@@ -28,7 +28,7 @@ if __name__ == "__main__":
     data_path = os.getenv("DATA_PATH")
 
     data = load_and_prepare_data(data_path)
-    dataloader = DataLoader.DataLoader(data, batch_size=32, shuffle=False)
+    dataloader = DataLoader.DataLoader(data, batch_size=8, shuffle=False)                         
 
     pipeline = load_model(model_path, token_path)
 

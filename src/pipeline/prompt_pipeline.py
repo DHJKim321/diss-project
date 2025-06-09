@@ -16,10 +16,11 @@ if __name__ == "__main__":
     huggingface_token = read_token(huggingface_token_path)
     data_path = os.getenv("DATA_PATH")
     save_path = os.getenv("DATA_SAVE_PATH")
+    cache_path = os.path.expanduser("~") + os.getenv("CACHE_PATH")
 
     data = load_test_data(data_path)                         
 
-    pipeline = load_model(model_path, huggingface_token)
+    pipeline = load_model(model_path, huggingface_token, cache_path=cache_path)
 
     data = batch_process(pipeline, TEMPLATE_V1, data, new_col='predictions', num_posts=10, max_tokens=1, data_path=save_path, source_col='text')
     print(data.head())

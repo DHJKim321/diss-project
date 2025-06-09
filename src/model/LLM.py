@@ -7,11 +7,20 @@ from tqdm import tqdm
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
 
-def load_model( model_name, TOKEN):
+def load_model( model_name, TOKEN, cache_path=None):
     start_ = tm.time()
+    if cache_path is not None:
+        local_model_path = f"{cache_path}/models--mistralai--Mistral-7B-Instruct-v0.2/snapshots/3ad372fc79158a2148299e3318516c786aeded6c"
+        print(f'Using cache path: {local_model_path}')
+        tokenizer = AutoTokenizer.from_pretrained(local_model_path, local_files_only=True)
+        model = AutoModelForCausalLM.from_pretrained(local_model_path, local_files_only=True)
+        pipeline_ = transformers.pipeline("text-generation", model=model, tokenizer=tokenizer, torch_dtype=torch.bfloat16, device_map="auto",
+        do_sample=False, return_full_text=False, token= TOKEN)
+    else:
+        print('No cache path provided, using default cache locations.')
     tokenizer = AutoTokenizer.from_pretrained( model_name, padding_side="left", token= TOKEN)
     pipeline_ = transformers.pipeline( 
         "text-generation", model= model_name, tokenizer=tokenizer, torch_dtype=torch.bfloat16, device_map="auto",

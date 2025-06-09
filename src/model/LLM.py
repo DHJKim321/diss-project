@@ -2,6 +2,7 @@ import torch, transformers
 import time as tm
 import os, sys
 import pandas as pd
+from tqdm import tqdm
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
@@ -38,17 +39,12 @@ def batch_process( pipeline, instruction, df, new_col, num_posts, max_tokens= 8,
     range_top = n_to_process // num_posts + 1
     print(f'Need to process {n_to_process} posts out of a {len(df)} dataframe.\n----')
 
-    for i in range( range_top):
+    for i in tqdm(range(range_top), desc="Processing batches", unit="batch"):
         idx_ = left_to_process[ i* num_posts: (i+1)* num_posts]
         if len( idx_) == 0:
             print(f'Batch {i} and no more to process!')
             break
         out = process_batch_of_prompts( pipeline, instruction, df.loc[ idx_, source_col].tolist(), max_tokens)
-        # ToDo: decouple this from instruction content!
-        #out = [x.split('Category:')[-1].split('\n')[0] for x in out]
-        #iis = [ii for ii, x in enumerate( out) if x == ' mental health and psychological issues']
-        #df.loc[ idx_, new_col] = 0
-        #df.loc[ idx_[ iis], new_col] = 1
         df.loc[ idx_, new_col] = out
         if data_path is not None:
             df.to_csv( data_path, index= False)

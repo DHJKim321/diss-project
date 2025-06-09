@@ -8,8 +8,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 
 from transformers import AutoTokenizer
 
-from prompts.templates import TEMPLATE_V1
-
 
 def load_model( model_name, TOKEN):
     start_ = tm.time()

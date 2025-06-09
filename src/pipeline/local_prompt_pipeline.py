@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     pipeline = load_model(model_path, huggingface_token, cache_path=cache_path)
 
-    data = batch_process(pipeline, TEMPLATE_V1, data, new_col='predictions', num_posts=10, max_tokens=1, data_path=save_path, source_col='text')
+    data = batch_process(pipeline, TEMPLATE_V1, data, new_col='predictions', num_posts=10, data_path=save_path, source_col='text')
     print(data.head())
 
     

@@ -3,7 +3,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from dotenv import load_dotenv
 
-from model.LLM import *
+from src.utils.llm_utils import *
 from src.utils.data_utils import load_test_data
 from src.utils.api_utils import read_token
 from src.prompts.templates import TEMPLATE_V1

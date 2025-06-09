@@ -1,5 +1,21 @@
 import pandas as pd
 
+def load_test_data(csv_file):
+    """
+    Load test data from a CSV file.
+
+    Args:
+        csv_file (str): Path to the CSV file containing the test dataset.
+
+    Returns:
+        pd.DataFrame: A DataFrame with the test data.
+    """
+    data = pd.read_csv(csv_file)
+    data.fillna('', inplace=True)
+    data.rename(columns={'clean_text': 'text', 'is_depression': 'label'}, inplace=True)
+    
+    return data
+
 def load_and_prepare_data(csv_file):
     """
     Load and prepare data from a CSV file.

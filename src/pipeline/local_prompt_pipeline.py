@@ -18,5 +18,5 @@ if __name__ == "__main__":
 
     pipeline_ = load_llama_model(model_path)
 
-    data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=10, data_path=save_path, source_col='text')
+    data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=4, data_path=save_path, source_col='text')
     print(data.head())

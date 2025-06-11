@@ -52,7 +52,7 @@ def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):
     outputs = [out[0]["generated_text"] for out in outputs]
     print(outputs)
     print(len(outputs), len(prompts))
-    print(f'Took {(tm.time() - start_) / 60} minutes to go through {len(prompts)} posts.')
+    print(f'Took {(tm.time() - start_)} seconds')
     return outputs
 
 def batch_process( pipeline, instruction, df, new_col, num_posts, data_path= None, source_col= 'selftext'):

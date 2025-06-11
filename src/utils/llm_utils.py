@@ -69,6 +69,7 @@ def batch_process( pipeline, instruction, df, new_col, num_posts, data_path= Non
             print(f'Batch {i} and no more to process!')
             break
         out = process_batch_of_prompts( pipeline, instruction, df.loc[ idx_, source_col].tolist())
+        out = out.replace("\n", "")
         df.loc[ idx_, new_col] = out
     if data_path is not None:
         df.to_csv( data_path, index= False)

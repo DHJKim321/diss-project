@@ -18,9 +18,4 @@ if __name__ == "__main__":
 
     pipeline_ = load_llama_model(model_path)
 
-    # Test one sample
-    sample = data.iloc[0:1]
-    sample['predictions'] = process_batch_of_prompts(pipeline_, TEMPLATE_V1, sample['text'].tolist(), max_new_tokens=100)
-
-    # data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=4, data_path=save_path, source_col='text')
-    # print(data.head())
+    data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=4, data_path=save_path, source_col='text')

@@ -50,6 +50,7 @@ def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):
     })
     outputs = pipeline(full_prompts, **kwargs)
     outputs = [out[0]["generated_text"] for out in outputs]
+    print(outputs)
     print(f'Took {(tm.time() - start_) / 60} minutes to go through {len(prompts)} posts.')
     return outputs
 

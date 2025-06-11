@@ -4,10 +4,13 @@ We use these templates to generate prompts for the LLM.
 '''
 
 # Hard coded 0, 1 labels as we are only doing binary classification for this entire project
-TEMPLATE_V1 = """Answer with only one of the following digits: 0 or 1.
-Respond with exactly one digit and nothing else.
+TEMPLATE_V1 = """You are a binary classifier. Answer ONLY with '0' or '1'.
 
-Question: Does the following Reddit post contain mental-health-related discourse?
+Task: Determine if the following Reddit post discusses mental health (e.g., depression, anxiety, therapy).
+
+Reply with:
+- 1 = Yes
+- 0 = No
 
 Post:
 {task_content}

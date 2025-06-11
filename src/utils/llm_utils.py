@@ -50,8 +50,6 @@ def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):
     })
     outputs = pipeline(full_prompts, **kwargs)
     outputs = [out[0]["generated_text"] for out in outputs]
-    print(outputs)
-    print(len(outputs), len(prompts))
     print(f'Took {(tm.time() - start_)} seconds')
     return outputs
 
@@ -69,7 +67,7 @@ def batch_process( pipeline, instruction, df, new_col, num_posts, data_path= Non
             print(f'Batch {i} and no more to process!')
             break
         out = process_batch_of_prompts( pipeline, instruction, df.loc[ idx_, source_col].tolist())
-        out = out.replace("\n", "")
+        out = [x.replace("\n", "") for x in out]
         df.loc[ idx_, new_col] = out
     if data_path is not None:
         df.to_csv( data_path, index= False)

@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from src.utils.llm_utils import *
 from src.utils.data_utils import load_test_data
 from src.prompts.templates import TEMPLATE_V1
+from src.utils.eval_utils import evaluate_model
 
 if __name__ == "__main__":
     load_dotenv()
@@ -18,4 +19,9 @@ if __name__ == "__main__":
 
     pipeline_ = load_llama_model(model_path)
 
-    data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=4, data_path=save_path, source_col='text')
+    updated_data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=4, data_path=save_path, source_col='text')
+
+    predictions = updated_data['predictions'].tolist()
+    labels = updated_data['label'].tolist()
+    evaluations = evaluate_model(updated_data)
+    print("Evaluations:", evaluations)

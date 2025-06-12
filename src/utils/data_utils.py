@@ -13,7 +13,7 @@ def load_test_data(csv_file):
     data = pd.read_csv(csv_file)
     data.fillna('', inplace=True)
     data.rename(columns={'clean_text': 'text', 'is_depression': 'label'}, inplace=True)
-    
+    data = data[['text', 'label']]
     return data
 
 def load_and_prepare_data(csv_file):

@@ -28,4 +28,5 @@ if __name__ == "__main__":
     print("Evaluations:", evaluations)
     output_file = os.path.dirname(data_path) + '/evaluation_results.json'
     with open(output_file, 'w') as f:
-        json.dump({'predictions': predictions, 'evaluations': evaluations}, f, indent=4)
+        json.dump(evaluations, f, indent=4)
+    print(f"Evaluation results saved to {output_file}")

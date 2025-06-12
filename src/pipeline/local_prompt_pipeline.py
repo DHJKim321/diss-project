@@ -2,6 +2,7 @@ import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from dotenv import load_dotenv
+import json
 
 from src.utils.llm_utils import *
 from src.utils.data_utils import load_test_data
@@ -25,3 +26,6 @@ if __name__ == "__main__":
     labels = updated_data['label'].tolist()
     evaluations = evaluate_model(updated_data)
     print("Evaluations:", evaluations)
+    output_file = os.path.dirname(data_path) + '/evaluation_results.json'
+    with open(output_file, 'w') as f:
+        json.dump({'predictions': predictions, 'evaluations': evaluations}, f, indent=4)

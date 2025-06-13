@@ -13,7 +13,7 @@
 # Load Python
 module load anaconda
 
-conda activate diss
+conda activate /exports/eddie/scratch/s2017594/conda-envs/diss
 
 # Run the program
 python src/pipeline/local_prompt_pipeline.py

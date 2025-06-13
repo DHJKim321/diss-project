@@ -7,6 +7,7 @@
 #$ -q gpu
 #$ -l gpu=1
 #$ -o log/output.log
+#$ -e log/error.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

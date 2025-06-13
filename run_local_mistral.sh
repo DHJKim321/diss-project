@@ -6,6 +6,7 @@
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
+#$ -o logs/output.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

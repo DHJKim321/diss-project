@@ -1,31 +1,25 @@
 import pandas as pd
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-def load_test_data(test_file, csv_file):
-    """
-    Load test data from a CSV file.
-
-    Args:
-        csv_file (str): Path to the CSV file containing the test dataset.
-
-    Returns:
-        pd.DataFrame: A DataFrame with the test data.
-    """
-    path = csv_file + test_file
+def load_test_data(test_file, file_path):
+    path = file_path + test_file
     data = pd.read_csv(path)
     data.fillna('', inplace=True)
     data = data[['text', 'label']]
     return data
 
+def load_train_data(file_path):
+    train = pd.DataFrame()
+    for file in os.listdir(file_path):
+        if file.endswith('.csv'):
+            df = pd.read_csv(os.path.join(file_path, file))
+            df = load_and_prepare_data(df)
+            train = pd.concat([train, df], ignore_index=True)
+    return train
+
 def load_and_prepare_data(csv_file):
-    """
-    Load and prepare data from a CSV file.
-
-    Args:
-        csv_file (str): Path to the CSV file containing the dataset.
-
-    Returns:
-        pd.DataFrame: A DataFrame with the prepared data.
-    """
     # Load the dataset
     data = pd.read_csv(csv_file)
     

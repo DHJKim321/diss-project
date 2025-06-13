@@ -34,8 +34,8 @@ def evaluate_model(preds, labels):
         'f1_score': f1_score
     }
 
-def save_evaluation(evaluations, file_name, data_path):
-    output_file = data_path + "evaluated_" + file_name
+def save_evaluation(evaluations, test_file, data_path):
+    output_file = data_path + "evaluated_" + test_file
     with open(output_file, 'w') as f:
         json.dump(evaluations, f, indent=4)
     print(f"Evaluation results saved to {output_file}")

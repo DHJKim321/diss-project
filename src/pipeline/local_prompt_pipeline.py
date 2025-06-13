@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     pipeline_ = load_llama_model(model_path)
 
-    updated_data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=4, data_path=save_path, source_col='text')
+    updated_data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=4, test_file=test_file, data_path=save_path, source_col='text')
 
     predictions = updated_data['predictions'].tolist()
     labels = updated_data['label'].tolist()

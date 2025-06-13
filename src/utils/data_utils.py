@@ -1,6 +1,6 @@
 import pandas as pd
 
-def load_test_data(csv_file):
+def load_test_data(test_file, csv_file):
     """
     Load test data from a CSV file.
 
@@ -10,9 +10,9 @@ def load_test_data(csv_file):
     Returns:
         pd.DataFrame: A DataFrame with the test data.
     """
-    data = pd.read_csv(csv_file)
+    path = csv_file + test_file
+    data = pd.read_csv(path)
     data.fillna('', inplace=True)
-    data.rename(columns={'clean_text': 'text', 'is_depression': 'label'}, inplace=True)
     data = data[['text', 'label']]
     return data
 

@@ -1,3 +1,5 @@
+import json
+
 def calc_accuracy(preds, labels):
     correct = sum(p == l for p, l in zip(preds, labels))
     return correct / len(labels) * 100 if labels else 0.0
@@ -31,3 +33,9 @@ def evaluate_model(preds, labels):
         'recall': recall,
         'f1_score': f1_score
     }
+
+def save_evaluation(evaluations, file_name, data_path):
+    output_file = data_path + "evaluated_" + file_name
+    with open(output_file, 'w') as f:
+        json.dump(evaluations, f, indent=4)
+    print(f"Evaluation results saved to {output_file}")

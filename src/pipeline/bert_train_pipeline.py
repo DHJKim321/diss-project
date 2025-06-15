@@ -8,8 +8,8 @@ from src.utils.data_utils import load_train_data
 from src.data.BertDataset import BertDataset
 from transformers import BertTokenizer, BertForSequenceClassification
 from torch.utils.data import DataLoader
-from torch.nn import CrossEntropyLoss
 from tqdm import tqdm
+torch.manual_seed(42)
 
 if __name__ == "__main__":
     load_dotenv()
@@ -26,13 +26,16 @@ if __name__ == "__main__":
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     dataset = BertDataset(train_data, tokenizer)
     print(f"Dataset length: {len(dataset)}")
-    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False)
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
     model = BertForSequenceClassification.from_pretrained(bert_name, num_labels=2)
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    loss = CrossEntropyLoss()
+    device = 'cuda' if torch.cuda.is_available() else None
+    print(f"Using device: {device}")
+    if device is None:
+        print("No GPU avialable, exiting...")
+        exit(1)
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
-    model.to_device(device)
+    model.to(device)
     model.train()
 
     losses = []
@@ -56,6 +59,7 @@ if __name__ == "__main__":
             loss_value.backward()
             optimizer.step()
             optimizer.zero_grad()
+            torch.cuda.empty_cache()
             tqdm.write(f"Loss: {loss_value.item()}")
             losses.append(loss_value.item())
 

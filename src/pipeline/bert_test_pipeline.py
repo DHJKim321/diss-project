@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from src.utils.data_utils import load_test_data
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import BertTokenizer
 from torch.utils.data import DataLoader
 
 torch.manual_seed(42)

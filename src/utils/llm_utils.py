@@ -44,7 +44,7 @@ def load_mistral_model(model_name, TOKEN, cache_path=None):
 def postprocess_output(output):
     output = output.strip()
     output = output[0]
-    return int(output)
+    return output
 
 def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):
     start_ = tm.time()

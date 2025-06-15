@@ -2,6 +2,8 @@ import json
 from sklearn.metrics import classification_report
 
 def evaluate_model(preds, labels):
+    labels = [str(label) for label in labels]
+    preds = [str(pred) for pred in preds]
     report = classification_report(labels, preds, output_dict=True)
     return report
 

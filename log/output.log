@@ -1,5 +1,5 @@
 Using path: /exports/eddie/scratch/s2017594/mistral-7B-instruct-v2
-Took 1.3470562060674032 minutes to load MistralForCausalLM(
+Took 0.9592254638671875 minutes to load MistralForCausalLM(
   (model): MistralModel(
     (embed_tokens): Embedding(32000, 4096)
     (layers): ModuleList(
@@ -25,6 +25,6 @@ Took 1.3470562060674032 minutes to load MistralForCausalLM(
   )
   (lm_head): Linear(in_features=4096, out_features=32000, bias=False)
 )
-Need to process 7731 posts out of a 7731 dataframe.
+Need to process 715 posts out of a 715 dataframe.
 ----
-Evaluation results saved to src/data/test/evaluated_test.csv
+Evaluation results saved to src/data/eval/metrics_dreaddit-test.

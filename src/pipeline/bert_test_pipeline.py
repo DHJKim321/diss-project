@@ -2,11 +2,11 @@ import os
 import sys
 import torch
 from tqdm import tqdm
-from sklearn.metrics import classification_report
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from dotenv import load_dotenv
 from src.utils.data_utils import load_test_data
+from src.utils.eval_utils import evaluate_model, save_evaluation
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
 from transformers import BertTokenizer
@@ -20,6 +20,7 @@ if __name__ == "__main__":
     # ------------ Load environment variables ------------
     test_file_path  = os.getenv("TEST_FILE")
     model_path = os.getenv("MODEL_SAVE_PATH")
+    data_save_path = os.getenv("DATA_SAVE_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_name = os.getenv("BERT_NAME")
 
@@ -55,4 +56,6 @@ if __name__ == "__main__":
             preds.extend(torch.argmax(logits, dim=-1).cpu().tolist())
             labels.extend(labels.cpu().tolist())
 
-    print(classification_report(labels, preds, digits=4))
+    # ------------ Evaluate Model ------------
+    evaluations = evaluate_model(preds, labels)
+    save_evaluation(evaluations, test_file_path, data_save_path, model_name=bert_name)

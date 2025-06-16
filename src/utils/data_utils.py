@@ -3,6 +3,14 @@ import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
+def load_full_data(train_file, file_path):
+    path = file_path + train_file
+    data = pd.read_csv(path)
+    data.fillna('', inplace=True)
+    data['text'] = f"[TITLE] {data['title']} [SELFTEXT] {data['selftext']}"
+    data.drop(columns=['title', 'selftext', 'subreddit', 'title_length'], inplace=True)
+    return data
+
 def load_test_data(test_file, file_path):
     path = file_path + test_file
     data = pd.read_csv(path)

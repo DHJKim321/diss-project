@@ -5,6 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 
 from dotenv import load_dotenv
 from src.utils.data_utils import load_train_data
+from src.utils.eval_utils import evaluate_model
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
 from transformers import BertTokenizer, BertForSequenceClassification
@@ -55,6 +56,8 @@ if __name__ == "__main__":
 
     # ------------ Start Training ------------
     epoch_losses = []
+    preds = []
+    all_labels = []
 
     for epoch in range(epochs):
         print(f"Epoch {epoch + 1}/{epochs}")
@@ -77,6 +80,9 @@ if __name__ == "__main__":
             total_loss += loss_value.item()
             num_batches += 1
 
+            preds.extend(torch.argmax(logits, dim=-1).cpu().tolist())
+            all_labels.extend(labels.cpu().tolist())
+
         avg_loss = total_loss / num_batches
         epoch_losses.append(avg_loss)
         print(f"Epoch {epoch + 1} average loss: {avg_loss:.4f}")
@@ -86,6 +92,11 @@ if __name__ == "__main__":
                 print(f"Early stopping triggered at epoch {epoch + 1}")
                 break
 
+    # ------------ Evaluate Model ------------
+    evaluations = evaluate_model(preds, all_labels)
+    print(f"Training completed. Final evaluation: {evaluations}")
+
+    # ------------ Save Model ------------
     model.save(model_save_path)
     print(f"Model saved to {model_save_path}")
 

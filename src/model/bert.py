@@ -25,13 +25,14 @@ class Bert(nn.Module):
         for param in self.classifier.parameters():
             param.requires_grad = True
 
-    def train(self):
-        self.bert.train()
-        self.classifier.train()
+    def train(self, mode=True):
+        super().train(mode)
+        self.bert.train(mode)
+        self.classifier.train(mode)
+        return self
 
     def eval(self):
-        self.bert.eval()
-        self.classifier.eval()
+        return self.train(False)
 
     def save(self, path):
         torch.save(self.state_dict(), path)

@@ -22,12 +22,11 @@ if __name__ == "__main__":
     model_path = os.getenv("MODEL_SAVE_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_name = os.getenv("BERT_NAME")
-    max_length = int(os.getenv("MAX_LENGTH"))
 
     # ------------ Load Data and Tokenizer ------------
     test_data   = load_test_data(test_file_path)
     tokenizer = BertTokenizer.from_pretrained(bert_name)
-    dataset   = BertDataset(test_data, tokenizer, max_length=max_length)
+    dataset   = BertDataset(test_data, tokenizer)
     dataloader   = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
     # ------------ Load Model and Device ------------
@@ -51,7 +50,7 @@ if __name__ == "__main__":
             labels = batch["labels"].to(device)
 
             logits = model(input_ids=input_ids,
-                           attention_mask=attention_mask).logits
+                           attention_mask=attention_mask)
 
             preds.extend(torch.argmax(logits, dim=-1).cpu().tolist())
             labels.extend(labels.cpu().tolist())

@@ -1,5 +1,4 @@
 from torch.utils.data import Dataset
-import pandas as pd
 import torch
 
 class BertDataset(Dataset):
@@ -11,8 +10,8 @@ class BertDataset(Dataset):
         return len(self.data)
     
     def __getitem__(self, idx):
-        text = str(self.data.iloc[idx, 'text'])
-        label = int(self.data.iloc[idx, 'label'])
+        text = str(self.data.iloc[idx]['text'])
+        label = int(self.data.iloc[idx]['label'])
         encoding = self.tokenizer(
             text,
             # padding='max_length',

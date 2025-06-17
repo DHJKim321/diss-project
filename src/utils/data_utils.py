@@ -20,15 +20,6 @@ def load_test_data(test_file, file_path):
     data = data[['text', 'label']]
     return data
 
-def load_train_data(file_path):
-    train = pd.DataFrame()
-    for file in os.listdir(file_path):
-        if file.endswith('.csv'):
-            df = pd.read_csv(os.path.join(file_path, file))
-            df = load_and_prepare_data(df)
-            train = pd.concat([train, df], ignore_index=True)
-    return train
-
 def load_and_prepare_data(csv_file):
     # Load the dataset
     data = pd.read_csv(csv_file)

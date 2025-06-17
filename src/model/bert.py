@@ -5,7 +5,7 @@ class Bert(nn.Module):
     def __init__(self, bert_model, num_classes=2, use_dropout=True, dropout=0.3):
         super(Bert, self).__init__()
         self.bert = bert_model
-        for param in self.bert.parameters(): # Ensure BERT parameters are frozen by default
+        for param in self.bert.parameters():
             param.requires_grad = False
         self.dropout = nn.Dropout(dropout) if use_dropout else nn.Identity()
         self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)

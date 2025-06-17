@@ -15,3 +15,8 @@ def save_evaluation(evaluations, test_file, data_path, model_name):
     with open(output_file, 'w') as f:
         json.dump(evaluations, f, indent=4)
     print(f"Evaluation results saved to {output_file}")
+
+def add_predictions_to_data(data, test_file, preds, model_name):
+    # Data is a dataframe, preds is a list of predictions
+    data['predictions'] = preds
+    data.to_csv(f"evaluated_{test_file}_{model_name}.csv", index=False)

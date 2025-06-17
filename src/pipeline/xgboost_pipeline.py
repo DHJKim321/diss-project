@@ -3,7 +3,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from dotenv import load_dotenv
 from src.utils.data_utils import load_full_data, load_test_data
-from src.utils.eval_utils import evaluate_model, save_evaluation
+from src.utils.eval_utils import evaluate_model, save_evaluation, add_predictions_to_data
 from src.utils.text_utils import reddit_tokenizer
 from xgboost import XGBClassifier, XGBRFClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -92,3 +92,4 @@ if __name__ == "__main__":
     print("Test Classification Report:")
     evaluations = evaluate_model(test_preds, test_y)
     save_evaluation(evaluations, test_file, data_save_path, model_name="xgboost_rf" if use_random_forest else "xgboost")
+    add_predictions_to_data(test_data, test_file, test_preds, model_name="xgboost_rf" if use_random_forest else "xgboost")

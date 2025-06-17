@@ -38,6 +38,12 @@ if __name__ == "__main__":
     X = vectorizer.fit_transform(data['text']).toarray()
     y = data['label'].values
 
+    # Calculate scale_pos_weight for imbalanced classes
+    class_counts = data['label'].value_counts()
+    weight = class_counts[0] / class_counts[1]
+    print(f"Class distribution: {class_counts.to_dict()}")
+    print(f"Scale pos weight: {weight}")
+
     features = vectorizer.get_feature_names_out()
 
     print(f"Total features: {len(features)}")
@@ -54,9 +60,17 @@ if __name__ == "__main__":
     # ------------ Initialize Model ------------
     print("Initializing model...")
     if use_random_forest:
-        model = XGBRFClassifier(random_state=42)
+        model = XGBRFClassifier(
+            scale_pos_weight=weight,
+            eval_metric='logloss', 
+            random_state=42
+        )
     else:
-        model = XGBClassifier(random_state=42)
+        model = XGBClassifier(
+            scale_pos_weight=weight,
+            eval_metric='logloss', 
+            random_state=42
+        )
     
     # ------------ Train Model ------------
     print("Training model...")
@@ -69,11 +83,12 @@ if __name__ == "__main__":
     # ------------ Evaluate Model ------------
     print("Evaluating model on validation set...")
     y_pred = model.predict(X_val)
-    print(f"Validation Classification Report:")
+    print("Validation Classification Report:")
     evaluate_model(y_pred, y_val)
 
     # ------------ Test Model ------------
     print("Evaluating model on test set...")
     test_preds = model.predict(test_X)
+    print("Test Classification Report:")
     evaluations = evaluate_model(test_preds, test_y)
     save_evaluation(evaluations, test_file, data_save_path, model_name="xgboost_rf" if use_random_forest else "xgboost")

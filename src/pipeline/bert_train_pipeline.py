@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from dotenv import load_dotenv
-from src.utils.data_utils import load_train_data
+from src.utils.data_utils import load_full_data
 from src.utils.eval_utils import evaluate_model
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     dropout = float(os.getenv("DROPOUT"))
 
     # ------------ Load Data and Tokenizer ------------
-    train_data = load_train_data(train_file_path)
+    train_data = load_full_data(train_file_path)
     tokenizer = BertTokenizer.from_pretrained(bert_name)
     dataset = BertDataset(train_data, tokenizer)
     print(f"Dataset length: {len(dataset)}")

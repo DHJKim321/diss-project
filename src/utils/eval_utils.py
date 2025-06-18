@@ -17,6 +17,5 @@ def save_evaluation(evaluations, test_file, data_path, model_name):
     print(f"Evaluation results saved to {output_file}")
 
 def add_predictions_to_data(data, test_file, preds, model_name):
-    # Data is a dataframe, preds is a list of predictions
     data['predictions'] = preds
     data.to_csv(f"evaluated_{test_file}_{model_name}.csv", index=False)

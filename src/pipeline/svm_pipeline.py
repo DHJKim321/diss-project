@@ -4,7 +4,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 from dotenv import load_dotenv
 from src.utils.data_utils import load_full_data, load_test_data
 from src.utils.eval_utils import evaluate_model, save_evaluation, add_predictions_to_data
-from sklearn.svm import SVC
+# from sklearn.svm import SVC
+from cuml.svm import SVC
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.utils.class_weight import compute_class_weight
 from sklearn.model_selection import train_test_split

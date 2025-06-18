@@ -66,7 +66,7 @@ if __name__ == "__main__":
     model.fit(X_train, y_train)
 
     # Save the trained model
-    joblib.dump(model, model_save_path)
+    joblib.dump(model, f"{model_save_path}/svm_model.joblib")
     print(f"Model saved to {model_save_path}")
     
     # ------------ Evaluate Model ------------

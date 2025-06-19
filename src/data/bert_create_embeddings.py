@@ -36,6 +36,5 @@ if __name__ == "__main__":
     encoded_data = encode_texts(data, bert, tokenizer, device)
 
     print(f"Encoded data shape: {encoded_data.shape}")
-    os.makedirs('train', exist_ok=True)
     np.save('src/data/train/bert_embeddings_expanded_full.npy', encoded_data)
     print("Embeddings saved to train/bert_embeddings_expanded_full.npy")

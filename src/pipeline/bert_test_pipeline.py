@@ -10,7 +10,7 @@ from src.utils.data_utils import load_test_data
 from src.utils.eval_utils import evaluate_model, save_evaluation
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
-from transformers import BertTokenizer
+from transformers import BertTokenizer, DataCollatorWithPadding
 from torch.utils.data import DataLoader
 
 torch.manual_seed(42)
@@ -27,10 +27,11 @@ if __name__ == "__main__":
     bert_model = os.getenv("BERT_MODEL")
 
     # ------------ Load Data and Tokenizer ------------
-    test_data   = load_test_data(test_file, test_data_path)
+    test_data = load_test_data(test_file, test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
-    dataset   = BertDataset(test_data, tokenizer)
-    dataloader   = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    dataset = BertDataset(test_data, tokenizer)
+    collator = DataCollatorWithPadding(tokenizer=tokenizer, return_tensors="pt")
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False, collate_fn=collator)
 
     # ------------ Load Model and Device ------------
     device = 'cuda' if torch.cuda.is_available() else None
@@ -43,7 +44,7 @@ if __name__ == "__main__":
     model.to_device(device)
     model.eval()
 
-    preds, labels = [], []
+    preds, all_labels = [], []
 
     # ------------ Start Inference ------------
     with torch.no_grad():
@@ -56,8 +57,8 @@ if __name__ == "__main__":
                            attention_mask=attention_mask)
 
             preds.extend(torch.argmax(logits, dim=-1).cpu().tolist())
-            labels.extend(labels.cpu().tolist())
+            all_labels.extend(labels.cpu().tolist())
 
     # ------------ Evaluate Model ------------
-    evaluations = evaluate_model(preds, labels)
-    save_evaluation(evaluations, test_file_path, data_save_path, model_name=bert_model)
+    evaluations = evaluate_model(preds, all_labels)
+    save_evaluation(evaluations, test_file, data_save_path, model_name=bert_model)

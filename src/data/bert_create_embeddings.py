@@ -37,5 +37,5 @@ if __name__ == "__main__":
 
     print(f"Encoded data shape: {encoded_data.shape}")
     os.makedirs('train', exist_ok=True)
-    np.save('train/bert_embeddings_expanded_full.npy', encoded_data)
+    np.save('src/data/train/bert_embeddings_expanded_full.npy', encoded_data)
     print("Embeddings saved to train/bert_embeddings_expanded_full.npy")

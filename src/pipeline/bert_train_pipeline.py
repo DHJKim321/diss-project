@@ -17,7 +17,8 @@ torch.manual_seed(42)
 if __name__ == "__main__":
     # ------------ Load environment variables ------------
     load_dotenv()
-    train_file_path = os.getenv("TRAIN_FILE")
+    train_file = os.getenv("TRAIN_FILE")
+    train_data_path = os.getenv("TRAIN_DATA_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_name = os.getenv("BERT_NAME")
     learning_rate = float(os.getenv("LEARNING_RATE"))
@@ -29,7 +30,7 @@ if __name__ == "__main__":
     dropout = float(os.getenv("DROPOUT"))
 
     # ------------ Load Data and Tokenizer ------------
-    train_data = load_full_data(train_file_path)
+    train_data = load_full_data(train_file, train_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_name)
     dataset = BertDataset(train_data, tokenizer)
     print(f"Dataset length: {len(dataset)}")

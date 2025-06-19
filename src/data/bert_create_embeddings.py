@@ -9,10 +9,12 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 
 if __name__ == "__main__":
     df = pd.read_csv('src/data/train/expanded_full.csv')
+    df.fillna('', inplace=True)
     bert = BertModel.from_pretrained('bert-base-uncased')
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     device = 'cuda'
     bert.to(device)
+    data = (df['title'] + ' ' + df['selftext']).tolist()
 
     def encode_texts(texts):
         inputs = tokenizer(texts, return_tensors='pt', padding=True, truncation=True)

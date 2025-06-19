@@ -14,7 +14,7 @@ class BertDataset(Dataset):
         label = int(self.data.iloc[idx]['label'])
         encoding = self.tokenizer(
             text,
-            # padding='max_length',
+            padding='max_length',
             # truncation=True,
             # max_length=self.max_length,
             return_tensors='pt'

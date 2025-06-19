@@ -9,7 +9,8 @@ def load_full_data(train_file, file_path):
     data = pd.read_csv(path)
     data.fillna('', inplace=True)
     data['text'] = data['title'].astype(str) + ' ' + data['selftext'].astype(str)
-    data.drop(columns=['title', 'selftext', 'subreddit', 'title_length'], inplace=True)
+    # Only keep text and label columns
+    data = data[['text', 'label']]
     return data
 
 def load_test_data(test_file, file_path):

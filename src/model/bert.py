@@ -28,7 +28,7 @@ class Bert(nn.Module):
         for param in self.classifier.parameters():
             param.requires_grad = True
 
-    def to(self, device):
+    def to_device(self, device):
         self.bert = self.bert.to(device)
         self.classifier = self.classifier.to(device)
         return super().to(device)

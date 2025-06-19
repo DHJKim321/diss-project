@@ -20,7 +20,7 @@ if __name__ == "__main__":
     train_file = os.getenv("TRAIN_FILE")
     train_data_path = os.getenv("TRAIN_DATA_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
-    bert_name = os.getenv("BERT_NAME")
+    bert_model = os.getenv("BERT_MODEL")
     learning_rate = float(os.getenv("LEARNING_RATE"))
     epochs = int(os.getenv("EPOCHS"))
     model_save_path = os.getenv("MODEL_SAVE_PATH")
@@ -31,13 +31,13 @@ if __name__ == "__main__":
 
     # ------------ Load Data and Tokenizer ------------
     train_data = load_full_data(train_file, train_data_path)
-    tokenizer = BertTokenizer.from_pretrained(bert_name)
+    tokenizer = BertTokenizer.from_pretrained(bert_model)
     dataset = BertDataset(train_data, tokenizer)
     print(f"Dataset length: {len(dataset)}")
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
     # ------------ Load Model, Loss, and Device ------------
-    bert = BertForSequenceClassification.from_pretrained(bert_name, num_labels=2)
+    bert = BertForSequenceClassification.from_pretrained(bert_model, num_labels=2)
     model = Bert(bert, use_dropout=use_dropout, dropout=dropout)
     loss = CrossEntropyLoss()
     device = 'cuda' if torch.cuda.is_available() else None

@@ -24,11 +24,11 @@ if __name__ == "__main__":
     model_path = os.getenv("MODEL_SAVE_PATH")
     data_save_path = os.getenv("DATA_SAVE_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
-    bert_name = os.getenv("BERT_NAME")
+    bert_model = os.getenv("BERT_MODEL")
 
     # ------------ Load Data and Tokenizer ------------
     test_data   = load_test_data(test_file, test_data_path)
-    tokenizer = BertTokenizer.from_pretrained(bert_name)
+    tokenizer = BertTokenizer.from_pretrained(bert_model)
     dataset   = BertDataset(test_data, tokenizer)
     dataloader   = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
@@ -60,4 +60,4 @@ if __name__ == "__main__":
 
     # ------------ Evaluate Model ------------
     evaluations = evaluate_model(preds, labels)
-    save_evaluation(evaluations, test_file_path, data_save_path, model_name=bert_name)
+    save_evaluation(evaluations, test_file_path, data_save_path, model_name=bert_model)

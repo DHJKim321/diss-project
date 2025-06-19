@@ -98,6 +98,6 @@ if __name__ == "__main__":
     print(f"Training completed. Final evaluation: {evaluations}")
 
     # ------------ Save Model ------------
-    model.save(model_save_path)
-    print(f"Model saved to {model_save_path}")
+    model.save(model_save_path + "bert_model.pth")
+    print(f"Model saved to {model_save_path}/bert_model.pth")
 

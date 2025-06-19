@@ -8,7 +8,7 @@ from src.utils.data_utils import load_full_data
 from src.utils.eval_utils import evaluate_model
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import BertTokenizer, BertModel, DataCollatorWithPadding
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader
 from tqdm import tqdm
@@ -34,10 +34,11 @@ if __name__ == "__main__":
     tokenizer = BertTokenizer.from_pretrained(bert_model)
     dataset = BertDataset(train_data, tokenizer)
     print(f"Dataset length: {len(dataset)}")
-    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    collator = DataCollatorWithPadding(tokenizer=tokenizer, return_tensors="pt")
+    dataloader = DataLoader(dataset, batch_size=batch_size, collate_fn=collator)
 
     # ------------ Load Model, Loss, and Device ------------
-    bert = BertForSequenceClassification.from_pretrained(bert_model, num_labels=2)
+    bert = BertModel.from_pretrained(bert_model, num_labels=2)
     model = Bert(bert, use_dropout=use_dropout, dropout=dropout)
     loss = CrossEntropyLoss()
     device = 'cuda' if torch.cuda.is_available() else None

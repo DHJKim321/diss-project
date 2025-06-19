@@ -5,6 +5,7 @@ class BertDataset(Dataset):
     def __init__(self, data, tokenizer):
         self.data = data
         self.tokenizer = tokenizer
+        self.max_length = 512
 
     def __len__(self):
         return len(self.data)
@@ -15,8 +16,8 @@ class BertDataset(Dataset):
         encoding = self.tokenizer(
             text,
             padding='max_length',
-            # truncation=True,
-            # max_length=self.max_length,
+            truncation=True,
+            max_length=self.max_length,
             return_tensors='pt'
         )
         return {

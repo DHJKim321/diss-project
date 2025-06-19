@@ -19,14 +19,15 @@ if __name__ == "__main__":
     load_dotenv()
 
     # ------------ Load environment variables ------------
-    test_file_path  = os.getenv("TEST_FILE")
+    test_file = os.getenv("TEST_FILE")
+    test_data_path = os.getenv("TEST_DATA_PATH")
     model_path = os.getenv("MODEL_SAVE_PATH")
     data_save_path = os.getenv("DATA_SAVE_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_name = os.getenv("BERT_NAME")
 
     # ------------ Load Data and Tokenizer ------------
-    test_data   = load_test_data(test_file_path)
+    test_data   = load_test_data(test_file, test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_name)
     dataset   = BertDataset(test_data, tokenizer)
     dataloader   = DataLoader(dataset, batch_size=batch_size, shuffle=True)

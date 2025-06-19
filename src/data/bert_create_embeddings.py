@@ -8,7 +8,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 if __name__ == "__main__":
-    df = pd.read_csv('train/expanded_full.csv')
+    df = pd.read_csv('src/data/train/expanded_full.csv')
     bert = BertModel.from_pretrained('bert-base-uncased')
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     device = 'cuda'

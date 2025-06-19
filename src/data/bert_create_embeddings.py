@@ -20,7 +20,7 @@ if __name__ == "__main__":
         inputs = tokenizer(texts, return_tensors='pt', padding=True, truncation=True)
         with torch.no_grad():
             print("Encoding texts...")
-            outputs = bert(**inputs, verbose=True)
+            outputs = bert(**inputs)
         return outputs.last_hidden_state.mean(dim=1).numpy()
 
     encoded_data = encode_texts(data)

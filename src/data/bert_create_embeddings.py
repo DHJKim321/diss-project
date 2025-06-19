@@ -1,31 +1,41 @@
 import pandas as pd
 import numpy as np
-from sklearn.mixture import GaussianMixture
 from transformers import BertTokenizer, BertModel
 import torch
+from tqdm import tqdm
 import os, sys
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
+def encode_texts(texts, model, tokenizer, device, batch_size=16):
+    model.eval()
+    embeddings = []
+
+    for i in tqdm(range(0, len(texts), batch_size), desc="Encoding"):
+        batch = texts[i:i+batch_size]
+        inputs = tokenizer(batch, return_tensors='pt', padding=True, truncation=True, max_length=512)
+        inputs = {k: v.to(device) for k, v in inputs.items()}
+
+        with torch.no_grad():
+            outputs = model(**inputs)
+            batch_embeddings = outputs.last_hidden_state.mean(dim=1)  # [batch_size, hidden_size]
+            embeddings.append(batch_embeddings.cpu().numpy())
+
+    return np.concatenate(embeddings, axis=0)
 
 if __name__ == "__main__":
     df = pd.read_csv('src/data/train/expanded_full.csv')
     df.fillna('', inplace=True)
-    bert = BertModel.from_pretrained('bert-base-uncased')
+
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    bert = BertModel.from_pretrained('bert-base-uncased').to(device)
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    device = 'cuda'
-    bert.to(device)
+
     data = (df['title'] + ' ' + df['selftext']).tolist()
+    encoded_data = encode_texts(data, bert, tokenizer, device)
 
-    def encode_texts(texts):
-        inputs = tokenizer(texts, return_tensors='pt', padding=True, truncation=True)
-        with torch.no_grad():
-            print("Encoding texts...")
-            outputs = bert(**inputs)
-        return outputs.last_hidden_state.mean(dim=1).numpy()
-
-    encoded_data = encode_texts(data)
     print(f"Encoded data shape: {encoded_data.shape}")
-
-    with open('train/bert_embeddings_expanded_full.npy', 'wb') as f:
-        np.save(f, encoded_data)
+    os.makedirs('train', exist_ok=True)
+    np.save('train/bert_embeddings_expanded_full.npy', encoded_data)
     print("Embeddings saved to train/bert_embeddings_expanded_full.npy")

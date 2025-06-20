@@ -22,6 +22,7 @@ if __name__ == "__main__":
     model_save_path = os.getenv("MODEL_SAVE_PATH")
     data_save_path = os.getenv("DATA_SAVE_PATH")
     max_features = int(os.getenv("MAX_FEATURES_TFIDF"))
+    use_class_weights = os.getenv("USE_CLASS_WEIGHTS").lower() == "true"
     
     # ------------ Load Data ------------
     print("Loading data...")
@@ -41,9 +42,11 @@ if __name__ == "__main__":
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
     
     # Class Weights
-    classes = list(set(y))
-    weights = compute_class_weight(class_weight='balanced', classes=np.array(classes), y=y)
-    class_weight_dict = dict(zip(classes, weights))
+    class_weight_dict = None
+    if use_class_weights:
+        classes = list(set(y))
+        weights = compute_class_weight(class_weight='balanced', classes=np.array(classes), y=y)
+        class_weight_dict = dict(zip(classes, weights))
     
     features = vectorizer.get_feature_names_out()
     

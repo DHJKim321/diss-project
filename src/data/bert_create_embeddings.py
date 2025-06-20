@@ -25,10 +25,12 @@ def encode_texts(texts, model, tokenizer, device, batch_size=16):
     return np.concatenate(embeddings, axis=0)
 
 if __name__ == "__main__":
-    df = pd.read_csv('src/data/train/expanded_full.csv')
+    df = pd.read_csv('src/data/train/expanded_full_v2.csv')
     df.fillna('', inplace=True)
 
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('mps')
+    print(f"Using device: {device}")
     bert = BertModel.from_pretrained('bert-base-uncased').to(device)
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
@@ -36,5 +38,5 @@ if __name__ == "__main__":
     encoded_data = encode_texts(data, bert, tokenizer, device)
 
     print(f"Encoded data shape: {encoded_data.shape}")
-    np.save('src/data/train/bert_embeddings_expanded_full.npy', encoded_data)
-    print("Embeddings saved to train/bert_embeddings_expanded_full.npy")
+    np.save('src/data/train/bert_embeddings_expanded_full_v2.npy', encoded_data)
+    print("Embeddings saved to train/bert_embeddings_expanded_full_v2.npy")

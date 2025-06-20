@@ -28,8 +28,7 @@ if __name__ == "__main__":
     df = pd.read_csv('src/data/train/expanded_full_v2.csv')
     df.fillna('', inplace=True)
 
-    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    device = torch.device('mps')
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Using device: {device}")
     bert = BertModel.from_pretrained('bert-base-uncased').to(device)
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')

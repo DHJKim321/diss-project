@@ -21,6 +21,7 @@ if __name__ == "__main__":
     data_save_path = os.getenv("DATA_SAVE_PATH")
     use_random_forest = os.getenv("USE_RANDOM_FOREST").lower() == "true"
     max_features = int(os.getenv("MAX_FEATURES_TFIDF"))
+    use_class_weights = os.getenv("USE_CLASS_WEIGHTS").lower() == "true"
     
     # ------------ Load Data ------------
     print("Loading data...")
@@ -39,10 +40,12 @@ if __name__ == "__main__":
     y = data['label'].values
 
     # Calculate scale_pos_weight for imbalanced classes
-    class_counts = data['label'].value_counts()
-    weight = class_counts[0] / class_counts[1]
-    print(f"Class distribution: {class_counts.to_dict()}")
-    print(f"Scale pos weight: {weight}")
+    weight = None
+    if use_class_weights:
+        class_counts = data['label'].value_counts()
+        weight = class_counts[0] / class_counts[1]
+        print(f"Class distribution: {class_counts.to_dict()}")
+        print(f"Scale pos weight: {weight}")
 
     features = vectorizer.get_feature_names_out()
 

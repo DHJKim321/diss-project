@@ -37,9 +37,9 @@ class Bert(nn.Module):
         torch.save(self.state_dict(), path)
 
     @staticmethod
-    def load(path, pretrained_model_name="bert-base-uncased", num_classes=2, use_dropout=True, dropout=0.3):
+    def load(path, device, pretrained_model_name="bert-base-uncased", num_classes=2, use_dropout=True, dropout=0.3):
         bert_model = BertModel.from_pretrained(pretrained_model_name)
         model = Bert(bert_model, num_classes=num_classes, use_dropout=use_dropout, dropout=dropout)
-        model.load_state_dict(torch.load(path, map_location=torch.device('cuda' if torch.cuda.is_available() else 'cpu')))
+        model.load_state_dict(torch.load(path, map_location=device else 'cpu'))
         model.eval()
         return model

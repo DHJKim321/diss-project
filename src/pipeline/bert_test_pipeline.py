@@ -40,7 +40,7 @@ if __name__ == "__main__":
         exit(1)
     print(f"Using device: {device}")
     print(f"Loading model from {model_path}")
-    model = Bert.load(model_path + "bert_model.pth")
+    model = Bert.load(model_path + "bert_model.pth", device)
     model.to_device(device)
     model.eval()
 

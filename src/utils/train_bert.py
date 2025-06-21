@@ -90,6 +90,7 @@ def train_one_run(
                 val_loss += loss(logits, batch["labels"].to(device)).item()
                 val_preds.extend(torch.argmax(logits, 1).cpu())
                 val_labels.extend(batch["labels"].cpu())
+        val_loss /= len(val_loader)
         val_f1  = f1_score(val_labels, val_preds)
         val_acc = accuracy_score(val_labels, val_preds)
         print(f"Validation Loss: {val_loss:.4f}, F1: {val_f1:.4f}, Accuracy: {val_acc:.4f}")

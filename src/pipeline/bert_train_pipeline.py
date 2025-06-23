@@ -4,10 +4,11 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from dotenv import load_dotenv
-from src.utils.data_utils import load_full_data
+from src.utils.data_utils import load_full_data, check_embedding_existence
 from src.utils.eval_utils import evaluate_model
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
+from src.modules.GMMLabelCorrector import GMMLabelCorrector
 from transformers import BertTokenizer, BertModel, DataCollatorWithPadding
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader
@@ -21,6 +22,7 @@ if __name__ == "__main__":
     load_dotenv()
     train_file = os.getenv("TRAIN_FILE")
     train_data_path = os.getenv("TRAIN_DATA_PATH")
+    embedding_full_path = os.getenv("EMBEDDING_FULL_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_model = os.getenv("BERT_MODEL")
     learning_rate = float(os.getenv("LEARNING_RATE"))
@@ -30,13 +32,37 @@ if __name__ == "__main__":
     patience = int(os.getenv("PATIENCE"))
     use_dropout = os.getenv("USE_DROPOUT").lower() == "true"
     dropout = float(os.getenv("DROPOUT"))
+    denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
+    denoise_type = os.getenv("DENOISE_TYPE").lower()
+    gmm_threshold = float(os.getenv("GMM_THRESHOLD"))
 
     # ------------ Load Data and Tokenizer ------------
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
     full_data = load_full_data(train_file, train_data_path)
+    # TODO Need to change this such that we split the evaluation data into val and test
     train_data, val_data = train_test_split(full_data, test_size=0.2, random_state=42)
     print(f"Train size: {len(train_data)}, Validation size: {len(val_data)}")
+
+    # ------------ (Optional) Denoise Noisy Labels ------------
+    if not check_embedding_existence(embedding_full_path):
+        print("Embedding file does not exist. Please run src/pipeline/bert_create_embeddings.py first.")
+        exit(1)
+    if denoise_labels:
+        print(f"Denoising labels with type: {denoise_type}")
+        if denoise_type == "gmm":
+            print("Loading embeddings for denoising...")
+            train_embeddings = torch.load(embedding_full_path)
+            print("Denoising labels")
+            gmm = GMMLabelCorrector(train_embeddings, n_components=2, covariance_type='full')
+            train_data['denoised_label'] = gmm.threshold_predict(train_embeddings, threshold=gmm_threshold)
+            print("Labels denoised.")
+            
+        train_data.to_csv(f"{train_data_path}/denoised/{denoise_type}_denoised_{train_file}", index=False)
+        train_data.drop(columns=['label'], inplace=True)
+        train_data.rename(columns={'denoised_label': 'label'}, inplace=True)
+
+    # ------------ Create Data Loaders ------------
     train_dataset = BertDataset(train_data, tokenizer)
     val_dataset = BertDataset(val_data, tokenizer)
     collator = DataCollatorWithPadding(tokenizer=tokenizer, return_tensors="pt")

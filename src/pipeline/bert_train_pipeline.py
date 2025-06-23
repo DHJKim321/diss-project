@@ -20,18 +20,21 @@ torch.manual_seed(42)
 if __name__ == "__main__":
     # ------------ Load environment variables ------------
     load_dotenv()
+    # ---- Data Paths ----
     train_file = os.getenv("TRAIN_FILE")
     train_data_path = os.getenv("TRAIN_DATA_PATH")
     embedding_full_path = os.getenv("EMBEDDING_FULL_PATH")
+    model_save_path = os.getenv("MODEL_SAVE_PATH")
+    # ---- Model Variables ----
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_model = os.getenv("BERT_MODEL")
     learning_rate = float(os.getenv("LEARNING_RATE"))
     epochs = int(os.getenv("EPOCHS"))
-    model_save_path = os.getenv("MODEL_SAVE_PATH")
     early_stopping = os.getenv("EARLY_STOPPING").lower() == "true"
     patience = int(os.getenv("PATIENCE"))
     use_dropout = os.getenv("USE_DROPOUT").lower() == "true"
     dropout = float(os.getenv("DROPOUT"))
+    # ---- Label Denoising ----
     denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     gmm_threshold = float(os.getenv("GMM_THRESHOLD"))

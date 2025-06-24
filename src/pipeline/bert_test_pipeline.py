@@ -7,7 +7,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from dotenv import load_dotenv
 from src.utils.data_utils import load_test_data
-from src.utils.eval_utils import evaluate_model, save_evaluation
+from src.utils.eval_utils import evaluate_model, save_evaluation, add_predictions_to_data
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
 from transformers import BertTokenizer, DataCollatorWithPadding
@@ -62,3 +62,4 @@ if __name__ == "__main__":
     # ------------ Evaluate Model ------------
     evaluations = evaluate_model(preds, all_labels)
     save_evaluation(evaluations, test_file, data_save_path, model_name=bert_model)
+    add_predictions_to_data(test_data, test_file, preds, model_name='bert-base-uncased')

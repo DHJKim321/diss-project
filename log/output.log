@@ -1,0 +1,60 @@
+Loading data from src/data/train/expanded_full.csv
+Train size: 107107, Validation size: 26777
+Embedding file src/data/train/bert_embeddings_expanded_full_v2.npy exists.
+Using device: cuda
+Model loaded and moved to cuda
+Starting training with batch size 16...
+Number of batches: 6695
+Starting training...
+Epoch 1/2
+Train Loss: 0.2723, F1: 0.8869, Accuracy: 0.8869
+Starting validation...
+Validation Loss: 0.2361, F1: 0.9029, Accuracy: 0.8992
+New best validation loss: 0.2361
+Epoch 2/2
+Train Loss: 0.1819, F1: 0.9291, Accuracy: 0.9284
+Starting validation...
+Validation Loss: 0.2464, F1: 0.9042, Accuracy: 0.8998
+No improvement in validation loss for 1 epochs
+Evaluation Report:
+{'0': {'precision': 0.9339383533644019, 'recall': 0.8589367621625686, 'f1-score': 0.8948687818253036, 'support': 13299.0}, '1': {'precision': 0.8710298363811357, 'recall': 0.940050452589405, 'f1-score': 0.9042249500428204, 'support': 13478.0}, 'accuracy': 0.8997647234566979, 'macro avg': {'precision': 0.9024840948727688, 'recall': 0.8994936073759868, 'f1-score': 0.899546865934062, 'support': 26777.0}, 'weighted avg': {'precision': 0.9022738281412453, 'recall': 0.8997647234566979, 'f1-score': 0.8995781381847049, 'support': 26777.0}}
+Model saved to model_save//bert_model.pth
+Loading test data from src/data/test/shape.csv
+Using device: cuda
+Loading model from model_save/
+Evaluation Report:
+{'0': {'precision': 0.7244094488188977, 'recall': 0.7666666666666667, 'f1-score': 0.7449392712550608, 'support': 120.0}, '1': {'precision': 0.7358490566037735, 'recall': 0.6902654867256637, 'f1-score': 0.7123287671232876, 'support': 113.0}, 'accuracy': 0.7296137339055794, 'macro avg': {'precision': 0.7301292527113357, 'recall': 0.7284660766961653, 'f1-score': 0.7286340191891743, 'support': 233.0}, 'weighted avg': {'precision': 0.729957413109417, 'recall': 0.7296137339055794, 'f1-score': 0.7291238765473769, 'support': 233.0}}
+Evaluation results saved to src/data/eval//metrics_bert-base-uncased_shape.json
+Predictions saved to evaluated_shape_bert-base-uncased.csv
+Loading test data from src/data/test/shape.csv
+Using path: /exports/eddie/scratch/s2017594/mistral-7B-instruct-v2
+Took 2.28516065677007 minutes to load MistralForCausalLM(
+  (model): MistralModel(
+    (embed_tokens): Embedding(32000, 4096)
+    (layers): ModuleList(
+      (0-31): 32 x MistralDecoderLayer(
+        (self_attn): MistralAttention(
+          (q_proj): Linear(in_features=4096, out_features=4096, bias=False)
+          (k_proj): Linear(in_features=4096, out_features=1024, bias=False)
+          (v_proj): Linear(in_features=4096, out_features=1024, bias=False)
+          (o_proj): Linear(in_features=4096, out_features=4096, bias=False)
+        )
+        (mlp): MistralMLP(
+          (gate_proj): Linear(in_features=4096, out_features=14336, bias=False)
+          (up_proj): Linear(in_features=4096, out_features=14336, bias=False)
+          (down_proj): Linear(in_features=14336, out_features=4096, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): MistralRMSNorm((4096,), eps=1e-05)
+        (post_attention_layernorm): MistralRMSNorm((4096,), eps=1e-05)
+      )
+    )
+    (norm): MistralRMSNorm((4096,), eps=1e-05)
+    (rotary_emb): MistralRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=4096, out_features=32000, bias=False)
+)
+Need to process 233 posts out of a 233 dataframe.
+----
+Evaluation Report:
+{'-': {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 0.0}, '0': {'precision': 0.7162162162162162, 'recall': 0.8833333333333333, 'f1-score': 0.7910447761194029, 'support': 120.0}, '1': {'precision': 0.8554216867469879, 'recall': 0.6283185840707964, 'f1-score': 0.7244897959183674, 'support': 113.0}, 'accuracy': 0.759656652360515, 'macro avg': {'precision': 0.5238793009877347, 'recall': 0.5038839724680432, 'f1-score': 0.5051781906792567, 'support': 233.0}, 'weighted avg': {'precision': 0.7837278821817837, 'recall': 0.759656652360515, 'f1-score': 0.7587670389403599, 'support': 233.0}}

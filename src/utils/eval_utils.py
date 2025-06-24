@@ -17,5 +17,8 @@ def save_evaluation(evaluations, test_file, data_path, model_name):
     print(f"Evaluation results saved to {output_file}")
 
 def add_predictions_to_data(data, test_file, preds, model_name):
+    test_file = test_file.replace(".csv", "")
+    output_file = f"evaluated_{test_file}_{model_name}.csv"
     data['predictions'] = preds
-    data.to_csv(f"evaluated_{test_file}_{model_name}.csv", index=False)
+    data.to_csv(output_file, index=False)
+    print(f"Predictions saved to {output_file}")

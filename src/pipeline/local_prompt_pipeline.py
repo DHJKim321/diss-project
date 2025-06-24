@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from src.utils.llm_utils import *
 from src.utils.data_utils import load_test_data
 from src.prompts.templates import TEMPLATE_V1
-from src.utils.eval_utils import evaluate_model, save_evaluation
+from src.utils.eval_utils import evaluate_model, save_evaluation, add_predictions_to_data
 
 if __name__ == "__main__":
     load_dotenv()
@@ -26,3 +26,4 @@ if __name__ == "__main__":
     labels = updated_data['label'].tolist()
     evaluations = evaluate_model(predictions, labels)
     save_evaluation(evaluations, test_file, save_path, model_path)
+    add_predictions_to_data(updated_data, test_file, predictions, 'mistral')

@@ -26,4 +26,4 @@ if __name__ == "__main__":
     labels = updated_data['label'].tolist()
     evaluations = evaluate_model(predictions, labels)
     save_evaluation(evaluations, test_file, test_path, 'mistral')
-    add_predictions_to_data(updated_data, test_file, predictions, 'mistral')
+    add_predictions_to_data(updated_data, test_file, save_path, predictions, 'mistral')

@@ -13,10 +13,10 @@ if __name__ == "__main__":
 
     model_path = os.getenv("LLM_PATH")
     test_file = os.getenv("TEST_FILE")
-    data_path = os.getenv("DATA_PATH")
+    test_path = os.getenv("TEST_DATA_PATH")
     save_path = os.getenv("DATA_SAVE_PATH")
 
-    data = load_test_data(test_file, data_path)                         
+    data = load_test_data(test_file, test_path)                         
 
     pipeline_ = load_llama_model(model_path)
 

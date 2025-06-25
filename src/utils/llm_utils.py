@@ -43,7 +43,7 @@ def load_mistral_model(model_name, TOKEN, cache_path=None):
 
 def postprocess_output(output):
     output = output.strip()
-    output = output[0]
+    output = list(filter(str.isdigit, output))[0]
     return output
 
 def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):

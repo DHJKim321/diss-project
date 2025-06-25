@@ -15,7 +15,10 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.model_selection import train_test_split
+import random
 torch.manual_seed(42)
+random.seed(42)
+torch.cuda.manual_seed_all(42)
 
 if __name__ == "__main__":
     # ------------ Load environment variables ------------

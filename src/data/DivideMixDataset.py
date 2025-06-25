@@ -42,6 +42,11 @@ class DivideMixDataset(Dataset):
         return len(self.text)
     
     def __getitem__(self, index):
+        """
+        
+        N.B. (mode == 'labelled' and mode == 'unlabelled'):
+            We return two inputs and augment them (M = 2 in the Pseudocode).
+        """
         if self.mode == 'all':
             encoding = self.tokenizer(
                 self.text[index],

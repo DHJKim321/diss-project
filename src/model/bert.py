@@ -9,6 +9,12 @@ class Bert(nn.Module):
         self.dropout = nn.Dropout(dropout) if use_dropout else nn.Identity()
         self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)
 
+    def get_embeddings(self, input_ids, attention_mask):
+        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
+        pooled_output = outputs.pooler_output
+        pooled_output = self.dropout(pooled_output)
+        return pooled_output
+
     def forward(self, input_ids, attention_mask):
         outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
         pooled_output = outputs.pooler_output

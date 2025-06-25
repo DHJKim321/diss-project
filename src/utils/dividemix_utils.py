@@ -6,9 +6,10 @@ import torch
 from tqdm import tqdm
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.mixture import GaussianMixture
-from src.modules.losses import NegEntropy
+import numpy as np
+import torch.nn.functional as F
 
-def warmup_train(epoch_no, model, optimizer, dataloader):
+def warmup_train(epoch_no, model, optimizer, dataloader, negentropy):
     """
     Warmup training function for DivideMix
     """
@@ -18,23 +19,107 @@ def warmup_train(epoch_no, model, optimizer, dataloader):
         optimizer.zero_grad()
         outputs = model(inputs)               
         loss = CrossEntropyLoss(outputs, labels)
-        penalty = NegEntropy(outputs) # Details in the class documentation
+        penalty = negentropy(outputs) # Details in the class documentation
         L = loss + penalty   
         L.backward()
         optimizer.step()
         print(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
 
+def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loader, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
+    model1.train()
+    model2.eval()
+    
+    unlabeled_train_iter = iter(unlabelled_loader)
+    num_iter = (len(labelled_loader.dataset)//batch_size)+1
+    for batch_idx, batch in enumerate(labelled_loader):
+        input_ids_x1 = batch['input_ids_1'].to(device)
+        input_ids_x2 = batch['input_ids_2'].to(device)
+        attention_mask_x1 = batch['attention_mask_1'].to(device)
+        attention_mask_x2 = batch['attention_mask_2'].to(device)
+        labels_x = batch['labels'].to(device)
+        prob = batch['probability'].to(device)
+        try:
+            input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2 = unlabeled_train_iter.next()
+        except:
+            unlabeled_train_iter = iter(unlabelled_loader)
+            input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2= unlabeled_train_iter.next()                 
+        batch_size = input_ids_x1.size(0)
+        
+        # Transform label to one-hot
+        labels_x = torch.zeros(batch_size, 2).scatter_(1, labels_x.view(-1,1), 1)        
+        prob = prob.view(-1,1).type(torch.FloatTensor) 
 
-def eval_train(model, all_loss, eval_loader):    
+        with torch.no_grad():
+            # label co-guessing of unlabeled samples
+            outputs_u11 = model1(input_ids_u1, attention_mask_u1)
+            outputs_u12 = model1(input_ids_u2, attention_mask_u2)
+            outputs_u21 = model2(input_ids_u1, attention_mask_u1)
+            outputs_u22 = model2(input_ids_u2, attention_mask_u2)
+            
+            pu = (torch.softmax(outputs_u11, dim=1) + torch.softmax(outputs_u12, dim=1) + torch.softmax(outputs_u21, dim=1) + torch.softmax(outputs_u22, dim=1)) / 4       
+            ptu = pu**(1/temperature) # temparature sharpening
+            
+            targets_u = ptu / ptu.sum(dim=1, keepdim=True) # normalize
+            targets_u = targets_u.detach()       
+            
+            # label refinement of labeled samples
+            outputs_x = model1(input_ids_x1, attention_mask_x1)
+            outputs_x2 = model1(input_ids_x2, attention_mask_x2)            
+            
+            px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2
+            px = prob*labels_x + (1-prob)*px # Co-refinement              
+            ptx = px**(1/temperature) # temparature sharpening 
+                       
+            targets_x = ptx / ptx.sum(dim=1, keepdim=True) # normalize           
+            targets_x = targets_x.detach()       
+        
+        # mixmatch
+        l = np.random.beta(alpha, alpha)        
+        l = max(l, 1-l)
+        
+        # TODO
+        all_inputs = torch.cat([input_ids_x1, input_ids_x2, input_ids_u1, input_ids_u2], dim=0)
+        all_targets = torch.cat([targets_x, targets_x, targets_u, targets_u], dim=0)
+
+        idx = torch.randperm(all_inputs.size(0))
+
+        input_a, input_b = all_inputs, all_inputs[idx]
+        target_a, target_b = all_targets, all_targets[idx]
+
+        # TODO
+        mixed_input = l * input_a[:batch_size*2] + (1 - l) * input_b[:batch_size*2]        
+        mixed_target = l * target_a[:batch_size*2] + (1 - l) * target_b[:batch_size*2]
+                
+        logits = model1(mixed_input)
+        
+        Lx = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * mixed_target, dim=1))
+        
+        prior = (torch.ones(num_class)/num_class).to(device)
+        pred_mean = torch.softmax(logits, dim=1).mean(0)
+        penalty = torch.sum(prior*torch.log(prior/pred_mean))
+       
+        loss = Lx + penalty
+
+        # compute gradient and do SGD step
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+        print(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Loss: {loss.item():.4f}")
+
+def eval_train(model, all_loss, eval_loader, device='cuda'):    
     model.eval()
     num_iter = (len(eval_loader.dataset)//eval_loader.batch_size)+1
     losses = torch.zeros(len(eval_loader.dataset))    
     with torch.no_grad():
-        for batch_idx, _ in tqdm(enumerate(eval_loader), desc="Evaluating"):
-            inputs, targets = inputs.cuda(), targets.cuda() 
-            outputs = model(inputs) 
-            loss = CrossEntropyLoss(outputs, targets)  
-            for b in range(inputs.size(0)):
+        for batch_idx, batch in enumerate(eval_loader):
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            labels = batch['labels'].to(device)
+            index = batch['index']
+            outputs = model(input_ids, attention_mask)
+            loss = CrossEntropyLoss(outputs, labels)  
+            for b in range(input_ids.size(0)):
                 losses[index[b]]=loss[b]
             print(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
                                     
@@ -49,19 +134,21 @@ def eval_train(model, all_loss, eval_loader):
     prob = prob[:,gmm.means_.argmin()]         
     return prob, all_loss
 
-def test(epoch_no, model1, model2, test_loader):
-    preds, labels = [], []
+def test(model1, model2, test_loader, device='cuda'):
+    preds, all_labels = [], []
     model1.eval()
     model2.eval()
     with torch.no_grad():
-        for _ in enumerate(test_loader):
-            inputs, targets = inputs.cuda(), targets.cuda()
-            outputs1 = model1(inputs)
-            outputs2 = model2(inputs)           
+        for _, batch in enumerate(test_loader):
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            labels = batch['labels'].to(device)
+            outputs1 = model1(input_ids, attention_mask)
+            outputs2 = model2(input_ids, attention_mask)
             outputs = outputs1 + outputs2
             _, predicted = torch.max(outputs, 1)
             preds.extend(predicted.cpu().numpy())
-            labels.extend(targets.cpu().numpy())
-    acc = accuracy_score(labels, preds)
-    f1 = f1_score(labels, preds, average='macro')
-    print(f"Epoch {epoch_no}, Test Accuracy: {acc:.4f}, F1 Score: {f1:.4f}")
+            all_labels.extend(labels.cpu().numpy())
+    acc = accuracy_score(all_labels, preds)
+    f1 = f1_score(all_labels, preds, average='macro')
+    return acc, f1, preds, all_labels

@@ -6,16 +6,17 @@ from DivideMixDataset import DivideMixDataset
 from torch.utils.data import DataLoader
 
 class DivideMixDataloader():
-    def __init__(self, batch_size, collator, num_workers=4):
+    def __init__(self, batch_size, collator, tokenizer, num_workers=4):
         self.batch_size = batch_size
         self.collator = collator
         self.num_workers = num_workers
+        self.tokenizer = tokenizer
 
-    def run(self, data, mode, tokenizer, preds=[], probs=[]):
+    def run(self, data, mode, preds=[], probs=[]):
         if mode == 'warmup':
             all_dataset = DivideMixDataset(
                 data=data,
-                tokenizer=tokenizer,
+                tokenizer=self.tokenizer,
                 mode='all',
                 preds=preds,
                 probs=probs
@@ -31,14 +32,14 @@ class DivideMixDataloader():
         elif mode == 'train':
             labelled_dataset = DivideMixDataset(
                 data=data,
-                tokenizer=tokenizer,
+                tokenizer=self.tokenizer,
                 mode='labelled',
                 preds=preds,
                 probs=probs
             )
             unlabelled_dataset = DivideMixDataset(
                 data=data,
-                tokenizer=tokenizer,
+                tokenizer=self.tokenizer,
                 mode='unlabelled',
                 preds=preds
             )
@@ -57,10 +58,10 @@ class DivideMixDataloader():
                 shuffle=True
             )
             return labelled_loader, unlabelled_loader
-        elif mode == 'eval':
+        elif mode == 'eval_train':
             eval_dataset = DivideMixDataset(
                 data=data,
-                tokenizer=tokenizer,
+                tokenizer=self.tokenizer,
                 mode='all',
             )
             loader = DataLoader(
@@ -74,7 +75,7 @@ class DivideMixDataloader():
         elif mode == 'test':
             test_dataset = DivideMixDataset(
                 data=data,
-                tokenizer=tokenizer,
+                tokenizer=self.tokenizer,
                 mode='test'
             )
             loader = DataLoader(
@@ -86,4 +87,4 @@ class DivideMixDataloader():
             )
             return loader
         else:
-            raise ValueError(f"Invalid mode: {mode}. Choose from 'warmup', 'train', 'eval', or 'test'.")
+            raise ValueError(f"Invalid mode: {mode}. Choose from 'warmup', 'train', 'eval_train', or 'test'.")

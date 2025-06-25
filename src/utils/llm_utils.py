@@ -74,9 +74,6 @@ def batch_process( pipeline, instruction, df, new_col, num_posts, test_file, dat
         out = process_batch_of_prompts( pipeline, instruction, df.loc[ idx_, source_col].tolist())
         out = [x.replace("\n", "") for x in out]
         df.loc[ idx_, new_col] = out
-    if data_path is not None:
-        path = data_path + "evaluated_" + test_file
-        df.to_csv(path, index= False)
          
     return df 
 

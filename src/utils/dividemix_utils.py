@@ -9,15 +9,17 @@ from sklearn.mixture import GaussianMixture
 import numpy as np
 import torch.nn.functional as F
 
-def warmup_train(epoch_no, model, optimizer, dataloader, negentropy):
+def warmup_train(epoch_no, model, optimizer, warmup_loader, negentropy, device='cuda'):
     """
     Warmup training function for DivideMix
     """
     model.train()
-    for _ in tqdm(enumerate(dataloader), desc="Warmup Training"):      
-        inputs, labels = inputs.cuda(), labels.cuda() 
+    for batch in tqdm(enumerate(warmup_loader), desc="Warmup Training"):      
+        input_ids = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+        labels = batch['labels'].to(device)
         optimizer.zero_grad()
-        outputs = model(inputs)               
+        outputs = model(input_ids, attention_mask)               
         loss = CrossEntropyLoss(outputs, labels)
         penalty = negentropy(outputs) # Details in the class documentation
         L = loss + penalty   
@@ -32,7 +34,7 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
     unlabeled_train_iter = iter(unlabelled_loader)
     num_iter = (len(labelled_loader.dataset)//batch_size)+1
     # MixMatch requires the same number of labelled and unlabelled samples in each batch.
-    for batch_idx, batch in enumerate(labelled_loader):
+    for batch_idx, batch in tqdm(enumerate(labelled_loader), desc="Training"):
         input_ids_x1 = batch['input_ids_1'].to(device)
         input_ids_x2 = batch['input_ids_2'].to(device)
         attention_mask_x1 = batch['attention_mask_1'].to(device)
@@ -118,7 +120,7 @@ def eval_train(model, all_loss, eval_loader, device='cuda'):
     num_iter = (len(eval_loader.dataset)//eval_loader.batch_size)+1
     losses = torch.zeros(len(eval_loader.dataset))    
     with torch.no_grad():
-        for batch_idx, batch in enumerate(eval_loader):
+        for batch_idx, batch in tqdm(enumerate(eval_loader), desc="Evaluating Training Data"):
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
             labels = batch['labels'].to(device)
@@ -145,7 +147,7 @@ def test(model1, model2, test_loader, device='cuda'):
     model1.eval()
     model2.eval()
     with torch.no_grad():
-        for _, batch in enumerate(test_loader):
+        for _, batch in tqdm(enumerate(test_loader), desc="Testing"):
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
             labels = batch['labels'].to(device)

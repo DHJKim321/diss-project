@@ -28,6 +28,25 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, negentropy, device='
         print(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
 
 def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loader, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
+    """
+    Training function for DivideMix.
+    This function implements the MixMatch algorithm with label co-guessing and co-refinement.
+    It uses two models (model1 and model2) to refine the labels of labelled samples and
+    guess the labels of unlabelled samples.
+
+    Args:
+        epoch_no: Current epoch number.
+        model1: Model to be trained
+        model2: Model to be used for Label Co-guessing
+        optimizer: Optimizer for model1
+        labelled_loader: DataLoader for labelled samples
+        unlabelled_loader: DataLoader for unlabelled samples
+        batch_size: Batch size for training
+        temperature: Temperature for label sharpening
+        alpha: Alpha parameter for MixMatch
+        num_class: Number of classes in the dataset
+        device: Device to run the training on (default is 'cuda')
+    """
     model1.train()
     model2.eval()
     
@@ -80,8 +99,18 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
         l = np.random.beta(alpha, alpha)        
         l = max(l, 1-l)
         
-        # TODO Change to Word/Sentence Embedding Interpolation----------
-        all_inputs = torch.cat([input_ids_x1, input_ids_x2, input_ids_u1, input_ids_u2], dim=0)
+        # Calculate embeddings for MixMatch
+        with torch.no_grad():
+            # Get embeddings for labelled samples
+            embedding_x1 = model1.get_embeddings(input_ids_x1, attention_mask_x1)
+            embedding_x2 = model1.get_embeddings(input_ids_x2, attention_mask_x2)
+
+            # Get embeddings for unlabelled samples
+            embedding_u1 = model1.get_embeddings(input_ids_u1, attention_mask_u1)
+            embedding_u2 = model1.get_embeddings(input_ids_u2, attention_mask_u2)
+
+        # Concatenate embeddings and labels for MixMatch
+        all_inputs = torch.cat([embedding_x1, embedding_x2, embedding_u1, embedding_u2], dim=0) # Concatenate embeddings
         all_labels = torch.cat([labels_x, labels_x, labels_u, labels_u], dim=0) # Soft labels from refinement/guessing
 
         idx = torch.randperm(all_inputs.size(0)) # Generates random permutation of indices
@@ -92,11 +121,11 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
 
         # Interpolate inputs and labels
         # Only use half of the inputs to avoid excessive memory usage
-        mixed_input = l * input_a[:batch_size*2] + (1 - l) * input_b[:batch_size*2]        
+        mixed_input = l * input_a[:batch_size*2] + (1 - l) * input_b[:batch_size*2]
         mixed_labels = l * label_a[:batch_size*2] + (1 - l) * label_b[:batch_size*2]
 
         # mixed_input.shape = (batch_size*2, embedding_dim)
-        logits = model1(mixed_input)
+        logits = model1.classifier(mixed_input)
         
         Lx = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * mixed_labels, dim=1))
         
@@ -105,8 +134,8 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
         pred_mean = torch.softmax(logits, dim=1).mean(0)
         penalty = torch.sum(prior*torch.log(prior/pred_mean))
        
+        # Combine losses
         loss = Lx + penalty
-        # TODO ----------
 
         # ---- Optimizer Step ----
         optimizer.zero_grad()

@@ -31,6 +31,7 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
     
     unlabeled_train_iter = iter(unlabelled_loader)
     num_iter = (len(labelled_loader.dataset)//batch_size)+1
+    # MixMatch requires the same number of labelled and unlabelled samples in each batch.
     for batch_idx, batch in enumerate(labelled_loader):
         input_ids_x1 = batch['input_ids_1'].to(device)
         input_ids_x2 = batch['input_ids_2'].to(device)
@@ -50,57 +51,62 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
         prob = prob.view(-1,1).type(torch.FloatTensor) 
 
         with torch.no_grad():
-            # label co-guessing of unlabeled samples
+            # ---- Label Co-guessing (Unlabelled Samples) ----
             outputs_u11 = model1(input_ids_u1, attention_mask_u1)
             outputs_u12 = model1(input_ids_u2, attention_mask_u2)
             outputs_u21 = model2(input_ids_u1, attention_mask_u1)
             outputs_u22 = model2(input_ids_u2, attention_mask_u2)
             
             pu = (torch.softmax(outputs_u11, dim=1) + torch.softmax(outputs_u12, dim=1) + torch.softmax(outputs_u21, dim=1) + torch.softmax(outputs_u22, dim=1)) / 4       
-            ptu = pu**(1/temperature) # temparature sharpening
+            ptu = pu**(1/temperature) # Temparature Sharpening
             
-            targets_u = ptu / ptu.sum(dim=1, keepdim=True) # normalize
-            targets_u = targets_u.detach()       
+            labels_u = ptu / ptu.sum(dim=1, keepdim=True) # Normalize
+            labels_u = labels_u.detach()       
             
-            # label refinement of labeled samples
+            # ----- Label Co-refinement (Labelled Samples) ----
             outputs_x = model1(input_ids_x1, attention_mask_x1)
             outputs_x2 = model1(input_ids_x2, attention_mask_x2)            
             
             px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2
-            px = prob*labels_x + (1-prob)*px # Co-refinement              
-            ptx = px**(1/temperature) # temparature sharpening 
+            px = prob*labels_x + (1-prob)*px # prob tells us the likelihood of the label being correct
+            ptx = px**(1/temperature) # Temparature Sharpening
                        
-            targets_x = ptx / ptx.sum(dim=1, keepdim=True) # normalize           
-            targets_x = targets_x.detach()       
+            labels_x = ptx / ptx.sum(dim=1, keepdim=True) # Normalize
+            labels_x = labels_x.detach()       
         
-        # mixmatch
+        # ---- MixMatch ----
         l = np.random.beta(alpha, alpha)        
         l = max(l, 1-l)
         
-        # TODO
+        # TODO Change to Word/Sentence Embedding Interpolation----------
         all_inputs = torch.cat([input_ids_x1, input_ids_x2, input_ids_u1, input_ids_u2], dim=0)
-        all_targets = torch.cat([targets_x, targets_x, targets_u, targets_u], dim=0)
+        all_labels = torch.cat([labels_x, labels_x, labels_u, labels_u], dim=0) # Soft labels from refinement/guessing
 
-        idx = torch.randperm(all_inputs.size(0))
+        idx = torch.randperm(all_inputs.size(0)) # Generates random permutation of indices
 
+        # This forms random MixUp pairs
         input_a, input_b = all_inputs, all_inputs[idx]
-        target_a, target_b = all_targets, all_targets[idx]
+        label_a, label_b = all_labels, all_labels[idx]
 
-        # TODO
+        # Interpolate inputs and labels
+        # Only use half of the inputs to avoid excessive memory usage
         mixed_input = l * input_a[:batch_size*2] + (1 - l) * input_b[:batch_size*2]        
-        mixed_target = l * target_a[:batch_size*2] + (1 - l) * target_b[:batch_size*2]
-                
+        mixed_labels = l * label_a[:batch_size*2] + (1 - l) * label_b[:batch_size*2]
+
+        # mixed_input.shape = (batch_size*2, embedding_dim)
         logits = model1(mixed_input)
         
-        Lx = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * mixed_target, dim=1))
+        Lx = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * mixed_labels, dim=1))
         
+        # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
         prior = (torch.ones(num_class)/num_class).to(device)
         pred_mean = torch.softmax(logits, dim=1).mean(0)
         penalty = torch.sum(prior*torch.log(prior/pred_mean))
        
         loss = Lx + penalty
+        # TODO ----------
 
-        # compute gradient and do SGD step
+        # ---- Optimizer Step ----
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()

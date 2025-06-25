@@ -69,6 +69,7 @@ class DivideMixDataset(Dataset):
                 max_length=self.max_length,
                 return_tensors='pt'
             )
+            # TODO Data Augmentation (Maybe Masking?)
             return {
                 'input_ids_1': encoding['input_ids'].squeeze(0),
                 'attention_mask_1': encoding['attention_mask'].squeeze(0),
@@ -85,6 +86,7 @@ class DivideMixDataset(Dataset):
                 max_length=self.max_length,
                 return_tensors='pt'
             )
+            # TODO Data Augmentation (Maybe Masking?)
             return {
                 'input_ids_1': encoding['input_ids'].squeeze(0),
                 'attention_mask_1': encoding['attention_mask'].squeeze(0),

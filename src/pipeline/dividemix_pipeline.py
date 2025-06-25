@@ -115,7 +115,7 @@ if __name__ == "__main__":
             train(epoch, model1, model2, optim1, labelled_loader, unlabelled_loader, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
             print(f"Training for Network 2")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred2, probs=prob2, device=device)
-            train(epoch, model1, model2, optim2, labelled_loader, unlabelled_loader)
+            train(epoch, model2, model1, optim2, labelled_loader, unlabelled_loader)
 
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")

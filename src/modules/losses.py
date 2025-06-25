@@ -26,6 +26,11 @@ class SemiLoss(object):
         return lambda_u*float(current)
     
 class NegEntropy(object):
+    """
+    This loss is used to penalise the model for being too confident in its predictions.
+    Useful for asymmetric label noise, where a label is assigned to a sample in a systematic way.
+    This aligns with our task as we systematically assign the same label to an entire subreddits' worth of samples.
+    """
     def __call__(self,outputs):
         probs = torch.softmax(outputs, dim=1)
         return torch.mean(torch.sum(probs.log() * probs, dim=1))

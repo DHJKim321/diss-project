@@ -22,11 +22,12 @@ if __name__ == "__main__":
     # ---- Runtime Variables ----
     batch_size = int(os.getenv("BATCH_SIZE"))
     learning_rate = float(os.getenv("LEARNING_RATE"))
+    warmup_epochs = int(os.getenv("WARMUP_EPOCHS"))
     epochs = int(os.getenv("EPOCHS"))
     alpha = float(os.getenv("ALPHA"))
     lambda_u = float(os.getenv("LAMBDA_U"))
     p_threshold = float(os.getenv("P_THRESHOLD"))
-    T = int(os.getenv("SHARPENING TEMPERATURE"))
+    temperature = int(os.getenv("SHARPENING TEMPERATURE"))
 
 
 

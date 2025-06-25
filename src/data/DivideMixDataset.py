@@ -1,0 +1,101 @@
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
+import torch
+from torch.utils.data import Dataset
+
+class DivideMixDataset(Dataset):
+    
+    def __init__(self, data, tokenizer, mode, preds=[], probs=[], max_length=512):
+        self.tokenizer = tokenizer
+        self.mode = mode
+        self.preds = preds
+        self.probs = probs
+        self.max_length = max_length
+
+        text = data['text'].tolist()
+        labels = data['label'].tolist()
+        if self.mode == 'test':
+            self.text = text
+            self.labels = labels
+            print(f"Test data size: {len(self.text)}")
+            return
+        if self.mode == 'all':
+            self.text = text
+            self.labels = labels
+        elif self.mode == 'labelled':
+            preds_idx = preds.nonzero()[0]
+            self.text = [text[i] for i in preds_idx]
+            self.labels = [labels[i] for i in preds_idx]
+            self.probability = [probs[i] for i in preds_idx]
+            print(f"{self.mode} data size: {len(self.text)}")
+        elif self.mode == 'unlabelled':
+            preds_idx = (1-preds).nonzero()[0]
+            text = data['text'].tolist()
+            self.text = [text[i] for i in preds_idx]
+            print(f"{self.mode} data size: {len(self.text)}")
+        else:
+            raise ValueError(f"Invalid mode: {self.mode}. Choose from 'all', 'labelled', or 'unlabelled'.")
+        
+    def __len__(self):
+        return len(self.text)
+    
+    def __getitem__(self, index):
+        if self.mode == 'all':
+            encoding = self.tokenizer(
+                self.text[index],
+                padding='max_length',
+                truncation=True,
+                max_length=self.max_length,
+                return_tensors='pt'
+            )
+            return {
+                'input_ids': encoding['input_ids'].squeeze(0),
+                'attention_mask': encoding['attention_mask'].squeeze(0),
+                'labels': torch.tensor(self.labels[index], dtype=torch.long),
+                'index': index
+            }
+        elif self.mode == 'labelled':
+            encoding = self.tokenizer(
+                self.text[index],
+                padding='max_length',
+                truncation=True,
+                max_length=self.max_length,
+                return_tensors='pt'
+            )
+            return {
+                'input_ids_1': encoding['input_ids'].squeeze(0),
+                'attention_mask_1': encoding['attention_mask'].squeeze(0),
+                'input_ids_2': encoding['input_ids'].squeeze(0),
+                'attention_mask_2': encoding['attention_mask'].squeeze(0),
+                'labels': self.labels[index],
+                'probability': self.probability[index]
+            }
+        elif self.mode == 'unlabelled':
+            encoding = self.tokenizer(
+                self.text[index],
+                padding='max_length',
+                truncation=True,
+                max_length=self.max_length,
+                return_tensors='pt'
+            )
+            return {
+                'input_ids_1': encoding['input_ids'].squeeze(0),
+                'attention_mask_1': encoding['attention_mask'].squeeze(0),
+                'input_ids_2': encoding['input_ids'].squeeze(0),
+                'attention_mask_2': encoding['attention_mask'].squeeze(0)
+            }
+        elif self.mode == 'test':
+            encoding = self.tokenizer(
+                self.text[index],
+                padding='max_length',
+                truncation=True,
+                max_length=self.max_length,
+                return_tensors='pt'
+            )
+            return {
+                'input_ids': encoding['input_ids'].squeeze(0),
+                'attention_mask': encoding['attention_mask'].squeeze(0),
+                'labels': torch.tensor(self.labels[index], dtype=torch.long)
+            }

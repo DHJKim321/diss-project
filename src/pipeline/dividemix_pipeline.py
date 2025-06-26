@@ -46,6 +46,7 @@ if __name__ == "__main__":
     num_workers = int(os.getenv("NUM_WORKERS"))
     momentum = float(os.getenv("MOMENTUM"))
     weight_decay = float(os.getenv("WEIGHT_DECAY"))
+    augmentation = os.getenv("AUGMENTATION")
 
     if epochs < warmup_epochs:
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")

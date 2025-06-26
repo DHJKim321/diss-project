@@ -12,7 +12,7 @@ class DivideMixDataloader():
         self.num_workers = num_workers
         self.tokenizer = tokenizer
 
-    def run(self, data, mode, preds=[], probs=[]):
+    def run(self, data, mode, preds=[], probs=[], augmentation='mask'):
         if mode == 'warmup':
             all_dataset = DivideMixDataset(
                 data=data,
@@ -35,13 +35,15 @@ class DivideMixDataloader():
                 tokenizer=self.tokenizer,
                 mode='labelled',
                 preds=preds,
-                probs=probs
+                probs=probs,
+                augmentation=augmentation
             )
             unlabelled_dataset = DivideMixDataset(
                 data=data,
                 tokenizer=self.tokenizer,
                 mode='unlabelled',
-                preds=preds
+                preds=preds,
+                augmentation=augmentation
             )
             labelled_loader = DataLoader(
                 labelled_dataset,

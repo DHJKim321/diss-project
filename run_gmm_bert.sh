@@ -19,14 +19,6 @@ else
     echo "$KEY1=$VALUE1" >> "$ENV_FILE"
 fi
 
-KEY2="DENOISE_TYPE"
-VALUE2="GMM"
-if grep -q "^$KEY2=" "$ENV_FILE"; then
-    sed -i "s|^$KEY2=.*|$KEY2=$VALUE2|" "$ENV_FILE"
-else
-    echo "$KEY2=$VALUE2" >> "$ENV_FILE"
-fi
-
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 

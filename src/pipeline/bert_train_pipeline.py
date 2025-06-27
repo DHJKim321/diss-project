@@ -60,6 +60,7 @@ if __name__ == "__main__":
             print("Denoising labels")
             gmm = GMMLabelCorrector(train_embeddings, n_components=2, covariance_type='full')
             train_data['denoised_label'] = gmm.threshold_predict(train_embeddings, threshold=gmm_threshold)
+            train_data = train_data[train_data['denoised_label'] != -1]  # Remove uncertain predictions
         elif denoise_type == 'kmeans':
             print("Denoising labels with KMeans")
             kmeans = KMeans(n_clusters=2, random_state=42)

@@ -45,7 +45,7 @@ if __name__ == "__main__":
     if denoise_labels:
         model_save_path = model_save_path.replace(".pth", f"_{denoise_type}_denoised.pth")
     print(f"Loading model from {model_save_path}")
-    model = Bert.load(model_save_path)
+    model = Bert.load(model_save_path, device)
     model.to_device(device)
     model.eval()
 

@@ -67,7 +67,7 @@ if __name__ == "__main__":
             train_data['denoised_label'] = kmeans.labels_
         print("Labels denoised.")
             
-        train_data.to_csv(f"{train_data_path}/denoised/{denoise_type}_denoised_{train_file}", index=False)
+        train_data.to_csv(f"{train_data_path}/{denoise_type}_denoised_{train_file}", index=False)
         train_data.drop(columns=['label'], inplace=True)
         train_data.rename(columns={'denoised_label': 'label'}, inplace=True)
 

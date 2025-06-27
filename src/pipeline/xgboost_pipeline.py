@@ -21,7 +21,6 @@ if __name__ == "__main__":
     data_save_path = os.getenv("DATA_SAVE_PATH")
     use_random_forest = os.getenv("USE_RANDOM_FOREST").lower() == "true"
     max_features = int(os.getenv("MAX_FEATURES_TFIDF"))
-    use_class_weights = os.getenv("USE_CLASS_WEIGHTS").lower() == "true"
     
     # ------------ Load Data ------------
     print("Loading data...")

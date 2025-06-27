@@ -57,8 +57,7 @@ if __name__ == "__main__":
     test_X = vectorizer.transform(test_data['text']).toarray()
     test_y = test_data['label'].values
     
-    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
-    print(f"Train shape: {X_train.shape}, Val shape: {X_val.shape}, Test shape: {test_X.shape}")
+    print(f"Training Data Size: {X.shape}, Test Data Size: {test_X.shape}")
 
     # ------------ Initialize Model ------------
     print("Initializing model...")
@@ -77,17 +76,11 @@ if __name__ == "__main__":
     
     # ------------ Train Model ------------
     print("Training model...")
-    model.fit(X_train, y_train)
+    model.fit(X, y)
     
     # ------------ Save Model ------------
     print(f"Saving model to {model_save_path}...")
     model.save_model(model_save_path + "/xgboost_rf.model" if use_random_forest else "/xgboost.model")
-    
-    # ------------ Evaluate Model ------------
-    print("Evaluating model on validation set...")
-    y_pred = model.predict(X_val)
-    print("Validation Classification Report:")
-    evaluate_model(y_pred, y_val)
 
     # ------------ Test Model ------------
     print("Evaluating model on test set...")

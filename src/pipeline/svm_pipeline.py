@@ -7,8 +7,6 @@ from src.utils.eval_utils import evaluate_model, save_evaluation, add_prediction
 # from sklearn.svm import SVC
 from cuml.svm import SVC
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.utils.class_weight import compute_class_weight
-from sklearn.model_selection import train_test_split
 import joblib
 import numpy as np
 
@@ -39,14 +37,6 @@ if __name__ == "__main__":
     # Training Data
     X = vectorizer.fit_transform(data['text'])
     y = data['label'].values
-    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    # Class Weights
-    class_weight_dict = None
-    if use_class_weights:
-        classes = list(set(y))
-        weights = compute_class_weight(class_weight='balanced', classes=np.array(classes), y=y)
-        class_weight_dict = dict(zip(classes, weights))
     
     features = vectorizer.get_feature_names_out()
     
@@ -59,24 +49,18 @@ if __name__ == "__main__":
     test_X = vectorizer.transform(test_data['text'])
     test_y = test_data['label'].values
 
-    print(f"Train shape: {X_train.shape}, Val shape: {X_val.shape}, Test shape: {test_X.shape}")
+    print(f"Training Data Size: {X.shape}, Test Data Size: {test_X.shape}")
     
     # ------------ Initialize Model ------------
-    model = SVC(kernel='linear', class_weight=class_weight_dict, probability=True)
+    model = SVC(kernel='linear', probability=True)
     
     # ------------ Train Model ------------
     print("Training model...")
-    model.fit(X_train, y_train)
+    model.fit(X, y)
 
     # Save the trained model
     joblib.dump(model, f"{model_save_path}/svm_model.joblib")
     print(f"Model saved to {model_save_path}")
-    
-    # ------------ Evaluate Model ------------
-    print("Evaluating model...")
-    preds = model.predict(X_val)
-    print("Validation Classification Report:")
-    evaluations = evaluate_model(preds, y_val)
     
     # ------------ Test Model ------------
     print("Testing model...")

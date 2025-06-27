@@ -5,7 +5,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 
 from dotenv import load_dotenv
 from src.utils.data_utils import load_full_data, check_embedding_existence
-from src.utils.eval_utils import evaluate_model
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
 from src.modules.GMMLabelCorrector import GMMLabelCorrector
@@ -14,7 +13,6 @@ from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from sklearn.metrics import accuracy_score, f1_score
-from sklearn.model_selection import train_test_split
 import random
 torch.manual_seed(42)
 random.seed(42)
@@ -37,6 +35,7 @@ if __name__ == "__main__":
     patience = int(os.getenv("PATIENCE"))
     use_dropout = os.getenv("USE_DROPOUT").lower() == "true"
     dropout = float(os.getenv("DROPOUT"))
+    head_type = os.getenv("HEAD_TYPE").lower()
     # ---- Label Denoising ----
     denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
     denoise_type = os.getenv("DENOISE_TYPE").lower()
@@ -74,7 +73,7 @@ if __name__ == "__main__":
 
     # ------------ Load Model, Loss, and Device ------------
     bert = BertModel.from_pretrained(bert_model)
-    model = Bert(bert, use_dropout=use_dropout, dropout=dropout)
+    model = Bert(bert, head_type=head_type, use_dropout=use_dropout, dropout=dropout)
     loss = CrossEntropyLoss()
     device = 'cuda' if torch.cuda.is_available() else None
     print(f"Using device: {device}")

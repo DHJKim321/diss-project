@@ -1,0 +1,71 @@
+Loading data...
+Loading data from src/data/train/expanded_full_v2.csv
+Loading test data from src/data/test/shape.csv
+Total features: 10000
+1. ab
+2. abandon
+3. abandoned
+4. abandonment
+5. abilify
+6. abilities
+7. ability
+8. able
+9. able afford
+10. able eat
+11. able feel
+12. able focus
+13. able function
+14. able handle
+15. able help
+16. able just
+17. able live
+18. able make
+19. able sleep
+20. able stop
+Training Data Size: (126488, 10000), Test Data Size: (233, 10000)
+Initializing model...
+Loading data from src/data/train/expanded_full_v2.csv
+Loaded 126488 training samples.
+Embedding file src/data/train/bert_embeddings_expanded_full_v2.npy exists.
+Denoising labels with type: gmm
+Loading embeddings for denoising...
+Denoising labels
+Reduced embeddings shape: (126488, 2)
+Labels denoised.
+Loading test data from src/data/test/shape.csv
+Using device: cuda
+Loading model from model_save/bert_model_gmm_denoised.pth
+Loading data...
+Loading data from src/data/train/expanded_full_v2.csv
+Loading test data from src/data/test/shape.csv
+Total features: 10000
+1. ab
+2. abandon
+3. abandoned
+4. abandonment
+5. abilify
+6. abilities
+7. ability
+8. able
+9. able afford
+10. able eat
+11. able feel
+12. able focus
+13. able function
+14. able handle
+15. able help
+16. able just
+17. able live
+18. able make
+19. able sleep
+20. able stop
+Training Data Size: (126488, 10000), Test Data Size: (233, 10000)
+Initializing model...
+Training model...
+Saving model to model_save/...
+Evaluating model on test set...
+Test Classification Report:
+Evaluation Report:
+{'0': {'precision': 0.6456692913385826, 'recall': 0.6833333333333333, 'f1-score': 0.6639676113360324, 'support': 120.0}, '1': {'precision': 0.6415094339622641, 'recall': 0.6017699115044248, 'f1-score': 0.6210045662100456, 'support': 113.0}, 'accuracy': 0.6437768240343348, 'macro avg': {'precision': 0.6435893626504234, 'recall': 0.6425516224188791, 'f1-score': 0.642486088773039, 'support': 233.0}, 'weighted avg': {'precision': 0.6436518497783938, 'recall': 0.6437768240343348, 'f1-score': 0.6431314564036869, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_xgboost_rf.json
+Predictions saved to src/data/eval/evaluated_shape_xgboost_rf.csv

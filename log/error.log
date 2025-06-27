@@ -1,0 +1,44 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/xgboost/core.py:377: FutureWarning: Your system has an old version of glibc (< 2.28). We will stop supporting Linux distros with glibc older than 2.28 after **May 31, 2025**. Please upgrade to a recent Linux distro (with glibc >= 2.28) to use future versions of XGBoost.
+Note: You have installed the 'manylinux2014' variant of XGBoost. Certain features such as GPU algorithms or federated learning are not available. To use these features, please upgrade to a recent Linux distro with glibc 2.28+, and install the 'manylinux_2_28' variant.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/pipeline/xgboost_pipeline.py", line 57, in <module>
+    scale_pos_weight=weight,
+NameError: name 'weight' is not defined
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+Traceback (most recent call last):
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/pipeline/bert_train_pipeline.py", line 70, in <module>
+    train_data.to_csv(f"{train_data_path}/denoised/{denoise_type}_denoised_{train_file}", index=False)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/pandas/core/generic.py", line 3720, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/pandas/io/formats/format.py", line 1189, in to_csv
+    csv_formatter.save()
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/pandas/io/formats/csvs.py", line 241, in save
+    with get_handle(
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/pandas/io/common.py", line 734, in get_handle
+    check_parent_directory(str(handle))
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/pandas/io/common.py", line 597, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'src/data/train/denoised'
+Traceback (most recent call last):
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/pipeline/bert_test_pipeline.py", line 48, in <module>
+    model = Bert.load(model_save_path)
+TypeError: Bert.load() missing 1 required positional argument: 'device'
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/xgboost/core.py:377: FutureWarning: Your system has an old version of glibc (< 2.28). We will stop supporting Linux distros with glibc older than 2.28 after **May 31, 2025**. Please upgrade to a recent Linux distro (with glibc >= 2.28) to use future versions of XGBoost.
+Note: You have installed the 'manylinux2014' variant of XGBoost. Certain features such as GPU algorithms or federated learning are not available. To use these features, please upgrade to a recent Linux distro with glibc 2.28+, and install the 'manylinux_2_28' variant.
+  warnings.warn(
+/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/xgboost/sklearn.py:1028: UserWarning: [17:51:07] WARNING: /croot/xgboost-split_1749630910898/work/src/c_api/c_api.cc:1427: Saving model in the UBJSON format as default.  You can use file extension: `json`, `ubj` or `deprecated` to choose between formats.
+  self.get_booster().save_model(fname)

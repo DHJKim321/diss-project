@@ -17,7 +17,7 @@ def load_llama_model(model_path):
     model = AutoModelForCausalLM.from_pretrained(model_path, local_files_only=True)
     pipeline_ = transformers.pipeline(
         "text-generation", model=model, tokenizer=tokenizer, torch_dtype=torch.bfloat16,
-        device_map="auto", do_sample=False, return_full_text=False
+        device='cuda', do_sample=False, return_full_text=False
     )
     print(f'Took {(tm.time()-start_)/60} minutes to load {model}')
     return pipeline_
@@ -36,7 +36,7 @@ def load_mistral_model(model_name, TOKEN, cache_path=None):
 
     pipeline_ = transformers.pipeline(
         "text-generation", model=model, tokenizer=tokenizer, torch_dtype=torch.bfloat16,
-        device_map="auto", do_sample=False, return_full_text=False
+        device='cuda', do_sample=False, return_full_text=False
     )
     print(f'Took {(tm.time()-start_)/60} minutes to load {model_name}')
     return pipeline_

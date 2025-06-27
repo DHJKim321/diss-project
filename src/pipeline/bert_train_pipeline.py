@@ -32,8 +32,6 @@ if __name__ == "__main__":
     bert_model = os.getenv("BERT_MODEL")
     learning_rate = float(os.getenv("LEARNING_RATE"))
     epochs = int(os.getenv("EPOCHS"))
-    early_stopping = os.getenv("EARLY_STOPPING").lower() == "true"
-    patience = int(os.getenv("PATIENCE"))
     use_dropout = os.getenv("USE_DROPOUT").lower() == "true"
     dropout = float(os.getenv("DROPOUT"))
     head_type = os.getenv("HEAD_TYPE").lower()

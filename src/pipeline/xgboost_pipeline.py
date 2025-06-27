@@ -54,13 +54,11 @@ if __name__ == "__main__":
     print("Initializing model...")
     if use_random_forest:
         model = XGBRFClassifier(
-            scale_pos_weight=weight,
             eval_metric='logloss', 
             random_state=42
         )
     else:
         model = XGBClassifier(
-            scale_pos_weight=weight,
             eval_metric='logloss', 
             random_state=42
         )

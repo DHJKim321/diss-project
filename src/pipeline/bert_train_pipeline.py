@@ -15,6 +15,7 @@ from tqdm import tqdm
 from sklearn.metrics import accuracy_score, f1_score
 from sklearn.cluster import KMeans
 import random
+import numpy as np
 torch.manual_seed(42)
 random.seed(42)
 torch.cuda.manual_seed_all(42)
@@ -54,7 +55,7 @@ if __name__ == "__main__":
     if denoise_labels:
         print(f"Denoising labels with type: {denoise_type}")
         print("Loading embeddings for denoising...")
-        train_embeddings = torch.load(embedding_full_path)
+        train_embeddings = torch.from_numpy(np.load(embedding_full_path))
         if denoise_type == "gmm":
             print("Denoising labels")
             gmm = GMMLabelCorrector(train_embeddings, n_components=2, covariance_type='full')

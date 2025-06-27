@@ -38,14 +38,6 @@ if __name__ == "__main__":
     X = vectorizer.fit_transform(data['text']).toarray()
     y = data['label'].values
 
-    # Calculate scale_pos_weight for imbalanced classes
-    weight = None
-    if use_class_weights:
-        class_counts = data['label'].value_counts()
-        weight = class_counts[0] / class_counts[1]
-        print(f"Class distribution: {class_counts.to_dict()}")
-        print(f"Scale pos weight: {weight}")
-
     features = vectorizer.get_feature_names_out()
 
     print(f"Total features: {len(features)}")

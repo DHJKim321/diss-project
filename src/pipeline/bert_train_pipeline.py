@@ -13,6 +13,7 @@ from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from sklearn.metrics import accuracy_score, f1_score
+from sklearn.cluster import KMeans
 import random
 torch.manual_seed(42)
 random.seed(42)
@@ -54,13 +55,18 @@ if __name__ == "__main__":
         exit(1)
     if denoise_labels:
         print(f"Denoising labels with type: {denoise_type}")
+        print("Loading embeddings for denoising...")
+        train_embeddings = torch.load(embedding_full_path)
         if denoise_type == "gmm":
-            print("Loading embeddings for denoising...")
-            train_embeddings = torch.load(embedding_full_path)
             print("Denoising labels")
             gmm = GMMLabelCorrector(train_embeddings, n_components=2, covariance_type='full')
             train_data['denoised_label'] = gmm.threshold_predict(train_embeddings, threshold=gmm_threshold)
-            print("Labels denoised.")
+        elif denoise_type == 'kmeans':
+            print("Denoising labels with KMeans")
+            kmeans = KMeans(n_clusters=2, random_state=42)
+            kmeans.fit(train_embeddings)
+            train_data['denoised_label'] = kmeans.labels_
+        print("Labels denoised.")
             
         train_data.to_csv(f"{train_data_path}/denoised/{denoise_type}_denoised_{train_file}", index=False)
         train_data.drop(columns=['label'], inplace=True)

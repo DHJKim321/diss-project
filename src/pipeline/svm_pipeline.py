@@ -20,7 +20,6 @@ if __name__ == "__main__":
     model_save_path = os.getenv("MODEL_SAVE_PATH")
     data_save_path = os.getenv("DATA_SAVE_PATH")
     max_features = int(os.getenv("MAX_FEATURES_TFIDF"))
-    use_class_weights = os.getenv("USE_CLASS_WEIGHTS").lower() == "true"
     
     # ------------ Load Data ------------
     print("Loading data...")

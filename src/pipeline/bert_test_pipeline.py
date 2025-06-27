@@ -66,5 +66,7 @@ if __name__ == "__main__":
 
     # ------------ Evaluate Model ------------
     evaluations = evaluate_model(preds, all_labels)
+    if denoise_labels:
+        bert_model += f"_{denoise_type}_denoised"
     save_evaluation(evaluations, test_file, data_save_path, model_name=bert_model)
-    add_predictions_to_data(test_data, test_file, data_save_path, preds, model_name='bert-base-uncased')
+    add_predictions_to_data(test_data, test_file, data_save_path, preds, model_name=bert_model)

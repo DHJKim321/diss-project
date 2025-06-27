@@ -25,6 +25,8 @@ if __name__ == "__main__":
     data_save_path = os.getenv("DATA_SAVE_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_model = os.getenv("BERT_MODEL")
+    denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
+    denoise_type = os.getenv("DENOISE_TYPE").lower()
 
     # ------------ Load Data and Tokenizer ------------
     test_data = load_test_data(test_file, test_data_path)
@@ -39,8 +41,11 @@ if __name__ == "__main__":
         print("No GPU available, exiting...")
         exit(1)
     print(f"Using device: {device}")
-    print(f"Loading model from {model_path}")
-    model = Bert.load(model_path + "bert_model.pth", device)
+    model_save_path = model_path + "bert_model.pth"
+    if denoise_labels:
+        model_save_path = model_save_path.replace(".pth", f"_{denoise_type}_denoised.pth")
+    print(f"Loading model from {model_save_path}")
+    model = Bert.load(model_save_path)
     model.to_device(device)
     model.eval()
 

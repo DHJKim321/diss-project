@@ -35,6 +35,8 @@ if __name__ == "__main__":
     
     # Training Data
     X = vectorizer.fit_transform(data['text'])
+    if hasattr(X, "toarray"):
+        X = X.toarray()
     y = data['label'].values
     
     features = vectorizer.get_feature_names_out()
@@ -46,6 +48,8 @@ if __name__ == "__main__":
     # Test Data
     test_data = load_test_data(test_file, test_data_path)
     test_X = vectorizer.transform(test_data['text'])
+    if hasattr(test_X, "toarray"):
+        test_X = test_X.toarray()
     test_y = test_data['label'].values
 
     print(f"Training Data Size: {X.shape}, Test Data Size: {test_X.shape}")

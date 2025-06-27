@@ -88,4 +88,4 @@ if __name__ == "__main__":
     print("Test Classification Report:")
     evaluations = evaluate_model(test_preds, test_y)
     save_evaluation(evaluations, test_file, data_save_path, model_name="xgboost_rf" if use_random_forest else "xgboost")
-    add_predictions_to_data(test_data, test_file, test_preds, model_name="xgboost_rf" if use_random_forest else "xgboost")
+    add_predictions_to_data(test_data, test_file, data_save_path, test_preds, model_name="xgboost_rf" if use_random_forest else "xgboost")

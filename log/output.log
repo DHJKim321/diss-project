@@ -1,25 +1,40 @@
 Loading data from src/data/train/expanded_full_v2.csv
 Loaded 126488 training samples.
 Embedding file src/data/train/bert_embeddings_expanded_full_v2.npy exists.
-Denoising labels with type: gmm
-Loading embeddings for denoising...
-Denoising labels
-Reduced embeddings shape: (126488, 2)
-Labels denoised.
 Using device: cuda
 Model loaded and moved to cuda
 Starting training with batch size 16...
 Number of batches: 7906
 Starting training...
 Epoch 1/2
-Train Loss: 0.0703, F1: 0.9786, Accuracy: 0.9715
+Loading data from src/data/train/expanded_full_v2.csv
+Loaded 126488 training samples.
+Embedding file src/data/train/bert_embeddings_expanded_full_v2.npy exists.
+Using device: cuda
+Model loaded and moved to cuda
+Starting training with batch size 16...
+Number of batches: 7906
+Starting training...
+Epoch 1/2
+Train Loss: 0.2610, F1: 0.8978, Accuracy: 0.8912
 Epoch 2/2
-Train Loss: 0.0436, F1: 0.9864, Accuracy: 0.9819
-Model saved to model_save/bert_model_gmm_denoised.pth/bert_model.pth
+Train Loss: 0.2609, F1: 0.8985, Accuracy: 0.8919
+Epoch 2/2
+Train Loss: 0.1729, F1: 0.9364, Accuracy: 0.9319
+Model saved to model_save/bert_model.pth/bert_model.pth
 Loading test data from src/data/test/shape.csv
 Using device: cuda
-Loading model from model_save/bert_model_gmm_denoised.pth
+Loading model from model_save/bert_model.pth
 Evaluation Report:
-{'0': {'precision': 0.45454545454545453, 'recall': 0.7083333333333334, 'f1-score': 0.5537459283387622, 'support': 120.0}, '1': {'precision': 0.2391304347826087, 'recall': 0.09734513274336283, 'f1-score': 0.13836477987421383, 'support': 113.0}, 'accuracy': 0.41201716738197425, 'macro avg': {'precision': 0.3468379446640316, 'recall': 0.4028392330383481, 'f1-score': 0.346055354106488, 'support': 233.0}, 'weighted avg': {'precision': 0.3500737926003834, 'recall': 0.41201716738197425, 'f1-score': 0.352294985092007, 'support': 233.0}}
+{'0': {'precision': 0.7164179104477612, 'recall': 0.8, 'f1-score': 0.7559055118110236, 'support': 120.0}, '1': {'precision': 0.7575757575757576, 'recall': 0.6637168141592921, 'f1-score': 0.7075471698113207, 'support': 113.0}, 'accuracy': 0.7339055793991416, 'macro avg': {'precision': 0.7369968340117594, 'recall': 0.7318584070796461, 'f1-score': 0.7317263408111722, 'support': 233.0}, 'weighted avg': {'precision': 0.7363785830892359, 'recall': 0.7339055793991416, 'f1-score': 0.7324527536738287, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_bert-base-uncased.json
+Predictions saved to src/data/eval/evaluated_shape_bert-base-uncased.csv
+Train Loss: 0.1731, F1: 0.9361, Accuracy: 0.9315
+Model saved to model_save/bert_model.pth/bert_model.pth
+Loading test data from src/data/test/shape.csv
+Using device: cuda
+Loading model from model_save/bert_model.pth
+Evaluation Report:
+{'0': {'precision': 0.7007299270072993, 'recall': 0.8, 'f1-score': 0.7470817120622568, 'support': 120.0}, '1': {'precision': 0.75, 'recall': 0.6371681415929203, 'f1-score': 0.6889952153110048, 'support': 113.0}, 'accuracy': 0.721030042918455, 'macro avg': {'precision': 0.7253649635036497, 'recall': 0.7185840707964601, 'f1-score': 0.7180384636866308, 'support': 233.0}, 'weighted avg': {'precision': 0.7246248551110555, 'recall': 0.721030042918455, 'f1-score': 0.7189110076292462, 'support': 233.0}}
 Evaluation results saved to src/data/eval/metrics_shape_bert-base-uncased.json
 Predictions saved to src/data/eval/evaluated_shape_bert-base-uncased.csv

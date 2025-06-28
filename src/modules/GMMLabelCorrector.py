@@ -21,5 +21,6 @@ class GMMLabelCorrector:
         probabilities = self.gmm.predict_proba(embeddings)
         # Flip to the less likely class if model is uncertain
         # predictions = [np.argmin(x) if min(x) >= threshold else np.argmax(x) for x in probabilities]
-        predictions = [np.argmax(x) if max(x) >= threshold else -1 for x in probabilities]
+        # predictions = [np.argmax(x) if max(x) >= threshold else -1 for x in probabilities]
+        predictions = np.argmax(probabilities, axis=1)
         return predictions

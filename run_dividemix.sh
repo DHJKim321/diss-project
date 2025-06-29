@@ -17,6 +17,4 @@ module load anaconda
 
 conda activate /exports/eddie/scratch/s2017594/conda-envs/diss
 
-rm -rf log/error.log log/output.log
-
 python src/pipeline/dividemix_pipeline.py

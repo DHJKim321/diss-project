@@ -18,6 +18,7 @@ class GMMLabelCorrector:
         print(f"Reduced embeddings shape: {reduced_embeddings.shape}")
         self.gmm = GaussianMixture(n_components=n_components, covariance_type=covariance_type, random_state=42)
         self.gmm.fit(reduced_embeddings)
+        self.reduced_embeddings = reduced_embeddings
 
     def threshold_predict(self, embeddings, threshold=0.3):
         """

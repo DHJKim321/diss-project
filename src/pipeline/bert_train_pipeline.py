@@ -60,6 +60,8 @@ if __name__ == "__main__":
         if denoise_type == "gmm":
             print("Denoising labels")
             gmm = GMMLabelCorrector(train_embeddings, reducer_type, n_components=2, covariance_type='full')
+            print(f"Reduced embeddings shape: {gmm.reduced_embeddings.shape}")
+            train_embeddings = gmm.reduced_embeddings
             train_data['denoised_label'] = gmm.threshold_predict(train_embeddings, threshold=gmm_threshold)
             train_data = train_data[train_data['denoised_label'] != -1]  # Remove uncertain predictions
             train_data['denoised_label'] = train_data['denoised_label'].apply(lambda x: 1 if x == 0 else 0) # Version 2 - align GMM clusters with labels

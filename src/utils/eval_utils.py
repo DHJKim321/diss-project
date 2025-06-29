@@ -1,5 +1,6 @@
 import json
 from sklearn.metrics import classification_report
+import pandas as pd
 
 def evaluate_model(preds, labels):
     labels = [str(label) for label in labels]
@@ -22,3 +23,13 @@ def add_predictions_to_data(data, test_file, data_save_path, preds, model_name):
     data['predictions'] = preds
     data.to_csv(output_file, index=False)
     print(f"Predictions saved to {output_file}")
+
+def save_loss_as_df(epoch, losses, data_save_path):
+    df = pd.DataFrame(columns=['model1_loss', 'model2_loss'])
+    model1_loss = losses[0].reshape(-1, 1)
+    model2_loss = losses[1].reshape(-1, 1)
+    df['model1_loss'] = model1_loss
+    df['model2_loss'] = model2_loss
+
+    output_file = f"{data_save_path}dividemix_epoch_{epoch}_losses.csv"
+    df.to_csv(output_file, index=False)

@@ -7,7 +7,7 @@ from torch.optim import SGD
 import torch.nn as nn
 from src.model.bert import Bert
 from src.utils.data_utils import load_full_data, load_test_data
-from src.utils.eval_utils import save_evaluation, add_predictions_to_data, evaluate_model
+from src.utils.eval_utils import save_evaluation, add_predictions_to_data, evaluate_model, save_loss_as_df
 from src.utils.dividemix_utils import warmup_train, train, eval_train, test
 from src.data.DivideMixDataloader import DivideMixDataloader
 from src.modules.losses import SemiLoss, NegEntropy
@@ -130,4 +130,4 @@ if __name__ == "__main__":
         eval_loader = loader.run(train_data, mode='eval_train')
         prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
         prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
-        torch.save(all_loss, f'{checkpoint_path}all_loss.pth.tar')
+        save_loss_as_df(epoch, all_loss, checkpoint_path)

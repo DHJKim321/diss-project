@@ -138,6 +138,6 @@ if __name__ == "__main__":
     # ------------ Save Model ------------
     model_save_path += "bert_model.pth"
     if denoise_labels:
-        model_save_path = model_save_path.replace(".pth", f"_{denoise_type}_denoised.pth")
+        model_save_path = model_save_path.replace(".pth", f"_{reducer_type}_{denoise_type}_denoised.pth")
     model.save(model_save_path)
     print(f"Model saved to {model_save_path}/bert_model.pth")

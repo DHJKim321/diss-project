@@ -27,6 +27,7 @@ if __name__ == "__main__":
     bert_model = os.getenv("BERT_MODEL")
     denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
     denoise_type = os.getenv("DENOISE_TYPE").lower()
+    reducer_type = os.getenv("REDUCER_TYPE").lower()
 
     # ------------ Load Data and Tokenizer ------------
     test_data = load_test_data(test_file, test_data_path)
@@ -43,7 +44,7 @@ if __name__ == "__main__":
     print(f"Using device: {device}")
     model_save_path = model_path + "bert_model.pth"
     if denoise_labels:
-        model_save_path = model_save_path.replace(".pth", f"_{denoise_type}_denoised.pth")
+        model_save_path = model_save_path.replace(".pth", f"_{reducer_type}_{denoise_type}_denoised.pth")
     print(f"Loading model from {model_save_path}")
     model = Bert.load(model_save_path, device)
     model.to_device(device)
@@ -67,6 +68,6 @@ if __name__ == "__main__":
     # ------------ Evaluate Model ------------
     evaluations = evaluate_model(preds, all_labels)
     if denoise_labels:
-        bert_model += f"_{denoise_type}_denoised"
+        bert_model += f"_{reducer_type}_{denoise_type}_denoised"
     save_evaluation(evaluations, test_file, data_save_path, model_name=bert_model)
     add_predictions_to_data(test_data, test_file, data_save_path, preds, model_name=bert_model)

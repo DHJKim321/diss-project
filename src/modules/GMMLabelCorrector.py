@@ -9,7 +9,7 @@ from sklearn.decomposition import PCA
 class GMMLabelCorrector:
     def __init__(self, embeddings, reducer, n_components=2, covariance_type='full'):
         if reducer == 'umap':
-            self.reducer = UMAP(n_components=n_components, random_state=42)
+            self.reducer = UMAP(n_components=n_components, n_neighbours=45, min_dist=0.7, metric='manhattan', random_state=42)
         elif reducer == 'pca':
             self.reducer = PCA(n_components=n_components, random_state=42)
         else:

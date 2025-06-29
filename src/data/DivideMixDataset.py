@@ -4,6 +4,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 
 import torch
 from torch.utils.data import Dataset
+from src.utils.augment_utils import mask_augment
 import random
 
 torch.manual_seed(42)
@@ -48,7 +49,6 @@ class DivideMixDataset(Dataset):
     
     def __getitem__(self, index):
         """
-        
         N.B. (mode == 'labelled' and mode == 'unlabelled'):
             We return two inputs and augment them (M = 2 in the Pseudocode).
         """
@@ -74,12 +74,15 @@ class DivideMixDataset(Dataset):
                 max_length=self.max_length,
                 return_tensors='pt'
             )
-            # TODO Data Augmentation (Maybe Masking?)
+            input_ids_1, attention_mask_1 = mask_augment(input_ids_1, attention_mask_1, self.tokenizer)
+            input_ids_2, attention_mask_2 = mask_augment(input_ids_2, attention_mask_2, self.tokenizer)
+            input_ids_1, attention_mask_1 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
+            input_ids_2, attention_mask_2 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
             return {
-                'input_ids_1': encoding['input_ids'].squeeze(0),
-                'attention_mask_1': encoding['attention_mask'].squeeze(0),
-                'input_ids_2': encoding['input_ids'].squeeze(0),
-                'attention_mask_2': encoding['attention_mask'].squeeze(0),
+                'input_ids_1': encoding['input_ids'],
+                'attention_mask_1': encoding['attention_mask'],
+                'input_ids_2': encoding['input_ids'],
+                'attention_mask_2': encoding['attention_mask'],
                 'labels': self.labels[index],
                 'probability': self.probability[index]
             }
@@ -91,12 +94,15 @@ class DivideMixDataset(Dataset):
                 max_length=self.max_length,
                 return_tensors='pt'
             )
-            # TODO Data Augmentation (Maybe Masking?)
+            input_ids_1, attention_mask_1 = mask_augment(input_ids_1, attention_mask_1, self.tokenizer)
+            input_ids_2, attention_mask_2 = mask_augment(input_ids_2, attention_mask_2, self.tokenizer)
+            input_ids_1, attention_mask_1 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
+            input_ids_2, attention_mask_2 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
             return {
-                'input_ids_1': encoding['input_ids'].squeeze(0),
-                'attention_mask_1': encoding['attention_mask'].squeeze(0),
-                'input_ids_2': encoding['input_ids'].squeeze(0),
-                'attention_mask_2': encoding['attention_mask'].squeeze(0)
+                'input_ids_1': encoding['input_ids'],
+                'attention_mask_1': encoding['attention_mask'],
+                'input_ids_2': encoding['input_ids'],
+                'attention_mask_2': encoding['attention_mask']
             }
         elif self.mode == 'test':
             encoding = self.tokenizer(
@@ -111,17 +117,3 @@ class DivideMixDataset(Dataset):
                 'attention_mask': encoding['attention_mask'].squeeze(0),
                 'labels': torch.tensor(self.labels[index], dtype=torch.long)
             }
-        
-    def mask_augment(self, input_ids, attention_mask, p=0.15):
-        """
-        Apply masking augmentation to the input_ids and attention_mask.
-        """
-        input_ids = input_ids.clone()
-        attention_mask = attention_mask.clone()
-
-        # For each input, randomly select tokens to mask with probability p
-        for i in range(input_ids.size(0)):
-            valid_input_ids = input_ids[i][attention_mask[i] == 1]
-            mask_indices = (torch.rand(valid_input_ids.size(0)) < p) & (attention_mask[i] == 1)
-            input_ids[i][mask_indices] = self.tokenizer.mask_token_id
-        return input_ids, attention_mask

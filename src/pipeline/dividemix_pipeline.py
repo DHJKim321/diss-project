@@ -42,7 +42,7 @@ if __name__ == "__main__":
     alpha = float(os.getenv("ALPHA"))
     lambda_u = float(os.getenv("LAMBDA_U"))
     p_threshold = float(os.getenv("P_THRESHOLD"))
-    temperature = int(os.getenv("SHARPENING_TEMPERATURE"))
+    temperature = float(os.getenv("SHARPENING_TEMPERATURE"))
     num_workers = int(os.getenv("NUM_WORKERS"))
     momentum = float(os.getenv("MOMENTUM"))
     weight_decay = float(os.getenv("WEIGHT_DECAY"))

@@ -5,21 +5,22 @@ Denoising labels with type: gmm
 Loading embeddings for denoising...
 Denoising labels
 Reduced embeddings shape: (126488, 2)
+Removed 0 uncertain labels.
 Labels denoised.
 Using device: cuda
 Model loaded and moved to cuda
 Starting training with batch size 16...
-Number of batches: 7905
+Number of batches: 7906
 Starting training...
 Epoch 1/2
-Train Loss: 0.0695, F1: 0.9788, Accuracy: 0.9719
+Train Loss: 0.0709, F1: 0.9573, Accuracy: 0.9712
 Epoch 2/2
-Train Loss: 0.0438, F1: 0.9864, Accuracy: 0.9820
+Train Loss: 0.0439, F1: 0.9732, Accuracy: 0.9820
 Model saved to model_save/bert_model_gmm_denoised.pth/bert_model.pth
 Loading test data from src/data/test/shape.csv
 Using device: cuda
 Loading model from model_save/bert_model_gmm_denoised.pth
 Evaluation Report:
-{'0': {'precision': 0.44385026737967914, 'recall': 0.6916666666666667, 'f1-score': 0.5407166123778502, 'support': 120.0}, '1': {'precision': 0.1956521739130435, 'recall': 0.07964601769911504, 'f1-score': 0.11320754716981132, 'support': 113.0}, 'accuracy': 0.3948497854077253, 'macro avg': {'precision': 0.3197512206463613, 'recall': 0.38565634218289085, 'f1-score': 0.32696207977383074, 'support': 233.0}, 'weighted avg': {'precision': 0.32347951818770565, 'recall': 0.3948497854077253, 'f1-score': 0.3333838897662262, 'support': 233.0}}
+{'0': {'precision': 0.7708333333333334, 'recall': 0.30833333333333335, 'f1-score': 0.44047619047619047, 'support': 120.0}, '1': {'precision': 0.5513513513513514, 'recall': 0.9026548672566371, 'f1-score': 0.6845637583892618, 'support': 113.0}, 'accuracy': 0.5965665236051502, 'macro avg': {'precision': 0.6610923423423424, 'recall': 0.6054941002949852, 'f1-score': 0.562519974432726, 'support': 233.0}, 'weighted avg': {'precision': 0.6643892819858485, 'recall': 0.5965665236051502, 'f1-score': 0.5588534229833881, 'support': 233.0}}
 Evaluation results saved to src/data/eval/metrics_shape_bert-base-uncased_gmm_denoised.json
 Predictions saved to src/data/eval/evaluated_shape_bert-base-uncased_gmm_denoised.csv

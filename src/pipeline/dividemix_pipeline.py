@@ -101,9 +101,9 @@ if __name__ == "__main__":
             # ---- Warmup Phase ----
             warmup_loader = loader.run(train_data, mode='warmup')
             print(f"Warmup training for Network 1")
-            warmup_train(epoch, model1, optim1, warmup_loader, CEloss, negentropy, device, device)
+            warmup_train(epoch, model1, optim1, warmup_loader, CEloss, negentropy, device)
             print(f"Warmup training for Network 2")
-            warmup_train(epoch, model2, optim2, warmup_loader, CEloss, negentropy, device, device)
+            warmup_train(epoch, model2, optim2, warmup_loader, CEloss, negentropy, device)
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold)

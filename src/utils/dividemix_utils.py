@@ -88,7 +88,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             outputs_x2 = model1(input_ids_x2, attention_mask_x2)            
             
             px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2
-            px = prob*labels_x + (1-prob)*px # prob tells us the likelihood of the label being correct
+            px = prob*labels_x + (1-prob)*px # prob tells us the likelihood of the label being correct using the GMM's cluster probability
             ptx = px**(1/temperature) # Temparature Sharpening
                        
             labels_x = ptx / ptx.sum(dim=1, keepdim=True) # Normalize

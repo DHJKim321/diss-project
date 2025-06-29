@@ -11,7 +11,7 @@ from src.utils.eval_utils import save_evaluation, add_predictions_to_data, evalu
 from src.utils.dividemix_utils import warmup_train, train, eval_train, test
 from src.data.DivideMixDataloader import DivideMixDataloader
 from src.modules.losses import SemiLoss, NegEntropy
-from transformers import DataCollatorWithPadding, BertTokenizer
+from transformers import BertTokenizer
 
 from dotenv import load_dotenv
 
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     alpha = float(os.getenv("ALPHA"))
     lambda_u = float(os.getenv("LAMBDA_U"))
     p_threshold = float(os.getenv("P_THRESHOLD"))
-    temperature = int(os.getenv("SHARPENING TEMPERATURE"))
+    temperature = int(os.getenv("SHARPENING_TEMPERATURE"))
     num_workers = int(os.getenv("NUM_WORKERS"))
     momentum = float(os.getenv("MOMENTUM"))
     weight_decay = float(os.getenv("WEIGHT_DECAY"))
@@ -69,10 +69,8 @@ if __name__ == "__main__":
     model2 = Bert(bert_model)
 
     # ------------ Load DataLoader ------------
-    collator = DataCollatorWithPadding(tokenizer=tokenizer)
     loader = DivideMixDataloader(
         batch_size=batch_size,
-        collator=collator,
         tokenizer=tokenizer,
         num_workers=num_workers
     )
@@ -103,9 +101,9 @@ if __name__ == "__main__":
             # ---- Warmup Phase ----
             warmup_loader = loader.run(train_data, mode='warmup', tokenizer=tokenizer)
             print(f"Warmup training for Network 1")
-            warmup_train(epoch, model1, optim1, warmup_loader, negentropy, device, device)
+            warmup_train(epoch, model1, optim1, warmup_loader, CEloss, negentropy, device, device)
             print(f"Warmup training for Network 2")
-            warmup_train(epoch, model2, optim2, warmup_loader, negentropy, device, device)
+            warmup_train(epoch, model2, optim2, warmup_loader, CEloss, negentropy, device, device)
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold)
@@ -113,10 +111,10 @@ if __name__ == "__main__":
 
             print(f"Training for Network 1")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred1, probs=prob1)
-            train(epoch, model1, model2, optim1, labelled_loader, unlabelled_loader, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
+            train(epoch, model1, model2, optim1, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
             print(f"Training for Network 2")
-            labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred2, probs=prob2, device=device)
-            train(epoch, model2, model1, optim2, labelled_loader, unlabelled_loader)
+            labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred2, probs=prob2)
+            train(epoch, model2, model1, optim2, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
 
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")
@@ -130,6 +128,6 @@ if __name__ == "__main__":
         # ---- Evaluation Phase ----
         print(f"Evaluating training data at epoch {epoch}")
         eval_loader = loader.run(train_data, mode='eval_train')
-        prob1, all_loss[0] = eval_train(model1, all_loss[0], eval_loader, device=device)
-        prob2, all_loss[1] = eval_train(model2, all_loss[1], eval_loader, device=device)
+        prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
+        prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
         torch.save(all_loss, f'{checkpoint_path}all_loss.pth.tar')

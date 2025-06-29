@@ -1,7 +1,6 @@
 import os, sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-from torch.nn import CrossEntropyLoss
 import torch
 from tqdm import tqdm
 from sklearn.metrics import f1_score, accuracy_score
@@ -9,7 +8,7 @@ from sklearn.mixture import GaussianMixture
 import numpy as np
 import torch.nn.functional as F
 
-def warmup_train(epoch_no, model, optimizer, warmup_loader, negentropy, device='cuda'):
+def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentropy, device='cuda'):
     """
     Warmup training function for DivideMix
     """
@@ -20,14 +19,14 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, negentropy, device='
         labels = batch['labels'].to(device)
         optimizer.zero_grad()
         outputs = model(input_ids, attention_mask)               
-        loss = CrossEntropyLoss(outputs, labels)
+        loss = criterion(outputs, labels)
         penalty = negentropy(outputs) # Details in the class documentation
         L = loss + penalty   
         L.backward()
         optimizer.step()
         print(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
 
-def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loader, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
+def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
     """
     Training function for DivideMix.
     This function implements the MixMatch algorithm with label co-guessing and co-refinement.
@@ -69,7 +68,7 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
         
         # Transform label to one-hot
         labels_x = torch.zeros(batch_size, 2).scatter_(1, labels_x.view(-1,1), 1)        
-        prob = prob.view(-1,1).type(torch.FloatTensor) 
+        prob = prob.view(-1,1).type(torch.FloatTensor).to(device)
 
         with torch.no_grad():
             # ---- Label Co-guessing (Unlabelled Samples) ----
@@ -126,8 +125,15 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
 
         # mixed_input.shape = (batch_size*2, embedding_dim)
         logits = model1.classifier(mixed_input)
+
+        # Split into labelled and unlabelled
+        logits_x = logits[:batch_size]
+        targets_x = mixed_labels[:batch_size]
+        logits_u = logits[batch_size:]
+        targets_u = mixed_labels[batch_size:]
         
-        Lx = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * mixed_labels, dim=1))
+        # Calculate individual losses
+        Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)
         
         # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
         prior = (torch.ones(num_class)/num_class).to(device)
@@ -135,16 +141,16 @@ def train(epoch_no, model1, model2, optimizer, labelled_loader, unlabelled_loade
         penalty = torch.sum(prior*torch.log(prior/pred_mean))
        
         # Combine losses
-        loss = Lx + penalty
+        loss = Lx + lambda_u_val * Lu + penalty
 
         # ---- Optimizer Step ----
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
-        print(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Loss: {loss.item():.4f}")
+        print(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
 
-def eval_train(model, all_loss, eval_loader, device='cuda'):    
+def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):    
     model.eval()
     num_iter = (len(eval_loader.dataset)//eval_loader.batch_size)+1
     losses = torch.zeros(len(eval_loader.dataset))    
@@ -155,7 +161,7 @@ def eval_train(model, all_loss, eval_loader, device='cuda'):
             labels = batch['labels'].to(device)
             index = batch['index']
             outputs = model(input_ids, attention_mask)
-            loss = CrossEntropyLoss(outputs, labels)  
+            loss = criterion(outputs, labels)  
             for b in range(input_ids.size(0)):
                 losses[index[b]]=loss[b]
             print(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")

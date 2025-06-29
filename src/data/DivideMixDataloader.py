@@ -6,9 +6,8 @@ from DivideMixDataset import DivideMixDataset
 from torch.utils.data import DataLoader
 
 class DivideMixDataloader():
-    def __init__(self, batch_size, collator, tokenizer, num_workers=4):
+    def __init__(self, batch_size, tokenizer, num_workers=4):
         self.batch_size = batch_size
-        self.collator = collator
         self.num_workers = num_workers
         self.tokenizer = tokenizer
 
@@ -24,7 +23,6 @@ class DivideMixDataloader():
             loader = DataLoader(
                 all_dataset,
                 batch_size=self.batch_size,
-                collate_fn=self.collator,
                 num_workers=self.num_workers,
                 shuffle=True
             )
@@ -48,14 +46,12 @@ class DivideMixDataloader():
             labelled_loader = DataLoader(
                 labelled_dataset,
                 batch_size=self.batch_size,
-                collate_fn=self.collator,
                 num_workers=self.num_workers,
                 shuffle=True
             )
             unlabelled_loader = DataLoader(
                 unlabelled_dataset,
                 batch_size=self.batch_size,
-                collate_fn=self.collator,
                 num_workers=self.num_workers,
                 shuffle=True
             )
@@ -69,7 +65,6 @@ class DivideMixDataloader():
             loader = DataLoader(
                 eval_dataset,
                 batch_size=self.batch_size,
-                collate_fn=self.collator,
                 num_workers=self.num_workers,
                 shuffle=False
             )
@@ -83,7 +78,6 @@ class DivideMixDataloader():
             loader = DataLoader(
                 test_dataset,
                 batch_size=self.batch_size,
-                collate_fn=self.collator,
                 num_workers=self.num_workers,
                 shuffle=False
             )

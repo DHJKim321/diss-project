@@ -5,19 +5,19 @@ from transformers import BertModel
 class Bert(nn.Module):
     def __init__(self, bert_model, head_type='linear', num_classes=2, use_dropout=True, dropout=0.3):
         super(Bert, self).__init__()
-        self.bert = bert_model
+        self.bert = BertModel.from_pretrained(bert_model)
         self.dropout = nn.Dropout(dropout) if use_dropout else nn.Identity()
         if head_type == "linear":
-            self.classifier = nn.Linear(self.bert.hidden_size, num_classes)
+            self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)
         elif head_type == 'bilstm':
-            self.lstm = nn.LSTM(self.bert.hidden_size, self.bert.hidden_size // 2, 
+            self.lstm = nn.LSTM(self.bert.config.hidden_size, self.bert.config.hidden_size // 2, 
                                num_layers=1, bidirectional=True, batch_first=True)
-            self.classifier = nn.Linear(self.bert.hidden_size, num_classes)
+            self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)
         elif head_type == 'cnn':
-            self.conv1 = nn.Conv1d(self.bert.hidden_size, 128, kernel_size=3, padding=1)
+            self.conv1 = nn.Conv1d(self.bert.config.hidden_size, 128, kernel_size=3, padding=1)
             self.conv2 = nn.Conv1d(128, 64, kernel_size=3, padding=1)
             self.pool = nn.MaxPool1d(kernel_size=2)
-            self.classifier = nn.Linear(64 * (self.bert.max_position_embeddings // 2), num_classes)
+            self.classifier = nn.Linear(64 * (self.bert.config.max_position_embeddings // 2), num_classes)
         else:
             raise ValueError(f"Unsupported head type: {head_type}")
 

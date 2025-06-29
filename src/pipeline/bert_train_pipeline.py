@@ -40,6 +40,7 @@ if __name__ == "__main__":
     denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     gmm_threshold = float(os.getenv("GMM_THRESHOLD"))
+    reducer_type = os.getenv("REDUCER_TYPE").lower()
 
     # ------------ Load Data and Tokenizer ------------
     tokenizer = BertTokenizer.from_pretrained(bert_model)
@@ -58,11 +59,11 @@ if __name__ == "__main__":
         train_embeddings = torch.from_numpy(np.load(embedding_full_path))
         if denoise_type == "gmm":
             print("Denoising labels")
-            gmm = GMMLabelCorrector(train_embeddings, n_components=2, covariance_type='full')
+            gmm = GMMLabelCorrector(train_embeddings, reducer_type, n_components=2, covariance_type='full')
             train_data['denoised_label'] = gmm.threshold_predict(train_embeddings, threshold=gmm_threshold)
             train_data = train_data[train_data['denoised_label'] != -1]  # Remove uncertain predictions
-            train_data['denoised_label'] = train_data['denoised_label'].apply(lambda x: 1 if x == 0 else 0)
-            print(f"Removed {len(train_data[train_data['denoised_label'] == -1])} uncertain labels.")
+            train_data['denoised_label'] = train_data['denoised_label'].apply(lambda x: 1 if x == 0 else 0) # Version 2 - align GMM clusters with labels
+            # print(f"Removed {len(train_data[train_data['denoised_label'] == -1])} uncertain labels.")
         elif denoise_type == 'kmeans':
             print("Denoising labels with KMeans")
             kmeans = KMeans(n_clusters=2, random_state=42)

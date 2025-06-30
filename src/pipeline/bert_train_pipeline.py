@@ -84,8 +84,7 @@ if __name__ == "__main__":
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=collator)
 
     # ------------ Load Model, Loss, and Device ------------
-    bert = BertModel.from_pretrained(bert_model)
-    model = Bert(bert, head_type=head_type, use_dropout=use_dropout, dropout=dropout)
+    model = Bert(bert_model, head_type=head_type, use_dropout=use_dropout, dropout=dropout)
     loss = CrossEntropyLoss()
     device = 'cuda' if torch.cuda.is_available() else None
     print(f"Using device: {device}")

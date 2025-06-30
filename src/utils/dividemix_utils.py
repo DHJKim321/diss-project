@@ -13,7 +13,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
     Warmup training function for DivideMix
     """
     model.train()
-    for batch in tqdm(enumerate(warmup_loader), desc="Warmup Training"):      
+    for batch_idx, batch in tqdm(enumerate(warmup_loader), desc="Warmup Training"):      
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)
         labels = batch['labels'].to(device)

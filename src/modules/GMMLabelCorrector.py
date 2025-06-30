@@ -20,7 +20,7 @@ class GMMLabelCorrector:
         self.gmm.fit(reduced_embeddings)
         self.reduced_embeddings = reduced_embeddings
 
-    def threshold_predict(self, embeddings, threshold=0.3):
+    def threshold_predict(self, embeddings, original_labels, threshold=0.9):
         """
         Predict labels based on GMM probabilities and a threshold.
         If the probability of the other class is above the threshold, assign it to that class.
@@ -29,5 +29,15 @@ class GMMLabelCorrector:
         # Flip to the less likely class if model is uncertain
         # predictions = [np.argmin(x) if min(x) >= threshold else np.argmax(x) for x in probabilities]
         # predictions = [np.argmax(x) if max(x) >= threshold else -1 for x in probabilities]
-        predictions = np.argmax(probabilities, axis=1) # Version 2 (with bug on line 20 where we call self.gmm.fit(embeddings) not .fit(reduced_embeddings))
-        return predictions
+        # predictions = np.argmax(probabilities, axis=1) # Version 2 (with bug on line 20 where we call self.gmm.fit(embeddings) not .fit(reduced_embeddings))
+        corrected_labels = [] # This is the original implementation for SDCNL
+        for label, prob in zip(original_labels, probabilities):
+            pred = prob.argmax()
+            if label != pred:
+                if max(prob) > threshold or min(prob) < 1 - threshold:
+                    corrected_labels.append(pred)
+                else:
+                    corrected_labels.append(label)
+            else:
+                corrected_labels.append(label)
+        return corrected_labels

@@ -93,7 +93,7 @@ if __name__ == "__main__":
         if epoch >= 40:
             lr /= 10 #  Reduce learning rate after 40 epochs
         for param_group in optim1.param_groups:
-            param_group['lr'] = lr       
+            param_group['lr'] = lr
         for param_group in optim2.param_groups:
             param_group['lr'] = lr
 
@@ -121,9 +121,6 @@ if __name__ == "__main__":
         test_loader = loader.run(test_data, mode='test')
         test_acc, test_f1, test_preds, test_labels = test(model1, model2, test_loader)
         print(f"Epoch: {epoch}, Test Accuracy: {test_acc:.4f}, Test F1 Score: {test_f1:.4f}")
-        report = evaluate_model(test_preds, test_labels)
-        save_evaluation(report, test_file, data_save_path, 'dividemix')
-        add_predictions_to_data(test_data, test_file, data_save_path, test_preds, 'dividemix')
 
         # ---- Evaluation Phase ----
         print(f"Evaluating training data at epoch {epoch}")
@@ -131,3 +128,9 @@ if __name__ == "__main__":
         prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
         prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
         save_loss_as_df(epoch, all_loss, checkpoint_path)
+
+    # ---- Save Evaluation Results ----
+    print("Saving evaluation results and predictions...")
+    report = evaluate_model(test_preds, test_labels)
+    save_evaluation(report, test_file, data_save_path, 'dividemix')
+    add_predictions_to_data(test_data, test_file, data_save_path, test_preds, 'dividemix')

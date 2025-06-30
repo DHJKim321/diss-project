@@ -47,6 +47,7 @@ if __name__ == "__main__":
     momentum = float(os.getenv("MOMENTUM"))
     weight_decay = float(os.getenv("WEIGHT_DECAY"))
     augmentation = os.getenv("AUGMENTATION")
+    head_type = os.getenv("HEAD_TYPE")
 
     if epochs < warmup_epochs:
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")
@@ -65,8 +66,8 @@ if __name__ == "__main__":
 
     # ------------ Load Models ------------
     print(f"Loading BERT model from {bert_model}")
-    model1 = Bert(bert_model).to_device(device)
-    model2 = Bert(bert_model).to_device(device)
+    model1 = Bert(bert_model, head_type).to_device(device)
+    model2 = Bert(bert_model, head_type).to_device(device)
 
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(

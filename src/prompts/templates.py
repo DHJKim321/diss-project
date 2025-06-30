@@ -17,6 +17,13 @@ Post:
 
 Answer:"""
 
-SYSTEM_PROMPT_V1 = """You are an AI assistant and your task is to perform binary classification on social media posts.
-You need to identify when the Reddit post provided after <<<>>> discusses mental-health related symptoms such as depression and anxiety.
+TEMPLATE_V2 = """You are an AI Assistant that performs binary classification on social media data.
+More specifically, your task is to detect whether each post contains discourse related to mental health symptoms such as, but not limited to, depression, anxiety, and suicidal ideation.
+You will be provided with a Reddit post after <<<>>>.
+Please classify the post as follows:
+1: Yes, the post discusses mental health symptoms.
+0: No, the post does not discuss mental health symptoms.
+
+Only reply with '1' or '0' as your answer. Do not provide any additional information or explanations.
+Post:<<<{task_content}>>>
 """

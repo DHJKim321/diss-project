@@ -65,8 +65,8 @@ if __name__ == "__main__":
 
     # ------------ Load Models ------------
     print(f"Loading BERT model from {bert_model}")
-    model1 = Bert(bert_model)
-    model2 = Bert(bert_model)
+    model1 = Bert(bert_model).to_device(device)
+    model2 = Bert(bert_model).to_device(device)
 
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(

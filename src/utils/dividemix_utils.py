@@ -68,7 +68,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         
         # Transform label to one-hot
         labels_x = torch.zeros(batch_size, 2).scatter_(1, labels_x.view(-1,1), 1)        
-        prob = prob.view(-1,1).type(torch.FloatTensor).to(device)
+        prob = prob.view(-1,1).float().to(device)
 
         with torch.no_grad():
             # ---- Label Co-guessing (Unlabelled Samples) ----

@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 from src.utils.llm_utils import *
 from src.utils.data_utils import load_test_data
-from src.prompts.templates import TEMPLATE_V1
+from src.prompts.templates import *
 from src.utils.eval_utils import evaluate_model, save_evaluation, add_predictions_to_data
 
 if __name__ == "__main__":
@@ -20,10 +20,12 @@ if __name__ == "__main__":
 
     pipeline_ = load_llama_model(model_path)
 
-    updated_data = batch_process(pipeline_, TEMPLATE_V1, data, new_col='predictions', num_posts=4, test_file=test_file, data_path=save_path, source_col='text')
+    for i, template in enumerate([TEMPLATE_V1, TEMPLATE_V2, TEMPLATE_V3, TEMPLATE_V4]):
+        print(f"Processing with template {i+1}")
+        updated_data = batch_process(pipeline_, template, data, new_col=f'predictions_{i+1}', num_posts=4, test_file=test_file, data_path=save_path, source_col='text')
 
-    predictions = updated_data['predictions'].tolist()
-    labels = updated_data['label'].tolist()
-    evaluations = evaluate_model(predictions, labels)
-    save_evaluation(evaluations, test_file, test_path, 'mistral')
-    add_predictions_to_data(updated_data, test_file, save_path, predictions, 'mistral')
+        predictions = updated_data[f'predictions_{i+1}'].tolist()
+        labels = updated_data['label'].tolist()
+        evaluations = evaluate_model(predictions, labels)
+        save_evaluation(evaluations, test_file, save_path, f'mistral_template_{i+1}')
+        add_predictions_to_data(updated_data, test_file, save_path, predictions, f'mistral_template_{i+1}', template=f"_{i+1}")

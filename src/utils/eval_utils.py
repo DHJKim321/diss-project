@@ -17,10 +17,10 @@ def save_evaluation(evaluations, test_file, data_path, model_name):
         json.dump(evaluations, f, indent=4)
     print(f"Evaluation results saved to {output_file}")
 
-def add_predictions_to_data(data, test_file, data_save_path, preds, model_name):
+def add_predictions_to_data(data, test_file, data_save_path, preds, model_name, template=''):
     test_file = test_file.replace(".csv", "")
     output_file = f"{data_save_path}evaluated_{test_file}_{model_name}.csv"
-    data['predictions'] = preds
+    data['predictions' + template] = preds
     data.to_csv(output_file, index=False)
     print(f"Predictions saved to {output_file}")
 

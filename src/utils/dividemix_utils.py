@@ -18,7 +18,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         attention_mask = batch['attention_mask'].to(device)
         labels = batch['labels'].to(device)
         optimizer.zero_grad()
-        outputs = model(input_ids, attention_mask)               
+        outputs = model(input_ids, attention_mask)
         loss = criterion(outputs, labels)
         penalty = negentropy(outputs) # Details in the class documentation
         L = loss + penalty   

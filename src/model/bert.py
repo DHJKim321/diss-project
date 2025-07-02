@@ -3,10 +3,11 @@ import torch.nn as nn
 from transformers import BertModel
 
 class Bert(nn.Module):
-    def __init__(self, bert_model, head_type='linear', num_classes=2, use_dropout=True, dropout=0.3):
+    def __init__(self, bert_model, head_type='linear', num_classes=2, use_dropout=True, dropout=0.3, use_hidden_state=False):
         super(Bert, self).__init__()
         self.bert = BertModel.from_pretrained(bert_model)
         self.dropout = nn.Dropout(dropout) if use_dropout else nn.Identity()
+        self.use_hidden_state = use_hidden_state
         if head_type == "linear":
             self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)
         elif head_type == 'bilstm':
@@ -57,6 +58,22 @@ class Bert(nn.Module):
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
         return logits
+    
+    def forward_from_layer(self, mixed_hidden_state, attention_mask, layer_index):
+        # Manually run the remaining layers of the encoder
+        extended_attention_mask = self.bert.get_extended_attention_mask(attention_mask, attention_mask.shape, attention_mask.device)
+        # Go from mix_layer to end
+        for layer_module in self.bert.encoder.layer[layer_index:]:
+            mixed_hidden_state = layer_module(mixed_hidden_state, attention_mask=extended_attention_mask, head_mask=None)[0]
+        pooled_output = mixed_hidden_state[:, 0]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
+        return logits
+    
+    def get_embedding_at_layer(self, input_ids, attention_mask, layer_index):
+        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask, output_hidden_states=True)
+        hidden_states = outputs.hidden_states
+        return hidden_states[layer_index]
 
     def freeze(self):
         for param in self.bert.parameters():

@@ -22,8 +22,6 @@ def mask_augment(input_ids, attention_mask, tokenizer, p=0.15):
         # Add padding to the mask
         mask = torch.cat([mask, torch.tensor([True] * padding_length)])
         assert mask.shape == input_ids.shape
-
-        attention_mask[mask] = 0
         input_ids[mask] = tokenizer.mask_token_id
         return input_ids, attention_mask
 

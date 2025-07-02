@@ -23,7 +23,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         L = loss + penalty
         L.backward()
         optimizer.step()
-        print(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
+        tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
 
 def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
     """
@@ -99,16 +99,18 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         l = max(l, 1-l)
         
         # Calculate embeddings for MixMatch
+        layer_index = np.random.choice([7, 9, 12]) # Based on the paper below, these layers contain the richest syntactic and semantic information
+        layer_index -= 1 # Convert to zero-based index
         with torch.no_grad():
             # Get embeddings for labelled samples
             # https://arxiv.org/pdf/2004.12239 - MixText/TMix
-            # Instead of using final embeddidngs, we use the model's hidden state representations 
-            embedding_x1 = model1.get_embeddings(input_ids_x1, attention_mask_x1)
-            embedding_x2 = model1.get_embeddings(input_ids_x2, attention_mask_x2)
+            # Instead of using final embeddngs, we use the model's hidden state representations
+            embedding_x1 = model1.get_embedding_at_layer(input_ids_x1, attention_mask_x1, layer_index=layer_index)
+            embedding_x2 = model1.get_embedding_at_layer(input_ids_x2, attention_mask_x2, layer_index=layer_index)
 
             # Get embeddings for unlabelled samples
-            embedding_u1 = model1.get_embeddings(input_ids_u1, attention_mask_u1)
-            embedding_u2 = model1.get_embeddings(input_ids_u2, attention_mask_u2)
+            embedding_u1 = model1.get_embedding_at_layer(input_ids_u1, attention_mask_u1, layer_index=layer_index)
+            embedding_u2 = model1.get_embedding_at_layer(input_ids_u2, attention_mask_u2, layer_index=layer_index)
 
         # Concatenate embeddings and labels for MixMatch
         all_inputs = torch.cat([embedding_x1, embedding_x2, embedding_u1, embedding_u2], dim=0) # Concatenate embeddings
@@ -124,10 +126,9 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # Only use half of the inputs to avoid excessive memory usage
         mixed_input = l * input_a[:batch_size*2] + (1 - l) * input_b[:batch_size*2]
         mixed_labels = l * label_a[:batch_size*2] + (1 - l) * label_b[:batch_size*2]
-
+        final_attention_mask = torch.ones_like(mixed_input[:, 0]).to(device) # Apply all-one attention mask following the paper
         # mixed_input.shape = (batch_size*2, embedding_dim)
-        # TODO
-        logits = model1.classifier(mixed_input)
+        logits = model1.forward_from_layer(mixed_input, final_attention_mask, layer_index=layer_index)
 
         # Split into labelled and unlabelled
         logits_x = logits[:batch_size]
@@ -151,7 +152,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         loss.backward()
         optimizer.step()
 
-        print(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
+        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
 
 def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):    
     model.eval()
@@ -167,7 +168,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
             loss = criterion(outputs, labels)
             for b in range(input_ids.size(0)):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
-            print(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
+            tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
 
     losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
     all_loss.append(losses)

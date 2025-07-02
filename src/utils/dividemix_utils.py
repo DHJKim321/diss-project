@@ -13,7 +13,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
     Warmup training function for DivideMix
     """
     model.train()
-    for batch_idx, batch in tqdm(enumerate(warmup_loader), desc="Warmup Training"):      
+    for _, batch in tqdm(enumerate(warmup_loader), desc="Warmup Training"):      
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)
         labels = batch['labels'].to(device)
@@ -87,8 +87,9 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             outputs_x = model1(input_ids_x1, attention_mask_x1)
             outputs_x2 = model1(input_ids_x2, attention_mask_x2)            
             
-            px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2
-            px = prob*labels_x + (1-prob)*px # prob tells us the likelihood of the label being correct using the GMM's cluster probability
+            px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2 # Average the outputs of the two models
+            px = prob * labels_x + (1 - prob) * px # prob tells us the likelihood of the label being correct using the GMM's cluster probability
+            # labels_x is the ground-truth, px is the average of the two models' predictions
             ptx = px**(1/temperature) # Temparature Sharpening
                        
             labels_x = ptx / ptx.sum(dim=1, keepdim=True) # Normalize
@@ -161,20 +162,22 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
             labels = batch['labels'].to(device)
             index = batch['index']
             outputs = model(input_ids, attention_mask)
-            loss = criterion(outputs, labels)  
+            loss = criterion(outputs, labels)
             for b in range(input_ids.size(0)):
-                losses[index[b]]=loss[b]
+                losses[index[b]]=loss[b] # losses.shape = [batch_size,]
             print(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
-                                    
-    losses = (losses-losses.min())/(losses.max()-losses.min())    
+
+    losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
     all_loss.append(losses)
 
     # fit a two-component GMM to the loss
-    input_loss = losses.reshape(-1,1)
-    gmm = GaussianMixture(n_components=2,max_iter=10,tol=1e-2,reg_covar=5e-4)
+    input_loss = losses.reshape(-1,1) # input_loss.shape = [n_samples, 1]
+    gmm = GaussianMixture(n_components=2, max_iter=10, tol=1e-2, reg_covar=5e-4)
     gmm.fit(input_loss)
-    prob = gmm.predict_proba(input_loss) 
-    prob = prob[:,gmm.means_.argmin()]         
+    prob = gmm.predict_proba(input_loss) # prob.shape = [n_samples, n_components]
+    prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
+    # I guess ^ is just a way to not use a hard-coded index? You can still calculate probabilities for both indices since n_components=2
+    # gmm.means_.argmin() returns the index of the component with the smallest mean
     return prob, all_loss
 
 def test(model1, model2, test_loader, device='cuda'):
@@ -188,10 +191,10 @@ def test(model1, model2, test_loader, device='cuda'):
             labels = batch['labels'].to(device)
             outputs1 = model1(input_ids, attention_mask)
             outputs2 = model2(input_ids, attention_mask)
-            outputs = outputs1 + outputs2
+            outputs = outputs1 + outputs2 # outputs.shape = [batch_size, num_classes]
             _, predicted = torch.max(outputs, 1)
             preds.extend(predicted.cpu().numpy())
             all_labels.extend(labels.cpu().numpy())
     acc = accuracy_score(all_labels, preds)
-    f1 = f1_score(all_labels, preds, average='macro')
+    f1 = f1_score(all_labels, preds, average='weighted')
     return acc, f1, preds, all_labels

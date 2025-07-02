@@ -107,15 +107,16 @@ if __name__ == "__main__":
             warmup_train(epoch, model2, optim2, warmup_loader, CEloss, negentropy, device)
         else:
             # ---- Training Phase ----
-            pred1 = (prob1 > p_threshold)
-            pred2 = (prob2 > p_threshold)
+            pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
+            pred2 = (prob2 > p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
+            # Wouldn't it be possible that no samples cross this threshold and everything gets classified as unlabelled?
 
             print(f"Training for Network 1")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred1, probs=prob1)
-            train(epoch, model1, model2, optim1, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
+            train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
             print(f"Training for Network 2")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred2, probs=prob2)
-            train(epoch, model2, model1, optim2, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
+            train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
 
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")

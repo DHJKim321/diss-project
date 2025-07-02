@@ -31,13 +31,13 @@ class DivideMixDataset(Dataset):
             self.text = text
             self.labels = labels
         elif self.mode == 'labelled':
-            preds_idx = preds.nonzero()[0]
+            preds_idx = preds.nonzero()[0] # Samples with cluster membership probability > p_threshold
             self.text = [text[i] for i in preds_idx]
             self.labels = [labels[i] for i in preds_idx]
-            self.probability = [probs[i] for i in preds_idx]
+            self.probability = [probs[i] for i in preds_idx] # These would all be > p_threshold
             print(f"{self.mode} data size: {len(self.text)}")
         elif self.mode == 'unlabelled':
-            preds_idx = (1-preds).nonzero()[0]
+            preds_idx = (1-preds).nonzero()[0] # Samples with cluster membership probability <= p_threshold
             text = data['text'].tolist()
             self.text = [text[i] for i in preds_idx]
             print(f"{self.mode} data size: {len(self.text)}")

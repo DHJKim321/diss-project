@@ -6,6 +6,11 @@ from tqdm import tqdm
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.mixture import GaussianMixture
 import numpy as np
+import random
+torch.manual_seed(42)
+random.seed(42)
+torch.cuda.manual_seed_all(42)
+torch.backends.cudnn.benchmark = True
 
 def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentropy, device='cuda'):
     """
@@ -23,7 +28,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         L = loss + penalty
         L.backward()
         optimizer.step()
-        tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
+        # tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
 
 def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
     """
@@ -66,7 +71,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         batch_size = input_ids_x1.size(0)
         
         # Transform label to one-hot
-        labels_x = torch.zeros(batch_size, 2).scatter_(1, labels_x.view(-1,1), 1)        
+        labels_x = torch.zeros(batch_size, 2, device=device).scatter_(1, labels_x.view(-1, 1), 1)
         prob = prob.view(-1,1).float().to(device)
 
         with torch.no_grad():
@@ -140,7 +145,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)
         
         # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
-        prior = (torch.ones(num_class)/num_class).to(device)
+        prior = torch.full((num_class,), 1 / num_class, device=device)
         pred_mean = torch.softmax(logits, dim=1).mean(0)
         penalty = torch.sum(prior*torch.log(prior/pred_mean))
        

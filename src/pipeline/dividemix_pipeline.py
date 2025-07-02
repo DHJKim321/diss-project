@@ -19,6 +19,7 @@ import random
 torch.manual_seed(42)
 random.seed(42)
 torch.cuda.manual_seed_all(42)
+torch.backends.cudnn.benchmark = True
 
 if __name__ == "__main__":
     # ------------ Load environment variables ------------

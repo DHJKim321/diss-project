@@ -1,0 +1,1221 @@
+{
+    " 0.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post does not discuss mental health. It is a description of a dream.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post does not discuss mental health. It is about a historical figure and the speaker": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post does not discuss mental health. It is about a technical issue with a video": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post does not discuss mental health. It is about a woman's concern and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post does not discuss mental health. It's about a historical building being demol": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post does not discuss mental health. It's about the person's interests": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post does not discuss mental health. It's about the person's social": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post is about League of Legends gameplay and item choices, it does not": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post is about a personal experience with a partner's hygiene and an": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post is about upgrading computer hardware, specifically a GPU, and discussing performance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. The post primarily discusses the individual's physical symptoms and their interaction with a doctor": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is a personal preference and does not indicate": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is a request for infidelity.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is a story about a person's": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about a couple's sexual dynamic": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about a person's physical experience": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about a personal relationship dilemma": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about a technical issue with a software": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about a video game and missing mod": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about a video game and the availability": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about a video game mode being removed": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about sharing an iCal on Apple": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about the NFL draft and football positions": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about the person's preferences for": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It is about troubleshooting JavaScript not": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It's about a person's career": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post does not discuss mental health. It's about social interactions and the person": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is a speculation about a character in a comic book series and does not": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about Astrology and dating preferences, not mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about a Warhammer 40k game experience, not": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about a child's eating habits and concerns about her hunger, but": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about a dog and the owner's concerns about leaving the dog alone": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about a person's preference for tabletop RPGs and their": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about a person's sexual obsession and fantasy, not directly related": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about a response from a company regarding a product issue, not about mental": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about a romantic relationship and feelings towards a partner, but it does not": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about a romantic relationship and the speaker's decision to leave a friend": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about buying morning after pills due to a fear of pregnancy, not about": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about having trouble copying saved Minecraft worlds to a new mobile phone": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about the Outer Banks TV show and the author's disappointment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about the individual's experience with Viagra, NoFap,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is about trading Pok\u00e9mon exclusives, not discussing mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is not about mental health, it's about a person being banned from": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0. This post is not related to mental health. It is a request for a sexual encounter": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.This post is about financial issues and paying back loans, not about mental health": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.This post is about the game \"Among Us\" and the player'": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.This post is not about mental health. It's a thank you message": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. The post mentions feelings (anxiety, flighty, disturbance to nervous": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. The post mentions feelings of neglect, fear of judgment, exhaustion, and the": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. This post mentions feelings (confused, upset), symptoms (seeing angel numbers": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses feelings of abandonment, rejection, and hurt related to past": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses feelings of depression, lack of motivation, and uncertainty about identity,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses feelings of disappointment, lack of connections, and mental state of feeling": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses feelings of hurt, insecurity, and clinginess, as": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses feelings of insecurity and jealousy, which can be symptoms of": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses feelings of sadness, fear, and mental health concerns.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses feelings of shame related to high sex drive and mental health concerns.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (BPD diagnosis, therapy, medication, emotional pain": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (anxiety) and physical symptoms (shivers": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (anxiety, stress, eating habits, sleep": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (anxiety, stress, panic attacks, sexual": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (anxiety, stress, panic, functioning without": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (body image issues, self-esteem, self": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (depression) and feelings of loneliness and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (depression, low self-worth, suic": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (feelings of low motivation, lack of will": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (feelings of self-hate, depression": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (feelings of worthlessness, depression, su": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (relationship issues, feelings, therapy not mentioned)": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (relationships, family acceptance, self-identity": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (specifically, a potential symptom of anxiety or": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, discusses mental health (specifically, the husband's reaction to the": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings and concerns related to the impact of work on a": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings and symptoms related to grief and the experience of a": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings of being victimized, symptoms of abuse, and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings of fear, vulnerability, and physical symptoms such": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings of frustration, hiding one's identity, and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings of love, heartbreak, depression, and addiction": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings of misery, exhaustion, stress, and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings related to breastfeeding and mental states related to": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings related to mental health, including self-worth,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings related to self-image and the desire for approval": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings related to sexuality and mental states, as well": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses feelings, symptoms (empty, not wanting to talk to": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses mental health issues (anxiety) and symptoms (": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses mental health issues, including anxiety and therapy. The individual": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post discusses mental health symptoms, specifically the impact of the person'": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions anxiety related to working, which is a mental health issue": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (anxiety, worry), symptoms (f": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (anxiety, worry, off feeling,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (hopeless romantic, love and affection, loyalty": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (invalidated, scared, overthinking,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (itch), symptoms (withdrawal), therapy": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (nervous, scared), symptoms (ache": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (overwhelming, scared, motivated), symptoms": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (sadness), symptoms (misg": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (sadness, confusion), symptoms (de": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (sadness, depression), symptoms (ign": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (scary, pain), symptoms (difficult": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (struggle, consciousness) and symptoms (": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings (waking up feeling better, feeling weird,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions feelings of inadequacy, wanting to get better": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions symptoms (smelling burnt stuff) and mental health": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1. Yes, the post mentions symptoms (urgency and frequency) related to a health": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 120.0
+    },
+    "0.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is a fan discussion about a character from": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is a question about painkillers and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is a question about the processing and shipping": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about a TV show and the speaker": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about a dog urinating on a": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about a person asking for advice on": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about a person's annoyance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about a person's experience with": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about a player in a video game": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about a technical issue with saving game": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about a video game, specifically the": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about an audio amplifier and its": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about choosing a program for CFE": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about planning a one-shot Dun": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about purchasing a used Mercedes-B": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about sharing a book reference and comparing": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about the challenges of finding a place": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It is about toaster recommendations.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It mentions beliefs about angels and collective": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It's about a friend's boyfriend": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It's about a mother considering switching her": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It's about a person's concern": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. It's about social life and dating.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. The author is asking for advice on combating": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. The author is expressing concern for the well": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post does not discuss mental health. The author is expressing confusion about a line": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is a discussion of a fictional character's actions and motivations in": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about Skyrim, a video game, and the person is asking": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about a game design concept for a tower defense game, it does not": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about a pet reptile and its feeding behavior, but it does": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about a technical issue with a laptop's gaming performance and temperature,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about a technical issue with a video game, Tarkov, and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about a technical issue with email disappearing from Gmail account, it": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about a video game character and the player's performance, it does": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about an alternate universe (AU) idea for a Disney animated series,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about dental health, not mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about personal beliefs and experiences, but it does not directly discuss mental health": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about personal experiences with psychedelic truffles and their effects": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about rooting a phone, discussing security features of Knox, and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about setting up and troubleshooting a Tor relay, not about": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about the Kraven movie plot and the preferred way of directing it": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about the individual's experience with NoFap (abstaining": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about the lore and game mechanics of a video game, Five N": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about the person's feelings and thoughts regarding drinking, but it doesn": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is about the speaker's relationship with their brother during the COVID-1": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is not about mental health, but rather discussing the use of Botox for": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is not about mental health, it's about a person's concern": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is not about mental health. It is a discussion of a cosmetic issue": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is not about mental health. It is a query regarding the replacement of e": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is not about mental health. It is a question about tax implications of transfer": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is not about mental health. It's a question about job negotiations and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is not about mental health. It's about a person's experience": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is not about mental health. It's about seeking a long-term": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post is primarily about the speaker's relationship dilemma and feelings towards multiple": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses breastfeeding, formula feeding, and weaning, but": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses computer hardware upgrades and purchasing decisions, with no clear mention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses financial matters and car-related issues, with no clear mention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses flight training and preparation for a check ride, with no clear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses interpersonal relationships and family dynamics, but it does not explicitly": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses personal interactions and text messages between two individuals, with no clear": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses physical health symptoms related to a UTI, yeast infection": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses the behavior of a dog and its training, not mental health": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses the individual's concerns about their hair, its appearance,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses the individual's desire to join an art collective and their": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses the individual's experiences with online dating platforms and their concerns": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0. This post primarily discusses the individual's love for Star Wars and their plan to": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 113.0
+    },
+    "1 = Yes, discusses feelings of sadness, desperation, and symptoms of depression (": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1 = Yes, discusses mental health (enjoying doing nothing is a common symptom": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1 = Yes, discusses mental health (gambling addiction)0 = No (": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1 = Yes, discusses symptoms of allergic reaction and mental stress related to living situation.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1 = Yes, discusses symptoms of side effects from medication on mental health (sleep quality)": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1 = Yes, discusses symptoms related to alcohol withdrawal.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1 = Yes, discusses symptoms related to potential mental health issue (hyperventilation) and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1 = Yes, the post discusses frustration and failure in completing a video game boss fight,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The person expresses feelings of frustration, anger, and helplessness. They also mention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The person mentions feelings of low self-confidence and ugliness, and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings (emotional connection, attachment, love, intox": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings (hurt, lost, confused), symptoms (lost": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings (like, love, anger, frustration), symptoms (h": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings (love, jealousy, overthinking, guilt),": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings (sick, tired, tough time, needy,": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of anxiety and depression, symptoms of mental health issues. It": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of anxiety and stress related to weight loss and diet. It": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of being treated poorly, symptoms of emotional abuse, and the": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of confusion and frustration regarding weight loss progress. It also ment": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of depression, fatigue, and a destroyed sex life.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of discomfort, confusion, and insecurity related to sexual": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of frustration and misunderstanding, symptoms of communication issues, and": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of frustration, the difficulty of reaching infinite, and the ease": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. The post mentions feelings of insomnia, panic, flushing, sweating": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "1. This post mentions feelings of nervousness, excitement, self-consciousness, low": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "accuracy": 0.0,
+    "macro avg": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 233.0
+    },
+    "weighted avg": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 233.0
+    }
+}

@@ -101,7 +101,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # Calculate embeddings for MixMatch
         with torch.no_grad():
             # Get embeddings for labelled samples
-            # https://arxiv.org/pdf/2004.12239 - MixText
+            # https://arxiv.org/pdf/2004.12239 - MixText/TMix
             # Instead of using final embeddidngs, we use the model's hidden state representations 
             embedding_x1 = model1.get_embeddings(input_ids_x1, attention_mask_x1)
             embedding_x2 = model1.get_embeddings(input_ids_x2, attention_mask_x2)

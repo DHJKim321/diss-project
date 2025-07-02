@@ -1,123 +1,32 @@
 {
-    " 0": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
+    "0":{
+        "precision":0.7181208054,
+        "recall":0.8916666667,
+        "f1-score":0.7955390335,
+        "support":120.0
     },
-    " 0. The post does not discuss mental health. It is about a dog owner's d": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
+    "1":{
+        "precision":0.8452380952,
+        "recall":0.6283185841,
+        "f1-score":0.7208121827,
+        "support":113.0
     },
-    " 0. This post does not discuss mental health. It is about a couple's sexual dynamic": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
+    "accuracy":{
+        "precision":0.7639484979,
+        "recall":0.7639484979,
+        "f1-score":0.7639484979,
+        "support":0.7639484979
     },
-    " 1": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
+    "macro avg":{
+        "precision":0.7816794503,
+        "recall":0.7599926254,
+        "f1-score":0.7581756081,
+        "support":233.0
     },
-    " 1. This post discusses the individual's self-perception and feelings of inade": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    " 1This post discusses mental health issues, specifically anxiety and insecurity, as the": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "- 0": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "- 1 = Yes (The post discusses mental health as it mentions feelings of sad": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "0": {
-        "precision": 0.7130434782608696,
-        "recall": 0.6833333333333333,
-        "f1-score": 0.6978723404255319,
-        "support": 120.0
-    },
-    "0.": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "0. The post does not directly discuss mental health. It is about a relationship issue and family": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "0. This post does not discuss mental health. It is about a pet reptile and": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "0. This post does not discuss mental health. It is about a woman's concern and": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "0. This post does not discuss mental health. It is about the job interview process and seeking": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "0. This post does not discuss mental health. It is about transferring money between bank accounts": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "0. This post is about weight loss and dieting, not mental health.": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "1": {
-        "precision": 0.8695652173913043,
-        "recall": 0.5309734513274337,
-        "f1-score": 0.6593406593406593,
-        "support": 113.0
-    },
-    "1. Yes, the post discusses mental health as it mentions anxiety and stress eating.": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1-score": 0.0,
-        "support": 0.0
-    },
-    "accuracy": 0.6094420600858369,
-    "macro avg": {
-        "precision": 0.08792270531400966,
-        "recall": 0.06746148803670929,
-        "f1-score": 0.07540072220923284,
-        "support": 233.0
-    },
-    "weighted avg": {
-        "precision": 0.7889531629035268,
-        "recall": 0.6094420600858369,
-        "f1-score": 0.6791853019594779,
-        "support": 233.0
+    "weighted avg":{
+        "precision":0.7797699631,
+        "recall":0.7639484979,
+        "f1-score":0.7592981144,
+        "support":233.0
     }
 }

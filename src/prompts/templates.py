@@ -46,7 +46,7 @@ Answer:"""
 # JSON Structure
 TEMPLATE_V4 = """You will classify the post with no extra commentary. Output must be valid JSON.
 
-{"post": "{task_content}", "analysis": "<brief analysis>", "prediction": <0_or_1>}
+{{"post": "{task_content}", "analysis": "<brief analysis>", "prediction": <0_or_1>}}
 
 Where:
 - "analysis" is 1–2 sentences, thinking aloud.

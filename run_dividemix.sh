@@ -2,7 +2,7 @@
 # Grid Engine options (lines prefixed with #$)
 #$ -N eval_local_mistral
 #$ -cwd
-#$ -l h_rt=12:00:00
+#$ -l h_rt=24:00:00
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1

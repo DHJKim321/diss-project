@@ -6,7 +6,6 @@ from tqdm import tqdm
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.mixture import GaussianMixture
 import numpy as np
-import torch.nn.functional as F
 
 def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentropy, device='cuda'):
     """
@@ -21,7 +20,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         outputs = model(input_ids, attention_mask)
         loss = criterion(outputs, labels)
         penalty = negentropy(outputs) # Details in the class documentation
-        L = loss + penalty   
+        L = loss + penalty
         L.backward()
         optimizer.step()
         print(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
@@ -102,6 +101,8 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # Calculate embeddings for MixMatch
         with torch.no_grad():
             # Get embeddings for labelled samples
+            # https://arxiv.org/pdf/2004.12239 - MixText
+            # Instead of using final embeddidngs, we use the model's hidden state representations 
             embedding_x1 = model1.get_embeddings(input_ids_x1, attention_mask_x1)
             embedding_x2 = model1.get_embeddings(input_ids_x2, attention_mask_x2)
 
@@ -125,6 +126,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         mixed_labels = l * label_a[:batch_size*2] + (1 - l) * label_b[:batch_size*2]
 
         # mixed_input.shape = (batch_size*2, embedding_dim)
+        # TODO
         logits = model1.classifier(mixed_input)
 
         # Split into labelled and unlabelled

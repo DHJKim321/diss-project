@@ -12,18 +12,6 @@
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 
-grep -q '^HEAD_TYPE=' .env && \
-  sed -i'' 's/^HEAD_TYPE=.*/HEAD_TYPE=linear/' .env || \
-  echo 'HEAD_TYPE=linear' >> .env
-
-grep -q '^USE_IMDB=' .env && \
-  sed -i'' 's/^USE_IMDB=.*/USE_IMDB=True/' .env || \
-  echo 'USE_IMDB=True' >> .env
-
-grep -q '^TRAIN_FILE=' .env && \
-  sed -i'' 's/^TRAIN_FILE=.*/TRAIN_FILE=imdb.csv/' .env || \
-  echo 'TRAIN_FILE=imdb.csv' >> .env
-
 # Load Python
 module load anaconda
 

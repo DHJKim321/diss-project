@@ -9,16 +9,6 @@
 #$ -o log/output.log
 #$ -e log/error.log
 
-ENV_FILE=".env"
-
-KEY1="DENOISE_LABELS"
-VALUE1="True"
-if grep -q "^$KEY1=" "$ENV_FILE"; then
-    sed -i "s|^$KEY1=.*|$KEY1=$VALUE1|" "$ENV_FILE"
-else
-    echo "$KEY1=$VALUE1" >> "$ENV_FILE"
-fi
-
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 

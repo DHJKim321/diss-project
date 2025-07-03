@@ -12,13 +12,6 @@
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 
-grep -q '^DENOISE_LABELS=' .env && \
-  sed -i'' 's/^DENOISE_LABELS=.*/DENOISE_LABELS=False/' .env || \
-  echo 'DENOISE_LABELS=False' >> .env
-grep -q '^HEAD_TYPE=' .env && \
-  sed -i'' 's/^HEAD_TYPE=.*/HEAD_TYPE=lstm/' .env || \
-  echo 'HEAD_TYPE=lstm' >> .env
-
 # Load Python
 module load anaconda
 

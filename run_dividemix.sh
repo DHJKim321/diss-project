@@ -12,14 +12,6 @@
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 
-grep -q '^HEAD_TYPE=' .env && \
-  sed -i'' 's/^HEAD_TYPE=.*/HEAD_TYPE=linear/' .env || \
-  echo 'HEAD_TYPE=linear' >> .env
-
-grep -q '^USE_IMDB=' .env && \
-  sed -i'' 's/^USE_IMDB=.*/USE_IMDB=False/' .env || \
-  echo 'USE_IMDB=False' >> .env
-
 # Load Python
 module load anaconda
 

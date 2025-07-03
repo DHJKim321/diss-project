@@ -28,7 +28,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         L = loss + penalty
         L.backward()
         optimizer.step()
-        # tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
+        tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
 
 def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
     """

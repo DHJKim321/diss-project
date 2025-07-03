@@ -1,5 +1,6 @@
 import pandas as pd
 import os, sys
+import numpy as np
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
@@ -28,3 +29,22 @@ def check_embedding_existence(embedding_path):
     else:
         print(f"Embedding file {embedding_path} exists.")
         return True
+    
+def load_imdb_data(file, file_path):
+    path = file_path + file
+    print(f"Loading IMDB data from {path}")
+    data = pd.read_csv(path, sep='\t', header=None, names=['review', 'sentiment'])
+    data.fillna('', inplace=True)
+    data['sentiment'] = data['sentiment'].apply(lambda x: 1 if x == 'positive' else 0)
+    data = data.rename(columns={'review': 'text', 'sentiment': 'label'})
+    data = data[['text', 'label']]
+    print(f"IMDB data loaded with {len(data)} samples")
+    return data
+
+def inject_symmetric_noise(data, noise_ratio=0.2):
+    print(f"Injecting symmetric noise with ratio {noise_ratio}")
+    num_samples = len(data)
+    num_noisy_samples = int(num_samples * noise_ratio)
+    noisy_indices = np.random.choice(num_samples, num_noisy_samples, replace=False)
+    data.loc[noisy_indices, 'label'] = 1 - data.loc[noisy_indices, 'label']
+    return data

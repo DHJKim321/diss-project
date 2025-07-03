@@ -6,12 +6,13 @@ import torch
 from torch.optim import SGD
 import torch.nn as nn
 from src.model.bert import Bert
-from src.utils.data_utils import load_full_data, load_test_data
+from src.utils.data_utils import load_full_data, load_test_data, load_imdb_data, inject_symmetric_noise
 from src.utils.eval_utils import save_evaluation, add_predictions_to_data, evaluate_model, save_loss_as_df
 from src.utils.dividemix_utils import warmup_train, train, eval_train, test
 from src.data.DivideMixDataloader import DivideMixDataloader
 from src.modules.losses import SemiLoss, NegEntropy
 from transformers import BertTokenizer
+from sklearn.model_selection import train_test_split
 
 from dotenv import load_dotenv
 
@@ -33,6 +34,7 @@ if __name__ == "__main__":
     test_data_path = os.getenv("TEST_DATA_PATH")
     data_save_path = os.getenv("DATA_SAVE_PATH")
     checkpoint_path = os.getenv("CHECKPOINT_PATH")
+    use_imdb = os.getenv("USE_IMDB").lower() == "true"
 
     # ---- Training Variables ----
     bert_model = os.getenv("BERT_MODEL")
@@ -49,6 +51,7 @@ if __name__ == "__main__":
     weight_decay = float(os.getenv("WEIGHT_DECAY"))
     augmentation = os.getenv("AUGMENTATION")
     head_type = os.getenv("HEAD_TYPE")
+    noise_ratio = float(os.getenv("NOISE_RATIO"))
 
     if epochs < warmup_epochs:
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")
@@ -60,9 +63,14 @@ if __name__ == "__main__":
         exit(1)
 
     # ------------ Load Data and Tokenizer ------------
-    print("Loading training and testing data...")
-    train_data = load_full_data(train_file, train_data_path)
-    test_data = load_test_data(test_file, test_data_path)
+    if use_imdb:
+        imdb_data = load_imdb_data(train_file, train_data_path)
+        train_data, test_data = train_test_split(imdb_data, test_size=0.2, random_state=42)
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+    else:
+        print("Loading ShaPe Data")
+        train_data = load_full_data(train_file, train_data_path)
+        test_data = load_test_data(test_file, test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
     # ------------ Load Models ------------

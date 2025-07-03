@@ -1,6 +1,6 @@
 #!/bin/sh
 # Grid Engine options (lines prefixed with #$)
-#$ -N eval_local_mistral
+#$ -N bert_baseline_lstm
 #$ -cwd
 #$ -l h_rt=12:00:00
 #$ -l h_vmem=512G
@@ -12,8 +12,12 @@
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 
-sed -i 's/^DENOISE_LABELS=.*/DENOISE_LABELS=False/' .env
-sed -i 's/^HEAD_TYPE=.*/HEAD_TYPE=lstm/' .env
+grep -q '^DENOISE_LABELS=' .env && \
+  sed -i'' 's/^DENOISE_LABELS=.*/DENOISE_LABELS=False/' .env || \
+  echo 'DENOISE_LABELS=False' >> .env
+grep -q '^HEAD_TYPE=' .env && \
+  sed -i'' 's/^HEAD_TYPE=.*/HEAD_TYPE=lstm/' .env || \
+  echo 'HEAD_TYPE=lstm' >> .env
 
 # Load Python
 module load anaconda

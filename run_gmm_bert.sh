@@ -1,6 +1,6 @@
 #!/bin/sh
 # Grid Engine options
-#$ -N eval_local_mistral
+#$ -N gmm_bert
 #$ -cwd
 #$ -l h_rt=12:00:00
 #$ -l h_vmem=512G

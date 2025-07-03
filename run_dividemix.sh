@@ -1,6 +1,6 @@
 #!/bin/sh
 # Grid Engine options (lines prefixed with #$)
-#$ -N eval_local_mistral
+#$ -N dividemix
 #$ -cwd
 #$ -l h_rt=24:00:00
 #$ -l h_vmem=512G
@@ -12,7 +12,9 @@
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 
-sed -i 's/^HEAD_TYPE=.*/HEAD_TYPE=linear/' .env
+grep -q '^HEAD_TYPE=' .env && \
+  sed -i'' 's/^HEAD_TYPE=.*/HEAD_TYPE=linear/' .env || \
+  echo 'HEAD_TYPE=linear' >> .env
 
 # Load Python
 module load anaconda

@@ -5,7 +5,7 @@ from transformers import BertModel
 class Bert(nn.Module):
     def __init__(self, bert_model, head_type='linear', num_classes=2, use_dropout=True, dropout=0.3, use_hidden_state=False):
         super(Bert, self).__init__()
-        self.bert = BertModel.from_pretrained(bert_model)
+        self.bert = bert_model
         self.dropout = nn.Dropout(dropout) if use_dropout else nn.Identity()
         self.use_hidden_state = use_hidden_state
         if head_type == "linear":
@@ -96,9 +96,9 @@ class Bert(nn.Module):
         torch.save(self.state_dict(), path)
 
     @staticmethod
-    def load(path, device, pretrained_model_name="bert-base-uncased", num_classes=2, use_dropout=True, dropout=0.3):
+    def load(path, device, head_type, pretrained_model_name="bert-base-uncased", num_classes=2, use_dropout=True, dropout=0.3):
         bert_model = BertModel.from_pretrained(pretrained_model_name)
-        model = Bert(bert_model, num_classes=num_classes, use_dropout=use_dropout, dropout=dropout)
+        model = Bert(bert_model, head_type, num_classes=num_classes, use_dropout=use_dropout, dropout=dropout)
         model.load_state_dict(torch.load(path, map_location=device))
         model.eval()
         return model

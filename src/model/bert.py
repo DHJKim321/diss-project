@@ -5,7 +5,7 @@ from transformers import BertModel
 class Bert(nn.Module):
     def __init__(self, bert_model, head_type='linear', num_classes=2, use_dropout=True, dropout=0.3, use_hidden_state=False):
         super(Bert, self).__init__()
-        self.bert = bert_model
+        self.bert = BertModel.from_pretrained(bert_model)
         self.dropout = nn.Dropout(dropout) if use_dropout else nn.Identity()
         self.use_hidden_state = use_hidden_state
         if head_type == "linear":

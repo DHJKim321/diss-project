@@ -12,6 +12,8 @@
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 
+ENV_FILE=".env"
+
 KEY1="DENOISE_LABELS"
 VALUE1="False"
 if grep -q "^$KEY1=" "$ENV_FILE"; then

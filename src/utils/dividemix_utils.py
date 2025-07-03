@@ -64,10 +64,10 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         labels_x = batch['labels'].to(device)
         prob = batch['probability'].to(device)
         try:
-            input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2 = unlabeled_train_iter.next()
+            input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2 = next(unlabeled_train_iter)
         except:
             unlabeled_train_iter = iter(unlabelled_loader)
-            input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2= unlabeled_train_iter.next()                 
+            input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2 = next(unlabeled_train_iter)
         batch_size = input_ids_x1.size(0)
         
         # Transform label to one-hot

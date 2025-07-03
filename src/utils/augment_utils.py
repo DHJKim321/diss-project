@@ -12,16 +12,17 @@ def mask_augment(input_ids, attention_mask, tokenizer, p=0.15):
         """
         Apply masking augmentation to the input_ids and attention_mask.
         """
-        padding_length = (1 - attention_mask).sum().item()
-        # Only get valid token IDs (i.e., disregard first and last tokens - CLS and SEP)
-        valid_input_ids = input_ids[attention_mask == 1][1:-1]
-        # Uniformly distributed between [0, 1]
-        mask = torch.rand(valid_input_ids.shape) < p
-        # Turn mask to same shape as input_ids
-        mask = torch.cat([torch.tensor([False]), mask, torch.tensor([False])])
-        # Add padding to the mask
-        mask = torch.cat([mask, torch.tensor([True] * padding_length)])
-        assert mask.shape == input_ids.shape
+        valid_pos = (attention_mask == 1).clone()
+        valid_pos[0] = False  # CLS
+        if valid_pos.sum() > 2:
+                valid_pos[valid_pos.nonzero()[-1]] = False  # SEP
+
+        # Random mask
+        rand = torch.rand(input_ids.shape)
+        mask = (rand < p) & valid_pos.bool()
+
+        # Apply mask
+        input_ids = input_ids.clone()
         input_ids[mask] = tokenizer.mask_token_id
         return input_ids, attention_mask
 

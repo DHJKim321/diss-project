@@ -43,6 +43,7 @@ def load_imdb_data(file, file_path):
 
 def inject_symmetric_noise(data, noise_ratio=0.2):
     print(f"Injecting symmetric noise with ratio {noise_ratio}")
+    data = data.copy().reset_index(drop=True)
     num_samples = len(data)
     num_noisy_samples = int(num_samples * noise_ratio)
     noisy_indices = np.random.choice(num_samples, num_noisy_samples, replace=False)

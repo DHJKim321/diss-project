@@ -135,9 +135,10 @@ if __name__ == "__main__":
         print(f"Epoch: {epoch}, Test Accuracy: {test_acc:.4f}, Test F1 Score: {test_f1:.4f}")
 
         # ---- Evaluation Phase ----
-        print(f"Evaluating training data at epoch {epoch}")
         eval_loader = loader.run(train_data, mode='eval_train')
+        print(f"Evaluating training data at epoch {epoch} for Model 1")
         prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
+        print(f"Evaluating training data at epoch {epoch} for Model 2")
         prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
         save_loss_as_df(epoch, all_loss, checkpoint_path)
 

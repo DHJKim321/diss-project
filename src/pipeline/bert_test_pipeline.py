@@ -28,6 +28,7 @@ if __name__ == "__main__":
     denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     reducer_type = os.getenv("REDUCER_TYPE").lower()
+    head_type = os.getenv("HEAD_TYPE").lower()
 
     # ------------ Load Data and Tokenizer ------------
     test_data = load_test_data(test_file, test_data_path)
@@ -68,6 +69,6 @@ if __name__ == "__main__":
     # ------------ Evaluate Model ------------
     evaluations = evaluate_model(preds, all_labels)
     if denoise_labels:
-        bert_model += f"_{reducer_type}_{denoise_type}_denoised"
+        bert_model += f"_{head_type}_{reducer_type}_{denoise_type}_denoised"
     save_evaluation(evaluations, test_file, data_save_path, model_name=bert_model)
     add_predictions_to_data(test_data, test_file, data_save_path, preds, model_name=bert_model)

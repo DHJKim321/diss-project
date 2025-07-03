@@ -17,8 +17,6 @@ module load anaconda
 
 conda activate /exports/eddie/scratch/s2017594/conda-envs/diss
 
-sed -i 's/^HEAD_TYPE=.*/HEAD_TYPE=lstm/' .env
-
 # Train
 python src/pipeline/bert_train_pipeline.py
 

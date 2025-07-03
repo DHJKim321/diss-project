@@ -17,7 +17,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
     Warmup training function for DivideMix
     """
     model.train()
-    for _, batch in tqdm(enumerate(warmup_loader), desc="Warmup Training"):      
+    for _, batch in tqdm(enumerate(warmup_loader), desc="Warmup Training", total=len(warmup_loader)):      
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)
         labels = batch['labels'].to(device)
@@ -56,7 +56,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
     unlabeled_train_iter = iter(unlabelled_loader)
     num_iter = (len(labelled_loader.dataset)//batch_size)+1
     # MixMatch requires the same number of labelled and unlabelled samples in each batch.
-    for batch_idx, batch in tqdm(enumerate(labelled_loader), desc="Training"):
+    for batch_idx, batch in tqdm(enumerate(labelled_loader), desc="Training", total=num_iter):
         input_ids_x1 = batch['input_ids_1'].to(device)
         input_ids_x2 = batch['input_ids_2'].to(device)
         attention_mask_x1 = batch['attention_mask_1'].to(device)
@@ -164,7 +164,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
     num_iter = (len(eval_loader.dataset)//eval_loader.batch_size)+1
     losses = torch.zeros(len(eval_loader.dataset))    
     with torch.no_grad():
-        for batch_idx, batch in tqdm(enumerate(eval_loader), desc="Evaluating Training Data"):
+        for batch_idx, batch in tqdm(enumerate(eval_loader), desc="Evaluating Training Data", total=num_iter):
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
             labels = batch['labels'].to(device)
@@ -193,7 +193,7 @@ def test(model1, model2, test_loader, device='cuda'):
     model1.eval()
     model2.eval()
     with torch.no_grad():
-        for _, batch in tqdm(enumerate(test_loader), desc="Testing"):
+        for _, batch in tqdm(enumerate(test_loader), desc="Testing", total=len(test_loader)):
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
             labels = batch['labels'].to(device)

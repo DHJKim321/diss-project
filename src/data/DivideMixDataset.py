@@ -74,15 +74,15 @@ class DivideMixDataset(Dataset):
                 max_length=self.max_length,
                 return_tensors='pt'
             )
-            input_ids_1, attention_mask_1 = encoding['input_ids'], encoding['attention_mask']
+            input_ids_1, attention_mask_1 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
             input_ids_1, attention_mask_1 = mask_augment(input_ids_1.clone(), attention_mask_1.clone(), self.tokenizer)
-            input_ids_2, attention_mask_2 = encoding['input_ids'], encoding['attention_mask']
+            input_ids_2, attention_mask_2 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
             input_ids_2, attention_mask_2 = mask_augment(input_ids_2.clone(), attention_mask_2.clone(), self.tokenizer)
             return {
-                'input_ids_1': input_ids_1.squeeze(0),
-                'attention_mask_1': attention_mask_1.squeeze(0),
-                'input_ids_2': input_ids_2.squeeze(0),
-                'attention_mask_2': attention_mask_2.squeeze(0),
+                'input_ids_1': input_ids_1,
+                'attention_mask_1': attention_mask_1,
+                'input_ids_2': input_ids_2,
+                'attention_mask_2': attention_mask_2,
                 'labels': self.labels[index],
                 'probability': self.probability[index]
             }
@@ -94,15 +94,15 @@ class DivideMixDataset(Dataset):
                 max_length=self.max_length,
                 return_tensors='pt'
             )
-            input_ids_1, attention_mask_1 = encoding['input_ids'], encoding['attention_mask']
+            input_ids_1, attention_mask_1 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
             input_ids_1, attention_mask_1 = mask_augment(input_ids_1.clone(), attention_mask_1.clone(), self.tokenizer)
-            input_ids_2, attention_mask_2 = encoding['input_ids'], encoding['attention_mask']
+            input_ids_2, attention_mask_2 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
             input_ids_2, attention_mask_2 = mask_augment(input_ids_2.clone(), attention_mask_2.clone(), self.tokenizer)
             return {
-                'input_ids_1': input_ids_1.squeeze(0),
-                'attention_mask_1':attention_mask_1.squeeze(0),
-                'input_ids_2': input_ids_2.squeeze(0),
-                'attention_mask_2': attention_mask_2.squeeze(0)
+                'input_ids_1': input_ids_1,
+                'attention_mask_1':attention_mask_1,
+                'input_ids_2': input_ids_2,
+                'attention_mask_2': attention_mask_2
             }
         elif self.mode == 'test':
             encoding = self.tokenizer(

@@ -5,7 +5,7 @@
 #$ -l h_rt=24:00:00
 #$ -l h_vmem=512G
 #$ -q gpu
-#$ -l gpu=2
+#$ -l gpu=1
 #$ -o log/output.log
 #$ -e log/error.log
 

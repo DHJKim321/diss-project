@@ -98,6 +98,13 @@ if __name__ == "__main__":
             param_group['lr'] = lr
         for param_group in optim2.param_groups:
             param_group['lr'] = lr
+        if warmup_epochs == 0 and epoch == 0:
+            print(f"Skipping warmup phase")
+            print(f"Evaluating training data at epoch {epoch}")
+            eval_loader = loader.run(train_data, mode='eval_train')
+            prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
+            prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
+            save_loss_as_df(epoch, all_loss, checkpoint_path)
 
         if epoch < warmup_epochs:
             # ---- Warmup Phase ----

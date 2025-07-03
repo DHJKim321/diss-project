@@ -35,6 +35,8 @@ if __name__ == "__main__":
     data_save_path = os.getenv("DATA_SAVE_PATH")
     checkpoint_path = os.getenv("CHECKPOINT_PATH")
     use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    if use_imdb:
+        test_file = os.getenv("TRAIN_FILE")
 
     # ---- Training Variables ----
     bert_model = os.getenv("BERT_MODEL")

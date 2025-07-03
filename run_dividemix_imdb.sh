@@ -20,6 +20,10 @@ grep -q '^USE_IMDB=' .env && \
   sed -i'' 's/^USE_IMDB=.*/USE_IMDB=True/' .env || \
   echo 'USE_IMDB=True' >> .env
 
+grep -q '^TRAIN_FILE=' .env && \
+  sed -i'' 's/^TRAIN_FILE=.*/TRAIN_FILE=imdb.csv/' .env || \
+  echo 'TRAIN_FILE=imdb.csv' >> .env
+
 # Load Python
 module load anaconda
 

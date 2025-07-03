@@ -1,7 +1,0 @@
-Loading test data from src/data/test/shape.csv
-Using device: cuda
-Loading model from model_save/bert_model_lstm_umap_gmm_denoised.pth
-Evaluation Report:
-{'0': {'precision': 0.24390243902439024, 'recall': 0.08333333333333333, 'f1-score': 0.12422360248447205, 'support': 120.0}, '1': {'precision': 0.4270833333333333, 'recall': 0.7256637168141593, 'f1-score': 0.5377049180327869, 'support': 113.0}, 'accuracy': 0.3948497854077253, 'macro avg': {'precision': 0.33549288617886175, 'recall': 0.40449852507374634, 'f1-score': 0.33096426025862946, 'support': 233.0}, 'weighted avg': {'precision': 0.3327412418437489, 'recall': 0.3948497854077253, 'f1-score': 0.3247531675358007, 'support': 233.0}}
-Evaluation results saved to src/data/eval/metrics_shape_bert-base-uncased_lstm_umap_gmm_denoised.json
-Predictions saved to src/data/eval/evaluated_shape_bert-base-uncased_lstm_umap_gmm_denoised.csv

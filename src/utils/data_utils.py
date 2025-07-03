@@ -33,7 +33,7 @@ def check_embedding_existence(embedding_path):
 def load_imdb_data(file, file_path):
     path = file_path + file
     print(f"Loading IMDB data from {path}")
-    data = pd.read_csv(path, sep='\t', header=None, names=['review', 'sentiment'])
+    data = pd.read_csv(path)
     data.fillna('', inplace=True)
     data['sentiment'] = data['sentiment'].apply(lambda x: 1 if x == 'positive' else 0)
     data = data.rename(columns={'review': 'text', 'sentiment': 'label'})

@@ -4,15 +4,16 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from dotenv import load_dotenv
-from src.utils.data_utils import load_full_data, check_embedding_existence
+from src.utils.data_utils import load_full_data, check_embedding_existence, load_imdb_data, inject_symmetric_noise
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
 from src.modules.GMMLabelCorrector import GMMLabelCorrector
-from transformers import BertTokenizer, BertModel, DataCollatorWithPadding
+from transformers import BertTokenizer, DataCollatorWithPadding
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from sklearn.metrics import accuracy_score, f1_score
+from sklearn.model_selection import train_test_split
 from sklearn.cluster import KMeans
 import random
 import numpy as np
@@ -41,12 +42,20 @@ if __name__ == "__main__":
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     gmm_threshold = float(os.getenv("GMM_THRESHOLD"))
     reducer_type = os.getenv("REDUCER_TYPE").lower()
+    noise_ratio = float(os.getenv("NOISE_RATIO"))
+    use_imdb = os.getenv("USE_IMDB").lower() == "true"
 
     # ------------ Load Data and Tokenizer ------------
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
-    full_data = load_full_data(train_file, train_data_path)
-    train_data = full_data
+    if use_imdb:
+        print("Using IMDB dataset for training.")
+        imdb_data = load_imdb_data(train_file, train_data_path)
+        train_data, _ = train_test_split(imdb_data, test_size=0.2, random_state=42)
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+    else:
+        print("Using ShaPe dataset for training.")
+        train_data = load_full_data(train_file, train_data_path)
     print(f"Loaded {len(train_data)} training samples.")
 
     # ------------ (Optional) Denoise Noisy Labels ------------

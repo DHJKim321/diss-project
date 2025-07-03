@@ -6,12 +6,13 @@ from tqdm import tqdm
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 from dotenv import load_dotenv
-from src.utils.data_utils import load_test_data
+from src.utils.data_utils import load_test_data, load_imdb_data
 from src.utils.eval_utils import evaluate_model, save_evaluation, add_predictions_to_data
 from src.data.BertDataset import BertDataset
 from src.model.bert import Bert
 from transformers import BertTokenizer, DataCollatorWithPadding
 from torch.utils.data import DataLoader
+from sklearn.model_selection import train_test_split
 
 torch.manual_seed(42)
 
@@ -19,6 +20,7 @@ if __name__ == "__main__":
     load_dotenv()
 
     # ------------ Load environment variables ------------
+    train_file = os.getenv("TRAIN_FILE")
     test_file = os.getenv("TEST_FILE")
     test_data_path = os.getenv("TEST_DATA_PATH")
     model_path = os.getenv("MODEL_SAVE_PATH")
@@ -29,9 +31,18 @@ if __name__ == "__main__":
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     reducer_type = os.getenv("REDUCER_TYPE").lower()
     head_type = os.getenv("HEAD_TYPE").lower()
+    use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    noise_ratio = float(os.getenv("NOISE_RATIO"))
 
     # ------------ Load Data and Tokenizer ------------
-    test_data = load_test_data(test_file, test_data_path)
+    if use_imdb:
+        print("Using IMDB dataset for testing.")
+        imdb_data = load_imdb_data(test_file, test_data_path)
+        _, test_data = train_test_split(imdb_data, test_size=0.2, random_state=42)
+        test_file = train_file # IMDB dataset does not have a separate test file
+    else:
+        print("Using ShaPe dataset for testing.")
+        test_data = load_test_data(test_file, test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
     dataset = BertDataset(test_data, tokenizer)
     collator = DataCollatorWithPadding(tokenizer=tokenizer, return_tensors="pt")

@@ -10,7 +10,7 @@ class Bert(nn.Module):
         self.use_hidden_state = use_hidden_state
         if head_type == "linear":
             self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)
-        elif head_type == 'bilstm':
+        elif head_type == 'lstm':
             self.lstm = nn.LSTM(self.bert.config.hidden_size, self.bert.config.hidden_size // 2, 
                                num_layers=1, bidirectional=True, batch_first=True)
             self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)

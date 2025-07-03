@@ -47,4 +47,5 @@ def inject_symmetric_noise(data, noise_ratio=0.2):
     num_noisy_samples = int(num_samples * noise_ratio)
     noisy_indices = np.random.choice(num_samples, num_noisy_samples, replace=False)
     data.loc[noisy_indices, 'label'] = 1 - data.loc[noisy_indices, 'label']
+    print(f"Injected noise into {num_noisy_samples} samples")
     return data

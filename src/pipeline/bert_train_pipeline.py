@@ -59,10 +59,10 @@ if __name__ == "__main__":
     print(f"Loaded {len(train_data)} training samples.")
 
     # ------------ (Optional) Denoise Noisy Labels ------------
-    if not check_embedding_existence(embedding_full_path):
-        print("Embedding file does not exist. Please run src/pipeline/bert_create_embeddings.py first.")
-        exit(1)
     if denoise_labels:
+        if not check_embedding_existence(embedding_full_path):
+            print("Embedding file does not exist. Please run src/pipeline/bert_create_embeddings.py first.")
+            exit(1)
         print(f"Denoising labels with type: {denoise_type}")
         print("Loading embeddings for denoising...")
         train_embeddings = torch.from_numpy(np.load(embedding_full_path))

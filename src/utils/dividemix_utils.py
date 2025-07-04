@@ -53,7 +53,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
     model1.train()
     model2.eval()
     
-    unlabeled_train_iter = iter(unlabelled_loader)
+    unlabelled_train_iter = iter(unlabelled_loader)
     num_iter = (len(labelled_loader.dataset)//batch_size)+1
     # MixMatch requires the same number of labelled and unlabelled samples in each batch.
     for batch_idx, batch in tqdm(enumerate(labelled_loader), desc="Training", total=num_iter):
@@ -64,10 +64,14 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         labels_x = batch['labels'].to(device)
         prob = batch['probability'].to(device)
         try:
-            input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2 = next(unlabeled_train_iter)
+            batch_u = next(unlabelled_train_iter)
         except:
-            unlabeled_train_iter = iter(unlabelled_loader)
-            input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2 = next(unlabeled_train_iter)
+            unlabelled_train_iter = iter(unlabelled_loader)
+            batch_u = next(unlabelled_train_iter)
+        input_ids_u1 = batch_u['input_ids_1'].to(device)
+        attention_mask_u1 = batch_u['attention_mask_1'].to(device)
+        input_ids_u2 = batch_u['input_ids_2'].to(device)
+        attention_mask_u2 = batch_u['attention_mask_2'].to(device)
         batch_size = input_ids_x1.size(0)
         
         # Transform label to one-hot

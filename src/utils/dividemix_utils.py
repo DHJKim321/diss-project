@@ -122,6 +122,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             embedding_u2 = model1.get_embedding_at_layer(input_ids_u2, attention_mask_u2, layer_index=layer_index)
 
         # Concatenate embeddings and labels for MixMatch
+        # all_inputs.shape = [batch_size * 4, seq_len, hidden_size]
         all_inputs = torch.cat([embedding_x1, embedding_x2, embedding_u1, embedding_u2], dim=0) # Concatenate embeddings
         all_labels = torch.cat([labels_x, labels_x, labels_u, labels_u], dim=0) # Soft labels from refinement/guessing
 
@@ -133,11 +134,12 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
 
         # Interpolate inputs and labels
         # Only use half of the inputs to avoid excessive memory usage
+        # mixed_input.shape = [batch_size * 2, seq_len, hidden_size]
         mixed_input = l * input_a[:batch_size*2] + (1 - l) * input_b[:batch_size*2]
         mixed_labels = l * label_a[:batch_size*2] + (1 - l) * label_b[:batch_size*2]
-        final_attention_mask = torch.ones_like(mixed_input[:, 0]).to(device) # Apply all-one attention mask following the paper
-        # mixed_input.shape = (batch_size*2, embedding_dim)
-        logits = model1.forward_from_layer(mixed_input, final_attention_mask, layer_index=layer_index)
+        final_attention_mask = torch.ones_like(mixed_input[:, :, 0]).to(device) # Apply all-one attention mask following the paper
+        # mixed_input.shape = (batch_size*2, seq_length, hidden_size)
+        logits = model1.forward_from_layer(mixed_input, final_attention_mask, layer_index=layer_index+1)
 
         # Split into labelled and unlabelled
         logits_x = logits[:batch_size]

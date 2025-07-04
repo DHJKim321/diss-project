@@ -73,7 +73,7 @@ class Bert(nn.Module):
     def get_embedding_at_layer(self, input_ids, attention_mask, layer_index):
         outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask, output_hidden_states=True)
         hidden_states = outputs.hidden_states
-        return hidden_states[layer_index]
+        return hidden_states[layer_index] # hidden_state.shape = [batch_size, seq_length, hidden_size]
 
     def freeze(self):
         for param in self.bert.parameters():

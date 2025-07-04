@@ -57,6 +57,7 @@ if __name__ == "__main__":
         imdb_data = load_imdb_data(train_file, train_data_path)
         train_data, test_data = train_test_split(imdb_data, test_size=0.2, random_state=42)
         train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+        test_file = train_file # IMDB dataset does not have a separate test file
     else:
         print("Using ShaPe dataset for training.")
         train_data = load_full_data(train_file, train_data_path)

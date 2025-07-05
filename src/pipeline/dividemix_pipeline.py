@@ -3,7 +3,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 import torch
-from torch.optim import SGD
+from torch.optim import AdamW
 import torch.nn as nn
 from src.model.bert import Bert
 from src.utils.data_utils import load_full_data, load_test_data, load_imdb_data, inject_symmetric_noise
@@ -90,8 +90,8 @@ if __name__ == "__main__":
     # ------------ Load Optimizer and Loss ------------
     print("Setting up optimizers and losses...")
     semiloss = SemiLoss(lambda_u=lambda_u)
-    optim1 = SGD(model1.parameters(), lr=learning_rate, momentum=momentum, weight_decay=weight_decay)
-    optim2 = SGD(model2.parameters(), lr=learning_rate, momentum=momentum, weight_decay=weight_decay)
+    optim1 = AdamW(model1.parameters(), lr=learning_rate, momentum=momentum, weight_decay=weight_decay)
+    optim2 = AdamW(model2.parameters(), lr=learning_rate, momentum=momentum, weight_decay=weight_decay)
     per_sample_CEloss = nn.CrossEntropyLoss(reduction='none')
     CEloss = nn.CrossEntropyLoss()
     negentropy = NegEntropy()

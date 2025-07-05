@@ -26,8 +26,8 @@ def add_predictions_to_data(data, test_file, data_save_path, preds, model_name, 
 
 def save_loss_as_df(epoch, losses, data_save_path):
     df = pd.DataFrame(columns=['model1_loss', 'model2_loss'])
-    df['model1_loss'] = losses[0]
-    df['model2_loss'] = losses[1]
+    df['model1_loss'] = losses[0].cpu().numpy()
+    df['model2_loss'] = losses[1].cpu().numpy()
 
     output_file = f"{data_save_path}dividemix_epoch_{epoch}_losses.csv"
     df.to_csv(output_file, index=False)

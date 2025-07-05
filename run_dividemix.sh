@@ -6,8 +6,8 @@
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/output.log
-#$ -e log/error.log
+#$ -o log/output_dividemix.log
+#$ -e log/error_dividemix.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

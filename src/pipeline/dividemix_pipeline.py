@@ -155,5 +155,5 @@ if __name__ == "__main__":
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")
     report = evaluate_model(test_preds, test_labels)
-    save_evaluation(report, test_file, data_save_path, 'dividemix')
-    add_predictions_to_data(test_data, test_file, data_save_path, test_preds, 'dividemix')
+    save_evaluation(report, test_file, data_save_path, f'dividemix_{noise_ratio}')
+    add_predictions_to_data(test_data, test_file, data_save_path, test_preds, f'dividemix_{noise_ratio}')

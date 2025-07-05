@@ -150,7 +150,7 @@ if __name__ == "__main__":
         prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
         prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
-        save_loss_as_df(epoch, all_loss, checkpoint_path)
+        # save_loss_as_df(epoch, all_loss, checkpoint_path)
 
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")

@@ -90,8 +90,8 @@ if __name__ == "__main__":
     # ------------ Load Optimizer and Loss ------------
     print("Setting up optimizers and losses...")
     semiloss = SemiLoss(lambda_u=lambda_u)
-    optim1 = AdamW(model1.parameters(), lr=learning_rate, momentum=momentum, weight_decay=weight_decay)
-    optim2 = AdamW(model2.parameters(), lr=learning_rate, momentum=momentum, weight_decay=weight_decay)
+    optim1 = AdamW(model1.parameters(), lr=learning_rate)
+    optim2 = AdamW(model2.parameters(), lr=learning_rate)
     per_sample_CEloss = nn.CrossEntropyLoss(reduction='none')
     CEloss = nn.CrossEntropyLoss()
     negentropy = NegEntropy()

@@ -28,7 +28,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         L = loss + penalty
         L.backward()
         optimizer.step()
-        tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
+        # tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
 
 def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
     """
@@ -163,7 +163,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         loss.backward()
         optimizer.step()
 
-        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
+        # tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
 
 def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):    
     model.eval()
@@ -179,7 +179,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
             loss = criterion(outputs, labels)
             for b in range(input_ids.size(0)):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
-            tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
+            # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
 
     losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
     all_loss.append(losses)

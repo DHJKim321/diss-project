@@ -1,0 +1,118 @@
+Loading IMDB data from src/data/train/imdb.csv
+IMDB data loaded with 50000 samples
+Injecting symmetric noise with ratio 0.5
+Injected noise into 20000 samples
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 0
+Test data size: 10000
+Epoch: 0, Test Accuracy: 0.4961, Test F1 Score: 0.3373
+Evaluating training data at epoch 0 for Model 1
+Evaluating training data at epoch 0 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 1
+Test data size: 10000
+Epoch: 1, Test Accuracy: 0.4961, Test F1 Score: 0.3290
+Evaluating training data at epoch 1 for Model 1
+Evaluating training data at epoch 1 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 2
+Test data size: 10000
+Using IMDB dataset for training.
+Loading IMDB data from src/data/train/imdb.csv
+IMDB data loaded with 50000 samples
+Injecting symmetric noise with ratio 0.5
+Injected noise into 20000 samples
+Loaded 40000 training samples.
+Loading BERT model from bert-base-uncased with head type linear
+Using device: cuda
+Model loaded and moved to cuda
+Starting training with batch size 64...
+Number of batches: 625
+Starting training...
+Epoch 1/20
+Epoch: 2, Test Accuracy: 0.5039, Test F1 Score: 0.3377
+Evaluating training data at epoch 2 for Model 1
+Evaluating training data at epoch 2 for Model 2
+Warmup training for Network 1
+Train Loss: 0.6957, F1: 0.4548, Accuracy: 0.5011
+Testing model on test data at epoch 1
+Epoch 2/20
+Warmup training for Network 2
+Evaluating models at epoch 3
+Test data size: 10000
+Epoch: 3, Test Accuracy: 0.4250, Test F1 Score: 0.4172
+Evaluating training data at epoch 3 for Model 1
+Evaluating training data at epoch 3 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 4
+Test data size: 10000
+Epoch: 4, Test Accuracy: 0.4724, Test F1 Score: 0.4701
+Evaluating training data at epoch 4 for Model 1
+Evaluating training data at epoch 4 for Model 2
+Training for Network 1
+labelled data size: 24670
+unlabelled data size: 15330
+Training for Network 2
+labelled data size: 24706
+unlabelled data size: 15294
+Evaluating models at epoch 5
+Test data size: 10000
+Epoch: 5, Test Accuracy: 0.4687, Test F1 Score: 0.4684
+Evaluating training data at epoch 5 for Model 1
+Evaluating training data at epoch 5 for Model 2
+Training for Network 1
+labelled data size: 28443
+unlabelled data size: 11557
+Training for Network 2
+labelled data size: 29221
+unlabelled data size: 10779
+Evaluating models at epoch 6
+Test data size: 10000
+Epoch: 6, Test Accuracy: 0.4805, Test F1 Score: 0.4797
+Evaluating training data at epoch 6 for Model 1
+Evaluating training data at epoch 6 for Model 2
+Training for Network 1
+labelled data size: 29155
+unlabelled data size: 10845
+Training for Network 2
+labelled data size: 30118
+unlabelled data size: 9882
+Evaluating models at epoch 7
+Test data size: 10000
+Epoch: 7, Test Accuracy: 0.4767, Test F1 Score: 0.4736
+Evaluating training data at epoch 7 for Model 1
+Evaluating training data at epoch 7 for Model 2
+Training for Network 1
+labelled data size: 29356
+unlabelled data size: 10644
+Training for Network 2
+labelled data size: 30162
+unlabelled data size: 9838
+Evaluating models at epoch 8
+Test data size: 10000
+Epoch: 8, Test Accuracy: 0.4717, Test F1 Score: 0.4681
+Evaluating training data at epoch 8 for Model 1
+Evaluating training data at epoch 8 for Model 2
+Training for Network 1
+labelled data size: 29147
+unlabelled data size: 10853
+Training for Network 2
+labelled data size: 28981
+unlabelled data size: 11019
+Evaluating models at epoch 9
+Test data size: 10000
+Epoch: 9, Test Accuracy: 0.4682, Test F1 Score: 0.4636
+Evaluating training data at epoch 9 for Model 1
+Evaluating training data at epoch 9 for Model 2
+Training for Network 1
+labelled data size: 28795
+unlabelled data size: 11205
+Training for Network 2
+labelled data size: 28990
+unlabelled data size: 11010

@@ -53,3 +53,32 @@ Test data size: 10000
 Epoch: 4, Test Accuracy: 0.4716, Test F1 Score: 0.4647
 Evaluating training data at epoch 4 for Model 1
 Evaluating training data at epoch 4 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 5
+Test data size: 10000
+Epoch: 5, Test Accuracy: 0.4777, Test F1 Score: 0.4743
+Evaluating training data at epoch 5 for Model 1
+Evaluating training data at epoch 5 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 6
+Test data size: 10000
+Epoch: 6, Test Accuracy: 0.4844, Test F1 Score: 0.4843
+Evaluating training data at epoch 6 for Model 1
+Evaluating training data at epoch 6 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 7
+Test data size: 10000
+Epoch: 7, Test Accuracy: 0.4783, Test F1 Score: 0.4783
+Evaluating training data at epoch 7 for Model 1
+Evaluating training data at epoch 7 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 8
+Test data size: 10000
+Epoch: 8, Test Accuracy: 0.4836, Test F1 Score: 0.4797
+Evaluating training data at epoch 8 for Model 1
+Evaluating training data at epoch 8 for Model 2
+Warmup training for Network 1

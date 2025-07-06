@@ -1,13 +1,13 @@
 #!/bin/sh
 # Grid Engine options (lines prefixed with #$)
-#$ -N bert_baseline
+#$ -N bert_baseline_lstm
 #$ -cwd
 #$ -l h_rt=12:00:00
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/output_bert_all.log
-#$ -e log/error_bert_all.log
+#$ -o log/output_bert_all_lstm.log
+#$ -e log/error_bert_all_lstm.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

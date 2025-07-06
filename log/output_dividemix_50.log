@@ -21,3 +21,50 @@ Evaluating training data at epoch 1 for Model 2
 Training for Network 1
 labelled data size: 20227
 unlabelled data size: 19773
+Training for Network 2
+labelled data size: 20227
+unlabelled data size: 19773
+Evaluating models at epoch 2
+Test data size: 10000
+Epoch: 2, Test Accuracy: 0.4961, Test F1 Score: 0.3290
+Evaluating training data at epoch 2 for Model 1
+Evaluating training data at epoch 2 for Model 2
+Training for Network 1
+labelled data size: 20227
+unlabelled data size: 19773
+Training for Network 2
+labelled data size: 20227
+unlabelled data size: 19773
+Evaluating models at epoch 3
+Test data size: 10000
+Epoch: 3, Test Accuracy: 0.4907, Test F1 Score: 0.3763
+Evaluating training data at epoch 3 for Model 1
+Evaluating training data at epoch 3 for Model 2
+Training for Network 1
+labelled data size: 20227
+unlabelled data size: 19773
+Training for Network 2
+labelled data size: 20431
+unlabelled data size: 19569
+Evaluating models at epoch 4
+Test data size: 10000
+Epoch: 4, Test Accuracy: 0.4439, Test F1 Score: 0.4218
+Evaluating training data at epoch 4 for Model 1
+Evaluating training data at epoch 4 for Model 2
+Training for Network 1
+labelled data size: 20227
+unlabelled data size: 19773
+Training for Network 2
+labelled data size: 21190
+unlabelled data size: 18810
+Evaluating models at epoch 5
+Test data size: 10000
+Epoch: 5, Test Accuracy: 0.4378, Test F1 Score: 0.4157
+Evaluating training data at epoch 5 for Model 1
+Evaluating training data at epoch 5 for Model 2
+Training for Network 1
+labelled data size: 20227
+unlabelled data size: 19773
+Training for Network 2
+labelled data size: 24494
+unlabelled data size: 15506

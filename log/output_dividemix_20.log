@@ -53,3 +53,6 @@ Evaluating training data at epoch 5 for Model 2
 Training for Network 1
 labelled data size: 34792
 unlabelled data size: 5208
+Training for Network 2
+labelled data size: 35013
+unlabelled data size: 4987

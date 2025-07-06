@@ -9,3 +9,9 @@ Starting training with batch size 64...
 Number of batches: 1977
 Starting training...
 Epoch 1/10
+Train Loss: 0.2623, F1: 0.8978, Accuracy: 0.8910
+Testing model on test data at epoch 1
+Test Loss: 0.6453
+Test Accuracy: 0.7124
+Test F1 Score: 0.6763
+Epoch 2/10

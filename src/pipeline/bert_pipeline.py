@@ -177,7 +177,7 @@ if __name__ == "__main__":
                 test_labels.extend(labels.cpu().tolist())
         print(f"Test Loss: {test_loss / num_test_batches:.4f}")
         print(f"Test Accuracy: {accuracy_score(test_labels, test_preds):.4f}")
-        print(f"Test F1 Score: {f1_score(test_labels, test_preds):.4f}")
+        print(f"Test F1 Score: {f1_score(test_labels, test_preds, average='macro'):.4f}")
 
     # ------------ Save Evaluations ------------
     evaluations = evaluate_model(test_preds, test_labels)

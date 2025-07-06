@@ -186,7 +186,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
     all_loss.append(losses)
 
     # fit a two-component GMM to the loss
-    input_loss = losses.reshape(-1,1) # input_loss.shape = [n_samples, 1]
+    input_loss = losses.reshape(-1,1).cpu().numpy() # input_loss.shape = [n_samples, 1]
     gmm = GaussianMixture(n_components=2, max_iter=10, tol=1e-2, reg_covar=5e-4)
     gmm.fit(input_loss)
     prob = gmm.predict_proba(input_loss) # prob.shape = [n_samples, n_components]

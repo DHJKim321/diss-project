@@ -163,6 +163,12 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         loss.backward()
         optimizer.step()
 
+        # ---- Debugging
+        for name, p in model1.named_parameters():
+            if p.grad is None:
+                tqdm.write(f"Parameter {name} has no gradient.")
+        # ----
+
         # tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
 
 def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):    
@@ -182,7 +188,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
             # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
 
-    # losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
+    losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
     all_loss.append(losses)
 
     # fit a two-component GMM to the loss

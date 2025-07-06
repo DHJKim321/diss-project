@@ -1,118 +1,49 @@
-Loading IMDB data from src/data/train/imdb.csv
-IMDB data loaded with 50000 samples
-Injecting symmetric noise with ratio 0.5
-Injected noise into 20000 samples
-Loading BERT model from bert-base-uncased
-Setting up optimizers and losses...
-Warmup training for Network 1
-Warmup training for Network 2
-Evaluating models at epoch 0
-Test data size: 10000
-Epoch: 0, Test Accuracy: 0.4961, Test F1 Score: 0.3373
-Evaluating training data at epoch 0 for Model 1
-Evaluating training data at epoch 0 for Model 2
-Warmup training for Network 1
-Warmup training for Network 2
-Evaluating models at epoch 1
-Test data size: 10000
-Epoch: 1, Test Accuracy: 0.4961, Test F1 Score: 0.3290
-Evaluating training data at epoch 1 for Model 1
-Evaluating training data at epoch 1 for Model 2
-Warmup training for Network 1
-Warmup training for Network 2
-Evaluating models at epoch 2
-Test data size: 10000
-Using IMDB dataset for training.
-Loading IMDB data from src/data/train/imdb.csv
-IMDB data loaded with 50000 samples
-Injecting symmetric noise with ratio 0.5
-Injected noise into 20000 samples
-Loaded 40000 training samples.
-Loading BERT model from bert-base-uncased with head type linear
-Using device: cuda
-Model loaded and moved to cuda
-Starting training with batch size 64...
-Number of batches: 625
-Starting training...
-Epoch 1/20
-Epoch: 2, Test Accuracy: 0.5039, Test F1 Score: 0.3377
-Evaluating training data at epoch 2 for Model 1
-Evaluating training data at epoch 2 for Model 2
-Warmup training for Network 1
-Train Loss: 0.6957, F1: 0.4548, Accuracy: 0.5011
-Testing model on test data at epoch 1
-Epoch 2/20
-Warmup training for Network 2
-Evaluating models at epoch 3
-Test data size: 10000
-Epoch: 3, Test Accuracy: 0.4250, Test F1 Score: 0.4172
-Evaluating training data at epoch 3 for Model 1
-Evaluating training data at epoch 3 for Model 2
-Warmup training for Network 1
-Warmup training for Network 2
-Evaluating models at epoch 4
-Test data size: 10000
-Epoch: 4, Test Accuracy: 0.4724, Test F1 Score: 0.4701
-Evaluating training data at epoch 4 for Model 1
-Evaluating training data at epoch 4 for Model 2
-Training for Network 1
-labelled data size: 24670
-unlabelled data size: 15330
-Training for Network 2
-labelled data size: 24706
-unlabelled data size: 15294
-Evaluating models at epoch 5
-Test data size: 10000
-Epoch: 5, Test Accuracy: 0.4687, Test F1 Score: 0.4684
-Evaluating training data at epoch 5 for Model 1
-Evaluating training data at epoch 5 for Model 2
-Training for Network 1
-labelled data size: 28443
-unlabelled data size: 11557
-Training for Network 2
-labelled data size: 29221
-unlabelled data size: 10779
-Evaluating models at epoch 6
-Test data size: 10000
-Epoch: 6, Test Accuracy: 0.4805, Test F1 Score: 0.4797
-Evaluating training data at epoch 6 for Model 1
-Evaluating training data at epoch 6 for Model 2
-Training for Network 1
-labelled data size: 29155
-unlabelled data size: 10845
-Training for Network 2
-labelled data size: 30118
-unlabelled data size: 9882
-Evaluating models at epoch 7
-Test data size: 10000
-Epoch: 7, Test Accuracy: 0.4767, Test F1 Score: 0.4736
-Evaluating training data at epoch 7 for Model 1
-Evaluating training data at epoch 7 for Model 2
-Training for Network 1
-labelled data size: 29356
-unlabelled data size: 10644
-Training for Network 2
-labelled data size: 30162
-unlabelled data size: 9838
-Evaluating models at epoch 8
-Test data size: 10000
-Epoch: 8, Test Accuracy: 0.4717, Test F1 Score: 0.4681
-Evaluating training data at epoch 8 for Model 1
-Evaluating training data at epoch 8 for Model 2
-Training for Network 1
-labelled data size: 29147
-unlabelled data size: 10853
-Training for Network 2
-labelled data size: 28981
-unlabelled data size: 11019
-Evaluating models at epoch 9
-Test data size: 10000
-Epoch: 9, Test Accuracy: 0.4682, Test F1 Score: 0.4636
-Evaluating training data at epoch 9 for Model 1
-Evaluating training data at epoch 9 for Model 2
-Training for Network 1
-labelled data size: 28795
-unlabelled data size: 11205
-Training for Network 2
-labelled data size: 28990
-unlabelled data size: 11010
+Loading test data from src/data/test/shape.csv
+Using path: /exports/eddie/scratch/s2017594/mistral-7B-instruct-v2
+Took 0.7539981683095296 minutes to load MistralForCausalLM(
+  (model): MistralModel(
+    (embed_tokens): Embedding(32000, 4096)
+    (layers): ModuleList(
+      (0-31): 32 x MistralDecoderLayer(
+        (self_attn): MistralAttention(
+          (q_proj): Linear(in_features=4096, out_features=4096, bias=False)
+          (k_proj): Linear(in_features=4096, out_features=1024, bias=False)
+          (v_proj): Linear(in_features=4096, out_features=1024, bias=False)
+          (o_proj): Linear(in_features=4096, out_features=4096, bias=False)
+        )
+        (mlp): MistralMLP(
+          (gate_proj): Linear(in_features=4096, out_features=14336, bias=False)
+          (up_proj): Linear(in_features=4096, out_features=14336, bias=False)
+          (down_proj): Linear(in_features=14336, out_features=4096, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): MistralRMSNorm((4096,), eps=1e-05)
+        (post_attention_layernorm): MistralRMSNorm((4096,), eps=1e-05)
+      )
+    )
+    (norm): MistralRMSNorm((4096,), eps=1e-05)
+    (rotary_emb): MistralRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=4096, out_features=32000, bias=False)
+)
+Processing with template 1
+Need to process 233 posts out of a 233 dataframe.
+----
+Evaluation Report:
+{'0': {'precision': 0.7181208053691275, 'recall': 0.8916666666666667, 'f1-score': 0.7955390334572491, 'support': 120.0}, '1': {'precision': 0.8452380952380952, 'recall': 0.6283185840707964, 'f1-score': 0.7208121827411168, 'support': 113.0}, 'accuracy': 0.7639484978540773, 'macro avg': {'precision': 0.7816794503036113, 'recall': 0.7599926253687316, 'f1-score': 0.7581756080991829, 'support': 233.0}, 'weighted avg': {'precision': 0.7797699631167384, 'recall': 0.7639484978540773, 'f1-score': 0.7592981144404123, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_mistral_template_1.json
+Predictions saved to src/data/eval/evaluated_shape_mistral_template_1.csv
+Processing with template 2
+Need to process 233 posts out of a 233 dataframe.
+----
+Evaluation Report:
+{'0': {'precision': 0.7272727272727273, 'recall': 0.8666666666666667, 'f1-score': 0.7908745247148289, 'support': 120.0}, '1': {'precision': 0.8222222222222222, 'recall': 0.6548672566371682, 'f1-score': 0.729064039408867, 'support': 113.0}, 'accuracy': 0.7639484978540773, 'macro avg': {'precision': 0.7747474747474747, 'recall': 0.7607669616519175, 'f1-score': 0.759969282061848, 'support': 233.0}, 'weighted avg': {'precision': 0.7733211947804224, 'recall': 0.7639484978540773, 'f1-score': 0.7608977657467014, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_mistral_template_2.json
+Predictions saved to src/data/eval/evaluated_shape_mistral_template_2.csv
+Processing with template 3
+Need to process 233 posts out of a 233 dataframe.
+----
+Evaluation Report:
+{'0': {'precision': 0.7394366197183099, 'recall': 0.875, 'f1-score': 0.8015267175572519, 'support': 120.0}, '1': {'precision': 0.8351648351648352, 'recall': 0.672566371681416, 'f1-score': 0.7450980392156863, 'support': 113.0}, 'accuracy': 0.776824034334764, 'macro avg': {'precision': 0.7873007274415725, 'recall': 0.773783185840708, 'f1-score': 0.773312378386469, 'support': 233.0}, 'weighted avg': {'precision': 0.7858627499563243, 'recall': 0.776824034334764, 'f1-score': 0.7741600194774368, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_mistral_template_3.json
+Predictions saved to src/data/eval/evaluated_shape_mistral_template_3.csv

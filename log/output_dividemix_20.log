@@ -38,3 +38,10 @@ Evaluating models at epoch 4
 Test data size: 10000
 Epoch: 4, Test Accuracy: 0.8959, Test F1 Score: 0.8959
 Evaluating training data at epoch 4 for Model 1
+Evaluating training data at epoch 4 for Model 2
+Training for Network 1
+labelled data size: 35475
+unlabelled data size: 4525
+Training for Network 2
+labelled data size: 35154
+unlabelled data size: 4846

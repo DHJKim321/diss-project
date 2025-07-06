@@ -32,7 +32,7 @@ Answer:"""
 # CoT + Roleplaying + JSON Formatting
 TEMPLATE_V3 = """You are a compassionate mental-health expert and counselor. Read the Reddit post below, think step by step, and then provide a final answer of '0' or '1' followed by an explanation of your answer.
 Your answer should be in the following format:
-{"answer": "0 or 1", "explanation": "Your explanation here"}
+{{"answer": "0 or 1", "explanation": "Your explanation here"}}
 
 1. Identify any mention of feelings, symptoms, therapy, or mental states.
 2. Evaluate whether it's a discussion of mental health.

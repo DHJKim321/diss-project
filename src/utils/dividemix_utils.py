@@ -24,8 +24,8 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         optimizer.zero_grad()
         outputs = model(input_ids, attention_mask)
         loss = criterion(outputs, labels)
-        # penalty = negentropy(outputs) # Details in the class documentation
-        L = loss
+        penalty = negentropy(outputs) # Details in the class documentation
+        L = loss + penalty
         L.backward()
         optimizer.step()
         # tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")

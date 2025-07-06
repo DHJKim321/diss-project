@@ -20,12 +20,12 @@ if __name__ == "__main__":
 
     pipeline_ = load_llama_model(model_path)
 
-    for i, template in enumerate([TEMPLATE_V3]):
-        print(f"Processing with template {i+1}")
-        updated_data = batch_process(pipeline_, template, data, new_col=f'predictions_{i+1}', num_posts=4, test_file=test_file, data_path=save_path, source_col='text')
+    for _, template in enumerate([TEMPLATE_V3]):
+        print(f"Processing with template {3}")
+        updated_data = batch_process(pipeline_, template, data, new_col=f'predictions_{3}', num_posts=4, test_file=test_file, data_path=save_path, source_col='text')
 
-        predictions = updated_data[f'predictions_{i+1}'].tolist()
+        predictions = updated_data[f'predictions_{3}'].tolist()
         labels = updated_data['label'].tolist()
         evaluations = evaluate_model(predictions, labels)
         save_evaluation(evaluations, test_file, save_path, f'mistral_template_{i+1}')
-        add_predictions_to_data(updated_data, test_file, save_path, predictions, f'mistral_template_{i+1}', template=f"_{i+1}")
+        add_predictions_to_data(updated_data, test_file, save_path, predictions, f'mistral_template_{3}', template=f"_{3}")

@@ -1,13 +1,13 @@
 #!/bin/sh
 # Grid Engine options (lines prefixed with #$)
-#$ -N eval_local_mistral
+#$ -N mistral
 #$ -cwd
 #$ -l h_rt=12:00:00
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/output.log
-#$ -e log/error.log
+#$ -o log/output_mistral.log
+#$ -e log/error_mistral.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

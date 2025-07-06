@@ -101,7 +101,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             ptx = px**(1/temperature) # Temparature Sharpening
                        
             labels_x = ptx / ptx.sum(dim=1, keepdim=True) # Normalize
-            labels_x = labels_x.detach()       
+            labels_x = labels_x.detach()
         
         # ---- MixMatch ----
         l = np.random.beta(alpha, alpha)        

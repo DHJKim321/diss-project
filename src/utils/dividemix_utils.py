@@ -182,7 +182,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
             # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
 
-    losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
+    # losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
     all_loss.append(losses)
 
     # fit a two-component GMM to the loss

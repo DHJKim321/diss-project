@@ -3,7 +3,7 @@ This file contains the prompt templates used in the experiments.
 We use these templates to generate prompts for the LLM.
 '''
 
-TEMPLATE_V1 = """You are a binary classifier. Answer ONLY with '0' or '1'.
+TEMPLATE_V1 = """Answer ONLY with '0' or '1'.
 
 Task: Determine if the following Reddit post discusses mental health (e.g., depression, anxiety, therapy).
 

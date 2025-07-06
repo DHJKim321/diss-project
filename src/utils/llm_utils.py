@@ -41,10 +41,9 @@ def load_mistral_model(model_name, TOKEN, cache_path=None):
     print(f'Took {(tm.time()-start_)/60} minutes to load {model_name}')
     return pipeline_
 
-def postprocess_output(output):
-    output = output.strip()
-    output = list(filter(str.isdigit, output))[0]
-    return output
+def extract_first_digit(s):
+    digit = ''.join([c for c in s if c.isdigit()])[0]
+    return digit
 
 def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):
     start_ = tm.time()
@@ -54,7 +53,7 @@ def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):
     })
     outputs = pipeline(full_prompts, **kwargs)
     outputs = [out[0]["generated_text"] for out in outputs]
-    # outputs = [postprocess_output(out) for out in outputs]
+    outputs = [extract_first_digit(out) for out in outputs]
     # print(f'Took {(tm.time() - start_)} seconds')
     return outputs
 

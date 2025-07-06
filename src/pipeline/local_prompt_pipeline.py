@@ -27,5 +27,5 @@ if __name__ == "__main__":
         predictions = updated_data[f'predictions_{3}'].tolist()
         labels = updated_data['label'].tolist()
         evaluations = evaluate_model(predictions, labels)
-        save_evaluation(evaluations, test_file, save_path, f'mistral_template_{i+1}')
+        save_evaluation(evaluations, test_file, save_path, f'mistral_template_{3}')
         add_predictions_to_data(updated_data, test_file, save_path, predictions, f'mistral_template_{3}', template=f"_{3}")

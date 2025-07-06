@@ -19,7 +19,6 @@ from dotenv import load_dotenv
 import random
 torch.manual_seed(42)
 random.seed(42)
-torch.cuda.manual_seed_all(42)
 torch.backends.cudnn.benchmark = True
 
 if __name__ == "__main__":
@@ -37,7 +36,7 @@ if __name__ == "__main__":
     use_imdb = os.getenv("USE_IMDB").lower() == "true"
     if use_imdb:
         test_file = os.getenv("TRAIN_FILE")
-
+    warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
     # ---- Training Variables ----
     bert_model = os.getenv("BERT_MODEL")
     batch_size = int(os.getenv("BATCH_SIZE"))
@@ -96,14 +95,31 @@ if __name__ == "__main__":
     CEloss = nn.CrossEntropyLoss()
     negentropy = NegEntropy()
 
+    # ------------ Load Pretrained Weights if available ------------
+    start_epoch = 0
+    warmup_done = False
+    prob1 = torch.zeros(len(train_data), device=device)
+    prob2 = torch.zeros(len(train_data), device=device)
+    if os.path.exists(warmup_checkpoint_path):
+        print("Found warm-up-completed models")
+        ckpt = torch.load(warmup_checkpoint_path, map_location=device)
+        model1.load_state_dict(ckpt["model1"])
+        model2.load_state_dict(ckpt["model2"])
+        optim1.load_state_dict(ckpt["optim1"])
+        optim2.load_state_dict(ckpt["optim2"])
+        prob1 = ckpt["prob1"].to(device)
+        prob2 = ckpt["prob2"].to(device)
+        start_epoch = warmup_epochs
+        warmup_done = True
+    else:
+        print("No warm-up-completed models. Training from scratch.")
+
     all_loss = [[], []] # Store losses for model1 and model2
 
     # ------------ Start Training ------------
-    for epoch in range(epochs):
+    for epoch in range(start_epoch, epochs):
         lr = learning_rate
     # ---- Learning Rate Decay ----
-        if epoch >= 40:
-            lr /= 10 #  Reduce learning rate after 40 epochs
         for param_group in optim1.param_groups:
             param_group['lr'] = lr
         for param_group in optim2.param_groups:
@@ -116,13 +132,32 @@ if __name__ == "__main__":
         #     prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
             # save_loss_as_df(epoch, all_loss, checkpoint_path) No idea how to fix this one to be honest
 
-        if epoch < warmup_epochs:
+        if not warmup_done and epoch < warmup_epochs:
             # ---- Warmup Phase ----
             warmup_loader = loader.run(train_data, mode='warmup')
             print(f"Warmup training for Network 1")
             warmup_train(epoch, model1, optim1, warmup_loader, CEloss, negentropy, device)
             print(f"Warmup training for Network 2")
             warmup_train(epoch, model2, optim2, warmup_loader, CEloss, negentropy, device)
+            # ---- Save Checkpoint ----
+            if epoch == warmup_epochs - 1:
+                eval_loader = loader.run(train_data, mode="eval_train")
+                prob1, _, _ = eval_train(model1, [], per_sample_CEloss, eval_loader, device)
+                prob2, _, _ = eval_train(model2, [], per_sample_CEloss, eval_loader, device)
+                torch.save(
+                    {
+                        "model1": model1.state_dict(),
+                        "model2": model2.state_dict(),
+                        "optim1": optim1.state_dict(),
+                        "optim2": optim2.state_dict(),
+                        "prob1" : prob1.cpu(),
+                        "prob2" : prob2.cpu(),
+                    },
+                    warmup_checkpoint_path,
+                )
+                warmup_done = True
+                print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
+            continue
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)

@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     pipeline_ = load_llama_model(model_path)
 
-    for i, template in enumerate([TEMPLATE_V1, TEMPLATE_V2, TEMPLATE_V3]):
+    for i, template in enumerate([TEMPLATE_V3]):
         print(f"Processing with template {i+1}")
         updated_data = batch_process(pipeline_, template, data, new_col=f'predictions_{i+1}', num_posts=4, test_file=test_file, data_path=save_path, source_col='text')
 

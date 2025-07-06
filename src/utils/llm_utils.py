@@ -53,7 +53,7 @@ def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):
     })
     outputs = pipeline(full_prompts, **kwargs)
     outputs = [out[0]["generated_text"] for out in outputs]
-    outputs = [extract_first_digit(out) for out in outputs]
+    # outputs = [extract_first_digit(out) for out in outputs]
     # print(f'Took {(tm.time() - start_)} seconds')
     return outputs
 

@@ -24,8 +24,8 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         optimizer.zero_grad()
         outputs = model(input_ids, attention_mask)
         loss = criterion(outputs, labels)
-        penalty = negentropy(outputs) # Details in the class documentation
-        L = loss + penalty
+        # penalty = negentropy(outputs) # Details in the class documentation
+        L = loss
         L.backward()
         optimizer.step()
         # tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
@@ -110,16 +110,16 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # Calculate embeddings for MixMatch
         layer_index = np.random.choice([7, 9, 12]) # Based on the paper below, these layers contain the richest syntactic and semantic information
         layer_index -= 1 # Convert to zero-based index
-        with torch.no_grad():
-            # Get embeddings for labelled samples
-            # https://arxiv.org/pdf/2004.12239 - MixText/TMix
-            # Instead of using final embeddngs, we use the model's hidden state representations
-            embedding_x1 = model1.get_embedding_at_layer(input_ids_x1, attention_mask_x1, layer_index=layer_index)
-            embedding_x2 = model1.get_embedding_at_layer(input_ids_x2, attention_mask_x2, layer_index=layer_index)
 
-            # Get embeddings for unlabelled samples
-            embedding_u1 = model1.get_embedding_at_layer(input_ids_u1, attention_mask_u1, layer_index=layer_index)
-            embedding_u2 = model1.get_embedding_at_layer(input_ids_u2, attention_mask_u2, layer_index=layer_index)
+        # Get embeddings for labelled samples
+        # https://arxiv.org/pdf/2004.12239 - MixText/TMix
+        # Instead of using final embeddngs, we use the model's hidden state representations
+        embedding_x1 = model1.get_embedding_at_layer(input_ids_x1, attention_mask_x1, layer_index=layer_index)
+        embedding_x2 = model1.get_embedding_at_layer(input_ids_x2, attention_mask_x2, layer_index=layer_index)
+
+        # Get embeddings for unlabelled samples
+        embedding_u1 = model1.get_embedding_at_layer(input_ids_u1, attention_mask_u1, layer_index=layer_index)
+        embedding_u2 = model1.get_embedding_at_layer(input_ids_u2, attention_mask_u2, layer_index=layer_index)
 
         # Concatenate embeddings and labels for MixMatch
         # all_inputs.shape = [batch_size * 4, seq_len, hidden_size]

@@ -25,10 +25,10 @@ def add_predictions_to_data(data, test_file, data_save_path, preds, model_name, 
     data.to_csv(output_file, index=False)
     print(f"Predictions saved to {output_file}")
 
-def save_loss_as_df(epoch, losses, data_save_path):
+def save_loss_as_df(epoch, losses, data_save_path, noise_ratio):
     df = pd.DataFrame(columns=['model1_loss', 'model2_loss'])
     df['model1_loss'] = torch.stack(losses[0]).cpu().numpy()
     df['model2_loss'] = torch.stack(losses[1]).cpu().numpy()
 
-    output_file = f"{data_save_path}dividemix_epoch_{epoch}_losses.csv"
+    output_file = f"{data_save_path}dividemix_{noise_ratio}_epoch_{epoch}_losses.csv"
     df.to_csv(output_file, index=False)

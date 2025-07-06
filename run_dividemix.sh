@@ -2,12 +2,12 @@
 # Grid Engine options (lines prefixed with #$)
 #$ -N dividemix_50_debugging
 #$ -cwd
-#$ -l h_rt=24:00:00
+#$ -l h_rt=48:00:00
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/output_dividemix_50_debugging.log
-#$ -e log/error_dividemix_50_debugging.log
+#$ -o log/output_dividemix_50.log
+#$ -e log/error_dividemix_50.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

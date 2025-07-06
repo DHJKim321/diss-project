@@ -192,6 +192,8 @@ if __name__ == "__main__":
     model_save_path += f"bert_model_{head_type}.pth"
     if use_imdb:
         model_save_path = model_save_path.replace(".pth", "_imdb.pth")
+    if head_type:
+        model_save_path = model_save_path.replace(".pth", f"_{head_type}.pth")
     if denoise_labels:
         model_save_path = model_save_path.replace(".pth", f"_{reducer_type}_{denoise_type}_denoised.pth")
     model.save(model_save_path)

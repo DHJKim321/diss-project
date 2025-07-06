@@ -142,10 +142,10 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         logits = model1.forward_from_layer(mixed_input, final_attention_mask, layer_index=layer_index+1)
 
         # Split into labelled and unlabelled
-        logits_x = logits[:batch_size*2]
-        targets_x = mixed_labels[:batch_size*2]
-        logits_u = logits[batch_size*2:]
-        targets_u = mixed_labels[batch_size*2:]
+        logits_x = logits[:batch_size]
+        targets_x = mixed_labels[:batch_size]
+        logits_u = logits[batch_size:]
+        targets_u = mixed_labels[batch_size:]
         
         # Calculate individual losses
         Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)

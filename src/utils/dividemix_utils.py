@@ -135,17 +135,17 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # Interpolate inputs and labels
         # Only use half of the inputs to avoid excessive memory usage
         # mixed_input.shape = [batch_size * 2, seq_len, hidden_size]
-        mixed_input = l * input_a[:batch_size*2] + (1 - l) * input_b[:batch_size*2]
-        mixed_labels = l * label_a[:batch_size*2] + (1 - l) * label_b[:batch_size*2]
+        mixed_input = l * input_a + (1 - l) * input_b
+        mixed_labels = l * label_a + (1 - l) * label_b
         final_attention_mask = torch.ones_like(mixed_input[:, :, 0]).to(device) # Apply all-one attention mask following the paper
         # mixed_input.shape = (batch_size*2, seq_length, hidden_size)
         logits = model1.forward_from_layer(mixed_input, final_attention_mask, layer_index=layer_index+1)
 
         # Split into labelled and unlabelled
-        logits_x = logits[:batch_size]
-        targets_x = mixed_labels[:batch_size]
-        logits_u = logits[batch_size:]
-        targets_u = mixed_labels[batch_size:]
+        logits_x = logits[:batch_size*2]
+        targets_x = mixed_labels[:batch_size*2]
+        logits_u = logits[batch_size*2:]
+        targets_u = mixed_labels[batch_size*2:]
         
         # Calculate individual losses
         Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)

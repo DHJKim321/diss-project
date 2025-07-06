@@ -1,27 +1,1425 @@
 {
+    " 0, The post does not discuss mental health directly. It is a description of a dream. While dreams can sometimes reflect mental health issues or be influenced by them, this post does not provide any indication of that.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0, This post is not about mental health. It is a discussion about the NFL draft and football strategy.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0, This post is not discussing mental health. It's about video games and their similarities in creating neon cities in their respective universes.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0, this post does not discuss mental health.Explanation: The post is about a video game, specifically Destiny 2, and the user is asking about cross-save functionality and access to digital content add-ons across different platforms. There is no mention of feelings, symptoms, therapy, or mental states.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation: The post does not mention any feelings, symptoms, therapy, or mental states. It is a technical question about getting JavaScript to work locally after pasting it on an online code playground.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation: The post is about a bad experience with a product, specifically a dab of live resin. There is no mention of feelings, symptoms, therapy, or mental states. The post is not discussing mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation: The post is about a player's preference and experience with different items for the League of Legends champion K'Sante. While the post mentions feelings and symptoms (feeling like Radiant Virtue is a better choice, having no problem with damage), it is not discussing mental health. The post is about League of Legends items and gameplay strategy.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post does mention feeling sad about a historical piece being gone, but it doesn't discuss any mental health issues, feelings related to mental health, symptoms, therapy, or mental states. It's just a statement about a historical building being demolished.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post does mention feelings (preference for anonymity) and a mental state (desire for instant communication), but it is not a discussion of mental health. The post is primarily about the user's preference for using Telegram over WhatsApp and their reasons for doing so.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about a TV show and the frequency of certain actions by characters in the show.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about a hobby project involving metalworking and woodworking. While the author expresses some thoughts and concerns, they do not indicate any mental health issues. Therefore, the answer is 0.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a question about airline carry-on policies regarding a winter jacket.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a simple thank you message to someone who did not kill the author in a video game. There is no indication that this is a discussion of mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post is about the disappointment and boredom the reader feels towards the current season of a TV show, \"Outer Banks.\" While the post mentions feelings, it is not discussing mental health issues or symptoms. The post is merely an expression of personal opinion and frustration.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post is not about mental health or feelings. It is a discussion about the Kraven movie plot and how it could be improved. The author suggests a different perspective for the movie, focusing more on Kraven's point of view. There is no mention of mental health, symptoms, therapy, or mental states.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.Explanation:The post primarily discusses the individual's career concerns and job transition, with no clear mention of feelings, symptoms, therapy, or mental states. While the person expresses unhappiness with their current job, it is not indicative of a mental health issue. Therefore, the answer is '0'.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.This post does not discuss mental health. The individual is experiencing an issue with a video game and its mods.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0.This post does not mention any feelings, symptoms, therapy, or mental states. It is a brief narrative about an event that occurred at a summer camp. While it's possible that the person sharing this experience might be dealing with mental health issues related to the traumatic event, the post itself does not discuss mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not discuss any feelings, symptoms, therapy, or mental states related to mental health. It is a discussion about a historical figure and the poster's personal interpretation of her character.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not discuss any feelings, symptoms, therapy, or mental states related to mental health. It is about the person's social situation and their identification as an INTP.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not discuss any feelings, symptoms, therapy, or mental states. It is a request for help in finding a specific book series.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not discuss any feelings, symptoms, therapy, or mental states. It is a request for information about a music video.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about a problem with a dog urinating on the carpet and the most affordable way to fix it.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about trying to find a scholarship application and needing help with the process. Mental health is not mentioned or implied.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not mention any feelings, symptoms, therapy, or mental states. It is a request for recommendations for free 3D art apps for iOS and Android.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not mention any feelings, symptoms, therapy, or mental states. It is a request for recommendations for places to eat alone with nice entertainment or atmosphere, specifically on the East Side of Los Angeles.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post does not mention any feelings, symptoms, therapy, or mental states. It is a technical issue regarding sharing an iCal on Apple.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation: The post primarily discusses the individual's unfortunate series of events, including job loss, relationship breakup, and homelessness. While these experiences can have significant emotional and mental impacts, the post itself does not explicitly mention feelings, symptoms, therapy, or mental states. Instead, it focuses on the individual's circumstances and the unexpected turn of events. Therefore, it is classified as a '0' for not discussing mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post discusses the rekindling of a sexual relationship between two brothers during the COVID-19 lockdown. While the content may be sensitive, it does not directly mention feelings, symptoms, therapy, or mental states related to mental health. The post is primarily about their personal experiences and decisions.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about a person's preference for a specific type of device to manage their task lists and potentially read books. While mental health can be impacted by organization and productivity, this post is not explicitly about mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about financial difficulties and making payments. While financial stress can impact mental health, the post itself does not discuss mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about finding new gloves for an injury.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about music, specifically video game soundtracks and potential collaborations.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a discussion about the player's experiences with Pokemon Go and their inability to travel far due to a disability. While there are some references to emotions like \"interesting\" and \"appreciate it,\" they are not related to mental health concerns. Therefore, the answer is 0.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post does not mention any feelings, symptoms, therapy, or mental states. It is a request for travel suggestions and experiences from the community.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post is about a Magic: The Gathering player seeking advice on improving their EDH (Commander) deck, specifically a Hinata, Dawn-Crowned deck. They discuss their concerns about protecting their commander due to its \"kill on sight\" nature and consider cutting some X spells to add more card draw. There is no mention of feelings, symptoms, therapy, or mental states. Therefore, this post does not discuss mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post is about the OP's romantic feelings towards someone she met on Tinder and her concerns about his communication. While it mentions feelings and a potential relationship, it does not discuss mental health or symptoms.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post mentions the person's interests, which include anime figurines, soccer jerseys, and piano. There is no mention of feelings, symptoms, therapy, or mental states. The post is not discussing mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post primarily discusses planning for a one-shot Dungeons & Dragons session, including character motivations and potential backup characters. While there are mentions of various character goals and motivations, there is no clear indication that the post is discussing mental health issues. Therefore, the answer is 0.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post primarily discusses the character development and potential of Hermie the Unworthy in the animated series \"Helluva Boss\" and Jimmy Wong's involvement with the character. There is no mention of feelings, symptoms, therapy, or mental states. Therefore, it is not a discussion of mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post primarily discusses the couple's sexual fantasies and experiences, but it does not directly mention feelings, symptoms, therapy, or mental states. While the individuals express curiosity about societal acceptance and potential reactions, this is not indicative of a mental health concern. Therefore, the answer is '0'.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post primarily discusses the individual's career situation and job offers from different banks. While there is a mention of feelings (miraculous, need help), it is not explicitly about mental health or mental states. The post is more focused on career advice and decision-making.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 0Explanation:The post primarily discusses the individual's concerns about the appearance and management of their hair. While there is a mention of feelings (frustration), it does not directly relate to mental health. The post does not discuss any symptoms, therapy, or mental states. Therefore, the answer is 0.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1Explanation: The post discusses feelings of exclusion, the impact of this on relationships, and the decision to remove oneself from a social group. These are all topics related to mental health and emotional well-being.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1Explanation: The post discusses feelings, symptoms, and mental states, as it describes the husband's behavior and the wife's reactions to various situations. It also mentions therapy, as the wife engages in role-play (RP) scenarios with an older gentleman, which can be considered a form of therapy or coping mechanism for some individuals. Therefore, the answer is '1' and the post discusses mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1Explanation: The post discusses the boyfriend's sexual experiences and preferences, including his orgasms and the techniques used during oral sex. The OP is concerned about his orgasms and wants to understand his preferences better to please him, which indicates a mental health context as it relates to their relationship and communication.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1Explanation: The post discusses the individual's anxiety, their discomfort with certain conditions (crowds, music, and nighttime), and their avoidance of social events due to these factors. The person also mentions their past attempts to build connections and their desire to do so, but their anxiety prevents them from attending the event. This is a clear indication that the post is about mental health and the challenges the individual faces in managing their anxiety.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1Explanation: The post expresses strong opinions about mental health issues, specifically the experiences of survivors of sexual assault and the complexities of their emotions and reactions. The author also discusses the impact of these experiences on their own mental health and their frustration with how these issues are perceived and discussed in various communities. The post also mentions therapy and the importance of recognizing and addressing harmful behaviors and attitudes.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1Explanation: The post mentions the individual's ongoing struggle with a health condition (IBS) that significantly impacts their daily life and social interactions. The individual expresses anxiety and fear related to this condition, particularly in the context of meeting up with someone they like. The post also includes a discussion of therapy and seeking understanding from others. The update further confirms the mental and emotional impact of the health condition.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1Explanation:The post discusses the mental state and behavior of the dog, as well as the owner's concerns about leaving the dog alone and the potential impact on their neighbors. The owner also mentions their efforts to practice alone time with the dog and their concerns about the dog's reaction to being left alone. This is a clear discussion of mental health and the impact of separation on the dog.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " 1Explanation:The post mentions feelings, as the person expresses their attraction to certain characters and their thoughts about how those characters could interact with them in the game. The post also discusses the idea of therapy or self-improvement, as the person considers how different elements of the game might appeal to different astrological signs and how those elements could be developed further to make the game more engaging. Additionally, the post mentions mental states, as the person reflects on their own thoughts and motivations. Overall, the post is a discussion of mental health, as it explores the person's emotional responses to the game and their thoughts about how the game could be improved to better meet the needs and preferences of different players.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    " {\"answer\": \"0\", \"explanation\": \"The post is about a Warhammer 40k game experience, not about mental health or feelings. The author expresses frustration about their friend's behavior during the game, but it doesn't indicate any mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
     "0": {
-        "precision": 0.7394366197183099,
-        "recall": 0.875,
-        "f1-score": 0.8015267175572519,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
         "support": 120.0
     },
+    "0, This post is about rooting a Galaxy S10e and discussing the security features of Knox in the context of protecting data on the device if it's lost or stolen. While the post mentions mental states like \"promising\" and \"consistent,\" it is not a discussion of mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0, this post does not discuss mental health. The individual is sharing their experience with catching mice and releasing them in the wild, as well as expressing concern for their well-being. While they do mention feelings such as guilt and empathy, these are not directly related to mental health concerns.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0, this post does not discuss mental health. The post is about trying to find a specific video on the internet.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0, this post does not discuss mental health.Explanation:The post is about a person's search for a used Mercedes-Benz AMG car that fits their specifications and preferences. They mention their love for their current R-class, their dislike for certain interior materials, and their preference for a V8 engine. They also ask for advice on specific Mercedes models and generations. This post is not related to mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0, this post is about a player expressing confusion regarding the best way to start using a new weapon in a video game, it does not mention any feelings, symptoms, therapy, or mental states.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post does not discuss mental health. The individual is asking for a tutorial on creating a file format for a laser cutter.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post does not discuss mental health. The individual is experiencing an issue with a software program and is unsure if their clips have been deleted or not.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post does not discuss mental health. The individual is expressing their interest in reading The Walking Dead fan fiction and specifically looking for certain themes.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post does not discuss mental health. The individual is seeking advice on which CFE (Chartered Financial Analyst) exam preparation program to use for their upcoming attempt.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post does not discuss mental health. The individual is seeking advice regarding their girlfriend's new gaming laptop's temperature and fan speed issues.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post is about the user's experience with Skyrim and their interest in mods to enhance the gameplay experience, particularly in terms of inventory management and bug fixes. While mental health is not explicitly mentioned, the post does not discuss any feelings, symptoms, therapy, or mental states. Therefore, it is not a discussion of mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post is not about mental health, it's about expressing frustration with a video game and suggesting ways to improve it. The author is not discussing any feelings, symptoms, therapy, or mental states.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post is not about mental health. It is a suggestion for a new tower in the game \"Tower Defense\" called Bloons TD 6. The post discusses the design, upgrade paths, and potential impact of the new tower on the game. There is no mention of feelings, symptoms, therapy, or mental states.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post is not about mental health. The author is discussing the decision to switch her child's daycare, comparing the pros and cons of two different daycare environments. While the author mentions feelings of guilt, this is not indicative of a mental health concern. Instead, it is a common emotion experienced by parents when making difficult decisions for their children.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post is not about mental health. The individual is discussing their progress in a video game, specifically in relation to acquiring certain items and making purchasing decisions. While it's understandable that people can experience feelings of frustration, disappointment, or even anxiety related to gaming, this post does not indicate any mention or focus on these emotions or mental states. Therefore, it is not a discussion of mental health.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post is not about mental health. The individual is expressing concern about the production of an anime series and the workload of the staff. There is no mention of feelings, symptoms, therapy, or mental states.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "0,This post is not about mental health. The individual is expressing their preference for certain types of music and requesting recommendations for similar artists and songs.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
     "1": {
-        "precision": 0.8351648351648352,
-        "recall": 0.672566371681416,
-        "f1-score": 0.7450980392156863,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
         "support": 113.0
     },
-    "accuracy": 0.776824034334764,
+    "{\"answer\": \"0\", \"explanation\": \"The post discusses personal thoughts and experiences regarding religion, but it does not explicitly mention feelings, symptoms, therapy, or mental states. Therefore, it is not primarily about mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post discusses the individual's experience with NoFap (abstaining from porn and masturbation), focusing on the physical aspect of erections and sexual urges. While mental health can be a factor in sexual function, the primary topic is not mental health issues or therapy.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss any feelings, symptoms, therapy, or mental states. It is about a person asking for advice on choosing a nation and class in the game 'Team Yankee'.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss any feelings, symptoms, therapy, or mental states. It is about a technical issue with meeting a community milestone in an event.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss any mental health issues or symptoms. It is a question about tax implications of transferring savings from one country to another.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss any mental health-related feelings, symptoms, therapy, or mental states. It is a question about painkillers and their usage during sexual activity.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss any mental health-related feelings, symptoms, therapy, or mental states. It is a request for help in installing a free application called Pictoposte (formerly known as Swapnote) on the Nintendo eShop.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss any mental health-related issues or symptoms. It is about Striker class spec cutoffs in the game Lost Ark.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss mental health issues or symptoms. It's about the person's lifestyle and social interactions.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss mental health issues. It's a personal preference and fear of potential dangers when hooking up with strangers.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss mental health. It is about a missing video game mode and the frustration of the users.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not discuss mental health. It is about the person's search for an art collective or community in Manchester.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post does not mention any feelings, symptoms, therapy, or mental states. It is a request for game recommendations in the RPG genre.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a child's eating habits and concerns about her hunger in the morning. While there is mention of the child's mood (dancing, being hungry), it does not directly discuss mental health or symptoms.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a controller issue in a video game, not related to mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a mother's concerns regarding breastfeeding and introducing formula feeding to her baby. It does not directly discuss mental health issues.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a person's concern regarding the sanitation of a bidet attachment they purchased. While the topic may indirectly touch upon personal hygiene, it does not explicitly discuss mental health or mental health-related issues.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a person's concern regarding their musical equipment, specifically an amp. While anxiety can be related to various aspects of life, including performance and purchasing decisions, this post does not explicitly discuss mental health or symptoms.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a person's desire to find a tabletop RPG game that fits their specific preferences, discussing various games and potential combinations. While mental health isn't explicitly mentioned, there's no indication of feelings, symptoms, therapy, or mental states being discussed.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a pet reptile named Spike, who was recently rescued and fed mealworms and a wax worm. The owner is concerned because Spike threw up his food and has been sleeping a lot since then. The post does not mention any feelings, symptoms, therapy, or mental states related to the owner or Spike. Therefore, it is not a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a video game challenge, specifically a boss fight in the game Five Nights at Freddy's. While the player expresses frustration and anger, there is no mention of feelings, symptoms, therapy, or mental states related to their mental health. Therefore, the post does not discuss mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about a video game character and the user's confusion regarding the character's role and effectiveness. While there are mentions of 'playing him correctly' and'seeming ineffective', there is no clear indication of feelings, symptoms, therapy, or mental states. Therefore, it does not discuss mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about an alternate universe (AU) idea for a Disney story, focusing on Oswald the Lucky Rabbit's new abilities and adventures. While there are mentions of challenges and hardships, there is no clear indication of mental health issues or therapy being discussed.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about an audio amplifier issue and does not mention any feelings, symptoms, therapy, or mental states. Therefore, it is not discussing mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about an issue with an email account, but it doesn't mention any feelings, symptoms, therapy, or mental states. It's a technical problem, not a mental health concern.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about finding earpad replacements for a specific headphone model and does not mention any feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about having trouble transferring saved Minecraft worlds to a new mobile phone. While the person expresses frustration about losing their progress, there is no mention of feelings, symptoms, therapy, or mental states. Therefore, it is not a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about setting up and troubleshooting a Tor relay, not about mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about the difficulty of finding a specific survivor in the game 'Among Us'. It does not mention any feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about toaster recommendations and does not mention any feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is about training a dog in a trial-like environment, not discussing mental health issues or symptoms.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is not about mental health, but rather a technical issue with streaming media services and the presence of background noises.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is not about mental health. It is a question about the processing and shipping time for a TOTs GG Doll from the company's website. There is no mention of feelings, symptoms, therapy, or mental states in the post.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is not about mental health. It's a discussion about two books and their similarities.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is primarily about dealing with grease and frizziness in hair caused by wearing a hat and working at Starbucks. While there is a mention of looking 'disgusting' and 'grease bucket,' these statements are not directly related to mental health or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is primarily about purchasing emergency contraception, not about mental health. However, the individual expresses feelings of paranoia and anxiety, which could potentially indicate mental health concerns. But the focus of the post is not on these feelings or seeking mental health advice, but rather on obtaining emergency contraception.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is primarily about the individual's weight loss journey and fast metabolism. While there is a mention of health and fitness, it does not directly discuss mental health or symptoms.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is primarily about the smell of burnt hair and outdoor air on the person's hair. While the person mentions finding it embarrassing, there is no clear indication that they are discussing mental health issues or symptoms.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post is primarily about the use of Botox for tension headaches and whether it has helped others in managing their migraines. While tension headaches and migraines are related to mental health, the post itself is not a discussion of mental health but rather a question about a medical treatment.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post mentions confusion about stuttering, but it doesn't explicitly discuss feelings, symptoms, therapy, or mental states. The individual expresses that they're not particularly worried and that the stuttering is unnoticeable to others. Therefore, it's not a clear indication of a mental health concern.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post mentions feeling tired and sleepy during the winter weather, but it doesn't explicitly discuss mental health issues or symptoms. It's more about physical energy levels and seeking advice on combating winter fatigue through vitamin supplements.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post mentions the belief in talking to angels, but it doesn't discuss any mental health symptoms, feelings, or therapy. It's more of a personal belief and experience shared on Reddit.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post mentions the person's lack of romantic relationships and their attempts to use online dating apps, but it does not explicitly discuss feelings, symptoms, therapy, or mental states. Therefore, it is not a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses a product issue with a silicone sock and nozzle for a 3D printer, and the author's interaction with the company's customer support. While there are mentions of a problem and the author's expectation of a solution, there is no clear indication of mental health issues or discussions related to therapy or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses financial concerns related to car ownership and potential car sales. While the author expresses feelings of uncertainty and stress, these feelings are not explicitly related to mental health issues or symptoms. There is no mention of therapy or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses physical health symptoms related to a UTI, yeast infection, and hormonal changes from birth control. While mental health is not explicitly mentioned, there is no indication of mental health concerns or discussions in the post.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses technical issues with installing and running Tarkov on Windows 11, and does not mention any feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses the age difference between the two individuals and their feelings towards each other. While there is mention of a relationship and feelings, it does not appear to be a discussion of mental health or symptoms.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses the couple's struggle with finding an affordable place to live and financial difficulties. While these issues can indirectly impact mental health, the post itself does not explicitly discuss feelings, symptoms, therapy, or mental states, making it a discussion of practical concerns rather than mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses the friend's boyfriend's behavior towards her and the friend's feelings about it. While there is a mention of the friend sharing her feelings with the OP, it does not explicitly discuss mental health issues or symptoms.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses the individual's computer hardware upgrades and issues. While there is a brief mention of feelings ('I\u2019m annoyed') and symptoms ('issues started happening again'), the post does not focus on mental health or therapy. Therefore, the answer is 0.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses the individual's dental concerns and habits, not mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses the individual's experience with taking pills sublingually (under the tongue) and the side effects they've experienced, which include bloating, feeling gross, and tiredness. While these symptoms can be associated with mental health conditions, the post itself does not directly discuss mental health or feelings.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"The post primarily discusses the individual's flight training experience and preparation for a check ride, with no clear mention of mental health or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post does not discuss any mental health symptoms, feelings, therapy, or mental states. It is a question about a line from a movie and the speaker's reaction to it.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post does not discuss mental health. It is a request for infidelity and sexual activity, unrelated to mental health concerns or therapy.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post is a speculation about a character's motivations and actions in a fictional story. It does not mention any feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post is about a technical issue with saving game names in a video game, and does not mention any feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post is about trading Pok\u00e9mon exclusives from the Scarlet and Violet games. There is no mention of feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post is not about mental health, it's about a user getting banned from a platform after making a threatening comment. The user is asking for clarification on why they were banned, not discussing their own mental health or seeking therapy.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post is not about mental health. It is a discussion about the lore and game mechanics of the Five Nights at Freddy's series.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post is not about mental health. It's a comment about someone's behavior on a TV show and the author's opinion about it. There's no mention of feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post is not about mental health. It's about seeking a long-term internet partner for sending and receiving nudes and engaging in sexual conversations.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"0\", \"explanation\": \"This post is not related to mental health as it is a request for a sexual encounter and does not mention any feelings, symptoms, therapy, or mental states.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post describes experiencing vivid and distressing hallucinations upon waking up and falling back asleep, which are symptoms of certain mental health conditions such as sleep paralysis or dissociative states. The individual also mentions seeking guidance from a meditation practice, which could be a coping mechanism for managing their experiences. Therefore, this post discusses mental health experiences.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses Ellie's mental health, her suicidal thoughts, and her unhealthy mindset. It also mentions the lack of communication and understanding between Ellie and Joel, which can be a common issue in mental health situations.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses conflicting feelings and desires related to romantic relationships and sexual desires, which are common mental health issues. The individual expresses feelings of confusion and sadness, suggesting a potential struggle with making a decision and dealing with the consequences of that decision. The mention of 'hopeless romantic' and 'love and affection' further emphasizes the emotional aspect of the situation, which is a key component of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings (crush, anxiety), symptoms (anxiety), therapy, and mental states (regrets, getting better personally). It is a discussion of mental health.\"}You're dealing with a complex situation involving feelings, anxiety, and work dynamics. It's important to approach this conversation with sensitivity and respect for both your emotional well-being and the potential impact on your working relationship. Here's a suggested script:1. Acknowledge the past: \"Hey [Name], I wanted to talk to you about something that's been on my mind for a while now. I asked you out on a date six months ago, and I'm sorry if that made you uncomfortable. I know we've both moved on since then, but I've been dealing with some anxiety related to that situation.\"2. Express your intentions: \"I want to make it clear that I don't want to make you uncomfortable or cause any awkwardness in our working relationship. I value our professional connection and the friendship we've built. I'd like to find a way to move past this and focus on our work and our shared interests.\"3. Offer an explanation: \"I've been in therapy to work through my anxiety and regrets, and I've made significant progress. I believe that moving forward, we can maintain a positive and professional working relationship. I hope you understand where I'm coming from and that we can continue to work together effectively.\"4. Seek reassurance: \"I understand if you have any concerns or feelings about this situation. I'm open to discussing anything that might help clarify any misunderstandings or miscommunications. I truly value our working relationship and the friendship we've built, and I don't want anything to jeopardize that.\"Remember, it's essential to approach this conversation with empathy, understanding, and a genuine desire for a positive outcome. Good luck!": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of anxiety and concern about weight loss, changes in diet and physical activity, and the impact of disruptions on weight loss, which are all related to mental health and wellbeing.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of depression, lack of motivation, social isolation, and suicidal thoughts. The individual mentions seeking therapy but is hesitant due to societal stigma.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of disappointment, lack of connections, and a sense of failure in achieving societal expectations. These are common themes in mental health discussions.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of emotional abuse, self-hatred, and difficulty moving on from a toxic relationship. The individual is seeking advice and support, indicating a mental health concern.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of fear, vulnerability, and physical symptoms such as shaking and nausea when sharing emotions. These experiences suggest a mental health concern related to anxiety and fear of rejection or abandonment.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of frustration, the inability to communicate with parents, and fear of their reaction. These are all indicators of mental health issues, specifically related to family dynamics and communication.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of growing apart, lack of intimacy, fear of exploring sexuality, and the use of medication for managing stress and panic attacks. These are all indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of guilt and anxiety related to the individual's drinking habits. They mention experiencing an uptick in their drinking and wanting to cut back, but feeling daunted about having drinks despite wanting to. This is a common experience for those dealing with mental health issues related to substance use.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of guilt, shame, and self-hatred related to weight and body image. The individual also mentions trying to change their mental and behavioral patterns to improve their relationship with food and their body. These are clear indicators of mental health concerns, specifically related to disordered eating and body image issues.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of hurt, confusion, and loss, as well as the boyfriend's admission of losing the spark in their relationship. This indicates a mental health discussion.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of hurt, insecurity, and clinginess, as well as the individual's concern about the other person's communication patterns. These are all indicators of mental health issues, specifically related to anxiety and attachment.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of inadequacy, lack of skills, and a desire to improve oneself. These are common themes in mental health discussions.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of insecurity and sensitivity, past conflicts, and concerns about the impact of work on their relationship. These are all indicators of mental health issues and the desire for advice on handling them.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of invalidation, self-doubt, and the desire for self-validation, which are all related to mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of loneliness and disconnection in a relationship, as well as the boyfriend's depression and efforts to manage it. The OP is seeking advice on how to cope with these feelings, making this a mental health discussion.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of loneliness and the desire for social connections. The individual also mentions their attempts to connect with others and their struggles in doing so. These are all indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of low motivation, failure, worthlessness, and a history of relationship issues. These are all common symptoms of depression and indicate a mental health concern.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of neglect, fear of judgment, exhaustion, and the need for boundaries, which are all related to mental health and emotional well-being.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of nervousness, self-consciousness, low self-esteem, and difficulty trusting others, which are common symptoms of anxiety and insecurity. The individual is seeking advice on how to improve their relationships with women, which implies a desire for mental and emotional growth.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of sadness, desperation, and the end of a relationship. The individual mentions crying and begging to get their partner back. They also mention the impact of their parents on their relationship and the emotional strain of long distance. These elements suggest that the post is discussing mental health issues related to the breakup and the emotional toll it is taking on the individual.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of sadness, fear, and overwhelming emotions, as well as a desire for love and a fear of pushing people away. These are all common symptoms of mental health issues such as depression and anxiety.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of sadness, lack of motivation, and self-worth issues related to playing fighting games. The individual expresses a desire to talk to someone about these feelings and find ways to improve their outlook. These are all indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of shame related to having a high sex drive as a man, which is a mental health concern. The individual also mentions the impact of societal stigma and the challenges of living with a roommate and limited access to hygiene, which further emphasizes the mental health aspect of the post.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings of worthlessness, depression, and suicidal thoughts. The individual also mentions their struggle with finding a job and the impact it has on their mental health and relationships. They express a desire for therapy or support.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings related to being misgendered and deadnamed by a friend, as well as concerns about the friend's attitude towards trans identity and potential regret. These are clear indications of mental health issues, specifically related to gender identity and interpersonal relationships.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings towards multiple romantic partners, past relationship complications, and potential manipulative actions to pursue a new relationship. These elements indicate a mental health discussion related to relationship issues and emotional distress.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings, emotional connections, and mental states related to romantic and sexual attractions towards men, which is a topic related to mental health and sexuality.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings, symptoms (confusion, upset), therapy (sister's message), and mental states (weird feeling) related to mental health issues, such as interpersonal conflicts and communication problems within the family and the relationship.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses feelings, symptoms, and mental states related to the relationship between the OP and his girlfriend. They are experiencing communication issues, a lack of intimacy, and difficulty coping with the long-distance aspect of their relationship. The girlfriend's dislike of the OP talking to his friends about their issues is also mentioned, which could potentially lead to further communication problems and feelings of mistrust. The post also mentions therapy or seeking advice, as the OP is asking for help and advice on their relationship issues.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses mental states and symptoms of characters, as well as their emotional processing of events, making it a mental health discussion.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses performance issues with a GPU and a struggling fan, causing high temperatures. The user mentions playing games like Tarkov and Hogwarts Legacy, and experiencing performance issues and low FPS. They also mention trying to clean the GPU and considering upgrading it, but being unsure if they need a new CPU as well. These issues and considerations indicate a discussion of mental health, specifically related to the user's frustration and uncertainty about their computer's performance and potential upgrades.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses personal experiences with abusive parents and the emotional impact it has had on the author's life. It also provides advice to those in similar situations, emphasizing the importance of leaving abusive relationships for the sake of one's own mental health and that of their children.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses physical symptoms (cold shivers, body clenching, head flinching) and mentions a potential connection to mental health (anxiety). The individual also expresses concern and confusion about these symptoms, suggesting they may be seeking understanding or help.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses physical symptoms such as bloating, gas, bowel problems, nausea, and vomiting, which can be indicative of mental health conditions like irritable bowel syndrome (IBS) or other gastrointestinal disorders. Additionally, the individual is seeking medical advice and testing for a potential condition related to their symptoms, which is a common aspect of mental health care.\"}However, it's important to note that the post primarily focuses on the physical symptoms and the individual's concerns about the accuracy of the celiac disease test. While mental health is a possibility, the post does not explicitly discuss mental health issues or therapy. Therefore, it's essential to approach this situation with sensitivity and understanding, recognizing that the individual may be dealing with both physical and mental health concerns. If you suspect that the individual is experiencing mental health issues, it would be appropriate to encourage them to explore those concerns with a mental health professional.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses symptoms of an eating disorder, such as significant weight loss, restrictive eating, stomach pain, and sleep disturbances. The individual also expresses concerns about their behavior and its potential diagnosis.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the OP's girlfriend's behavior and their relationship, which includes mention of her depression and the OP's jealousy and overthinking. The OP is seeking advice and understanding about the situation, which indicates a mental health component.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the author's experience with breastfeeding and the challenges they are facing in trying to wean their child off of it. They mention their high prolactin levels due to a pituitary tumor, which is a mental health concern as it can lead to various hormonal imbalances. The author is seeking advice and sharing their personal struggles, making this a mental health discussion.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the author's experiences with emotional abuse from their mother, passive aggression, and feelings of being left out and hurt. These are all mental health related issues.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the author's experiences with the ranked system in the game, expressing frustration and the belief that the system is broken. They mention their own progression through the ranks, facing various opponents, and the ease with which they reach infinite rank. They also suggest that the system needs a rework and express disappointment with the current state of the ranks and MMR.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the behavior of the puppy towards its sibling, which is causing distress and concern for the owners. This behavior can be a sign of aggression and potential mental health issues related to socialization and dominance. The owners are seeking help to address the issue, indicating a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the boyfriend's insecure and jealous behavior, which can be considered symptoms of jealousy and insecurity, both of which are mental states. The OP also mentions that she's tired of it and doesn't know what to do, which suggests that this is a ongoing issue in their relationship and may be impacting her mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the boyfriend's mother's gambling addiction and its impact on the relationship between the OP and her boyfriend. They both express concern about her mental health and her need for professional help. The post also mentions the emotional strain it puts on the boyfriend and their discussions about how to handle the situation.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the emotional impact of the impending death of a close family member, feelings of grief, and the author's difficulty coping with the situation. These are all indicators of mental health issues related to loss and grief.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the friend's concern about Jacey's avoidance and her apparent sadness. The friend also mentions her own mental health condition, depression. The post is about their friendship and the friend's attempts to reach out and support Jacey, indicating a mental health discussion.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the friend's fears, self-image issues, and the impact of their parents' opinions on their mental health. The friend is expressing feelings of inadequacy, the desire for approval, and the struggle to break free from these patterns. These are all common themes in mental health discussions.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's confusion and unusual behavior from a friend, including the friend expressing affectionate terms and insomnia. These elements suggest a mental health context, as insomnia can be a symptom of various mental health conditions and the friend's behavior might indicate romantic feelings or emotional instability.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's diagnosis of BPD, their struggles with addiction, codependency, and negative emotions, as well as their ongoing therapy and medication. These are all clear indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's discomfort and confusion regarding their sexual experiences and attraction, their exploration of asexuality as a potential identity, and their feelings of insecurity and self-doubt. These are all mental health related topics.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's enjoyment of watching anime for extended periods and their preference for a small, dark room as a comfortable space. They also mention their past experiences with parents interrupting their anime viewing habits. These elements suggest a potential focus on comfort and routine, which can be indicative of mental health considerations, such as anxiety or depression.\"}However, it's important to note that enjoying anime or any other hobby for extended periods doesn't necessarily indicate a mental health issue. The individual's description of feeling comfortable and enjoying their routine could be a normal part of their personality or preferences. The mention of past parental interference might suggest some underlying emotional attachment to the hobby, but it doesn't definitively indicate a mental health issue. It's always recommended to consult a mental health professional for a proper evaluation if there are concerns.": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's experience of smelling burnt stuff, which could be a symptom of a stroke or anxiety. They also mention their concern about having a stroke and the possibility that their mind might be tricking them, which are indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's experience with side effects of medication, specifically Seroquel, which includes cold sweats and difficulty sleeping. These symptoms are related to mental health as they can impact the overall well-being and quality of life.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's experiences with allergies, which can be a symptom of mental and physical health issues. Additionally, the post mentions the impact of their living situation on their mental and physical well-being, as well as their intention to have a conversation with their family about it.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's experiences with domestic violence and the subsequent legal proceedings, which can be considered mental health issues as they involve feelings of distress, fear, and anxiety, as well as symptoms related to physical abuse.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's experiences with maintaining an erection during sexual intercourse, their use of Viagra, and their feelings of nervousness and concern about their ability to perform. These topics are related to mental and emotional aspects of sexual health and can be considered a part of mental health discussions.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's experiences with their parents' reactions to their non-traditional relationships and gender identity, as well as their feelings of frustration, exhaustion, and confusion. These are all common themes in mental health discussions.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's experiences with various types of truffles, their effects on him, and his thoughts on the lack of visual hallucinations. These experiences and thoughts relate to mental states and emotions, making this a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's feelings and concerns about their dating life and personal relationships, which are aspects of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's feelings of being overwhelmed, their struggles with living with relatives, their concerns about their future, and their lack of motivation. These are all indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's feelings of misery, exhaustion, stress, and frustration at their job. They mention their impact on their relationship and their attempts to find a new job, which are all indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's feelings towards another person, their reluctance to engage due to their own mental state (emptiness, not wanting to talk to people), and their attempts to start a conversation. These elements indicate a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's inner thoughts and struggles, which are related to mental health and personal growth. The person is seeking guidance on how to address their thoughts of arrogance and its potential impact on their afterlife. This is a mental health concern and a discussion of mental states and therapy (even if it's not explicitly stated as such).\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's long-term depression, feelings of worthlessness, lack of confidence, and the impact of bullying on their mental health. They mention seeking advice from a friend and attempting to improve their physical appearance as coping mechanisms, but their mental health continues to deteriorate. They also mention using substances as a way to ease their mind. These are all indicators of mental health struggles.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's love for Star Wars and their plan to introduce their girlfriend to the series. They mention their concerns about her attention span due to ADD and the amount of 'filler' content in 'Clone Wars'. This is a clear indication that they are discussing mental health issues related to their relationship and their approach to sharing their passion for Star Wars with their partner.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's mental and emotional struggles related to their physical health condition and the impact it has on their mental state. They mention feeling mentally affected by their body's appearance and the progress of their treatment, as well as expressing concerns and seeking advice from others who have gone through similar experiences.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's mental health struggles, including feelings of overwhelm, violent outbursts, and suicidal thoughts. They also mention seeking help and feeling unwanted and hated by their family.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's obsession and compulsion towards using a sex toy, which can be considered a mental health concern if it interferes significantly with daily life and causes distress. The individual expresses a desire to use the toy in various settings despite potential consequences, indicating a strong urge and preoccupation.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's past experiences with drug abuse, which led to psychotic episodes, derealization, auditory hallucinations, and other symptoms. They also mention feelings of fear, emptiness, and infinity, as well as hyperempathy. These experiences and feelings are indicative of mental health issues.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's struggle with anxiety related to working, which is a clear indication of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's struggle with functioning without their medication, expressing feelings of panic, stress, and lack of functionality. They also mention therapy as a potential solution, indicating a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's struggle with their self-image, body perception, and weight loss. They mention feeling self-conscious, low self-worth, and a negative body image. These are all common symptoms and feelings related to mental health issues, particularly body dysmorphic disorder and eating disorders.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's struggles with their sexuality and feelings towards their boyfriend, which are related to their mental health and identity. They also mention seeking advice and support from others, indicating a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the individual's weight loss journey, their attempts to maintain a healthy diet, and their confusion regarding calorie intake and its impact on their weight loss progress. These topics are related to mental and emotional aspects of health, making this a mental health discussion.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the mental states and feelings of the characters Yoru and Asa, and the author's interpretation of their interactions, which can be considered a mental health discussion.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the speaker's addiction to benzodiazepines, their repeated hospitalizations, and the emotional turmoil they are experiencing as a result of leaving their girlfriend behind to move back home. These topics are all related to mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the speaker's feelings towards a friend, her friend's behavior, and the impact on the speaker's mental state. The speaker expresses frustration, stress, and feelings of guilt. They also mention their friend's 'hurtful staff' and 'toxic mom'. These elements suggest that mental health issues, such as anxiety or stress, may be present for both the speaker and their friend.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the speaker's relationship with her boyfriend and her family's reaction to her sexuality. It also mentions feelings, symptoms (the speaker's father's disapproval), therapy (implied but not explicitly stated), and mental states (the speaker's expectations and fears).\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the wife's unwillingness to engage in conversations with the husband, her lack of initiative in calling him, and her refusal to help him improve his speaking skills. These issues suggest a communication problem within their relationship, which is a common mental health concern.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses the woman's experience with a sex partner who gave her Chlamydia, her subsequent STD testing, and her decision to not engage in sexual activity with him until he provides proof of a clean test. This is a clear discussion of mental and sexual health issues.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses various mental and physical symptoms, including depression, fatigue, and a negative impact on sex life. The individual also mentions seeking advice and considering asking their pharmacy for a different medication due to these symptoms. This indicates a discussion of mental health and potential mental health issues related to the medication.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses various negative experiences and behaviors from a friend, including emotional manipulation, blackmail, unwanted advances, and jealousy. These experiences and behaviors are indicative of toxic relationships and mental health issues, such as emotional abuse and boundary violations.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses various symptoms such as anxiety, fidgetiness, lightheadedness, heartburn, and diarrhea. The individual also mentions feeling 'off' and 'filled with worry,' which are common mental health concerns. The post also mentions taking Lexapro, an antidepressant medication, and hoping to feel 'normal' again, further indicating a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post discusses various thoughts and feelings related to mental states, therapy (implicitly through the mention of manifesting positive thoughts), and mental health issues such as anxiety and confusion about personal circumstances.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions a clinical diagnosis of depression, feelings of sadness, and a sense of dissociation. These are all indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions anxiety problems, skepticism about a medical diagnosis, and difficulty sleeping due to unregulated breathing and twitching, which are all indicators of mental health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions feeling weird, having a headache, and expressing concerns about their health, which are all indicators of mental and/or physical health issues. The person also mentions going for a drive and walking in a park as coping mechanisms, suggesting they are seeking ways to improve their mood and manage their symptoms. Additionally, they mention praying to God for improvement and hoping for a good day, which could be interpreted as a form of spiritual or emotional support. Overall, the post appears to be a discussion of mental and/or physical health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions feelings (insomnia, panic, flushing, sweating, higher HR), symptoms (insomnia, panic, flushing, sweating, higher HR), therapy (TRT), and mental states (anxious person, can't shake it) related to mental health. Therefore, the answer is '1'.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions feelings of anxiety and depression, experiences related to mental health during teen years, and concerns about the potential for a future depression. Therefore, it is a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions feelings of anxiety, health anxiety specifically, and sensitivity to medications, which are all related to mental health. The individual also mentions their concern about taking a new medication alone at home, which could be a sign of agoraphobia or other anxiety disorders. The post is a clear discussion of mental health concerns and experiences.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions feelings of concern and anxiety about the rabbit's well-being, as well as symptoms observed in the rabbit such as quick breathing and loaf position. The individual also expresses a desire for a friendly rabbit of their own, indicating a potential interest in mental health and animal welfare.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions feelings of lack of motivation, wanting to sleep all day, feeling unable to do things right, and a lack of direction or identity in life. These are all common symptoms of depression and anxiety, making this a discussion of mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions feelings of low self-confidence, thinking one is ugly, and difficulty finding a girl. These are all common symptoms of low self-esteem and potentially other mental health issues. The mention of spiraling suggests a worsening mental state.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions feelings of nervousness, fear, and lightheadedness, as well as a physical symptom (chest ache). The individual also expresses concern about their health and is seeking advice or understanding. These factors indicate that the post discusses mental and physical health concerns.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions symptoms related to breathing and asthma, which could be indicative of mental or physical health issues. The individual is also seeking advice and discussion about these symptoms, which is a common aspect of mental health forums. Therefore, it is reasonable to assume that this post discusses mental health.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions the individual's experience of stopping alcohol consumption for 4 months and then experiencing hand tremors when drinking from shot glasses. This is a clear indication of a potential mental or physical health issue related to alcohol withdrawal.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions the individual's mental state, specifically their moodiness, neediness, and overthinking, which are common symptoms of various mental health conditions. The person is also expressing a desire for peace in their head, which could be interpreted as a wish for improved mental well-being.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "{\"answer\": \"1\", \"explanation\": \"The post mentions the individual's past struggle with addiction to prescription pills, which can be considered a mental health issue. They also mention the negative impact it had on their life and the occasional return of the urge to use. The post does not explicitly discuss therapy or mental states, but the content suggests a mental health discussion.\"}": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+    },
+    "accuracy": 0.0,
     "macro avg": {
-        "precision": 0.7873007274415725,
-        "recall": 0.773783185840708,
-        "f1-score": 0.773312378386469,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
         "support": 233.0
     },
     "weighted avg": {
-        "precision": 0.7858627499563243,
-        "recall": 0.776824034334764,
-        "f1-score": 0.7741600194774368,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
         "support": 233.0
     }
 }

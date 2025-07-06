@@ -45,3 +45,11 @@ unlabelled data size: 4525
 Training for Network 2
 labelled data size: 35154
 unlabelled data size: 4846
+Evaluating models at epoch 5
+Test data size: 10000
+Epoch: 5, Test Accuracy: 0.8986, Test F1 Score: 0.8986
+Evaluating training data at epoch 5 for Model 1
+Evaluating training data at epoch 5 for Model 2
+Training for Network 1
+labelled data size: 34792
+unlabelled data size: 5208

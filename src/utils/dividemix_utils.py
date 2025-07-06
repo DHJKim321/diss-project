@@ -177,6 +177,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
             index = batch['index']
             outputs = model(input_ids, attention_mask)
             loss = criterion(outputs, labels)
+            loss = loss.detach().cpu()
             for b in range(input_ids.size(0)):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
             # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")

@@ -6,7 +6,7 @@ import torch
 from torch.optim import AdamW
 import torch.nn as nn
 from src.model.bert import Bert
-from src.utils.data_utils import load_full_data, load_test_data, load_imdb_data, inject_symmetric_noise
+from src.utils.data_utils import *
 from src.utils.eval_utils import save_evaluation, add_predictions_to_data, evaluate_model, save_loss_as_df
 from src.utils.dividemix_utils import warmup_train, train, eval_train, test
 from src.data.DivideMixDataloader import DivideMixDataloader
@@ -147,10 +147,12 @@ if __name__ == "__main__":
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
-        prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
+        prob1, all_loss[0], raw_losses1 = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(raw_losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
-        prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
-        save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
+        prob2, all_loss[1], raw_losses2 = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(raw_losses2, epoch, model=2)
+        save_loss_as_df(epoch, [raw_losses1, raw_losses2], checkpoint_path, noise_ratio)
 
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")

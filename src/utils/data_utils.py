@@ -4,6 +4,7 @@ import numpy as np
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 np.random.seed(42)
+import matplotlib.pyplot as plt
 
 def load_full_data(train_file, file_path):
     path = file_path + train_file
@@ -51,3 +52,14 @@ def inject_symmetric_noise(data, noise_ratio=0.2):
     data.loc[noisy_indices, 'label'] = 1 - data.loc[noisy_indices, 'label']
     print(f"Injected noise into {num_noisy_samples} samples")
     return data
+
+def save_loss_histogram(losses, epoch, model):
+    plt.figure(figsize=(6, 4))
+    plt.hist(losses, bins=100, color='skyblue', alpha=0.7, edgecolor='black')
+    plt.title(f"Loss Distribution At Epoch {epoch} for Model {model}")
+    plt.xlabel("Normalized Loss")
+    plt.ylabel("Frequency")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig(f"src/data/images/loss/loss_distribution_epoch_{epoch}_model_{model}.png")
+    plt.close()

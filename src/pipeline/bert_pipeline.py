@@ -181,8 +181,10 @@ if __name__ == "__main__":
 
     # ------------ Save Evaluations ------------
     evaluations = evaluate_model(test_preds, test_labels)
+    if head_type:
+        bert_model += f"_{head_type}"
     if denoise_labels:
-        bert_model += f"_{head_type}_{reducer_type}_{denoise_type}_denoised"
+        bert_model += f"_{reducer_type}_{denoise_type}_denoised"
     save_evaluation(evaluations, test_file, data_save_path, model_name=bert_model)
     add_predictions_to_data(test_data, test_file, data_save_path, test_preds, model_name=bert_model)
 

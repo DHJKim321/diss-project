@@ -30,7 +30,7 @@ Post:
 Answer:"""
 
 # CoT + Roleplaying
-TEMPLATE_V3 = """You are a compassionate mental-health expert and counselor. Read the Reddit post below, think step by step, and then provide a final answer only as '0' or '1'.
+TEMPLATE_V3 = """You are a compassionate mental-health expert and counselor. Read the Reddit post below, think step by step, and then provide a final answer of '0' or '1' followed by an explanation of your answer.
 
 1. Identify any mention of feelings, symptoms, therapy, or mental states.
 2. Evaluate whether it's a discussion of mental health.

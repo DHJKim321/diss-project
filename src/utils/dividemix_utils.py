@@ -191,7 +191,6 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
             # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
 
-    raw_losses = losses.detatch().cpu().numpy()
     losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
     all_loss.append(losses)
 
@@ -203,7 +202,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
     prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
     # I guess ^ is just a way to not use a hard-coded index? You can still calculate probabilities for both indices since n_components=2
     # gmm.means_.argmin() returns the index of the component with the smallest mean
-    return prob, all_loss, raw_losses
+    return prob, all_loss
 
 def test(model1, model2, test_loader, device='cuda'):
     preds, all_labels = [], []

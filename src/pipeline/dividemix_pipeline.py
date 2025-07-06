@@ -100,6 +100,7 @@ if __name__ == "__main__":
     warmup_done = False
     prob1 = torch.zeros(len(train_data), device=device)
     prob2 = torch.zeros(len(train_data), device=device)
+    warmup_checkpoint_path = warmup_checkpoint_path.replace(".pth", f"_{noise_ratio}_{warmup_epochs}.pth")
     if os.path.exists(warmup_checkpoint_path):
         print("Found warm-up-completed models")
         ckpt = torch.load(warmup_checkpoint_path, map_location=device)
@@ -142,8 +143,8 @@ if __name__ == "__main__":
             # ---- Save Checkpoint ----
             if epoch == warmup_epochs - 1:
                 eval_loader = loader.run(train_data, mode="eval_train")
-                prob1, _, _ = eval_train(model1, [], per_sample_CEloss, eval_loader, device)
-                prob2, _, _ = eval_train(model2, [], per_sample_CEloss, eval_loader, device)
+                prob1, _ = eval_train(model1, [], per_sample_CEloss, eval_loader, device)
+                prob2, _ = eval_train(model2, [], per_sample_CEloss, eval_loader, device)
                 torch.save(
                     {
                         "model1": model1.state_dict(),
@@ -182,12 +183,12 @@ if __name__ == "__main__":
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
-        prob1, all_loss[0], raw_losses1 = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
-        save_loss_histogram(raw_losses1, epoch, model=1)
+        prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(all_loss[0], epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
-        prob2, all_loss[1], raw_losses2 = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
-        save_loss_histogram(raw_losses2, epoch, model=2)
-        save_loss_as_df(epoch, [raw_losses1, raw_losses2], checkpoint_path, noise_ratio)
+        prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(all_loss[1], epoch, model=2)
+        save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
 
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")

@@ -50,7 +50,7 @@ def process_batch_of_prompts( pipeline, instruction, prompts, **kwargs):
     start_ = tm.time()
     full_prompts = [ instruction.format( task_content= prompt) for prompt in prompts]
     kwargs.update({
-        'batch_size': 1, 'pad_token_id': pipeline.tokenizer.eos_token_id, 'eos_token_id': pipeline.tokenizer.eos_token_id
+        'batch_size': 1, 'pad_token_id': pipeline.tokenizer.eos_token_id, 'eos_token_id': pipeline.tokenizer.eos_token_id, 'max_new_tokens': 512
     })
     outputs = pipeline(full_prompts, **kwargs)
     outputs = [out[0]["generated_text"] for out in outputs]

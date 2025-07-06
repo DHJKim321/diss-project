@@ -6,8 +6,8 @@
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/output_dividemix_50_no_normalise.log
-#$ -e log/error_dividemix_50_no_normalise.log
+#$ -o log/output_dividemix_50_debugging.log
+#$ -e log/error_dividemix_50_debugging.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

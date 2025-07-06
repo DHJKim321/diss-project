@@ -164,12 +164,12 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         optimizer.step()
 
         # ---- Debugging
-        for name, p in model1.named_parameters():
-            if p.grad is None:
-                tqdm.write(f"Parameter {name} has no gradient.")
+        # for name, p in model1.named_parameters():
+        #     if p.grad is None:
+        #         tqdm.write(f"Parameter {name} has no gradient.")
 
-        if batch_idx == 0:            # first batch of epoch
-            print("optim step =", optimizer.state_dict()['state'][next(iter(optimizer.state_dict()['state']))]['step'])
+        # if batch_idx == 0:            # first batch of epoch
+        #     print("optim step =", optimizer.state_dict()['state'][next(iter(optimizer.state_dict()['state']))]['step'])
         # ----
 
         # tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")

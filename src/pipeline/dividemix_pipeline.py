@@ -158,7 +158,6 @@ if __name__ == "__main__":
                 )
                 warmup_done = True
                 print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
-            continue
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)

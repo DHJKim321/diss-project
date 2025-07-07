@@ -151,8 +151,8 @@ if __name__ == "__main__":
                         "model2": model2.state_dict(),
                         "optim1": optim1.state_dict(),
                         "optim2": optim2.state_dict(),
-                        "prob1" : prob1.cpu(),
-                        "prob2" : prob2.cpu(),
+                        "prob1" : prob1,
+                        "prob2" : prob2,
                     },
                     warmup_checkpoint_path,
                 )

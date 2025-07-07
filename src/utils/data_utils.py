@@ -54,8 +54,6 @@ def inject_symmetric_noise(data, noise_ratio=0.2):
     return data
 
 def save_loss_histogram(losses, epoch, model):
-    if len(losses) > 1:
-        losses = losses[-1]
     plt.figure(figsize=(6, 4))
     plt.hist(losses, bins=100, color='skyblue', alpha=0.7, edgecolor='black')
     plt.title(f"Loss Distribution At Epoch {epoch} for Model {model}")

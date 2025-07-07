@@ -75,6 +75,67 @@ class Bert(nn.Module):
         hidden_states = outputs.hidden_states
         return hidden_states[layer_index] # hidden_state.shape = [batch_size, seq_length, hidden_size]
 
+    def forward_mixup(self, input_ids_x1, attention_mask_x1, input_ids_x2, attention_mask_x2, labels_x, 
+                      input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2, labels_u, layer_index,
+                      mix_lambda, device='cuda'):
+        
+        # Get initial embeddings from BERT
+        emb_x1 = self.bert.embeddings(input_ids_x1)
+        emb_x2 = self.bert.embeddings(input_ids_x2)
+        emb_u1 = self.bert.embeddings(input_ids_u1)
+        emb_u2 = self.bert.embeddings(input_ids_u2)
+
+        hidden_x1 = emb_x1
+        hidden_x2 = emb_x2
+        hidden_u1 = emb_u1
+        hidden_u2 = emb_u2
+
+        # Get extended attention masks
+        extended_attention_mask_x1 = self.bert.get_extended_attention_mask(attention_mask_x1, attention_mask_x1.shape, device)
+        extended_attention_mask_x2 = self.bert.get_extended_attention_mask(attention_mask_x2, attention_mask_x2.shape, device)
+        extended_attention_mask_u1 = self.bert.get_extended_attention_mask(attention_mask_u1, attention_mask_u1.shape, device)
+        extended_attention_mask_u2 = self.bert.get_extended_attention_mask(attention_mask_u2, attention_mask_u2.shape, device)
+
+        # Iterate through from layer 0 to layer_index (exclusive)
+        encoder_layers = self.bert.encoder.layer
+        for i in range(layer_index):
+            layer_module = encoder_layers[i]
+            hidden_x1 = layer_module(hidden_x1, attention_mask=extended_attention_mask_x1)[0]
+            hidden_x2 = layer_module(hidden_x2, attention_mask=extended_attention_mask_x2)[0]
+            hidden_u1 = layer_module(hidden_u1, attention_mask=extended_attention_mask_u1)[0]
+            hidden_u2 = layer_module(hidden_u2, attention_mask=extended_attention_mask_u2)[0]
+
+        # Concatenate all embeddings and labels
+        all_inputs = torch.cat([hidden_x1, hidden_x2, hidden_u1, hidden_u2], dim=0) # Concatenate embeddings
+        all_labels = torch.cat([labels_x, labels_x, labels_u, labels_u], dim=0) # Soft labels from refinement/guessing
+
+        # Generates random permutation of indices
+        idx = torch.randperm(all_inputs.size(0))
+
+        # This forms random MixUp pairs
+        input_a, input_b = all_inputs, all_inputs[idx]
+        label_a, label_b = all_labels, all_labels[idx]
+
+        # Interpolate inputs and labels
+        # Only use half of the inputs to avoid excessive memory usage
+        # mixed_input.shape = [batch_size * 2, seq_len, hidden_size]
+        mixed_hidden = mix_lambda * input_a + (1 - mix_lambda) * input_b
+        mixed_labels = mix_lambda * label_a + (1 - mix_lambda) * label_b
+        attention_mask = torch.ones(mixed_hidden.size(0), mixed_hidden.size(1), dtype=torch.long, device=device)
+        extended_attention_mask = self.bert.get_extended_attention_mask(attention_mask, attention_mask.shape, device)
+
+        # Run the remaining layers from layer_index to the end
+        for i in range(layer_index, len(self.bert.encoder.layer)):
+            mixed_hidden = self.bert.encoder.layer[i](mixed_hidden, attention_mask=extended_attention_mask)[0]
+
+        # Get the pooled output
+        pooled_output = mixed_hidden[:, 0]
+        pooled_output = self.dropout(pooled_output)
+
+        # Classify the pooled output
+        logits = self.classifier(pooled_output)
+        return logits, mixed_labels
+
     def freeze(self):
         for param in self.bert.parameters():
             param.requires_grad = False

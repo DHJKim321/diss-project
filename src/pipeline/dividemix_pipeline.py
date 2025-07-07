@@ -108,8 +108,8 @@ if __name__ == "__main__":
         model2.load_state_dict(ckpt["model2"])
         optim1.load_state_dict(ckpt["optim1"])
         optim2.load_state_dict(ckpt["optim2"])
-        prob1 = ckpt["prob1"].to(device)
-        prob2 = ckpt["prob2"].to(device)
+        prob1 = ckpt["prob1"]
+        prob2 = ckpt["prob2"]
         start_epoch = warmup_epochs
         warmup_done = True
     else:

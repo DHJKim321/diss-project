@@ -30,7 +30,6 @@ if __name__ == "__main__":
         # tokenizer=reddit_tokenizer,
         ngram_range=(1, 2),
         max_features=max_features,
-        stop_words='english',
         lowercase=True,
         strip_accents='unicode'
     )

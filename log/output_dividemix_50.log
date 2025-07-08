@@ -1,0 +1,78 @@
+Loading IMDB data from src/data/train/imdb.csv
+IMDB data loaded with 50000 samples
+Injecting symmetric noise with ratio 0.5
+Injected noise into 20000 samples
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+No warm-up-completed models. Training from scratch.
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 0
+Test data size: 10000
+Epoch: 0, Test Accuracy: 0.4891, Test F1 Score: 0.3843
+Evaluating training data at epoch 0 for Model 1
+Evaluating training data at epoch 0 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 1
+Test data size: 10000
+Epoch: 1, Test Accuracy: 0.4961, Test F1 Score: 0.3290
+Evaluating training data at epoch 1 for Model 1
+Evaluating training data at epoch 1 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 2
+Test data size: 10000
+Epoch: 2, Test Accuracy: 0.5039, Test F1 Score: 0.3377
+Evaluating training data at epoch 2 for Model 1
+Evaluating training data at epoch 2 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 3
+Test data size: 10000
+Epoch: 3, Test Accuracy: 0.4382, Test F1 Score: 0.4124
+Evaluating training data at epoch 3 for Model 1
+Evaluating training data at epoch 3 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 4
+Test data size: 10000
+Epoch: 4, Test Accuracy: 0.4657, Test F1 Score: 0.4654
+Evaluating training data at epoch 4 for Model 1
+Evaluating training data at epoch 4 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 5
+Test data size: 10000
+Epoch: 5, Test Accuracy: 0.4774, Test F1 Score: 0.4680
+Evaluating training data at epoch 5 for Model 1
+Evaluating training data at epoch 5 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 6
+Test data size: 10000
+Epoch: 6, Test Accuracy: 0.4851, Test F1 Score: 0.4838
+Evaluating training data at epoch 6 for Model 1
+Evaluating training data at epoch 6 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 7
+Test data size: 10000
+Epoch: 7, Test Accuracy: 0.4870, Test F1 Score: 0.4853
+Evaluating training data at epoch 7 for Model 1
+Evaluating training data at epoch 7 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating models at epoch 8
+Test data size: 10000
+Epoch: 8, Test Accuracy: 0.4920, Test F1 Score: 0.4854
+Evaluating training data at epoch 8 for Model 1
+Evaluating training data at epoch 8 for Model 2
+Warmup training for Network 1
+Warmup training for Network 2
+Warmup completed. Checkpoint saved at checkpoint/dividemix/warmup_checkpoint_0.5_10.pth
+Evaluating models at epoch 9
+Test data size: 10000
+Epoch: 9, Test Accuracy: 0.4961, Test F1 Score: 0.4956
+Evaluating training data at epoch 9 for Model 1
+Evaluating training data at epoch 9 for Model 2

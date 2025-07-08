@@ -120,6 +120,8 @@ if __name__ == "__main__":
     # ------------ Start Training ------------
     for epoch in range(start_epoch, epochs):
         lr = learning_rate
+        if epoch >= warmup_epochs:
+            lr /= 10
     # ---- Learning Rate Decay ----
         for param_group in optim1.param_groups:
             param_group['lr'] = lr

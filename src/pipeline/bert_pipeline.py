@@ -26,7 +26,8 @@ if __name__ == "__main__":
     # ------------ Load environment variables ------------
     load_dotenv()
     # ---- Data Paths ----
-    train_file = os.getenv("TRAIN_FILE")
+    # train_file = os.getenv("TRAIN_FILE")
+    train_file = "expanded_full_v2.csv"
     train_data_path = os.getenv("TRAIN_DATA_PATH")
     test_file = os.getenv("TEST_FILE")
     test_data_path = os.getenv("TEST_DATA_PATH")
@@ -36,18 +37,22 @@ if __name__ == "__main__":
     # ---- Model Variables ----
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_model = os.getenv("BERT_MODEL")
-    learning_rate = float(os.getenv("LEARNING_RATE"))
-    epochs = int(os.getenv("EPOCHS"))
+    # learning_rate = float(os.getenv("LEARNING_RATE"))
+    learning_rate = 2e-5
+    # epochs = int(os.getenv("EPOCHS"))
+    epochs = 5
     use_dropout = os.getenv("USE_DROPOUT").lower() == "true"
     dropout = float(os.getenv("DROPOUT"))
-    head_type = os.getenv("HEAD_TYPE").lower()
+    # head_type = os.getenv("HEAD_TYPE").lower()
+    head_type = "lstm"
     # ---- Label Denoising ----
     denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     gmm_threshold = float(os.getenv("GMM_THRESHOLD"))
     reducer_type = os.getenv("REDUCER_TYPE").lower()
     noise_ratio = float(os.getenv("NOISE_RATIO"))
-    use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    # use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    use_imdb = False
 
     # ------------ Load Data and Tokenizer ------------
     tokenizer = BertTokenizer.from_pretrained(bert_model)

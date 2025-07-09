@@ -46,7 +46,8 @@ if __name__ == "__main__":
     # head_type = os.getenv("HEAD_TYPE").lower()
     head_type = "lstm"
     # ---- Label Denoising ----
-    denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
+    # denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
+    denoise_labels = False
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     gmm_threshold = float(os.getenv("GMM_THRESHOLD"))
     reducer_type = os.getenv("REDUCER_TYPE").lower()

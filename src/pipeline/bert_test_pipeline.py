@@ -33,7 +33,8 @@ if __name__ == "__main__":
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     reducer_type = os.getenv("REDUCER_TYPE").lower()
     head_type = os.getenv("HEAD_TYPE").lower()
-    use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    # use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    use_imdb = False
     noise_ratio = float(os.getenv("NOISE_RATIO"))
 
     # ------------ Load Data and Tokenizer ------------

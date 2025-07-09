@@ -46,7 +46,8 @@ if __name__ == "__main__":
     gmm_threshold = float(os.getenv("GMM_THRESHOLD"))
     reducer_type = os.getenv("REDUCER_TYPE").lower()
     noise_ratio = float(os.getenv("NOISE_RATIO"))
-    use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    # use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    use_imdb = False
 
     # ------------ Load Data and Tokenizer ------------
     tokenizer = BertTokenizer.from_pretrained(bert_model)

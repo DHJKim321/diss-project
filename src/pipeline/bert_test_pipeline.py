@@ -20,14 +20,16 @@ if __name__ == "__main__":
     load_dotenv()
 
     # ------------ Load environment variables ------------
-    train_file = os.getenv("TRAIN_FILE")
+    # train_file = os.getenv("TRAIN_FILE")
+    train_file = "expanded_full_v2.csv"
     test_file = os.getenv("TEST_FILE")
     test_data_path = os.getenv("TEST_DATA_PATH")
     model_path = os.getenv("MODEL_SAVE_PATH")
     data_save_path = os.getenv("DATA_SAVE_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_model = os.getenv("BERT_MODEL")
-    denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
+    # denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
+    denoise_labels = True
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     reducer_type = os.getenv("REDUCER_TYPE").lower()
     head_type = os.getenv("HEAD_TYPE").lower()
@@ -81,7 +83,9 @@ if __name__ == "__main__":
 
     # ------------ Evaluate Model ------------
     evaluations = evaluate_model(preds, all_labels)
+    if head_type:
+        bert_model += f"_{head_type}"
     if denoise_labels:
-        bert_model += f"_{head_type}_{reducer_type}_{denoise_type}_denoised"
+        bert_model += f"_{reducer_type}_{denoise_type}_denoised"
     save_evaluation(evaluations, test_file, data_save_path, model_name=bert_model)
     add_predictions_to_data(test_data, test_file, data_save_path, preds, model_name=bert_model)

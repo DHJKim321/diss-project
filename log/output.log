@@ -47,3 +47,7 @@ Evaluation Report:
 {'0': {'precision': 0.7394366197183099, 'recall': 0.875, 'f1-score': 0.8015267175572519, 'support': 120.0}, '1': {'precision': 0.8351648351648352, 'recall': 0.672566371681416, 'f1-score': 0.7450980392156863, 'support': 113.0}, 'accuracy': 0.776824034334764, 'macro avg': {'precision': 0.7873007274415725, 'recall': 0.773783185840708, 'f1-score': 0.773312378386469, 'support': 233.0}, 'weighted avg': {'precision': 0.7858627499563243, 'recall': 0.776824034334764, 'f1-score': 0.7741600194774368, 'support': 233.0}}
 Evaluation results saved to src/data/eval/metrics_shape_mistral_template_3.json
 Predictions saved to src/data/eval/evaluated_shape_mistral_template_3.csv
+Using IMDB dataset for training.
+Loading IMDB data from src/data/train/expanded_full_v2.csv
+Using IMDB dataset for testing.
+Loading IMDB data from src/data/test/shape.csv

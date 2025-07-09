@@ -149,7 +149,13 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         #     print("optim step =", optimizer.state_dict()['state'][next(iter(optimizer.state_dict()['state']))]['step'])
         # ----
 
-        # tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
+        for name, p in model1.named_parameters():
+            if p.grad is not None:
+                print(f"{name}: grad norm = {p.grad.norm().item():.4f}")
+            else:
+                print(f"{name}: NO GRAD")
+
+        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
 
 def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):    
     model.eval()

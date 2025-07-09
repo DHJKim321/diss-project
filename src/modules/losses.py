@@ -23,7 +23,7 @@ class SemiLoss(object):
 
         return Lx, Lu, self.linear_rampup(epoch, warm_up)
     
-    def linear_rampup(self, current, warm_up, rampup_length=4):
+    def linear_rampup(self, current, warm_up, rampup_length=2):
         current = np.clip((current-warm_up) / rampup_length, 0.0, 1.0)
         return self.lambda_u*float(current)
     

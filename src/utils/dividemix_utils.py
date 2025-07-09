@@ -118,36 +118,6 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             layer_index=layer_index, mix_lambda=l,
             device=device)
 
-        # # Get embeddings for labelled samples
-        # # https://arxiv.org/pdf/2004.12239 - MixText/TMix
-        # # Instead of using final embeddngs, we use the model's hidden state representations
-        # embedding_x1 = model1.get_embedding_at_layer(input_ids_x1, attention_mask_x1, layer_index=layer_index)
-        # embedding_x2 = model1.get_embedding_at_layer(input_ids_x2, attention_mask_x2, layer_index=layer_index)
-
-        # # Get embeddings for unlabelled samples
-        # embedding_u1 = model1.get_embedding_at_layer(input_ids_u1, attention_mask_u1, layer_index=layer_index)
-        # embedding_u2 = model1.get_embedding_at_layer(input_ids_u2, attention_mask_u2, layer_index=layer_index)
-
-        # # Concatenate embeddings and labels for MixMatch
-        # # all_inputs.shape = [batch_size * 4, seq_len, hidden_size]
-        # all_inputs = torch.cat([embedding_x1, embedding_x2, embedding_u1, embedding_u2], dim=0) # Concatenate embeddings
-        # all_labels = torch.cat([labels_x, labels_x, labels_u, labels_u], dim=0) # Soft labels from refinement/guessing
-
-        # idx = torch.randperm(all_inputs.size(0)) # Generates random permutation of indices
-
-        # # This forms random MixUp pairs
-        # input_a, input_b = all_inputs, all_inputs[idx]
-        # label_a, label_b = all_labels, all_labels[idx]
-
-        # # Interpolate inputs and labels
-        # # Only use half of the inputs to avoid excessive memory usage
-        # # mixed_input.shape = [batch_size * 2, seq_len, hidden_size]
-        # mixed_input = l * input_a + (1 - l) * input_b
-        # mixed_labels = l * label_a + (1 - l) * label_b
-        # final_attention_mask = torch.ones_like(mixed_input[:, :, 0]).to(device) # Apply all-one attention mask following the paper
-        # # mixed_input.shape = (batch_size*2, seq_length, hidden_size)
-        # logits = model1.forward_from_layer(mixed_input, final_attention_mask, layer_index=layer_index+1)
-
         # Split into labelled and unlabelled
         logits_x = logits[:batch_size]
         targets_x = mixed_labels[:batch_size]

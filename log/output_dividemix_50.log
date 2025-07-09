@@ -34,3 +34,10 @@ Evaluating training data at epoch 2 for Model 2
 Training for Network 1
 labelled data size: 20233
 unlabelled data size: 19767
+Training for Network 2
+labelled data size: 20227
+unlabelled data size: 19773
+Evaluating models at epoch 3
+Test data size: 10000
+Epoch: 3, Test Accuracy: 0.4961, Test F1 Score: 0.3290
+Evaluating training data at epoch 3 for Model 1

@@ -5,6 +5,8 @@ import numpy as np
 from sklearn.mixture import GaussianMixture
 from umap import UMAP
 from sklearn.decomposition import PCA
+from sklearn.metrics import confusion_matrix
+from scipy.optimize import linear_sum_assignment
 
 class GMMLabelCorrector:
     def __init__(self, embeddings, reducer, n_components=2, covariance_type='full'):
@@ -41,3 +43,10 @@ class GMMLabelCorrector:
             else:
                 corrected_labels.append(label)
         return corrected_labels
+    
+    def get_label_mapping(self, train_data):
+        cm = confusion_matrix(train_data["label"].values,
+                      train_data["denoised_label"].values)
+        r, c = linear_sum_assignment(-cm)
+        mapping = {c[i]: r[i] for i in range(len(r))}
+        return mapping

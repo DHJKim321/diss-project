@@ -73,8 +73,11 @@ if __name__ == "__main__":
             train_embeddings = gmm.reduced_embeddings
             train_labels = train_data['label'].values
             train_data['denoised_label'] = gmm.threshold_predict(train_embeddings, train_labels, threshold=gmm_threshold)
-            train_data = train_data[train_data['denoised_label'] != -1]  # Remove uncertain predictions
-            train_data['denoised_label'] = train_data['denoised_label'].apply(lambda x: 1 if x == 0 else 0) # Version 2 - align GMM clusters with labels
+            mapping = gmm.get_label_mapping(train_data)
+            train_data['denoised_label'] = train_data['denoised_label'].map(mapping)
+            print(f"Label mapping: {mapping}")
+            # train_data = train_data[train_data['denoised_label'] != -1]  # Remove uncertain predictions
+            # train_data['denoised_label'] = train_data['denoised_label'].apply(lambda x: 1 if x == 0 else 0) # Version 2 - align GMM clusters with labels
             # print(f"Removed {len(train_data[train_data['denoised_label'] == -1])} uncertain labels.")
         elif denoise_type == 'kmeans':
             print("Denoising labels with KMeans")

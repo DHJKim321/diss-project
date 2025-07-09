@@ -20,21 +20,18 @@ if __name__ == "__main__":
     load_dotenv()
 
     # ------------ Load environment variables ------------
-    # train_file = os.getenv("TRAIN_FILE")
-    train_file = "expanded_full_v2.csv"
+    train_file = os.getenv("TRAIN_FILE")
     test_file = os.getenv("TEST_FILE")
     test_data_path = os.getenv("TEST_DATA_PATH")
     model_path = os.getenv("MODEL_SAVE_PATH")
     data_save_path = os.getenv("DATA_SAVE_PATH")
     batch_size = int(os.getenv("BATCH_SIZE"))
     bert_model = os.getenv("BERT_MODEL")
-    # denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
-    denoise_labels = True
+    denoise_labels = os.getenv("DENOISE_LABELS").lower() == "true"
     denoise_type = os.getenv("DENOISE_TYPE").lower()
     reducer_type = os.getenv("REDUCER_TYPE").lower()
     head_type = os.getenv("HEAD_TYPE").lower()
-    # use_imdb = os.getenv("USE_IMDB").lower() == "true"
-    use_imdb = False
+    use_imdb = os.getenv("USE_IMDB").lower() == "true"
     noise_ratio = float(os.getenv("NOISE_RATIO"))
 
     # ------------ Load Data and Tokenizer ------------

@@ -41,3 +41,4 @@ Evaluating models at epoch 3
 Test data size: 10000
 Epoch: 3, Test Accuracy: 0.4961, Test F1 Score: 0.3290
 Evaluating training data at epoch 3 for Model 1
+Evaluating training data at epoch 3 for Model 2

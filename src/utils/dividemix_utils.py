@@ -149,13 +149,10 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         #     print("optim step =", optimizer.state_dict()['state'][next(iter(optimizer.state_dict()['state']))]['step'])
         # ----
 
-        for name, p in model1.named_parameters():
-            if p.grad is not None:
-                print(f"{name}: grad norm = {p.grad.norm().item():.4f}")
-            else:
-                print(f"{name}: NO GRAD")
-
-        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
+        # Get number of grad norms that are near zero
+        grad_norms = [p.grad.norm().item() for p in model1.parameters() if p.grad is not None]
+        near_zero_grad_count = sum(1 for norm in grad_norms if norm <= 1e-4)
+        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Grad Norms near zero: {near_zero_grad_count}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
 
 def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):    
     model.eval()

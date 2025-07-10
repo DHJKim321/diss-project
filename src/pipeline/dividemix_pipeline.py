@@ -94,7 +94,7 @@ if __name__ == "__main__":
     optim1 = AdamW(
         [
             {"params": model1.bert.parameters(), "lr": learning_rate},
-            {"Params": model1.classifier.parameters(), "lr": learning_rate * 100},
+            {"Params": model1.classifier.parameters(), "lr": learning_rate * 10},
         ]
     )
     optim2 = AdamW(

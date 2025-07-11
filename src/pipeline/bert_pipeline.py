@@ -40,7 +40,7 @@ if __name__ == "__main__":
     # learning_rate = float(os.getenv("LEARNING_RATE"))
     learning_rate = 2e-5
     # epochs = int(os.getenv("EPOCHS"))
-    epochs = 5
+    epochs = 3
     use_dropout = os.getenv("USE_DROPOUT").lower() == "true"
     dropout = float(os.getenv("DROPOUT"))
     # head_type = os.getenv("HEAD_TYPE").lower()

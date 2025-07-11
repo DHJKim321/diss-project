@@ -1,0 +1,45 @@
+Using ShaPe dataset for training.
+Loading data from src/data/train/expanded_full_v2.csv
+Loading test data from src/data/test/shape.csv
+Loaded 126488 training samples.
+Loading BERT model from bert-base-uncased with head type lstm
+Using device: cuda
+Model loaded and moved to cuda
+Starting training with batch size 32...
+Number of batches: 3953
+Starting training...
+Epoch 1/5
+Train Loss: 0.2586, F1: 0.8986, Accuracy: 0.8920
+Testing model on test data at epoch 1
+Test Loss: 0.6349
+Test Accuracy: 0.7382
+Test F1 Score: 0.7344
+Epoch 2/5
+Train Loss: 0.1727, F1: 0.9367, Accuracy: 0.9322
+Testing model on test data at epoch 2
+Test Loss: 0.7429
+Test Accuracy: 0.7296
+Test F1 Score: 0.7286
+Epoch 3/5
+Train Loss: 0.1078, F1: 0.9623, Accuracy: 0.9596
+Testing model on test data at epoch 3
+Test Loss: 0.8992
+Test Accuracy: 0.7382
+Test F1 Score: 0.7354
+Epoch 4/5
+Train Loss: 0.0704, F1: 0.9755, Accuracy: 0.9738
+Testing model on test data at epoch 4
+Test Loss: 1.2082
+Test Accuracy: 0.7339
+Test F1 Score: 0.7297
+Epoch 5/5
+Train Loss: 0.0521, F1: 0.9816, Accuracy: 0.9803
+Testing model on test data at epoch 5
+Test Loss: 1.2992
+Test Accuracy: 0.7210
+Test F1 Score: 0.7169
+Evaluation Report:
+{'0': {'precision': 0.6950354609929078, 'recall': 0.8166666666666667, 'f1-score': 0.7509578544061303, 'support': 120.0}, '1': {'precision': 0.7608695652173914, 'recall': 0.6194690265486725, 'f1-score': 0.6829268292682927, 'support': 113.0}, 'accuracy': 0.721030042918455, 'macro avg': {'precision': 0.7279525131051496, 'recall': 0.7180678466076695, 'f1-score': 0.7169423418372115, 'support': 233.0}, 'weighted avg': {'precision': 0.7269635887927646, 'recall': 0.721030042918455, 'f1-score': 0.7179642671075225, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_bert-base-uncased_lstm.json
+Predictions saved to src/data/eval/evaluated_shape_bert-base-uncased_lstm.csv
+Model saved to model_save/bert_model_lstm_lstm.pth

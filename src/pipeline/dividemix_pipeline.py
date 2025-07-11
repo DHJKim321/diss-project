@@ -111,6 +111,8 @@ if __name__ == "__main__":
     per_sample_CEloss = nn.CrossEntropyLoss(reduction='none')
     CEloss = nn.CrossEntropyLoss()
     negentropy = NegEntropy()
+    decayed = False
+    decay_epoch = int(0.60 * epochs)
 
     # ------------ Load Pretrained Weights if available ------------
     start_epoch = 0
@@ -140,6 +142,11 @@ if __name__ == "__main__":
         if epoch >= warmup_epochs:
             lr /= 10
     # ---- Learning Rate Decay ----
+    if not decayed and epoch == decay_epoch:
+        for optim in (optim1, optim2):
+            for pg in optim.param_groups:
+                pg['lr'] *= 0.1
+        decayed = True     
         # for param_group in optim1.param_groups:
         #     param_group['lr'] = lr
         # for param_group in optim2.param_groups:

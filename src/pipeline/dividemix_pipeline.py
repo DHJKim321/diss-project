@@ -140,10 +140,10 @@ if __name__ == "__main__":
         if epoch >= warmup_epochs:
             lr /= 10
     # ---- Learning Rate Decay ----
-        for param_group in optim1.param_groups:
-            param_group['lr'] = lr
-        for param_group in optim2.param_groups:
-            param_group['lr'] = lr
+        # for param_group in optim1.param_groups:
+        #     param_group['lr'] = lr
+        # for param_group in optim2.param_groups:
+        #     param_group['lr'] = lr
         # if warmup_epochs == 0 and epoch == 0:
         #     print(f"Skipping warmup phase")
         #     print(f"Evaluating training data at epoch {epoch}")

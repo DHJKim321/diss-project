@@ -67,7 +67,9 @@ if __name__ == "__main__":
     if use_imdb:
         imdb_data = load_imdb_data(train_file, train_data_path)
         train_data, test_data = train_test_split(imdb_data, test_size=0.2, random_state=42)
+        original_labels = train_data['label'].values
         train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+        noisy_dict = get_labels_injected_list(original_labels, train_data['label'].values)
     else:
         print("Loading ShaPe Data")
         train_data = load_full_data(train_file, train_data_path)
@@ -198,9 +200,11 @@ if __name__ == "__main__":
         print(f"Evaluating training data at epoch {epoch} for Model 1")
         prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
         save_loss_histogram(all_loss[0][-1], epoch, model=1)
+        save_orig_noisy_loss_histogram(noisy_dict, all_loss[0][-1], epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
         prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
         save_loss_histogram(all_loss[1][-1], epoch, model=2)
+        save_orig_noisy_loss_histogram(noisy_dict, all_loss[0][-1], epoch, model=1)
         save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
 
     # ---- Save Evaluation Results ----

@@ -13,12 +13,14 @@ from src.data.DivideMixDataloader import DivideMixDataloader
 from src.modules.losses import SemiLoss, NegEntropy
 from transformers import BertTokenizer
 from sklearn.model_selection import train_test_split
+import numpy as np
 
 from dotenv import load_dotenv
 
 import random
 torch.manual_seed(42)
 random.seed(42)
+np.random.seed(42)
 torch.backends.cudnn.benchmark = True
 
 if __name__ == "__main__":

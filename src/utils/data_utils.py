@@ -3,7 +3,6 @@ import os, sys
 import numpy as np
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-np.random.seed(42)
 import matplotlib.pyplot as plt
 
 def load_full_data(train_file, file_path):

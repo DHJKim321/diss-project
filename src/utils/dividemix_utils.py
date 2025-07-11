@@ -7,9 +7,6 @@ from sklearn.metrics import f1_score, accuracy_score
 from sklearn.mixture import GaussianMixture
 import numpy as np
 import random
-torch.manual_seed(42)
-random.seed(42)
-torch.cuda.manual_seed_all(42)
 torch.backends.cudnn.benchmark = True
 
 def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentropy, device='cuda'):

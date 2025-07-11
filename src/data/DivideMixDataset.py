@@ -5,11 +5,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 import torch
 from torch.utils.data import Dataset
 from src.utils.augment_utils import mask_augment
-import random
-
-torch.manual_seed(42)
-random.seed(42)
-torch.cuda.manual_seed_all(42)
 
 class DivideMixDataset(Dataset):
     

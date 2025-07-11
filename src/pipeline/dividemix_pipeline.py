@@ -44,6 +44,7 @@ if __name__ == "__main__":
     warmup_epochs = int(os.getenv("WARMUP_EPOCHS"))
     epochs = int(os.getenv("EPOCHS"))
     alpha = float(os.getenv("ALPHA"))
+    penalty_val = float(os.getenv("PENALTY_VAL"))
     lambda_u = float(os.getenv("LAMBDA_U"))
     p_threshold = float(os.getenv("P_THRESHOLD"))
     temperature = float(os.getenv("SHARPENING_TEMPERATURE"))
@@ -184,10 +185,10 @@ if __name__ == "__main__":
 
             print(f"Training for Network 1")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred1, probs=prob1)
-            train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
+            train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, device=device)
             print(f"Training for Network 2")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred2, probs=prob2)
-            train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, device=device)
+            train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, device=device)
 
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")

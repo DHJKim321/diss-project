@@ -31,7 +31,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         optimizer.step()
         # tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Penalty: {penalty.item():.4f}")
 
-def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=64, temperature=0.5, alpha=0.5, num_class=2, device='cuda'):
+def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=64, temperature=0.5, alpha=0.5, penalty_val=1.0, num_class=2, device='cuda'):
     """
     Training function for DivideMix.
     This function implements the MixMatch algorithm with label co-guessing and co-refinement.
@@ -131,9 +131,8 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         prior = torch.full((num_class,), 1 / num_class, device=device)
         pred_mean = torch.softmax(logits, dim=1).mean(0)
         penalty = torch.sum(prior*torch.log(prior/pred_mean))
-       
         # Combine losses
-        loss = Lx + lambda_u_val * Lu + penalty
+        loss = Lx + lambda_u_val * Lu + penalty_val * penalty
 
         # ---- Optimizer Step ----
         optimizer.zero_grad()

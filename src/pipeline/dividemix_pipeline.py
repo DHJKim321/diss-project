@@ -154,8 +154,8 @@ if __name__ == "__main__":
             # ---- Save Checkpoint ----
             if epoch == warmup_epochs - 1:
                 eval_loader = loader.run(train_data, mode="eval_train")
-                prob1, _ = eval_train(model1, [], per_sample_CEloss, eval_loader, device)
-                prob2, _ = eval_train(model2, [], per_sample_CEloss, eval_loader, device)
+                prob1, _, _ = eval_train(model1, [], per_sample_CEloss, eval_loader, device)
+                prob2, _, _= eval_train(model2, [], per_sample_CEloss, eval_loader, device)
                 torch.save(
                     {
                         "model1": model1.state_dict(),

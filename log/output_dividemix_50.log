@@ -13,3 +13,4 @@ Epoch: 0, Test Accuracy: 0.5039, Test F1 Score: 0.3377
 Evaluating training data at epoch 0 for Model 1
 Evaluating training data at epoch 0 for Model 2
 Warmup training for Network 1
+Warmup training for Network 2

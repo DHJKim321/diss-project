@@ -66,3 +66,34 @@ Test Loss: 0.7328
 Test Accuracy: 0.7339
 Test F1 Score: 0.7333
 Epoch 3/3
+Train Loss: 0.1076, F1: 0.9623, Accuracy: 0.9596
+Testing model on test data at epoch 3
+Test Loss: 0.9240
+Test Accuracy: 0.7124
+Test F1 Score: 0.7094
+Evaluation Report:
+{'0': {'precision': 0.6934306569343066, 'recall': 0.7916666666666666, 'f1-score': 0.7392996108949417, 'support': 120.0}, '1': {'precision': 0.7395833333333334, 'recall': 0.6283185840707964, 'f1-score': 0.6794258373205742, 'support': 113.0}, 'accuracy': 0.7124463519313304, 'macro avg': {'precision': 0.71650699513382, 'recall': 0.7099926253687315, 'f1-score': 0.7093627241077579, 'support': 233.0}, 'weighted avg': {'precision': 0.7158137145870535, 'recall': 0.7124463519313304, 'f1-score': 0.7102621155562998, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_bert-base-uncased_lstm.json
+Predictions saved to src/data/eval/evaluated_shape_bert-base-uncased_lstm.csv
+Model saved to model_save/bert_model_lstm_lstm.pth
+Using ShaPe dataset for training.
+Loading data from src/data/train/expanded_full_v2.csv
+Loading test data from src/data/test/shape.csv
+Loaded 126488 training samples.
+Loading BERT model from bert-base-uncased with head type lstm
+Using device: cuda
+Model loaded and moved to cuda
+Starting training with batch size 32...
+Number of batches: 3953
+Starting training...
+Epoch 1/1
+Train Loss: 0.2586, F1: 0.8989, Accuracy: 0.8923
+Testing model on test data at epoch 1
+Test Loss: 0.6314
+Test Accuracy: 0.7425
+Test F1 Score: 0.7390
+Evaluation Report:
+{'0': {'precision': 0.7142857142857143, 'recall': 0.8333333333333334, 'f1-score': 0.7692307692307693, 'support': 120.0}, '1': {'precision': 0.7849462365591398, 'recall': 0.6460176991150443, 'f1-score': 0.7087378640776699, 'support': 113.0}, 'accuracy': 0.7424892703862661, 'macro avg': {'precision': 0.749615975422427, 'recall': 0.7396755162241888, 'f1-score': 0.7389843166542196, 'support': 233.0}, 'weighted avg': {'precision': 0.7485545512681052, 'recall': 0.7424892703862661, 'f1-score': 0.739893008362528, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_bert-base-uncased_lstm.json
+Predictions saved to src/data/eval/evaluated_shape_bert-base-uncased_lstm.csv
+Model saved to model_save/bert_model_lstm_lstm.pth

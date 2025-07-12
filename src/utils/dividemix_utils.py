@@ -150,10 +150,10 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         near_zero_grad_count = sum(1 for norm in grad_norms if norm <= 1e-4)
         tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Grad Norms near zero: {near_zero_grad_count}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Pentalty {penalty.item():.4f}, loss {loss.item():.4f}")
 
-def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):    
+def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
     model.eval()
     num_iter = (len(eval_loader.dataset)//eval_loader.batch_size)+1
-    losses = torch.zeros(len(eval_loader.dataset))    
+    losses = torch.zeros(len(eval_loader.dataset))
     with torch.no_grad():
         for batch_idx, batch in tqdm(enumerate(eval_loader), desc="Evaluating Training Data", total=num_iter):
             input_ids = batch['input_ids'].to(device)

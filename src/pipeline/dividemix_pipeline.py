@@ -138,27 +138,12 @@ if __name__ == "__main__":
 
     # ------------ Start Training ------------
     for epoch in range(start_epoch, epochs):
-        lr = learning_rate
-        if epoch >= warmup_epochs:
-            lr /= 10
         # ---- Learning Rate Decay ----
         if not decayed and epoch == decay_epoch:
             for optim in (optim1, optim2):
                 for pg in optim.param_groups:
                     pg['lr'] *= 0.1
-            decayed = True     
-        # for param_group in optim1.param_groups:
-        #     param_group['lr'] = lr
-        # for param_group in optim2.param_groups:
-        #     param_group['lr'] = lr
-        # if warmup_epochs == 0 and epoch == 0:
-        #     print(f"Skipping warmup phase")
-        #     print(f"Evaluating training data at epoch {epoch}")
-        #     eval_loader = loader.run(train_data, mode='eval_train')
-        #     prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
-        #     prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
-            # save_loss_as_df(epoch, all_loss, checkpoint_path) No idea how to fix this one to be honest
-
+            decayed = True
         if not warmup_done and epoch < warmup_epochs:
             # ---- Warmup Phase ----
             warmup_loader = loader.run(train_data, mode='warmup')

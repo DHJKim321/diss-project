@@ -85,9 +85,9 @@ if __name__ == "__main__":
     # ------------ Load Models ------------
     print(f"Loading BERT model from {bert_model}")
     torch.manual_seed(42)
-    model1 = Bert(bert_model, head_type).to_device(device)
+    model1 = Bert(bert_model, head_type, dropout=0.0).to_device(device)
     torch.manual_seed(43)
-    model2 = Bert(bert_model, head_type).to_device(device)
+    model2 = Bert(bert_model, head_type, dropout=0.0).to_device(device)
 
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(

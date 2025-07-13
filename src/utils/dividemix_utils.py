@@ -115,31 +115,22 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2, labels_u,
             layer_index=layer_index, mix_lambda=l,
             device=device)
+
+        # Split into labelled and unlabelled
+        logits_x = logits[:batch_size*2]
+        targets_x = mixed_labels[:batch_size*2]
+        logits_u = logits[batch_size*2:]
+        targets_u = mixed_labels[batch_size*2:]
         
-        Lx = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * mixed_labels, dim=1))
+        # Calculate individual losses
+        Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)
         
-        prior = torch.ones(2)/2.0
-        prior = prior.cuda()
+        # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
+        prior = torch.full((num_class,), 1 / num_class, device=device)
         pred_mean = torch.softmax(logits, dim=1).mean(0)
         penalty = torch.sum(prior*torch.log(prior/pred_mean))
-       
-        loss = Lx + penalty
-
-        # # Split into labelled and unlabelled
-        # logits_x = logits[:batch_size]
-        # targets_x = mixed_labels[:batch_size]
-        # logits_u = logits[batch_size:]
-        # targets_u = mixed_labels[batch_size:]
-        
-        # # Calculate individual losses
-        # Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)
-        
-        # # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
-        # prior = torch.full((num_class,), 1 / num_class, device=device)
-        # pred_mean = torch.softmax(logits, dim=1).mean(0)
-        # penalty = torch.sum(prior*torch.log(prior/pred_mean))
-        # # Combine losses
-        # loss = Lx + lambda_u_val * Lu + penalty_val * penalty
+        # Combine losses
+        loss = Lx + lambda_u_val * Lu + penalty_val * penalty
 
         # ---- Optimizer Step ----
         optimizer.zero_grad()
@@ -158,8 +149,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # Get number of grad norms that are near zero
         grad_norms = [p.grad.norm().item() for p in model1.parameters() if p.grad is not None]
         near_zero_grad_count = sum(1 for norm in grad_norms if norm <= 1e-4)
-        # tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Grad Norms near zero: {near_zero_grad_count}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
-        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Grad Norms near zero: {near_zero_grad_count}, Lx {Lx.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
+        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Grad Norms near zero: {near_zero_grad_count}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
 
 def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
     model.eval()

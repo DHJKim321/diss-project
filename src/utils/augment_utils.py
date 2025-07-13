@@ -8,7 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 
 import torch, random
 
-def mask_augment(input_ids, attention_mask, tokenizer, p=0.25):
+def mask_augment(input_ids, attention_mask, tokenizer, p=0.2):
         """
         Apply masking augmentation to the input_ids and attention_mask.
         """

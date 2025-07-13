@@ -120,8 +120,8 @@ class Bert(nn.Module):
         # Only use half of the inputs to avoid excessive memory usage
         # mixed_input.shape = [batch_size * 2, seq_len, hidden_size]
         batch_size = hidden_x1.size(0)
-        mixed_hidden = mix_lambda * input_a[:batch_size * 2] + (1 - mix_lambda) * input_b[:batch_size * 2]
-        mixed_labels = mix_lambda * label_a[:batch_size * 2] + (1 - mix_lambda) * label_b[:batch_size * 2]
+        mixed_hidden = mix_lambda * input_a + (1 - mix_lambda) * input_b
+        mixed_labels = mix_lambda * label_a + (1 - mix_lambda) * label_b
         attention_mask = torch.ones(mixed_hidden.size(0), mixed_hidden.size(1), dtype=torch.long, device=device)
         extended_attention_mask = self.bert.get_extended_attention_mask(attention_mask, attention_mask.shape, device)
 

@@ -18,9 +18,9 @@ import numpy as np
 from dotenv import load_dotenv
 
 import random
-torch.manual_seed(42)
-random.seed(42)
-np.random.seed(42)
+# torch.manual_seed(42)
+# random.seed(42)
+# np.random.seed(42)
 torch.backends.cudnn.benchmark = True
 
 if __name__ == "__main__":

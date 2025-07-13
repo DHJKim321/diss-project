@@ -56,6 +56,7 @@ if __name__ == "__main__":
     augmentation = os.getenv("AUGMENTATION")
     head_type = os.getenv("HEAD_TYPE")
     noise_ratio = float(os.getenv("NOISE_RATIO"))
+    dropout_type = os.getenv("DROPOUT_TYPE")
     p_early = float(os.getenv("P_EARLY"))
     p_late = float(os.getenv("P_LATE"))
 
@@ -149,13 +150,12 @@ if __name__ == "__main__":
                     pg['lr'] *= 0.1
             decayed = True
         # ---- Dropout Management ----
-        if epoch < warmup_epochs:
+        if epoch < warmup_epochs and dropout_type == 'early':
             model1.dropout.p = p_early
             model2.dropout.p = p_early
-        else:
+        elif epoch >= warmup_epochs and dropout_type == 'late':
             model1.dropout.p = p_late
             model2.dropout.p = p_late
-
         # ---- Warmup Phase ----
         if not warmup_done and epoch < warmup_epochs:
             warmup_loader = loader.run(train_data, mode='warmup')

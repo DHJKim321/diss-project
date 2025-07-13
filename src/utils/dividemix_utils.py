@@ -7,6 +7,7 @@ from sklearn.metrics import f1_score, accuracy_score
 from sklearn.mixture import GaussianMixture
 import numpy as np
 import random
+import torch.nn.functional as F
 torch.backends.cudnn.benchmark = True
 
 def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentropy, device='cuda'):
@@ -114,22 +115,31 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2, labels_u,
             layer_index=layer_index, mix_lambda=l,
             device=device)
-
-        # Split into labelled and unlabelled
-        logits_x = logits[:batch_size]
-        targets_x = mixed_labels[:batch_size]
-        logits_u = logits[batch_size:]
-        targets_u = mixed_labels[batch_size:]
         
-        # Calculate individual losses
-        Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)
+        Lx = -torch.mean(torch.sum(F.log_softmax(logits, dim=1) * mixed_labels, dim=1))
         
-        # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
-        prior = torch.full((num_class,), 1 / num_class, device=device)
+        prior = torch.ones(2)/2.0
+        prior = prior.cuda()
         pred_mean = torch.softmax(logits, dim=1).mean(0)
         penalty = torch.sum(prior*torch.log(prior/pred_mean))
-        # Combine losses
-        loss = Lx + lambda_u_val * Lu + penalty_val * penalty
+       
+        loss = Lx + penalty
+
+        # # Split into labelled and unlabelled
+        # logits_x = logits[:batch_size]
+        # targets_x = mixed_labels[:batch_size]
+        # logits_u = logits[batch_size:]
+        # targets_u = mixed_labels[batch_size:]
+        
+        # # Calculate individual losses
+        # Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)
+        
+        # # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
+        # prior = torch.full((num_class,), 1 / num_class, device=device)
+        # pred_mean = torch.softmax(logits, dim=1).mean(0)
+        # penalty = torch.sum(prior*torch.log(prior/pred_mean))
+        # # Combine losses
+        # loss = Lx + lambda_u_val * Lu + penalty_val * penalty
 
         # ---- Optimizer Step ----
         optimizer.zero_grad()

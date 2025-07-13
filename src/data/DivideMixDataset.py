@@ -4,7 +4,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 
 import torch
 from torch.utils.data import Dataset
-from src.utils.augment_utils import mask_augment
+from src.utils.augment_utils import augment
 
 class DivideMixDataset(Dataset):
     
@@ -70,9 +70,9 @@ class DivideMixDataset(Dataset):
                 return_tensors='pt'
             )
             input_ids_1, attention_mask_1 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
-            input_ids_1, attention_mask_1 = mask_augment(input_ids_1.clone(), attention_mask_1.clone(), self.tokenizer)
+            input_ids_1, attention_mask_1 = augment(input_ids_1.clone(), attention_mask_1.clone(), self.tokenizer)
             input_ids_2, attention_mask_2 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
-            input_ids_2, attention_mask_2 = mask_augment(input_ids_2.clone(), attention_mask_2.clone(), self.tokenizer)
+            input_ids_2, attention_mask_2 = augment(input_ids_2.clone(), attention_mask_2.clone(), self.tokenizer)
             return {
                 'input_ids_1': input_ids_1,
                 'attention_mask_1': attention_mask_1,
@@ -90,9 +90,9 @@ class DivideMixDataset(Dataset):
                 return_tensors='pt'
             )
             input_ids_1, attention_mask_1 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
-            input_ids_1, attention_mask_1 = mask_augment(input_ids_1.clone(), attention_mask_1.clone(), self.tokenizer)
+            input_ids_1, attention_mask_1 = augment(input_ids_1.clone(), attention_mask_1.clone(), self.tokenizer)
             input_ids_2, attention_mask_2 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
-            input_ids_2, attention_mask_2 = mask_augment(input_ids_2.clone(), attention_mask_2.clone(), self.tokenizer)
+            input_ids_2, attention_mask_2 = augment(input_ids_2.clone(), attention_mask_2.clone(), self.tokenizer)
             return {
                 'input_ids_1': input_ids_1,
                 'attention_mask_1':attention_mask_1,

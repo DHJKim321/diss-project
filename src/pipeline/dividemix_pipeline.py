@@ -56,6 +56,8 @@ if __name__ == "__main__":
     augmentation = os.getenv("AUGMENTATION")
     head_type = os.getenv("HEAD_TYPE")
     noise_ratio = float(os.getenv("NOISE_RATIO"))
+    p_early = float(os.getenv("P_EARLY"))
+    p_late = float(os.getenv("P_LATE"))
 
     if epochs < warmup_epochs:
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")
@@ -146,8 +148,16 @@ if __name__ == "__main__":
                 for pg in optim.param_groups:
                     pg['lr'] *= 0.1
             decayed = True
+        # ---- Dropout Management ----
+        if epoch < warmup_epochs:
+            model1.dropout.p = p_early
+            model2.dropout.p = p_early
+        else:
+            model1.dropout.p = p_late
+            model2.dropout.p = p_late
+
+        # ---- Warmup Phase ----
         if not warmup_done and epoch < warmup_epochs:
-            # ---- Warmup Phase ----
             warmup_loader = loader.run(train_data, mode='warmup')
             print(f"Warmup training for Network 1")
             warmup_train(epoch, model1, optim1, warmup_loader, CEloss, negentropy, device)

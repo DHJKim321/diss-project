@@ -85,7 +85,10 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             outputs_u22 = model2(input_ids_u2, attention_mask_u2)
             
             pu = (torch.softmax(outputs_u11, dim=1) + torch.softmax(outputs_u12, dim=1) + torch.softmax(outputs_u21, dim=1) + torch.softmax(outputs_u22, dim=1)) / 4       
-            ptu = pu**(1/temperature) # Temparature Sharpening
+            if temperature == 0:
+                ptu = pu
+            else:
+                ptu = pu**(1/temperature) # Temparature Sharpening
             
             labels_u = ptu / ptu.sum(dim=1, keepdim=True) # Normalize
             labels_u = labels_u.detach()       
@@ -97,7 +100,10 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2 # Average the outputs of the two models
             px = prob * labels_x + (1 - prob) * px # prob tells us the likelihood of the label being correct using the GMM's cluster probability
             # labels_x is the ground-truth, px is the average of the two models' predictions
-            ptx = px**(1/temperature) # Temparature Sharpening
+            if temperature == 0:
+                ptx = px
+            else:
+                ptx = px**(1/temperature) # Temparature Sharpening
                        
             labels_x = ptx / ptx.sum(dim=1, keepdim=True) # Normalize
             labels_x = labels_x.detach()

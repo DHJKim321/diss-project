@@ -207,12 +207,12 @@ if __name__ == "__main__":
         print(f"Evaluating training data at epoch {epoch} for Model 1")
         prob1, all_loss[0], raw_losses1 = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
         save_loss_histogram(raw_losses1, epoch, model=1)
-        save_orig_noisy_loss_histogram(noisy_dict, raw_losses1, epoch, model=1)
+        # save_orig_noisy_loss_histogram(noisy_dict, raw_losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
         prob2, all_loss[1], raw_losses2 = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
         save_loss_histogram(raw_losses2, epoch, model=2)
-        save_orig_noisy_loss_histogram(noisy_dict, raw_losses2, epoch, model=2)
-        save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
+        # save_orig_noisy_loss_histogram(noisy_dict, raw_losses2, epoch, model=2)
+        # save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
 
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")

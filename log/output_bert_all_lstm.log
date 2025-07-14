@@ -110,3 +110,79 @@ Starting training with batch size 32...
 Number of batches: 1250
 Starting training...
 Epoch 1/52
+Using IMDB dataset for training.
+Loading IMDB data from src/data/train/imdb.csv
+IMDB data loaded with 50000 samples
+Injecting symmetric noise with ratio 0.5
+Injected noise into 20000 samples
+Loaded 40000 training samples.
+Loading BERT model from bert-base-uncased with head type linear
+Using device: cuda
+Model loaded and moved to cuda
+Starting training with batch size 32...
+Number of batches: 1250
+Starting training...
+Epoch 1/10
+Train Loss: 0.6955, F1: 0.5008, Accuracy: 0.5038
+Testing model on test data at epoch 1
+Test Loss: 0.6963
+Test Accuracy: 0.4961
+Test F1 Score: 0.3316
+Epoch 2/10
+Train Loss: 0.6943, F1: 0.4909, Accuracy: 0.5035
+Testing model on test data at epoch 2
+Test Loss: 0.6924
+Test Accuracy: 0.5299
+Test F1 Score: 0.4585
+Epoch 3/10
+Train Loss: 0.6929, F1: 0.5089, Accuracy: 0.5131
+Testing model on test data at epoch 3
+Test Loss: 0.6871
+Test Accuracy: 0.5593
+Test F1 Score: 0.5590
+Epoch 4/10
+Train Loss: 0.6883, F1: 0.5068, Accuracy: 0.5371
+Testing model on test data at epoch 4
+Test Loss: 0.6960
+Test Accuracy: 0.5145
+Test F1 Score: 0.5118
+Epoch 5/10
+Train Loss: 0.6491, F1: 0.5985, Accuracy: 0.6182
+Testing model on test data at epoch 5
+Test Loss: 0.7553
+Test Accuracy: 0.4966
+Test F1 Score: 0.4964
+Epoch 6/10
+Train Loss: 0.5394, F1: 0.7168, Accuracy: 0.7252
+Testing model on test data at epoch 6
+Test Loss: 0.9112
+Test Accuracy: 0.4931
+Test F1 Score: 0.4899
+Epoch 7/10
+Train Loss: 0.4071, F1: 0.8088, Accuracy: 0.8120
+Testing model on test data at epoch 7
+Test Loss: 1.1447
+Test Accuracy: 0.4891
+Test F1 Score: 0.4774
+Epoch 8/10
+Train Loss: 0.2965, F1: 0.8712, Accuracy: 0.8726
+Testing model on test data at epoch 8
+Test Loss: 1.3210
+Test Accuracy: 0.5099
+Test F1 Score: 0.4995
+Epoch 9/10
+Train Loss: 0.2169, F1: 0.9106, Accuracy: 0.9111
+Testing model on test data at epoch 9
+Test Loss: 1.5571
+Test Accuracy: 0.4977
+Test F1 Score: 0.4965
+Epoch 10/10
+Train Loss: 0.1655, F1: 0.9366, Accuracy: 0.9368
+Testing model on test data at epoch 10
+Test Loss: 1.6424
+Test Accuracy: 0.5001
+Test F1 Score: 0.5000
+Evaluation Report:
+{'0': {'precision': 0.49612086565945285, 'recall': 0.4898206006853457, 'f1-score': 0.4929506035094837, 'support': 4961.0}, '1': {'precision': 0.5039200313602509, 'recall': 0.5102202818019448, 'f1-score': 0.5070505867271472, 'support': 5039.0}, 'accuracy': 0.5001, 'macro avg': {'precision': 0.5000204485098518, 'recall': 0.5000204412436453, 'f1-score': 0.5000005951183155, 'support': 10000.0}, 'weighted avg': {'precision': 0.500050865256085, 'recall': 0.5001, 'f1-score': 0.5000555850528644, 'support': 10000.0}}
+Evaluation results saved to src/data/eval/metrics_imdb_bert-base-uncased_linear.json
+Predictions saved to src/data/eval/evaluated_imdb_bert-base-uncased_linear.csv

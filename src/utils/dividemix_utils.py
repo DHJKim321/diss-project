@@ -85,7 +85,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             outputs_u22 = model2(input_ids_u2, attention_mask_u2)
             
             pu = (torch.softmax(outputs_u11, dim=1) + torch.softmax(outputs_u12, dim=1) + torch.softmax(outputs_u21, dim=1) + torch.softmax(outputs_u22, dim=1)) / 4       
-            if temperature == 0:
+            if temperature == 1:
                 ptu = pu
             else:
                 ptu = pu**(1/temperature) # Temparature Sharpening

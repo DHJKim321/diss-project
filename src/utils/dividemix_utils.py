@@ -100,7 +100,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2 # Average the outputs of the two models
             px = prob * labels_x + (1 - prob) * px # prob tells us the likelihood of the label being correct using the GMM's cluster probability
             # labels_x is the ground-truth, px is the average of the two models' predictions
-            if temperature == 0:
+            if temperature == 1:
                 ptx = px
             else:
                 ptx = px**(1/temperature) # Temparature Sharpening

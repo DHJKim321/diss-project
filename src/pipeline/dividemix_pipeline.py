@@ -14,6 +14,8 @@ from src.modules.losses import SemiLoss, NegEntropy
 from transformers import BertTokenizer
 from sklearn.model_selection import train_test_split
 import numpy as np
+import nltk
+nltk.download('stopwords')
 
 from dotenv import load_dotenv
 

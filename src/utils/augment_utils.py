@@ -3,6 +3,11 @@ Utility functions for the 'Augment' function in DivideMix.
 """
 
 import os, sys
+import regex as re
+import random, re
+from nltk.corpus import wordnet as wn, stopwords
+_STOP = set(stopwords.words("english"))
+_tok_re = re.compile(r"\w+|[^\w\s]", re.UNICODE)
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
@@ -43,6 +48,24 @@ def _is_special(tok, tokenizer):
     return tok in {tokenizer.cls_token, tokenizer.sep_token,
                    tokenizer.pad_token, tokenizer.mask_token}
 
+def _find_synonyms(word):
+    syns = set()
+    for syn in wn.synsets(word):
+        for lemma in syn.lemmas():
+            w = lemma.name().replace('_', ' ').lower()
+            if w != word.lower():
+                syns.add(w)
+    return [s for s in syns if _tok_re.fullmatch(s)]
+
+def _join_tokens(tokens):
+    out, prev = [], ''
+    for curr in tokens:
+        if prev and prev[-1].isalnum() and curr.isalnum():
+            out.append(' ')
+        out.append(curr)
+        prev = curr
+    return ''.join(out)
+
 def delete_augment(input_ids, attention_mask, tokenizer, p=0.2):
     device, seq_len = input_ids.device, input_ids.size(0)
     tokens = _ids_to_tokens(input_ids, tokenizer, attention_mask)
@@ -61,8 +84,39 @@ def delete_augment(input_ids, attention_mask, tokenizer, p=0.2):
     new_ids, new_mask = _tokens_to_ids(kept, tokenizer, seq_len, device)
     return new_ids, new_mask
 
-def augment(input_ids, attention_mask, tokenizer):
+def synonym_augment(text, alpha=0.1):
+    tokens = _tok_re.findall(text)
+    length = len(tokens)
+    word_idx = [
+        i for i, tok in enumerate(tokens)
+        if tok.isalpha() and tok.lower() not in _STOP
+    ]
+    if not word_idx:
+        return text
+
+    for idx in random.sample(word_idx, min(alpha * length, len(word_idx))):
+        syns = _find_synonyms(tokens[idx])
+        if syns:
+            tokens[idx] = random.choice(syns)
+
+    return _join_tokens(tokens)
+
+def augment_token(input_ids, attention_mask, tokenizer):
         if random.random() < 0.5:
                 return mask_augment(input_ids, attention_mask, tokenizer)
         else:
                 return delete_augment(input_ids, attention_mask, tokenizer)
+        
+def augment_text(text):
+     return synonym_augment(text)
+
+def augment(text, input_ids, attention_mask, tokenizer):
+    if random.random() < 1/3:
+        text = augment_text(text)
+        return text, None, None
+    elif random.random() < 2/3:
+        input_ids, attention_mask = augment_token(input_ids, attention_mask, tokenizer)
+        return None, input_ids, attention_mask
+    else:
+        input_ids, attention_mask = mask_augment(input_ids, attention_mask, tokenizer)
+        return None, input_ids, attention_mask

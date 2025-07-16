@@ -64,30 +64,36 @@ def save_loss_histogram(losses, epoch, model):
     plt.close()
 
 def get_labels_injected_list(original, noisy):
-    # Outputs a dictionary of {idx: isNoiseInjected}
-    output = {}
-    for idx, (orig_label, noisy_label) in enumerate(zip(original, noisy)):
-        output[idx] = orig_label != noisy_label
-    return output
+    return np.array([orig != new for orig, new in zip(original, noisy)], dtype=bool)
 
-def save_orig_noisy_loss_histogram(noisy_dict, loss, epoch, model):
-    noisy_losses = np.array([loss[idx] for idx, is_noisy in noisy_dict.items() if is_noisy])
-    clean_losses = np.array([loss[idx] for idx, is_noisy in noisy_dict.items() if not is_noisy])
+import numpy as np
+import matplotlib.pyplot as plt
+import os
 
-    bins = np.linspace(0, 1, 100)
+def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
+    """
+    Save a histogram comparing clean vs noisy sample losses for a given epoch.
+
+    Args:
+        noisy_mask (array-like): Boolean array of shape [num_samples], True for noisy samples.
+        raw_losses (array-like): Per-sample losses (unnormalized or normalized), shape [num_samples].
+        epoch (int): Current epoch number.
+        model (int): Model index (1 or 2) to label the plot.
+        save_dir (str): Directory to save the plot.
+    """
+    raw_losses = np.array(raw_losses)
+    noisy_mask = np.array(noisy_mask)
+    clean_losses = raw_losses[~noisy_mask]
+    noisy_losses = raw_losses[noisy_mask]
 
     plt.figure(figsize=(8, 5))
-
-    plt.hist(clean_losses, bins=bins, density=True, color='royalblue', label='Clean', edgecolor='black', linewidth=0.3, histtype='stepfilled', alpha=1, zorder=1)
-
-    plt.hist(noisy_losses, bins=bins, density=True, color='salmon', label='Noisy', edgecolor='black', linewidth=0.3, histtype='stepfilled', alpha=1, zorder=2)
-
+    bins = 100
+    plt.hist(clean_losses, bins=bins, density=True, alpha=0.5, label="Clean", color="blue")
+    plt.hist(noisy_losses, bins=bins, density=True, alpha=0.5, label="Noisy", color="red")
     plt.xlabel("Normalized loss")
-    plt.ylabel("Frequency")
-    plt.title(f"Loss Distribution at Epoch {epoch} for Model {model}")
+    plt.ylabel("Empirical pdf")
+    plt.title(f"Epoch {epoch}: Loss Distribution (Model {model})")
     plt.legend()
     plt.tight_layout()
-
-    save_path = f"src/data/images/loss/orig_noisy_loss_distribution_epoch_{epoch}_model_{model}.png"
-    plt.savefig(save_path)
+    plt.savefig(f"src/data/images/loss/clean_noisy_loss_{epoch}_model_{model}.png")
     plt.close()

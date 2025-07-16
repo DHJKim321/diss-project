@@ -3,6 +3,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 import torch
+import nltk
+nltk.download('stopwords')
 from torch.optim import AdamW
 import torch.nn as nn
 from src.model.bert import Bert
@@ -13,9 +15,6 @@ from src.data.DivideMixDataloader import DivideMixDataloader
 from src.modules.losses import SemiLoss, NegEntropy
 from transformers import BertTokenizer
 from sklearn.model_selection import train_test_split
-import numpy as np
-import nltk
-nltk.download('stopwords')
 
 from dotenv import load_dotenv
 

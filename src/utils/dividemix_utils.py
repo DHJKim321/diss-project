@@ -123,16 +123,22 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         targets_u = mixed_labels[batch_size*2:]
 
         # Print label softmax for debugging
-        tqdm.write(f"Label Softmax (x): {torch.softmax(logits_x, dim=1).mean(dim=0).cpu().numpy()}")
+        tqdm.write(f"Label Softmax (x): {torch.softmax(logits, dim=1).mean(dim=0).cpu().numpy()}")
 
         # Calculate individual losses
         Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)
         
         # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
-        prior = torch.full((num_class,), 1 / num_class, device=device)
-        pred_mean = torch.softmax(logits, dim=1).mean(0)
-        penalty = torch.sum(prior*torch.log(prior/pred_mean))
-        # Combine losses
+        # KL Divergence penalty
+        # prior = torch.full((num_class,), 1 / num_class, device=device)
+        # pred_mean = torch.softmax(logits, dim=1).mean(0)
+        # penalty = torch.sum(prior*torch.log(prior/pred_mean))
+
+        # Negative Entropy
+        probs = F.softmax(logits, dim=1)
+        log_probs = F.log_softmax(logits, dim=1)
+        entropy = -torch.sum(probs * log_probs, dim=1)
+        penalty = -entropy.mean()
         loss = Lx + lambda_u_val * Lu + penalty_val * penalty
 
         # ---- Optimizer Step ----

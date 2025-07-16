@@ -199,8 +199,8 @@ if __name__ == "__main__":
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")
         test_loader = loader.run(test_data, mode='test')
-        test_acc, test_f1, test_preds, test_labels = test(model1, model2, test_loader)
-        print(f"Epoch: {epoch}, Test Accuracy: {test_acc:.4f}, Test F1 Score: {test_f1:.4f}")
+        test_acc, test_f1, test_preds, test_labels, test_loss = test(model1, model2, test_loader)
+        print(f"Epoch: {epoch}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}, Test F1 Score: {test_f1:.4f}")
 
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')

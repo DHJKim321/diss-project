@@ -197,6 +197,7 @@ def test(model1, model2, test_loader, device='cuda'):
             _, predicted = torch.max(outputs, 1)
             preds.extend(predicted.cpu().numpy())
             all_labels.extend(labels.cpu().numpy())
+            loss = F.cross_entropy(outputs, labels, reduction='mean')
     acc = accuracy_score(all_labels, preds)
     f1 = f1_score(all_labels, preds, average='weighted')
-    return acc, f1, preds, all_labels
+    return acc, f1, preds, all_labels, loss

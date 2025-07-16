@@ -103,9 +103,9 @@ def synonym_augment(text, alpha=0.1):
 
 def augment_token(input_ids, attention_mask, tokenizer):
         if random.random() < 0.5:
-                return mask_augment(input_ids, attention_mask, tokenizer)
+            return mask_augment(input_ids, attention_mask, tokenizer)
         else:
-                return delete_augment(input_ids, attention_mask, tokenizer)
+            return delete_augment(input_ids, attention_mask, tokenizer)
         
 def augment_text(text):
      return synonym_augment(text)

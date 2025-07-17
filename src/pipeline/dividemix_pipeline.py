@@ -91,6 +91,9 @@ if __name__ == "__main__":
     model1 = Bert(bert_model, head_type, dropout=0.0).to_device(device)
     torch.manual_seed(43)
     model2 = Bert(bert_model, head_type, dropout=0.0).to_device(device)
+    for m in (model1, model2):
+        for param in m.bert.parameters():
+            param.requires_grad = False
 
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(
@@ -185,9 +188,9 @@ if __name__ == "__main__":
                 warmup_done = True
                 print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
                 for param in model1.bert.parameters():
-                    param.requires_grad = False
+                    param.requires_grad = True
                 for param in model2.bert.parameters():
-                    param.requires_grad = False
+                    param.requires_grad = True
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)

@@ -123,7 +123,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         targets_u = mixed_labels[batch_size*2:]
 
         # Print label softmax for debugging
-        tqdm.write(f"Label Softmax (x): {torch.softmax(logits, dim=1).mean(dim=0).cpu().numpy()}")
+        tqdm.write(f"Label Softmax (x): {torch.softmax(logits, dim=1).mean(dim=0).detach().cpu().numpy()}")
 
         # Calculate individual losses
         Lx, Lu, lambda_u_val = semiloss(logits_x, targets_x, logits_u, targets_u, epoch_no, warmup_epochs)

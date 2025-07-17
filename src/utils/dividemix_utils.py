@@ -16,6 +16,8 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
     """
     model.bert.eval()
     model.classifier.train()
+    for param in model.bert.parameters():
+        param.requires_grad = False
     for _, batch in tqdm(enumerate(warmup_loader), desc="Warmup Training", total=len(warmup_loader)):      
         input_ids = batch['input_ids'].to(device)
         attention_mask = batch['attention_mask'].to(device)

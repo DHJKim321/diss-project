@@ -184,6 +184,10 @@ if __name__ == "__main__":
                 )
                 warmup_done = True
                 print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
+                for param in model1.bert.parameters():
+                    param.requires_grad = False
+                for param in model2.bert.parameters():
+                    param.requires_grad = False
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
@@ -210,7 +214,7 @@ if __name__ == "__main__":
         save_loss_histogram(raw_losses2, epoch, model=2)
         save_orig_noisy_loss_histogram(noisy_mask, raw_losses2, epoch, model=2)
         # save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
-        
+
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")
         test_loader = loader.run(test_data, mode='test')

@@ -94,7 +94,7 @@ def synonym_augment(text, alpha=0.1):
     if not word_idx:
         return text
 
-    for idx in random.sample(word_idx, min(alpha * length, len(word_idx))):
+    for idx in random.sample(word_idx, min(int(alpha * length), len(word_idx))):
         syns = _find_synonyms(tokens[idx])
         if syns:
             tokens[idx] = random.choice(syns)

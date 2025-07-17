@@ -185,18 +185,6 @@ if __name__ == "__main__":
                 warmup_done = True
                 print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
         else:
-            # ---- Evaluation Phase ----
-            eval_loader = loader.run(train_data, mode='eval_train')
-            print(f"Evaluating training data at epoch {epoch} for Model 1")
-            prob1, all_loss[0], raw_losses1 = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
-            save_loss_histogram(raw_losses1, epoch, model=1)
-            save_orig_noisy_loss_histogram(noisy_mask, raw_losses1, epoch, model=1)
-            print(f"Evaluating training data at epoch {epoch} for Model 2")
-            prob2, all_loss[1], raw_losses2 = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
-            save_loss_histogram(raw_losses2, epoch, model=2)
-            save_orig_noisy_loss_histogram(noisy_mask, raw_losses2, epoch, model=2)
-            # save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
-
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
             pred2 = (prob2 > p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
@@ -211,6 +199,18 @@ if __name__ == "__main__":
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred1, probs=prob1)
             train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, device=device)
 
+        # ---- Evaluation Phase ----
+        eval_loader = loader.run(train_data, mode='eval_train')
+        print(f"Evaluating training data at epoch {epoch} for Model 1")
+        prob1, all_loss[0], raw_losses1 = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(raw_losses1, epoch, model=1)
+        save_orig_noisy_loss_histogram(noisy_mask, raw_losses1, epoch, model=1)
+        print(f"Evaluating training data at epoch {epoch} for Model 2")
+        prob2, all_loss[1], raw_losses2 = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(raw_losses2, epoch, model=2)
+        save_orig_noisy_loss_histogram(noisy_mask, raw_losses2, epoch, model=2)
+        # save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
+        
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")
         test_loader = loader.run(test_data, mode='test')

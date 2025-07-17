@@ -4,6 +4,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 
 import torch
 import nltk
+nltk.download('wordnet')
 nltk.download('stopwords')
 from torch.optim import AdamW
 import torch.nn as nn

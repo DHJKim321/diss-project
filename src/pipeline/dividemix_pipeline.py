@@ -187,10 +187,10 @@ if __name__ == "__main__":
                 )
                 warmup_done = True
                 print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
-                for param in model1.bert.parameters():
-                    param.requires_grad = True
-                for param in model2.bert.parameters():
-                    param.requires_grad = True
+                for m in (model1, model2):
+                    for param in m.bert.parameters():
+                        param.requires_grad = True
+                    m.bert.train()
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)

@@ -5373,3 +5373,2013 @@ Label Softmax (x): [0.6064296 0.3935704]
 Epoch 8, Batch 479/771, Grad Norms near zero: 12, Lx 0.6173, Lu 0.1764, Penalty -0.3301, loss 0.4637
 Label Softmax (x): [0.601857   0.39814302]
 Epoch 8, Batch 480/771, Grad Norms near zero: 12, Lx 0.5940, Lu 0.4465, Penalty -0.3316, loss 0.7088
+Label Softmax (x): [0.602427 0.397573]
+Epoch 8, Batch 481/771, Grad Norms near zero: 12, Lx 0.5968, Lu 0.1521, Penalty -0.3317, loss 0.4172
+Label Softmax (x): [0.5847775  0.41522253]
+Epoch 8, Batch 482/771, Grad Norms near zero: 12, Lx 0.6517, Lu 0.1800, Penalty -0.3337, loss 0.4980
+Label Softmax (x): [0.57981586 0.4201842 ]
+Epoch 8, Batch 483/771, Grad Norms near zero: 12, Lx 0.6111, Lu 0.1214, Penalty -0.3342, loss 0.3983
+Label Softmax (x): [0.5963863 0.4036137]
+Epoch 8, Batch 484/771, Grad Norms near zero: 12, Lx 0.6474, Lu 0.4105, Penalty -0.3340, loss 0.7240
+Label Softmax (x): [0.5670028  0.43299723]
+Epoch 8, Batch 485/771, Grad Norms near zero: 12, Lx 0.6704, Lu 0.2463, Penalty -0.3373, loss 0.5794
+Label Softmax (x): [0.5677944  0.43220562]
+Epoch 8, Batch 486/771, Grad Norms near zero: 12, Lx 0.6508, Lu 0.2684, Penalty -0.3375, loss 0.5816
+Label Softmax (x): [0.58695275 0.41304725]
+Epoch 8, Batch 487/771, Grad Norms near zero: 12, Lx 0.6259, Lu 0.2902, Penalty -0.3361, loss 0.5800
+Label Softmax (x): [0.54483694 0.4551631 ]
+Epoch 8, Batch 488/771, Grad Norms near zero: 12, Lx 0.6290, Lu 0.0905, Penalty -0.3379, loss 0.3815
+Label Softmax (x): [0.5553786  0.44462135]
+Epoch 8, Batch 489/771, Grad Norms near zero: 12, Lx 0.6359, Lu 0.0799, Penalty -0.3369, loss 0.3790
+Label Softmax (x): [0.5442959  0.45570412]
+Epoch 8, Batch 490/771, Grad Norms near zero: 12, Lx 0.6668, Lu 0.3520, Penalty -0.3408, loss 0.6779
+Label Softmax (x): [0.549007 0.450993]
+Epoch 8, Batch 491/771, Grad Norms near zero: 12, Lx 0.6336, Lu 0.1294, Penalty -0.3384, loss 0.4247
+Label Softmax (x): [0.5282607 0.4717393]
+Epoch 8, Batch 492/771, Grad Norms near zero: 12, Lx 0.6420, Lu 0.0898, Penalty -0.3390, loss 0.3927
+Label Softmax (x): [0.5683559  0.43164402]
+Epoch 8, Batch 493/771, Grad Norms near zero: 12, Lx 0.6533, Lu 0.0773, Penalty -0.3361, loss 0.3945
+Label Softmax (x): [0.57812643 0.42187354]
+Epoch 8, Batch 494/771, Grad Norms near zero: 12, Lx 0.6347, Lu 0.1298, Penalty -0.3367, loss 0.4278
+Label Softmax (x): [0.6000351  0.39996493]
+Epoch 8, Batch 495/771, Grad Norms near zero: 12, Lx 0.6099, Lu 0.3002, Penalty -0.3328, loss 0.5772
+Label Softmax (x): [0.6049371  0.39506286]
+Epoch 8, Batch 496/771, Grad Norms near zero: 12, Lx 0.5685, Lu 0.1686, Penalty -0.3308, loss 0.4063
+Label Softmax (x): [0.5925747  0.40742534]
+Epoch 8, Batch 497/771, Grad Norms near zero: 12, Lx 0.6116, Lu 0.1691, Penalty -0.3307, loss 0.4500
+Label Softmax (x): [0.60699594 0.39300412]
+Epoch 8, Batch 498/771, Grad Norms near zero: 12, Lx 0.5811, Lu 0.1068, Penalty -0.3292, loss 0.3587
+Label Softmax (x): [0.6028746  0.39712542]
+Epoch 8, Batch 499/771, Grad Norms near zero: 12, Lx 0.6334, Lu 0.1984, Penalty -0.3276, loss 0.5042
+Label Softmax (x): [0.5885359 0.4114641]
+Epoch 8, Batch 500/771, Grad Norms near zero: 12, Lx 0.6537, Lu 0.1993, Penalty -0.3320, loss 0.5210
+Label Softmax (x): [0.59902847 0.40097153]
+Epoch 8, Batch 501/771, Grad Norms near zero: 12, Lx 0.5824, Lu 0.1006, Penalty -0.3286, loss 0.3545
+Label Softmax (x): [0.60786504 0.39213502]
+Epoch 8, Batch 502/771, Grad Norms near zero: 12, Lx 0.6120, Lu 0.2133, Penalty -0.3291, loss 0.4962
+Label Softmax (x): [0.57530355 0.42469645]
+Epoch 8, Batch 503/771, Grad Norms near zero: 12, Lx 0.6191, Lu 0.2947, Penalty -0.3317, loss 0.5822
+Label Softmax (x): [0.56884295 0.43115705]
+Epoch 8, Batch 504/771, Grad Norms near zero: 12, Lx 0.5973, Lu 0.1490, Penalty -0.3343, loss 0.4120
+Label Softmax (x): [0.604878   0.39512202]
+Epoch 8, Batch 505/771, Grad Norms near zero: 12, Lx 0.6595, Lu 0.2792, Penalty -0.3309, loss 0.6078
+Label Softmax (x): [0.59849745 0.40150255]
+Epoch 8, Batch 506/771, Grad Norms near zero: 12, Lx 0.6538, Lu 0.3377, Penalty -0.3292, loss 0.6623
+Label Softmax (x): [0.55421126 0.44578868]
+Epoch 8, Batch 507/771, Grad Norms near zero: 12, Lx 0.6560, Lu 0.1358, Penalty -0.3338, loss 0.4581
+Label Softmax (x): [0.5694413  0.43055865]
+Epoch 8, Batch 508/771, Grad Norms near zero: 12, Lx 0.6378, Lu 0.1805, Penalty -0.3340, loss 0.4843
+Label Softmax (x): [0.5753753  0.42462465]
+Epoch 8, Batch 509/771, Grad Norms near zero: 12, Lx 0.6835, Lu 0.2686, Penalty -0.3352, loss 0.6168
+Label Softmax (x): [0.55796033 0.44203964]
+Epoch 8, Batch 510/771, Grad Norms near zero: 12, Lx 0.6489, Lu 0.2711, Penalty -0.3373, loss 0.5826
+Label Softmax (x): [0.55831116 0.44168887]
+Epoch 8, Batch 511/771, Grad Norms near zero: 12, Lx 0.5798, Lu 0.0695, Penalty -0.3329, loss 0.3164
+Label Softmax (x): [0.6053471  0.39465293]
+Epoch 8, Batch 512/771, Grad Norms near zero: 12, Lx 0.6035, Lu 0.2962, Penalty -0.3283, loss 0.5715
+Label Softmax (x): [0.61657774 0.38342226]
+Epoch 8, Batch 513/771, Grad Norms near zero: 12, Lx 0.5754, Lu 0.0716, Penalty -0.3241, loss 0.3229
+Label Softmax (x): [0.6182037 0.3817963]
+Epoch 8, Batch 514/771, Grad Norms near zero: 12, Lx 0.6178, Lu 0.1134, Penalty -0.3257, loss 0.4054
+Label Softmax (x): [0.61249334 0.38750672]
+Epoch 8, Batch 515/771, Grad Norms near zero: 12, Lx 0.5673, Lu 0.1152, Penalty -0.3261, loss 0.3564
+Label Softmax (x): [0.6090904 0.3909096]
+Epoch 8, Batch 516/771, Grad Norms near zero: 12, Lx 0.6530, Lu 0.1863, Penalty -0.3297, loss 0.5097
+Label Softmax (x): [0.6072666  0.39273334]
+Epoch 8, Batch 517/771, Grad Norms near zero: 12, Lx 0.6080, Lu 0.1095, Penalty -0.3291, loss 0.3884
+Label Softmax (x): [0.6262373  0.37376267]
+Epoch 8, Batch 518/771, Grad Norms near zero: 12, Lx 0.6194, Lu 0.3397, Penalty -0.3258, loss 0.6332
+Label Softmax (x): [0.5773466  0.42265344]
+Epoch 8, Batch 519/771, Grad Norms near zero: 12, Lx 0.6617, Lu 0.2808, Penalty -0.3355, loss 0.6069
+Label Softmax (x): [0.5961955  0.40380445]
+Epoch 8, Batch 520/771, Grad Norms near zero: 12, Lx 0.6218, Lu 0.2458, Penalty -0.3322, loss 0.5354
+Label Softmax (x): [0.5372269 0.4627731]
+Epoch 8, Batch 521/771, Grad Norms near zero: 12, Lx 0.6400, Lu 0.1389, Penalty -0.3386, loss 0.4403
+Label Softmax (x): [0.5320464  0.46795365]
+Epoch 8, Batch 522/771, Grad Norms near zero: 12, Lx 0.6535, Lu 0.0864, Penalty -0.3381, loss 0.4018
+Label Softmax (x): [0.55504453 0.44495553]
+Epoch 8, Batch 523/771, Grad Norms near zero: 12, Lx 0.6364, Lu 0.1193, Penalty -0.3357, loss 0.4200
+Label Softmax (x): [0.54788756 0.4521124 ]
+Epoch 8, Batch 524/771, Grad Norms near zero: 12, Lx 0.6627, Lu 0.2481, Penalty -0.3388, loss 0.5720
+Label Softmax (x): [0.5762245  0.42377543]
+Epoch 8, Batch 525/771, Grad Norms near zero: 12, Lx 0.6048, Lu 0.2576, Penalty -0.3355, loss 0.5269
+Label Softmax (x): [0.59401673 0.40598327]
+Epoch 8, Batch 526/771, Grad Norms near zero: 12, Lx 0.6457, Lu 0.2642, Penalty -0.3314, loss 0.5784
+Label Softmax (x): [0.60655814 0.3934418 ]
+Epoch 8, Batch 527/771, Grad Norms near zero: 12, Lx 0.5971, Lu 0.3206, Penalty -0.3306, loss 0.5871
+Label Softmax (x): [0.66327083 0.33672914]
+Epoch 8, Batch 528/771, Grad Norms near zero: 12, Lx 0.6020, Lu 0.2372, Penalty -0.3139, loss 0.5253
+Label Softmax (x): [0.6175234 0.3824767]
+Epoch 8, Batch 529/771, Grad Norms near zero: 12, Lx 0.5862, Lu 0.2676, Penalty -0.3271, loss 0.5267
+Label Softmax (x): [0.60218245 0.3978176 ]
+Epoch 8, Batch 530/771, Grad Norms near zero: 12, Lx 0.6283, Lu 0.2282, Penalty -0.3291, loss 0.5274
+Label Softmax (x): [0.6043983  0.39560175]
+Epoch 8, Batch 531/771, Grad Norms near zero: 12, Lx 0.6263, Lu 0.1327, Penalty -0.3296, loss 0.4293
+Label Softmax (x): [0.60722613 0.39277375]
+Epoch 8, Batch 532/771, Grad Norms near zero: 12, Lx 0.5962, Lu 0.2134, Penalty -0.3298, loss 0.4798
+Label Softmax (x): [0.5796502  0.42034978]
+Epoch 8, Batch 533/771, Grad Norms near zero: 12, Lx 0.6314, Lu 0.1551, Penalty -0.3353, loss 0.4512
+Label Softmax (x): [0.5739836 0.4260164]
+Epoch 8, Batch 534/771, Grad Norms near zero: 12, Lx 0.6093, Lu 0.1729, Penalty -0.3335, loss 0.4487
+Label Softmax (x): [0.578967   0.42103297]
+Epoch 8, Batch 535/771, Grad Norms near zero: 12, Lx 0.6622, Lu 0.2015, Penalty -0.3339, loss 0.5298
+Label Softmax (x): [0.5602039  0.43979603]
+Epoch 8, Batch 536/771, Grad Norms near zero: 12, Lx 0.6509, Lu 0.2493, Penalty -0.3356, loss 0.5646
+Label Softmax (x): [0.573083   0.42691702]
+Epoch 8, Batch 537/771, Grad Norms near zero: 12, Lx 0.6292, Lu 0.1854, Penalty -0.3341, loss 0.4805
+Label Softmax (x): [0.6167356 0.3832644]
+Epoch 8, Batch 538/771, Grad Norms near zero: 12, Lx 0.5805, Lu 0.1740, Penalty -0.3279, loss 0.4266
+Label Softmax (x): [0.62460023 0.3753997 ]
+Epoch 8, Batch 539/771, Grad Norms near zero: 12, Lx 0.6048, Lu 0.2680, Penalty -0.3247, loss 0.5481
+Label Softmax (x): [0.6423618  0.35763818]
+Epoch 8, Batch 540/771, Grad Norms near zero: 12, Lx 0.6039, Lu 0.1601, Penalty -0.3186, loss 0.4454
+Label Softmax (x): [0.6417841  0.35821596]
+Epoch 8, Batch 541/771, Grad Norms near zero: 12, Lx 0.5634, Lu 0.2198, Penalty -0.3211, loss 0.4622
+Label Softmax (x): [0.6313856  0.36861435]
+Epoch 8, Batch 542/771, Grad Norms near zero: 12, Lx 0.6731, Lu 0.2369, Penalty -0.3242, loss 0.5857
+Label Softmax (x): [0.6359634 0.3640366]
+Epoch 8, Batch 543/771, Grad Norms near zero: 12, Lx 0.5972, Lu 0.2567, Penalty -0.3227, loss 0.5312
+Label Softmax (x): [0.58420473 0.41579527]
+Epoch 8, Batch 544/771, Grad Norms near zero: 12, Lx 0.6309, Lu 0.3414, Penalty -0.3335, loss 0.6388
+Label Softmax (x): [0.55238473 0.44761533]
+Epoch 8, Batch 545/771, Grad Norms near zero: 12, Lx 0.6109, Lu 0.1345, Penalty -0.3362, loss 0.4091
+Label Softmax (x): [0.5435897 0.4564103]
+Epoch 8, Batch 546/771, Grad Norms near zero: 12, Lx 0.6309, Lu 0.1266, Penalty -0.3379, loss 0.4195
+Label Softmax (x): [0.58004475 0.4199552 ]
+Epoch 8, Batch 547/771, Grad Norms near zero: 12, Lx 0.6247, Lu 0.2937, Penalty -0.3372, loss 0.5812
+Label Softmax (x): [0.554678   0.44532204]
+Epoch 8, Batch 548/771, Grad Norms near zero: 12, Lx 0.6689, Lu 0.2532, Penalty -0.3390, loss 0.5831
+Label Softmax (x): [0.57609534 0.4239046 ]
+Epoch 8, Batch 549/771, Grad Norms near zero: 12, Lx 0.6047, Lu 0.1014, Penalty -0.3346, loss 0.3715
+Label Softmax (x): [0.58032364 0.41967636]
+Epoch 8, Batch 550/771, Grad Norms near zero: 12, Lx 0.6173, Lu 0.2156, Penalty -0.3356, loss 0.4973
+Label Softmax (x): [0.57169324 0.42830676]
+Epoch 8, Batch 551/771, Grad Norms near zero: 12, Lx 0.6284, Lu 0.1278, Penalty -0.3334, loss 0.4227
+Label Softmax (x): [0.57480055 0.42519945]
+Epoch 8, Batch 552/771, Grad Norms near zero: 12, Lx 0.6285, Lu 0.1378, Penalty -0.3317, loss 0.4346
+Label Softmax (x): [0.5894794  0.41052064]
+Epoch 8, Batch 553/771, Grad Norms near zero: 12, Lx 0.6091, Lu 0.0754, Penalty -0.3310, loss 0.3535
+Label Softmax (x): [0.5925232  0.40747684]
+Epoch 8, Batch 554/771, Grad Norms near zero: 12, Lx 0.6127, Lu 0.2830, Penalty -0.3326, loss 0.5631
+Label Softmax (x): [0.60638356 0.39361647]
+Epoch 8, Batch 555/771, Grad Norms near zero: 12, Lx 0.6618, Lu 0.3006, Penalty -0.3313, loss 0.6310
+Label Softmax (x): [0.6253374 0.3746626]
+Epoch 8, Batch 556/771, Grad Norms near zero: 12, Lx 0.5745, Lu 0.2998, Penalty -0.3274, loss 0.5469
+Label Softmax (x): [0.60527647 0.39472356]
+Epoch 8, Batch 557/771, Grad Norms near zero: 12, Lx 0.5911, Lu 0.1215, Penalty -0.3278, loss 0.3848
+Label Softmax (x): [0.5890825 0.4109174]
+Epoch 8, Batch 558/771, Grad Norms near zero: 12, Lx 0.6052, Lu 0.1722, Penalty -0.3331, loss 0.4443
+Label Softmax (x): [0.56717116 0.43282884]
+Epoch 8, Batch 559/771, Grad Norms near zero: 12, Lx 0.6424, Lu 0.1971, Penalty -0.3359, loss 0.5035
+Label Softmax (x): [0.5559146  0.44408548]
+Epoch 8, Batch 560/771, Grad Norms near zero: 12, Lx 0.5985, Lu 0.1015, Penalty -0.3338, loss 0.3662
+Label Softmax (x): [0.5660807  0.43391937]
+Epoch 8, Batch 561/771, Grad Norms near zero: 12, Lx 0.6373, Lu 0.2778, Penalty -0.3372, loss 0.5779
+Label Softmax (x): [0.5643712 0.4356287]
+Epoch 8, Batch 562/771, Grad Norms near zero: 12, Lx 0.6317, Lu 0.2236, Penalty -0.3361, loss 0.5192
+Label Softmax (x): [0.59356165 0.40643832]
+Epoch 8, Batch 563/771, Grad Norms near zero: 12, Lx 0.6215, Lu 0.3405, Penalty -0.3299, loss 0.6321
+Label Softmax (x): [0.54565966 0.45434037]
+Epoch 8, Batch 564/771, Grad Norms near zero: 12, Lx 0.6436, Lu 0.3443, Penalty -0.3379, loss 0.6501
+Label Softmax (x): [0.6140822  0.38591775]
+Epoch 8, Batch 565/771, Grad Norms near zero: 12, Lx 0.5879, Lu 0.1179, Penalty -0.3275, loss 0.3782
+Label Softmax (x): [0.600722   0.39927796]
+Epoch 8, Batch 566/771, Grad Norms near zero: 12, Lx 0.5754, Lu 0.1929, Penalty -0.3297, loss 0.4386
+Label Softmax (x): [0.62816715 0.37183288]
+Epoch 8, Batch 567/771, Grad Norms near zero: 12, Lx 0.6196, Lu 0.2947, Penalty -0.3251, loss 0.5892
+Label Softmax (x): [0.6193732 0.3806268]
+Epoch 8, Batch 568/771, Grad Norms near zero: 12, Lx 0.6218, Lu 0.1893, Penalty -0.3253, loss 0.4858
+Label Softmax (x): [0.61765885 0.38234115]
+Epoch 8, Batch 569/771, Grad Norms near zero: 12, Lx 0.6064, Lu 0.1024, Penalty -0.3245, loss 0.3843
+Label Softmax (x): [0.56103575 0.43896422]
+Epoch 8, Batch 570/771, Grad Norms near zero: 12, Lx 0.6645, Lu 0.1815, Penalty -0.3351, loss 0.5110
+Label Softmax (x): [0.527601   0.47239903]
+Epoch 8, Batch 571/771, Grad Norms near zero: 12, Lx 0.6321, Lu 0.0989, Penalty -0.3354, loss 0.3955
+Label Softmax (x): [0.49774194 0.50225806]
+Epoch 8, Batch 572/771, Grad Norms near zero: 12, Lx 0.6952, Lu 0.4100, Penalty -0.3397, loss 0.7654
+Label Softmax (x): [0.51357186 0.48642814]
+Epoch 8, Batch 573/771, Grad Norms near zero: 12, Lx 0.6711, Lu 0.2616, Penalty -0.3379, loss 0.5948
+Label Softmax (x): [0.5200519  0.47994813]
+Epoch 8, Batch 574/771, Grad Norms near zero: 12, Lx 0.6303, Lu 0.0893, Penalty -0.3387, loss 0.3809
+Label Softmax (x): [0.56551903 0.4344809 ]
+Epoch 8, Batch 575/771, Grad Norms near zero: 12, Lx 0.6408, Lu 0.3141, Penalty -0.3374, loss 0.6175
+Label Softmax (x): [0.5952946  0.40470538]
+Epoch 8, Batch 576/771, Grad Norms near zero: 12, Lx 0.5673, Lu 0.0890, Penalty -0.3310, loss 0.3254
+Label Softmax (x): [0.6063102  0.39368984]
+Epoch 8, Batch 577/771, Grad Norms near zero: 12, Lx 0.5983, Lu 0.1312, Penalty -0.3293, loss 0.4002
+Label Softmax (x): [0.62273395 0.37726602]
+Epoch 8, Batch 578/771, Grad Norms near zero: 12, Lx 0.6506, Lu 0.2075, Penalty -0.3262, loss 0.5319
+Label Softmax (x): [0.645432   0.35456803]
+Epoch 8, Batch 579/771, Grad Norms near zero: 12, Lx 0.5767, Lu 0.2628, Penalty -0.3205, loss 0.5190
+Label Softmax (x): [0.6224785  0.37752149]
+Epoch 8, Batch 580/771, Grad Norms near zero: 12, Lx 0.6509, Lu 0.3248, Penalty -0.3270, loss 0.6487
+Label Softmax (x): [0.6083846  0.39161536]
+Epoch 8, Batch 581/771, Grad Norms near zero: 12, Lx 0.6245, Lu 0.1719, Penalty -0.3308, loss 0.4657
+Label Softmax (x): [0.5898312  0.41016883]
+Epoch 8, Batch 582/771, Grad Norms near zero: 12, Lx 0.6113, Lu 0.2707, Penalty -0.3355, loss 0.5465
+Label Softmax (x): [0.57570565 0.42429435]
+Epoch 8, Batch 583/771, Grad Norms near zero: 12, Lx 0.6431, Lu 0.2792, Penalty -0.3359, loss 0.5863
+Label Softmax (x): [0.5137797  0.48622027]
+Epoch 8, Batch 584/771, Grad Norms near zero: 12, Lx 0.6421, Lu 0.1954, Penalty -0.3407, loss 0.4968
+Label Softmax (x): [0.5437575 0.4562425]
+Epoch 8, Batch 585/771, Grad Norms near zero: 12, Lx 0.6437, Lu 0.1942, Penalty -0.3404, loss 0.4974
+Label Softmax (x): [0.559907 0.440093]
+Epoch 8, Batch 586/771, Grad Norms near zero: 12, Lx 0.6082, Lu 0.1600, Penalty -0.3366, loss 0.4317
+Label Softmax (x): [0.5478365 0.4521635]
+Epoch 8, Batch 587/771, Grad Norms near zero: 12, Lx 0.6255, Lu 0.1674, Penalty -0.3380, loss 0.4549
+Label Softmax (x): [0.5848818  0.41511822]
+Epoch 8, Batch 588/771, Grad Norms near zero: 12, Lx 0.5904, Lu 0.0990, Penalty -0.3336, loss 0.3558
+Label Softmax (x): [0.610588   0.38941202]
+Epoch 8, Batch 589/771, Grad Norms near zero: 12, Lx 0.5998, Lu 0.1620, Penalty -0.3285, loss 0.4333
+Label Softmax (x): [0.6177625  0.38223755]
+Epoch 8, Batch 590/771, Grad Norms near zero: 12, Lx 0.5732, Lu 0.2636, Penalty -0.3293, loss 0.5075
+Label Softmax (x): [0.63094825 0.3690517 ]
+Epoch 8, Batch 591/771, Grad Norms near zero: 12, Lx 0.5891, Lu 0.3416, Penalty -0.3250, loss 0.6057
+Label Softmax (x): [0.6332785  0.36672148]
+Epoch 8, Batch 592/771, Grad Norms near zero: 12, Lx 0.6067, Lu 0.2367, Penalty -0.3258, loss 0.5176
+Label Softmax (x): [0.6416935  0.35830656]
+Epoch 8, Batch 593/771, Grad Norms near zero: 12, Lx 0.5914, Lu 0.1473, Penalty -0.3198, loss 0.4188
+Label Softmax (x): [0.64874977 0.3512503 ]
+Epoch 8, Batch 594/771, Grad Norms near zero: 12, Lx 0.5017, Lu 0.1207, Penalty -0.3158, loss 0.3065
+Label Softmax (x): [0.6179019  0.38209808]
+Epoch 8, Batch 595/771, Grad Norms near zero: 12, Lx 0.6011, Lu 0.2571, Penalty -0.3256, loss 0.5326
+Label Softmax (x): [0.61389756 0.38610238]
+Epoch 8, Batch 596/771, Grad Norms near zero: 12, Lx 0.6204, Lu 0.2928, Penalty -0.3274, loss 0.5858
+Label Softmax (x): [0.5829339  0.41706616]
+Epoch 8, Batch 597/771, Grad Norms near zero: 12, Lx 0.6019, Lu 0.1289, Penalty -0.3319, loss 0.3989
+Label Softmax (x): [0.539093   0.46090698]
+Epoch 8, Batch 598/771, Grad Norms near zero: 12, Lx 0.6203, Lu 0.2099, Penalty -0.3383, loss 0.4919
+Label Softmax (x): [0.5637498  0.43625027]
+Epoch 8, Batch 599/771, Grad Norms near zero: 12, Lx 0.5963, Lu 0.2111, Penalty -0.3345, loss 0.4730
+Label Softmax (x): [0.5369653  0.46303466]
+Epoch 8, Batch 600/771, Grad Norms near zero: 12, Lx 0.6354, Lu 0.2841, Penalty -0.3386, loss 0.5808
+Label Softmax (x): [0.5576279  0.44237208]
+Epoch 8, Batch 601/771, Grad Norms near zero: 12, Lx 0.6232, Lu 0.1622, Penalty -0.3332, loss 0.4522
+Label Softmax (x): [0.54645896 0.45354098]
+Epoch 8, Batch 602/771, Grad Norms near zero: 12, Lx 0.6432, Lu 0.1342, Penalty -0.3337, loss 0.4437
+Label Softmax (x): [0.59753275 0.4024673 ]
+Epoch 8, Batch 603/771, Grad Norms near zero: 12, Lx 0.5914, Lu 0.2248, Penalty -0.3281, loss 0.4880
+Label Softmax (x): [0.6276196  0.37238035]
+Epoch 8, Batch 604/771, Grad Norms near zero: 12, Lx 0.6245, Lu 0.1931, Penalty -0.3215, loss 0.4961
+Label Softmax (x): [0.6411935 0.3588065]
+Epoch 8, Batch 605/771, Grad Norms near zero: 12, Lx 0.6277, Lu 0.3247, Penalty -0.3191, loss 0.6332
+Label Softmax (x): [0.63797694 0.362023  ]
+Epoch 8, Batch 606/771, Grad Norms near zero: 12, Lx 0.6148, Lu 0.3086, Penalty -0.3196, loss 0.6038
+Label Softmax (x): [0.63147336 0.3685266 ]
+Epoch 8, Batch 607/771, Grad Norms near zero: 12, Lx 0.5779, Lu 0.2015, Penalty -0.3220, loss 0.4575
+Label Softmax (x): [0.5955575  0.40444243]
+Epoch 8, Batch 608/771, Grad Norms near zero: 12, Lx 0.6310, Lu 0.0997, Penalty -0.3288, loss 0.4019
+Label Softmax (x): [0.59922826 0.4007717 ]
+Epoch 8, Batch 609/771, Grad Norms near zero: 12, Lx 0.5985, Lu 0.2625, Penalty -0.3321, loss 0.5289
+Label Softmax (x): [0.5875027  0.41249725]
+Epoch 8, Batch 610/771, Grad Norms near zero: 12, Lx 0.6014, Lu 0.2231, Penalty -0.3337, loss 0.4909
+Label Softmax (x): [0.60190225 0.3980978 ]
+Epoch 8, Batch 611/771, Grad Norms near zero: 12, Lx 0.5736, Lu 0.1407, Penalty -0.3302, loss 0.3841
+Label Softmax (x): [0.61320555 0.38679448]
+Epoch 8, Batch 612/771, Grad Norms near zero: 12, Lx 0.5899, Lu 0.2861, Penalty -0.3278, loss 0.5482
+Label Softmax (x): [0.60496205 0.39503798]
+Epoch 8, Batch 613/771, Grad Norms near zero: 12, Lx 0.5418, Lu 0.0944, Penalty -0.3236, loss 0.3126
+Label Softmax (x): [0.64584637 0.3541536 ]
+Epoch 8, Batch 614/771, Grad Norms near zero: 12, Lx 0.6174, Lu 0.3374, Penalty -0.3215, loss 0.6333
+Label Softmax (x): [0.63343495 0.36656505]
+Epoch 8, Batch 615/771, Grad Norms near zero: 12, Lx 0.6221, Lu 0.3743, Penalty -0.3234, loss 0.6729
+Label Softmax (x): [0.6241361  0.37586394]
+Epoch 8, Batch 616/771, Grad Norms near zero: 12, Lx 0.6146, Lu 0.3158, Penalty -0.3257, loss 0.6046
+Label Softmax (x): [0.6062331  0.39376688]
+Epoch 8, Batch 617/771, Grad Norms near zero: 12, Lx 0.5926, Lu 0.3336, Penalty -0.3296, loss 0.5966
+Label Softmax (x): [0.5811695  0.41883057]
+Epoch 8, Batch 618/771, Grad Norms near zero: 12, Lx 0.6594, Lu 0.1609, Penalty -0.3312, loss 0.4891
+Label Softmax (x): [0.5704696  0.42953044]
+Epoch 8, Batch 619/771, Grad Norms near zero: 12, Lx 0.6439, Lu 0.2956, Penalty -0.3361, loss 0.6034
+Label Softmax (x): [0.5600532 0.4399467]
+Epoch 8, Batch 620/771, Grad Norms near zero: 12, Lx 0.6558, Lu 0.0995, Penalty -0.3363, loss 0.4190
+Label Softmax (x): [0.5571314  0.44286862]
+Epoch 8, Batch 621/771, Grad Norms near zero: 12, Lx 0.6406, Lu 0.2611, Penalty -0.3386, loss 0.5632
+Label Softmax (x): [0.5213082  0.47869182]
+Epoch 8, Batch 622/771, Grad Norms near zero: 12, Lx 0.6192, Lu 0.0763, Penalty -0.3357, loss 0.3598
+Label Softmax (x): [0.54149216 0.45850784]
+Epoch 8, Batch 623/771, Grad Norms near zero: 12, Lx 0.6192, Lu 0.2034, Penalty -0.3367, loss 0.4859
+Label Softmax (x): [0.5999814 0.4000186]
+Epoch 8, Batch 624/771, Grad Norms near zero: 12, Lx 0.5873, Lu 0.2985, Penalty -0.3341, loss 0.5517
+Label Softmax (x): [0.6064918  0.39350826]
+Epoch 8, Batch 625/771, Grad Norms near zero: 12, Lx 0.6059, Lu 0.2930, Penalty -0.3317, loss 0.5672
+Label Softmax (x): [0.6169087 0.3830913]
+Epoch 8, Batch 626/771, Grad Norms near zero: 12, Lx 0.6095, Lu 0.1715, Penalty -0.3276, loss 0.4535
+Label Softmax (x): [0.6312424  0.36875764]
+Epoch 8, Batch 627/771, Grad Norms near zero: 12, Lx 0.5867, Lu 0.1714, Penalty -0.3242, loss 0.4339
+Label Softmax (x): [0.625031 0.374969]
+Epoch 8, Batch 628/771, Grad Norms near zero: 12, Lx 0.5989, Lu 0.2063, Penalty -0.3278, loss 0.4774
+Label Softmax (x): [0.62250507 0.37749496]
+Epoch 8, Batch 629/771, Grad Norms near zero: 12, Lx 0.5865, Lu 0.2821, Penalty -0.3282, loss 0.5404
+Label Softmax (x): [0.589108   0.41089198]
+Epoch 8, Batch 630/771, Grad Norms near zero: 12, Lx 0.6272, Lu 0.1258, Penalty -0.3336, loss 0.4195
+Label Softmax (x): [0.6053403 0.3946597]
+Epoch 8, Batch 631/771, Grad Norms near zero: 12, Lx 0.5767, Lu 0.1711, Penalty -0.3314, loss 0.4164
+Label Softmax (x): [0.58421034 0.4157897 ]
+Epoch 8, Batch 632/771, Grad Norms near zero: 12, Lx 0.6590, Lu 0.2893, Penalty -0.3366, loss 0.6117
+Label Softmax (x): [0.5874325 0.4125675]
+Epoch 8, Batch 633/771, Grad Norms near zero: 12, Lx 0.6302, Lu 0.1495, Penalty -0.3361, loss 0.4437
+Label Softmax (x): [0.5504784 0.4495216]
+Epoch 8, Batch 634/771, Grad Norms near zero: 12, Lx 0.6365, Lu 0.2753, Penalty -0.3402, loss 0.5716
+Label Softmax (x): [0.5550561  0.44494388]
+Epoch 8, Batch 635/771, Grad Norms near zero: 12, Lx 0.6155, Lu 0.1306, Penalty -0.3389, loss 0.4072
+Label Softmax (x): [0.61388826 0.38611174]
+Epoch 8, Batch 636/771, Grad Norms near zero: 12, Lx 0.5849, Lu 0.1719, Penalty -0.3301, loss 0.4267
+Label Softmax (x): [0.61631453 0.38368544]
+Epoch 8, Batch 637/771, Grad Norms near zero: 12, Lx 0.6352, Lu 0.3052, Penalty -0.3293, loss 0.6111
+Label Softmax (x): [0.60088956 0.39911044]
+Epoch 8, Batch 638/771, Grad Norms near zero: 12, Lx 0.6192, Lu 0.1982, Penalty -0.3315, loss 0.4859
+Label Softmax (x): [0.6142366  0.38576344]
+Epoch 8, Batch 639/771, Grad Norms near zero: 12, Lx 0.6153, Lu 0.1748, Penalty -0.3288, loss 0.4613
+Label Softmax (x): [0.58557713 0.41442287]
+Epoch 8, Batch 640/771, Grad Norms near zero: 12, Lx 0.5884, Lu 0.1668, Penalty -0.3323, loss 0.4229
+Label Softmax (x): [0.58637863 0.4136214 ]
+Epoch 8, Batch 641/771, Grad Norms near zero: 12, Lx 0.6494, Lu 0.2148, Penalty -0.3338, loss 0.5305
+Label Softmax (x): [0.6010624  0.39893755]
+Epoch 8, Batch 642/771, Grad Norms near zero: 12, Lx 0.5928, Lu 0.0751, Penalty -0.3271, loss 0.3408
+Label Softmax (x): [0.58188087 0.41811913]
+Epoch 8, Batch 643/771, Grad Norms near zero: 12, Lx 0.6656, Lu 0.2967, Penalty -0.3334, loss 0.6289
+Label Softmax (x): [0.5393234  0.46067664]
+Epoch 8, Batch 644/771, Grad Norms near zero: 12, Lx 0.6744, Lu 0.2714, Penalty -0.3380, loss 0.6078
+Label Softmax (x): [0.56011933 0.4398806 ]
+Epoch 8, Batch 645/771, Grad Norms near zero: 12, Lx 0.6376, Lu 0.2210, Penalty -0.3353, loss 0.5234
+Label Softmax (x): [0.57305896 0.426941  ]
+Epoch 8, Batch 646/771, Grad Norms near zero: 12, Lx 0.6047, Lu 0.0761, Penalty -0.3352, loss 0.3456
+Label Softmax (x): [0.6015824  0.39841756]
+Epoch 8, Batch 647/771, Grad Norms near zero: 12, Lx 0.6109, Lu 0.2320, Penalty -0.3314, loss 0.5115
+Label Softmax (x): [0.6039835  0.39601654]
+Epoch 8, Batch 648/771, Grad Norms near zero: 12, Lx 0.6061, Lu 0.2027, Penalty -0.3319, loss 0.4769
+Label Softmax (x): [0.6138557  0.38614428]
+Epoch 8, Batch 649/771, Grad Norms near zero: 12, Lx 0.6092, Lu 0.2440, Penalty -0.3293, loss 0.5240
+Label Softmax (x): [0.62349695 0.37650302]
+Epoch 8, Batch 650/771, Grad Norms near zero: 12, Lx 0.6196, Lu 0.2320, Penalty -0.3254, loss 0.5262
+Label Softmax (x): [0.63540655 0.3645934 ]
+Epoch 8, Batch 651/771, Grad Norms near zero: 12, Lx 0.6265, Lu 0.2370, Penalty -0.3239, loss 0.5396
+Label Softmax (x): [0.5983686  0.40163136]
+Epoch 8, Batch 652/771, Grad Norms near zero: 12, Lx 0.6220, Lu 0.2509, Penalty -0.3320, loss 0.5409
+Label Softmax (x): [0.58828175 0.4117183 ]
+Epoch 8, Batch 653/771, Grad Norms near zero: 12, Lx 0.5979, Lu 0.1244, Penalty -0.3322, loss 0.3901
+Label Softmax (x): [0.5723388 0.4276612]
+Epoch 8, Batch 654/771, Grad Norms near zero: 12, Lx 0.6442, Lu 0.2195, Penalty -0.3336, loss 0.5301
+Label Softmax (x): [0.55701435 0.44298568]
+Epoch 8, Batch 655/771, Grad Norms near zero: 12, Lx 0.6363, Lu 0.3227, Penalty -0.3375, loss 0.6216
+Label Softmax (x): [0.57831156 0.4216884 ]
+Epoch 8, Batch 656/771, Grad Norms near zero: 12, Lx 0.6536, Lu 0.4032, Penalty -0.3360, loss 0.7208
+Label Softmax (x): [0.5649282  0.43507177]
+Epoch 8, Batch 657/771, Grad Norms near zero: 12, Lx 0.6751, Lu 0.2826, Penalty -0.3366, loss 0.6211
+Label Softmax (x): [0.576865 0.423135]
+Epoch 8, Batch 658/771, Grad Norms near zero: 12, Lx 0.5980, Lu 0.2638, Penalty -0.3349, loss 0.5269
+Label Softmax (x): [0.6042587  0.39574128]
+Epoch 8, Batch 659/771, Grad Norms near zero: 12, Lx 0.6207, Lu 0.2479, Penalty -0.3307, loss 0.5378
+Label Softmax (x): [0.6092758  0.39072418]
+Epoch 8, Batch 660/771, Grad Norms near zero: 12, Lx 0.6176, Lu 0.3014, Penalty -0.3318, loss 0.5873
+Label Softmax (x): [0.5957829  0.40421706]
+Epoch 8, Batch 661/771, Grad Norms near zero: 12, Lx 0.6318, Lu 0.2846, Penalty -0.3320, loss 0.5845
+Label Softmax (x): [0.5919143 0.4080857]
+Epoch 8, Batch 662/771, Grad Norms near zero: 12, Lx 0.6382, Lu 0.2858, Penalty -0.3323, loss 0.5917
+Label Softmax (x): [0.58782476 0.4121752 ]
+Epoch 8, Batch 663/771, Grad Norms near zero: 12, Lx 0.6036, Lu 0.0549, Penalty -0.3290, loss 0.3295
+Label Softmax (x): [0.57723063 0.42276934]
+Epoch 8, Batch 664/771, Grad Norms near zero: 12, Lx 0.6122, Lu 0.2462, Penalty -0.3347, loss 0.5237
+Label Softmax (x): [0.5683476  0.43165243]
+Epoch 8, Batch 665/771, Grad Norms near zero: 12, Lx 0.6298, Lu 0.2394, Penalty -0.3376, loss 0.5316
+Label Softmax (x): [0.5863378  0.41366223]
+Epoch 8, Batch 666/771, Grad Norms near zero: 12, Lx 0.6441, Lu 0.2695, Penalty -0.3348, loss 0.5788
+Label Softmax (x): [0.58529466 0.4147054 ]
+Epoch 8, Batch 667/771, Grad Norms near zero: 12, Lx 0.6123, Lu 0.1393, Penalty -0.3332, loss 0.4184
+Label Softmax (x): [0.60408103 0.39591897]
+Epoch 8, Batch 668/771, Grad Norms near zero: 12, Lx 0.5963, Lu 0.2423, Penalty -0.3302, loss 0.5083
+Label Softmax (x): [0.61704695 0.382953  ]
+Epoch 8, Batch 669/771, Grad Norms near zero: 12, Lx 0.6060, Lu 0.3160, Penalty -0.3292, loss 0.5928
+Label Softmax (x): [0.6263438  0.37365627]
+Epoch 8, Batch 670/771, Grad Norms near zero: 12, Lx 0.6347, Lu 0.3882, Penalty -0.3282, loss 0.6948
+Label Softmax (x): [0.62539446 0.3746055 ]
+Epoch 8, Batch 671/771, Grad Norms near zero: 12, Lx 0.6008, Lu 0.2887, Penalty -0.3270, loss 0.5624
+Label Softmax (x): [0.63561976 0.36438018]
+Epoch 8, Batch 672/771, Grad Norms near zero: 12, Lx 0.6016, Lu 0.3357, Penalty -0.3219, loss 0.6154
+Label Softmax (x): [0.6282165  0.37178347]
+Epoch 8, Batch 673/771, Grad Norms near zero: 12, Lx 0.6001, Lu 0.2585, Penalty -0.3263, loss 0.5323
+Label Softmax (x): [0.6000418  0.39995816]
+Epoch 8, Batch 674/771, Grad Norms near zero: 12, Lx 0.6216, Lu 0.2627, Penalty -0.3319, loss 0.5524
+Label Softmax (x): [0.60108924 0.39891073]
+Epoch 8, Batch 675/771, Grad Norms near zero: 12, Lx 0.5920, Lu 0.2898, Penalty -0.3306, loss 0.5511
+Label Softmax (x): [0.57443476 0.42556518]
+Epoch 8, Batch 676/771, Grad Norms near zero: 12, Lx 0.6358, Lu 0.3000, Penalty -0.3357, loss 0.6000
+Label Softmax (x): [0.5621876 0.4378124]
+Epoch 8, Batch 677/771, Grad Norms near zero: 12, Lx 0.6047, Lu 0.1061, Penalty -0.3346, loss 0.3762
+Label Softmax (x): [0.57383484 0.42616513]
+Epoch 8, Batch 678/771, Grad Norms near zero: 12, Lx 0.6155, Lu 0.2668, Penalty -0.3337, loss 0.5486
+Label Softmax (x): [0.57659304 0.423407  ]
+Epoch 8, Batch 679/771, Grad Norms near zero: 12, Lx 0.6152, Lu 0.0996, Penalty -0.3328, loss 0.3821
+Label Softmax (x): [0.6079112  0.39208883]
+Epoch 8, Batch 680/771, Grad Norms near zero: 12, Lx 0.5678, Lu 0.1141, Penalty -0.3258, loss 0.3562
+Label Softmax (x): [0.60315716 0.39684284]
+Epoch 8, Batch 681/771, Grad Norms near zero: 12, Lx 0.5900, Lu 0.0886, Penalty -0.3286, loss 0.3501
+Label Softmax (x): [0.60305786 0.39694217]
+Epoch 8, Batch 682/771, Grad Norms near zero: 12, Lx 0.6192, Lu 0.1681, Penalty -0.3254, loss 0.4619
+Label Softmax (x): [0.6401378  0.35986215]
+Epoch 8, Batch 683/771, Grad Norms near zero: 12, Lx 0.5533, Lu 0.1371, Penalty -0.3204, loss 0.3700
+Label Softmax (x): [0.61627895 0.38372105]
+Epoch 8, Batch 684/771, Grad Norms near zero: 12, Lx 0.6449, Lu 0.4929, Penalty -0.3273, loss 0.8104
+Label Softmax (x): [0.6197649  0.38023508]
+Epoch 8, Batch 685/771, Grad Norms near zero: 12, Lx 0.5598, Lu 0.1575, Penalty -0.3237, loss 0.3937
+Label Softmax (x): [0.5998014  0.40019858]
+Epoch 8, Batch 686/771, Grad Norms near zero: 12, Lx 0.5917, Lu 0.2536, Penalty -0.3320, loss 0.5133
+Label Softmax (x): [0.5788264  0.42117357]
+Epoch 8, Batch 687/771, Grad Norms near zero: 12, Lx 0.6288, Lu 0.1202, Penalty -0.3352, loss 0.4138
+Label Softmax (x): [0.5563032 0.4436968]
+Epoch 8, Batch 688/771, Grad Norms near zero: 12, Lx 0.6225, Lu 0.2313, Penalty -0.3394, loss 0.5144
+Label Softmax (x): [0.5810892 0.4189108]
+Epoch 8, Batch 689/771, Grad Norms near zero: 12, Lx 0.6196, Lu 0.1609, Penalty -0.3338, loss 0.4467
+Label Softmax (x): [0.5911778  0.40882218]
+Epoch 8, Batch 690/771, Grad Norms near zero: 12, Lx 0.5988, Lu 0.2248, Penalty -0.3334, loss 0.4902
+Label Softmax (x): [0.62987494 0.37012511]
+Epoch 8, Batch 691/771, Grad Norms near zero: 12, Lx 0.5558, Lu 0.1567, Penalty -0.3234, loss 0.3891
+Label Softmax (x): [0.66873777 0.33126223]
+Epoch 8, Batch 692/771, Grad Norms near zero: 12, Lx 0.5812, Lu 0.3218, Penalty -0.3117, loss 0.5913
+Label Softmax (x): [0.6384641  0.36153582]
+Epoch 8, Batch 693/771, Grad Norms near zero: 12, Lx 0.5734, Lu 0.2180, Penalty -0.3205, loss 0.4709
+Label Softmax (x): [0.6757474  0.32425267]
+Epoch 8, Batch 694/771, Grad Norms near zero: 12, Lx 0.5938, Lu 0.3106, Penalty -0.3107, loss 0.5937
+Label Softmax (x): [0.59511364 0.40488645]
+Epoch 8, Batch 695/771, Grad Norms near zero: 12, Lx 0.6346, Lu 0.2333, Penalty -0.3293, loss 0.5386
+Label Softmax (x): [0.6032201 0.3967799]
+Epoch 8, Batch 696/771, Grad Norms near zero: 12, Lx 0.6165, Lu 0.1766, Penalty -0.3287, loss 0.4644
+Label Softmax (x): [0.56750226 0.43249774]
+Epoch 8, Batch 697/771, Grad Norms near zero: 12, Lx 0.5752, Lu 0.1631, Penalty -0.3340, loss 0.4043
+Label Softmax (x): [0.54659605 0.4534039 ]
+Epoch 8, Batch 698/771, Grad Norms near zero: 12, Lx 0.6698, Lu 0.3314, Penalty -0.3371, loss 0.6641
+Label Softmax (x): [0.54293895 0.4570611 ]
+Epoch 8, Batch 699/771, Grad Norms near zero: 12, Lx 0.5800, Lu 0.0514, Penalty -0.3320, loss 0.2994
+Label Softmax (x): [0.5519656 0.4480344]
+Epoch 8, Batch 700/771, Grad Norms near zero: 12, Lx 0.6287, Lu 0.2414, Penalty -0.3367, loss 0.5334
+Label Softmax (x): [0.59632766 0.40367237]
+Epoch 8, Batch 701/771, Grad Norms near zero: 12, Lx 0.6038, Lu 0.1303, Penalty -0.3279, loss 0.4062
+Label Softmax (x): [0.6063038 0.3936962]
+Epoch 8, Batch 702/771, Grad Norms near zero: 12, Lx 0.6401, Lu 0.3390, Penalty -0.3300, loss 0.6491
+Label Softmax (x): [0.6396936  0.36030647]
+Epoch 8, Batch 703/771, Grad Norms near zero: 12, Lx 0.6170, Lu 0.3108, Penalty -0.3218, loss 0.6060
+Label Softmax (x): [0.6358434  0.36415663]
+Epoch 8, Batch 704/771, Grad Norms near zero: 12, Lx 0.6192, Lu 0.2273, Penalty -0.3240, loss 0.5225
+Label Softmax (x): [0.6588506  0.34114942]
+Epoch 8, Batch 705/771, Grad Norms near zero: 12, Lx 0.5691, Lu 0.1869, Penalty -0.3169, loss 0.4391
+Label Softmax (x): [0.6321484  0.36785164]
+Epoch 8, Batch 706/771, Grad Norms near zero: 12, Lx 0.5878, Lu 0.1665, Penalty -0.3241, loss 0.4302
+Label Softmax (x): [0.62531924 0.3746808 ]
+Epoch 8, Batch 707/771, Grad Norms near zero: 12, Lx 0.5857, Lu 0.1860, Penalty -0.3268, loss 0.4449
+Label Softmax (x): [0.6359275 0.3640725]
+Epoch 8, Batch 708/771, Grad Norms near zero: 12, Lx 0.5394, Lu 0.1142, Penalty -0.3220, loss 0.3316
+Label Softmax (x): [0.608994   0.39100602]
+Epoch 8, Batch 709/771, Grad Norms near zero: 12, Lx 0.5456, Lu 0.2211, Penalty -0.3295, loss 0.4372
+Label Softmax (x): [0.5998626  0.40013736]
+Epoch 8, Batch 710/771, Grad Norms near zero: 12, Lx 0.6067, Lu 0.1002, Penalty -0.3307, loss 0.3762
+Label Softmax (x): [0.611085 0.388915]
+Epoch 8, Batch 711/771, Grad Norms near zero: 12, Lx 0.6231, Lu 0.3180, Penalty -0.3318, loss 0.6093
+Label Softmax (x): [0.6266948 0.3733052]
+Epoch 8, Batch 712/771, Grad Norms near zero: 12, Lx 0.6179, Lu 0.1826, Penalty -0.3225, loss 0.4780
+Label Softmax (x): [0.6177113 0.3822887]
+Epoch 8, Batch 713/771, Grad Norms near zero: 12, Lx 0.6461, Lu 0.2750, Penalty -0.3299, loss 0.5912
+Label Softmax (x): [0.61540836 0.38459164]
+Epoch 8, Batch 714/771, Grad Norms near zero: 12, Lx 0.6303, Lu 0.0984, Penalty -0.3264, loss 0.4024
+Label Softmax (x): [0.5961162  0.40388379]
+Epoch 8, Batch 715/771, Grad Norms near zero: 12, Lx 0.5568, Lu 0.2366, Penalty -0.3322, loss 0.4612
+Label Softmax (x): [0.5800563  0.41994363]
+Epoch 8, Batch 716/771, Grad Norms near zero: 12, Lx 0.6008, Lu 0.0932, Penalty -0.3347, loss 0.3592
+Label Softmax (x): [0.57899904 0.42100102]
+Epoch 8, Batch 717/771, Grad Norms near zero: 12, Lx 0.6069, Lu 0.1496, Penalty -0.3338, loss 0.4226
+Label Softmax (x): [0.5861687  0.41383123]
+Epoch 8, Batch 718/771, Grad Norms near zero: 12, Lx 0.6245, Lu 0.1562, Penalty -0.3339, loss 0.4468
+Label Softmax (x): [0.5866348  0.41336522]
+Epoch 8, Batch 719/771, Grad Norms near zero: 12, Lx 0.6073, Lu 0.2314, Penalty -0.3350, loss 0.5036
+Label Softmax (x): [0.61228037 0.3877197 ]
+Epoch 8, Batch 720/771, Grad Norms near zero: 12, Lx 0.5886, Lu 0.1382, Penalty -0.3286, loss 0.3982
+Label Softmax (x): [0.61293757 0.3870625 ]
+Epoch 8, Batch 721/771, Grad Norms near zero: 12, Lx 0.5964, Lu 0.2585, Penalty -0.3293, loss 0.5257
+Label Softmax (x): [0.5921316  0.40786836]
+Epoch 8, Batch 722/771, Grad Norms near zero: 12, Lx 0.6570, Lu 0.2290, Penalty -0.3309, loss 0.5551
+Label Softmax (x): [0.655944   0.34405607]
+Epoch 8, Batch 723/771, Grad Norms near zero: 12, Lx 0.5486, Lu 0.1654, Penalty -0.3174, loss 0.3965
+Label Softmax (x): [0.6188419 0.3811581]
+Epoch 8, Batch 724/771, Grad Norms near zero: 12, Lx 0.5955, Lu 0.2135, Penalty -0.3263, loss 0.4828
+Label Softmax (x): [0.59477496 0.4052251 ]
+Epoch 8, Batch 725/771, Grad Norms near zero: 12, Lx 0.6343, Lu 0.2099, Penalty -0.3320, loss 0.5121
+Label Softmax (x): [0.61196387 0.3880361 ]
+Epoch 8, Batch 726/771, Grad Norms near zero: 12, Lx 0.5853, Lu 0.1986, Penalty -0.3283, loss 0.4556
+Label Softmax (x): [0.5701328 0.4298672]
+Epoch 8, Batch 727/771, Grad Norms near zero: 12, Lx 0.6492, Lu 0.1270, Penalty -0.3342, loss 0.4420
+Label Softmax (x): [0.58103245 0.41896752]
+Epoch 8, Batch 728/771, Grad Norms near zero: 12, Lx 0.6182, Lu 0.3186, Penalty -0.3346, loss 0.6022
+Label Softmax (x): [0.54346853 0.4565315 ]
+Epoch 8, Batch 729/771, Grad Norms near zero: 12, Lx 0.6639, Lu 0.2361, Penalty -0.3370, loss 0.5629
+Label Softmax (x): [0.575891   0.42410892]
+Epoch 8, Batch 730/771, Grad Norms near zero: 12, Lx 0.6421, Lu 0.2256, Penalty -0.3343, loss 0.5333
+Label Softmax (x): [0.6028522  0.39714777]
+Epoch 8, Batch 731/771, Grad Norms near zero: 12, Lx 0.6394, Lu 0.2274, Penalty -0.3271, loss 0.5397
+Label Softmax (x): [0.6085645  0.39143544]
+Epoch 8, Batch 732/771, Grad Norms near zero: 12, Lx 0.5609, Lu 0.1367, Penalty -0.3289, loss 0.3687
+Label Softmax (x): [0.60415745 0.39584258]
+Epoch 8, Batch 733/771, Grad Norms near zero: 12, Lx 0.6095, Lu 0.2919, Penalty -0.3278, loss 0.5736
+Label Softmax (x): [0.59227806 0.40772194]
+Epoch 8, Batch 734/771, Grad Norms near zero: 12, Lx 0.6300, Lu 0.3270, Penalty -0.3309, loss 0.6261
+Label Softmax (x): [0.58979386 0.4102061 ]
+Epoch 8, Batch 735/771, Grad Norms near zero: 12, Lx 0.6315, Lu 0.1434, Penalty -0.3285, loss 0.4464
+Label Softmax (x): [0.5800717  0.41992828]
+Epoch 8, Batch 736/771, Grad Norms near zero: 12, Lx 0.6267, Lu 0.2809, Penalty -0.3306, loss 0.5770
+Label Softmax (x): [0.5867865  0.41321352]
+Epoch 8, Batch 737/771, Grad Norms near zero: 12, Lx 0.6204, Lu 0.1899, Penalty -0.3324, loss 0.4779
+Label Softmax (x): [0.5635055 0.4364945]
+Epoch 8, Batch 738/771, Grad Norms near zero: 12, Lx 0.6414, Lu 0.2765, Penalty -0.3329, loss 0.5850
+Label Softmax (x): [0.5817499  0.41825008]
+Epoch 8, Batch 739/771, Grad Norms near zero: 12, Lx 0.6310, Lu 0.2752, Penalty -0.3357, loss 0.5704
+Label Softmax (x): [0.58934146 0.41065854]
+Epoch 8, Batch 740/771, Grad Norms near zero: 12, Lx 0.6433, Lu 0.1405, Penalty -0.3304, loss 0.4534
+Label Softmax (x): [0.5963274 0.4036725]
+Epoch 8, Batch 741/771, Grad Norms near zero: 12, Lx 0.6007, Lu 0.2380, Penalty -0.3308, loss 0.5078
+Label Softmax (x): [0.59695876 0.40304124]
+Epoch 8, Batch 742/771, Grad Norms near zero: 12, Lx 0.6655, Lu 0.1920, Penalty -0.3307, loss 0.5267
+Label Softmax (x): [0.59465206 0.405348  ]
+Epoch 8, Batch 743/771, Grad Norms near zero: 12, Lx 0.6372, Lu 0.1896, Penalty -0.3299, loss 0.4969
+Label Softmax (x): [0.5859043 0.4140957]
+Epoch 8, Batch 744/771, Grad Norms near zero: 12, Lx 0.6160, Lu 0.2912, Penalty -0.3346, loss 0.5726
+Label Softmax (x): [0.5778921  0.42210788]
+Epoch 8, Batch 745/771, Grad Norms near zero: 12, Lx 0.6570, Lu 0.2824, Penalty -0.3350, loss 0.6044
+Label Softmax (x): [0.5360182  0.46398178]
+Epoch 8, Batch 746/771, Grad Norms near zero: 12, Lx 0.6446, Lu 0.0700, Penalty -0.3351, loss 0.3795
+Label Softmax (x): [0.56892616 0.43107384]
+Epoch 8, Batch 747/771, Grad Norms near zero: 12, Lx 0.6366, Lu 0.2207, Penalty -0.3361, loss 0.5212
+Label Softmax (x): [0.578766   0.42123395]
+Epoch 8, Batch 748/771, Grad Norms near zero: 12, Lx 0.6265, Lu 0.2724, Penalty -0.3363, loss 0.5626
+Label Softmax (x): [0.579022 0.420978]
+Epoch 8, Batch 749/771, Grad Norms near zero: 12, Lx 0.6171, Lu 0.2469, Penalty -0.3353, loss 0.5287
+Label Softmax (x): [0.61468214 0.38531792]
+Epoch 8, Batch 750/771, Grad Norms near zero: 12, Lx 0.6056, Lu 0.2217, Penalty -0.3287, loss 0.4986
+Label Softmax (x): [0.6094015  0.39059848]
+Epoch 8, Batch 751/771, Grad Norms near zero: 12, Lx 0.5978, Lu 0.1124, Penalty -0.3261, loss 0.3840
+Label Softmax (x): [0.6019964  0.39800355]
+Epoch 8, Batch 752/771, Grad Norms near zero: 12, Lx 0.6029, Lu 0.1397, Penalty -0.3276, loss 0.4149
+Label Softmax (x): [0.6209861  0.37901387]
+Epoch 8, Batch 753/771, Grad Norms near zero: 12, Lx 0.5725, Lu 0.0883, Penalty -0.3227, loss 0.3381
+Label Softmax (x): [0.61592764 0.38407233]
+Epoch 8, Batch 754/771, Grad Norms near zero: 12, Lx 0.6080, Lu 0.1881, Penalty -0.3267, loss 0.4694
+Label Softmax (x): [0.58635694 0.41364303]
+Epoch 8, Batch 755/771, Grad Norms near zero: 12, Lx 0.5981, Lu 0.1088, Penalty -0.3285, loss 0.3784
+Label Softmax (x): [0.5943167  0.40568328]
+Epoch 8, Batch 756/771, Grad Norms near zero: 12, Lx 0.6080, Lu 0.2271, Penalty -0.3314, loss 0.5037
+Label Softmax (x): [0.5625001  0.43749982]
+Epoch 8, Batch 757/771, Grad Norms near zero: 12, Lx 0.6340, Lu 0.2116, Penalty -0.3348, loss 0.5108
+Label Softmax (x): [0.56424564 0.43575436]
+Epoch 8, Batch 758/771, Grad Norms near zero: 12, Lx 0.6736, Lu 0.4490, Penalty -0.3360, loss 0.7866
+Label Softmax (x): [0.59637576 0.4036243 ]
+Epoch 8, Batch 759/771, Grad Norms near zero: 12, Lx 0.5554, Lu 0.0499, Penalty -0.3295, loss 0.2758
+Label Softmax (x): [0.5788948  0.42110527]
+Epoch 8, Batch 760/771, Grad Norms near zero: 12, Lx 0.5968, Lu 0.1781, Penalty -0.3338, loss 0.4411
+Label Softmax (x): [0.59941506 0.40058506]
+Epoch 8, Batch 761/771, Grad Norms near zero: 12, Lx 0.6291, Lu 0.3140, Penalty -0.3311, loss 0.6120
+Label Softmax (x): [0.60998154 0.39001843]
+Epoch 8, Batch 762/771, Grad Norms near zero: 12, Lx 0.6265, Lu 0.2293, Penalty -0.3300, loss 0.5258
+Label Softmax (x): [0.5965806  0.40341935]
+Epoch 8, Batch 763/771, Grad Norms near zero: 12, Lx 0.6396, Lu 0.2442, Penalty -0.3315, loss 0.5523
+Label Softmax (x): [0.5900657  0.40993422]
+Epoch 8, Batch 764/771, Grad Norms near zero: 12, Lx 0.6573, Lu 0.4291, Penalty -0.3341, loss 0.7523
+Label Softmax (x): [0.5855249  0.41447505]
+Epoch 8, Batch 765/771, Grad Norms near zero: 12, Lx 0.6343, Lu 0.2258, Penalty -0.3335, loss 0.5267
+Label Softmax (x): [0.5531908 0.4468091]
+Epoch 8, Batch 766/771, Grad Norms near zero: 12, Lx 0.6422, Lu 0.2917, Penalty -0.3378, loss 0.5961
+Label Softmax (x): [0.55358326 0.44641677]
+Epoch 8, Batch 767/771, Grad Norms near zero: 12, Lx 0.6257, Lu 0.3001, Penalty -0.3372, loss 0.5886
+Label Softmax (x): [0.53329885 0.46670112]
+Epoch 8, Batch 768/771, Grad Norms near zero: 12, Lx 0.6767, Lu 0.2101, Penalty -0.3386, loss 0.5482
+Label Softmax (x): [0.56138074 0.43861926]
+Epoch 8, Batch 769/771, Grad Norms near zero: 12, Lx 0.6251, Lu 0.1440, Penalty -0.3335, loss 0.4356
+Label Softmax (x): [0.53271854 0.46728143]
+Epoch 8, Batch 770/771, Grad Norms near zero: 12, Lx 0.6492, Lu 0.1324, Penalty -0.3378, loss 0.4438
+Label Softmax (x): [0.54902935 0.45097056]
+Epoch 8, Batch 771/771, Grad Norms near zero: 12, Lx 0.6016, Lu 0.1109, Penalty -0.3351, loss 0.3774
+Training for Network 2
+labelled data size: 22716
+unlabelled data size: 17284
+Label Softmax (x): [0.55886436 0.44113564]
+Epoch 8, Batch 1/710, Grad Norms near zero: 12, Lx 0.6735, Lu 0.3502, Penalty -0.3400, loss 0.6837
+Label Softmax (x): [0.5642722  0.43572783]
+Epoch 8, Batch 2/710, Grad Norms near zero: 12, Lx 0.6794, Lu 0.2261, Penalty -0.3400, loss 0.5656
+Label Softmax (x): [0.54243565 0.45756435]
+Epoch 8, Batch 3/710, Grad Norms near zero: 12, Lx 0.6711, Lu 0.2276, Penalty -0.3426, loss 0.5562
+Label Softmax (x): [0.53335816 0.4666418 ]
+Epoch 8, Batch 4/710, Grad Norms near zero: 12, Lx 0.6436, Lu 0.2245, Penalty -0.3413, loss 0.5268
+Label Softmax (x): [0.4900834  0.50991654]
+Epoch 8, Batch 5/710, Grad Norms near zero: 12, Lx 0.6744, Lu 0.3269, Penalty -0.3434, loss 0.6580
+Label Softmax (x): [0.4608157 0.5391842]
+Epoch 8, Batch 6/710, Grad Norms near zero: 12, Lx 0.6813, Lu 0.4127, Penalty -0.3418, loss 0.7522
+Label Softmax (x): [0.4821799 0.5178201]
+Epoch 8, Batch 7/710, Grad Norms near zero: 12, Lx 0.6554, Lu 0.1785, Penalty -0.3406, loss 0.4933
+Label Softmax (x): [0.5020388  0.49796122]
+Epoch 8, Batch 8/710, Grad Norms near zero: 12, Lx 0.6358, Lu 0.2479, Penalty -0.3405, loss 0.5432
+Label Softmax (x): [0.5015497  0.49845028]
+Epoch 8, Batch 9/710, Grad Norms near zero: 12, Lx 0.6650, Lu 0.1575, Penalty -0.3391, loss 0.4834
+Label Softmax (x): [0.4913955 0.5086045]
+Epoch 8, Batch 10/710, Grad Norms near zero: 12, Lx 0.6562, Lu 0.1888, Penalty -0.3341, loss 0.5109
+Label Softmax (x): [0.51361305 0.48638695]
+Epoch 8, Batch 11/710, Grad Norms near zero: 12, Lx 0.6884, Lu 0.1266, Penalty -0.3289, loss 0.4861
+Label Softmax (x): [0.49432597 0.505674  ]
+Epoch 8, Batch 12/710, Grad Norms near zero: 12, Lx 0.6930, Lu 0.2546, Penalty -0.3381, loss 0.6095
+Label Softmax (x): [0.5561292 0.4438708]
+Epoch 8, Batch 13/710, Grad Norms near zero: 12, Lx 0.6362, Lu 0.1469, Penalty -0.3276, loss 0.4556
+Label Softmax (x): [0.51089156 0.48910844]
+Epoch 8, Batch 14/710, Grad Norms near zero: 12, Lx 0.6956, Lu 0.1642, Penalty -0.3323, loss 0.5275
+Label Softmax (x): [0.5258227  0.47417733]
+Epoch 8, Batch 15/710, Grad Norms near zero: 12, Lx 0.6381, Lu 0.1935, Penalty -0.3326, loss 0.4991
+Label Softmax (x): [0.5207394  0.47926062]
+Epoch 8, Batch 16/710, Grad Norms near zero: 12, Lx 0.6730, Lu 0.4320, Penalty -0.3336, loss 0.7714
+Label Softmax (x): [0.53064317 0.46935683]
+Epoch 8, Batch 17/710, Grad Norms near zero: 12, Lx 0.6627, Lu 0.2611, Penalty -0.3359, loss 0.5879
+Label Softmax (x): [0.5057819 0.4942181]
+Epoch 8, Batch 18/710, Grad Norms near zero: 12, Lx 0.6813, Lu 0.2485, Penalty -0.3377, loss 0.5920
+Label Softmax (x): [0.56274796 0.437252  ]
+Epoch 8, Batch 19/710, Grad Norms near zero: 12, Lx 0.6397, Lu 0.1886, Penalty -0.3321, loss 0.4962
+Label Softmax (x): [0.5279793 0.4720207]
+Epoch 8, Batch 20/710, Grad Norms near zero: 12, Lx 0.6551, Lu 0.1724, Penalty -0.3305, loss 0.4970
+Label Softmax (x): [0.57158136 0.4284187 ]
+Epoch 8, Batch 21/710, Grad Norms near zero: 12, Lx 0.6549, Lu 0.2452, Penalty -0.3348, loss 0.5653
+Label Softmax (x): [0.5393981  0.46060193]
+Epoch 8, Batch 22/710, Grad Norms near zero: 12, Lx 0.6639, Lu 0.3492, Penalty -0.3383, loss 0.6748
+Label Softmax (x): [0.51333666 0.4866633 ]
+Epoch 8, Batch 23/710, Grad Norms near zero: 12, Lx 0.6978, Lu 0.2468, Penalty -0.3367, loss 0.6079
+Label Softmax (x): [0.50212204 0.49787796]
+Epoch 8, Batch 24/710, Grad Norms near zero: 12, Lx 0.6185, Lu 0.2028, Penalty -0.3377, loss 0.4836
+Label Softmax (x): [0.45632622 0.5436738 ]
+Epoch 8, Batch 25/710, Grad Norms near zero: 12, Lx 0.6533, Lu 0.4060, Penalty -0.3392, loss 0.7201
+Label Softmax (x): [0.501792   0.49820805]
+Epoch 8, Batch 26/710, Grad Norms near zero: 12, Lx 0.6920, Lu 0.3029, Penalty -0.3390, loss 0.6559
+Label Softmax (x): [0.4806843  0.51931566]
+Epoch 8, Batch 27/710, Grad Norms near zero: 12, Lx 0.6564, Lu 0.2108, Penalty -0.3411, loss 0.5261
+Label Softmax (x): [0.5010988 0.4989012]
+Epoch 8, Batch 28/710, Grad Norms near zero: 12, Lx 0.6748, Lu 0.2081, Penalty -0.3394, loss 0.5435
+Label Softmax (x): [0.500344   0.49965605]
+Epoch 8, Batch 29/710, Grad Norms near zero: 12, Lx 0.6404, Lu 0.1906, Penalty -0.3378, loss 0.4932
+Label Softmax (x): [0.49545267 0.5045473 ]
+Epoch 8, Batch 30/710, Grad Norms near zero: 12, Lx 0.6565, Lu 0.2228, Penalty -0.3410, loss 0.5382
+Label Softmax (x): [0.47256023 0.5274398 ]
+Epoch 8, Batch 31/710, Grad Norms near zero: 12, Lx 0.6330, Lu 0.2740, Penalty -0.3376, loss 0.5694
+Label Softmax (x): [0.48807007 0.5119299 ]
+Epoch 8, Batch 32/710, Grad Norms near zero: 12, Lx 0.6483, Lu 0.2451, Penalty -0.3410, loss 0.5524
+Label Softmax (x): [0.4788792 0.5211207]
+Epoch 8, Batch 33/710, Grad Norms near zero: 12, Lx 0.6663, Lu 0.2522, Penalty -0.3388, loss 0.5797
+Label Softmax (x): [0.49850294 0.5014971 ]
+Epoch 8, Batch 34/710, Grad Norms near zero: 12, Lx 0.6661, Lu 0.3043, Penalty -0.3412, loss 0.6292
+Label Softmax (x): [0.4968791 0.5031209]
+Epoch 8, Batch 35/710, Grad Norms near zero: 12, Lx 0.6410, Lu 0.0889, Penalty -0.3347, loss 0.3951
+Label Softmax (x): [0.52556616 0.47443387]
+Epoch 8, Batch 36/710, Grad Norms near zero: 12, Lx 0.6523, Lu 0.1855, Penalty -0.3378, loss 0.4999
+Label Softmax (x): [0.53790176 0.46209815]
+Epoch 8, Batch 37/710, Grad Norms near zero: 12, Lx 0.6439, Lu 0.2127, Penalty -0.3346, loss 0.5220
+Label Softmax (x): [0.5153799  0.48462003]
+Epoch 8, Batch 38/710, Grad Norms near zero: 12, Lx 0.6505, Lu 0.1251, Penalty -0.3393, loss 0.4363
+Label Softmax (x): [0.53270054 0.46729946]
+Epoch 8, Batch 39/710, Grad Norms near zero: 12, Lx 0.6797, Lu 0.3578, Penalty -0.3381, loss 0.6994
+Label Softmax (x): [0.5073546  0.49264538]
+Epoch 8, Batch 40/710, Grad Norms near zero: 12, Lx 0.6654, Lu 0.2746, Penalty -0.3394, loss 0.6007
+Label Softmax (x): [0.495556 0.504444]
+Epoch 8, Batch 41/710, Grad Norms near zero: 12, Lx 0.6560, Lu 0.2744, Penalty -0.3412, loss 0.5892
+Label Softmax (x): [0.4919275 0.5080725]
+Epoch 8, Batch 42/710, Grad Norms near zero: 12, Lx 0.6561, Lu 0.3466, Penalty -0.3401, loss 0.6626
+Label Softmax (x): [0.49541354 0.5045865 ]
+Epoch 8, Batch 43/710, Grad Norms near zero: 12, Lx 0.6988, Lu 0.1423, Penalty -0.3349, loss 0.5062
+Label Softmax (x): [0.50077325 0.49922675]
+Epoch 8, Batch 44/710, Grad Norms near zero: 12, Lx 0.6569, Lu 0.2909, Penalty -0.3405, loss 0.6073
+Label Softmax (x): [0.5463219  0.45367807]
+Epoch 8, Batch 45/710, Grad Norms near zero: 12, Lx 0.6602, Lu 0.2663, Penalty -0.3388, loss 0.5877
+Label Softmax (x): [0.5299103  0.47008967]
+Epoch 8, Batch 46/710, Grad Norms near zero: 12, Lx 0.6653, Lu 0.1613, Penalty -0.3369, loss 0.4896
+Label Softmax (x): [0.54196644 0.4580335 ]
+Epoch 8, Batch 47/710, Grad Norms near zero: 12, Lx 0.6595, Lu 0.3264, Penalty -0.3387, loss 0.6472
+Label Softmax (x): [0.50934136 0.4906587 ]
+Epoch 8, Batch 48/710, Grad Norms near zero: 12, Lx 0.6604, Lu 0.2208, Penalty -0.3397, loss 0.5415
+Label Softmax (x): [0.4655672 0.5344329]
+Epoch 8, Batch 49/710, Grad Norms near zero: 12, Lx 0.6729, Lu 0.3265, Penalty -0.3394, loss 0.6600
+Label Softmax (x): [0.4408764  0.55912364]
+Epoch 8, Batch 50/710, Grad Norms near zero: 12, Lx 0.6566, Lu 0.2649, Penalty -0.3364, loss 0.5851
+Label Softmax (x): [0.5046137 0.4953863]
+Epoch 8, Batch 51/710, Grad Norms near zero: 12, Lx 0.6688, Lu 0.1746, Penalty -0.3405, loss 0.5030
+Label Softmax (x): [0.45900995 0.5409901 ]
+Epoch 8, Batch 52/710, Grad Norms near zero: 12, Lx 0.6420, Lu 0.2153, Penalty -0.3361, loss 0.5212
+Label Softmax (x): [0.47185403 0.52814597]
+Epoch 8, Batch 53/710, Grad Norms near zero: 12, Lx 0.6646, Lu 0.2508, Penalty -0.3395, loss 0.5759
+Label Softmax (x): [0.46337727 0.53662264]
+Epoch 8, Batch 54/710, Grad Norms near zero: 12, Lx 0.6186, Lu 0.1866, Penalty -0.3358, loss 0.4694
+Label Softmax (x): [0.5218786 0.4781214]
+Epoch 8, Batch 55/710, Grad Norms near zero: 12, Lx 0.6465, Lu 0.0744, Penalty -0.3349, loss 0.3860
+Label Softmax (x): [0.5501076  0.44989243]
+Epoch 8, Batch 56/710, Grad Norms near zero: 12, Lx 0.6404, Lu 0.2511, Penalty -0.3376, loss 0.5540
+Label Softmax (x): [0.5558841  0.44411594]
+Epoch 8, Batch 57/710, Grad Norms near zero: 12, Lx 0.6496, Lu 0.1101, Penalty -0.3351, loss 0.4247
+Label Softmax (x): [0.54689395 0.45310605]
+Epoch 8, Batch 58/710, Grad Norms near zero: 12, Lx 0.6817, Lu 0.1063, Penalty -0.3395, loss 0.4486
+Label Softmax (x): [0.52431023 0.47568977]
+Epoch 8, Batch 59/710, Grad Norms near zero: 12, Lx 0.6676, Lu 0.3088, Penalty -0.3409, loss 0.6356
+Label Softmax (x): [0.49187544 0.50812453]
+Epoch 8, Batch 60/710, Grad Norms near zero: 12, Lx 0.6400, Lu 0.0768, Penalty -0.3363, loss 0.3805
+Label Softmax (x): [0.4759124  0.52408755]
+Epoch 8, Batch 61/710, Grad Norms near zero: 12, Lx 0.6595, Lu 0.2118, Penalty -0.3412, loss 0.5302
+Label Softmax (x): [0.43607855 0.56392145]
+Epoch 8, Batch 62/710, Grad Norms near zero: 12, Lx 0.6698, Lu 0.3630, Penalty -0.3360, loss 0.6968
+Label Softmax (x): [0.44759154 0.55240846]
+Epoch 8, Batch 63/710, Grad Norms near zero: 12, Lx 0.6604, Lu 0.3312, Penalty -0.3390, loss 0.6526
+Label Softmax (x): [0.4930094 0.5069906]
+Epoch 8, Batch 64/710, Grad Norms near zero: 12, Lx 0.6574, Lu 0.3333, Penalty -0.3425, loss 0.6482
+Label Softmax (x): [0.5303302  0.46966982]
+Epoch 8, Batch 65/710, Grad Norms near zero: 12, Lx 0.6618, Lu 0.0994, Penalty -0.3401, loss 0.4210
+Label Softmax (x): [0.5244055  0.47559452]
+Epoch 8, Batch 66/710, Grad Norms near zero: 12, Lx 0.6718, Lu 0.3515, Penalty -0.3395, loss 0.6838
+Label Softmax (x): [0.5337068  0.46629322]
+Epoch 8, Batch 67/710, Grad Norms near zero: 12, Lx 0.6948, Lu 0.1456, Penalty -0.3354, loss 0.5050
+Label Softmax (x): [0.5387612  0.46123883]
+Epoch 8, Batch 68/710, Grad Norms near zero: 12, Lx 0.6334, Lu 0.2645, Penalty -0.3397, loss 0.5582
+Label Softmax (x): [0.5010838 0.4989162]
+Epoch 8, Batch 69/710, Grad Norms near zero: 12, Lx 0.6931, Lu 0.3858, Penalty -0.3415, loss 0.7374
+Label Softmax (x): [0.4945266  0.50547343]
+Epoch 8, Batch 70/710, Grad Norms near zero: 12, Lx 0.6384, Lu 0.1083, Penalty -0.3369, loss 0.4098
+Label Softmax (x): [0.44918838 0.55081165]
+Epoch 8, Batch 71/710, Grad Norms near zero: 12, Lx 0.6485, Lu 0.2943, Penalty -0.3358, loss 0.6070
+Label Softmax (x): [0.44279584 0.5572041 ]
+Epoch 8, Batch 72/710, Grad Norms near zero: 12, Lx 0.6877, Lu 0.1827, Penalty -0.3307, loss 0.5398
+Label Softmax (x): [0.43051046 0.5694896 ]
+Epoch 8, Batch 73/710, Grad Norms near zero: 12, Lx 0.6239, Lu 0.3428, Penalty -0.3334, loss 0.6334
+Label Softmax (x): [0.480164 0.519836]
+Epoch 8, Batch 74/710, Grad Norms near zero: 12, Lx 0.6477, Lu 0.1662, Penalty -0.3360, loss 0.4779
+Label Softmax (x): [0.5732575 0.4267425]
+Epoch 8, Batch 75/710, Grad Norms near zero: 12, Lx 0.6502, Lu 0.2759, Penalty -0.3323, loss 0.5938
+Label Softmax (x): [0.58501375 0.41498625]
+Epoch 8, Batch 76/710, Grad Norms near zero: 12, Lx 0.6282, Lu 0.1951, Penalty -0.3259, loss 0.4974
+Label Softmax (x): [0.5845492  0.41545087]
+Epoch 8, Batch 77/710, Grad Norms near zero: 12, Lx 0.6619, Lu 0.2056, Penalty -0.3288, loss 0.5387
+Label Softmax (x): [0.5664618  0.43353823]
+Epoch 8, Batch 78/710, Grad Norms near zero: 12, Lx 0.7414, Lu 0.3870, Penalty -0.3338, loss 0.7946
+Label Softmax (x): [0.5487776 0.4512224]
+Epoch 8, Batch 79/710, Grad Norms near zero: 12, Lx 0.6475, Lu 0.1573, Penalty -0.3348, loss 0.4700
+Label Softmax (x): [0.47151583 0.5284842 ]
+Epoch 8, Batch 80/710, Grad Norms near zero: 12, Lx 0.6581, Lu 0.1429, Penalty -0.3385, loss 0.4625
+Label Softmax (x): [0.38678178 0.6132182 ]
+Epoch 8, Batch 81/710, Grad Norms near zero: 12, Lx 0.6694, Lu 0.4293, Penalty -0.3293, loss 0.7694
+Label Softmax (x): [0.40540186 0.5945982 ]
+Epoch 8, Batch 82/710, Grad Norms near zero: 12, Lx 0.7087, Lu 0.1963, Penalty -0.3326, loss 0.5724
+Label Softmax (x): [0.42867067 0.57132936]
+Epoch 8, Batch 83/710, Grad Norms near zero: 12, Lx 0.6972, Lu 0.2775, Penalty -0.3381, loss 0.6366
+Label Softmax (x): [0.47705555 0.5229445 ]
+Epoch 8, Batch 84/710, Grad Norms near zero: 12, Lx 0.6651, Lu 0.3513, Penalty -0.3417, loss 0.6747
+Label Softmax (x): [0.52461284 0.4753871 ]
+Epoch 8, Batch 85/710, Grad Norms near zero: 12, Lx 0.6790, Lu 0.2492, Penalty -0.3428, loss 0.5854
+Label Softmax (x): [0.5477309  0.45226908]
+Epoch 8, Batch 86/710, Grad Norms near zero: 12, Lx 0.6789, Lu 0.3049, Penalty -0.3413, loss 0.6424
+Label Softmax (x): [0.5567466 0.4432534]
+Epoch 8, Batch 87/710, Grad Norms near zero: 12, Lx 0.6981, Lu 0.3350, Penalty -0.3413, loss 0.6918
+Label Softmax (x): [0.5484941  0.45150584]
+Epoch 8, Batch 88/710, Grad Norms near zero: 12, Lx 0.7009, Lu 0.2907, Penalty -0.3425, loss 0.6492
+Label Softmax (x): [0.5419184  0.45808157]
+Epoch 8, Batch 89/710, Grad Norms near zero: 12, Lx 0.6530, Lu 0.0700, Penalty -0.3402, loss 0.3827
+Label Softmax (x): [0.5059944 0.4940056]
+Epoch 8, Batch 90/710, Grad Norms near zero: 12, Lx 0.6531, Lu 0.0411, Penalty -0.3420, loss 0.3523
+Label Softmax (x): [0.48664212 0.5133579 ]
+Epoch 8, Batch 91/710, Grad Norms near zero: 12, Lx 0.6578, Lu 0.1222, Penalty -0.3424, loss 0.4376
+Label Softmax (x): [0.44569665 0.5543033 ]
+Epoch 8, Batch 92/710, Grad Norms near zero: 12, Lx 0.6464, Lu 0.1204, Penalty -0.3395, loss 0.4273
+Label Softmax (x): [0.4282803 0.5717197]
+Epoch 8, Batch 93/710, Grad Norms near zero: 12, Lx 0.7196, Lu 0.4247, Penalty -0.3385, loss 0.8058
+Label Softmax (x): [0.43408448 0.5659156 ]
+Epoch 8, Batch 94/710, Grad Norms near zero: 12, Lx 0.6713, Lu 0.4081, Penalty -0.3406, loss 0.7388
+Label Softmax (x): [0.48874593 0.5112541 ]
+Epoch 8, Batch 95/710, Grad Norms near zero: 12, Lx 0.6689, Lu 0.2203, Penalty -0.3429, loss 0.5464
+Label Softmax (x): [0.50787485 0.4921252 ]
+Epoch 8, Batch 96/710, Grad Norms near zero: 12, Lx 0.6549, Lu 0.1509, Penalty -0.3422, loss 0.4636
+Label Softmax (x): [0.5586666  0.44133332]
+Epoch 8, Batch 97/710, Grad Norms near zero: 12, Lx 0.6714, Lu 0.2771, Penalty -0.3392, loss 0.6093
+Label Softmax (x): [0.561043   0.43895704]
+Epoch 8, Batch 98/710, Grad Norms near zero: 12, Lx 0.6469, Lu 0.2249, Penalty -0.3374, loss 0.5344
+Label Softmax (x): [0.55891645 0.4410836 ]
+Epoch 8, Batch 99/710, Grad Norms near zero: 12, Lx 0.6529, Lu 0.1346, Penalty -0.3370, loss 0.4505
+Label Softmax (x): [0.55246204 0.4475379 ]
+Epoch 8, Batch 100/710, Grad Norms near zero: 12, Lx 0.6380, Lu 0.2494, Penalty -0.3378, loss 0.5496
+Label Softmax (x): [0.53094906 0.46905094]
+Epoch 8, Batch 101/710, Grad Norms near zero: 12, Lx 0.6816, Lu 0.3416, Penalty -0.3424, loss 0.6809
+Label Softmax (x): [0.5208813  0.47911873]
+Epoch 8, Batch 102/710, Grad Norms near zero: 12, Lx 0.6745, Lu 0.1723, Penalty -0.3400, loss 0.5068
+Label Softmax (x): [0.4645014 0.5354986]
+Epoch 8, Batch 103/710, Grad Norms near zero: 12, Lx 0.6209, Lu 0.0738, Penalty -0.3378, loss 0.3570
+Label Softmax (x): [0.45957354 0.5404265 ]
+Epoch 8, Batch 104/710, Grad Norms near zero: 12, Lx 0.6336, Lu 0.1277, Penalty -0.3384, loss 0.4229
+Label Softmax (x): [0.4118132 0.5881868]
+Epoch 8, Batch 105/710, Grad Norms near zero: 12, Lx 0.6058, Lu 0.1270, Penalty -0.3327, loss 0.4001
+Label Softmax (x): [0.38527456 0.6147255 ]
+Epoch 8, Batch 106/710, Grad Norms near zero: 12, Lx 0.7087, Lu 0.4639, Penalty -0.3279, loss 0.8447
+Label Softmax (x): [0.4499519  0.55004805]
+Epoch 8, Batch 107/710, Grad Norms near zero: 12, Lx 0.6734, Lu 0.1886, Penalty -0.3362, loss 0.5258
+Label Softmax (x): [0.47789577 0.52210426]
+Epoch 8, Batch 108/710, Grad Norms near zero: 12, Lx 0.6756, Lu 0.2855, Penalty -0.3365, loss 0.6246
+Label Softmax (x): [0.502853   0.49714708]
+Epoch 8, Batch 109/710, Grad Norms near zero: 12, Lx 0.6634, Lu 0.2297, Penalty -0.3414, loss 0.5518
+Label Softmax (x): [0.5539392 0.4460608]
+Epoch 8, Batch 110/710, Grad Norms near zero: 12, Lx 0.6498, Lu 0.1655, Penalty -0.3369, loss 0.4784
+Label Softmax (x): [0.5717682 0.4282318]
+Epoch 8, Batch 111/710, Grad Norms near zero: 12, Lx 0.6998, Lu 0.4238, Penalty -0.3375, loss 0.7861
+Label Softmax (x): [0.5951346  0.40486535]
+Epoch 8, Batch 112/710, Grad Norms near zero: 12, Lx 0.7162, Lu 0.2694, Penalty -0.3330, loss 0.6527
+Label Softmax (x): [0.5265191  0.47348088]
+Epoch 8, Batch 113/710, Grad Norms near zero: 12, Lx 0.6731, Lu 0.2100, Penalty -0.3415, loss 0.5416
+Label Softmax (x): [0.53479815 0.46520188]
+Epoch 8, Batch 114/710, Grad Norms near zero: 12, Lx 0.6563, Lu 0.3298, Penalty -0.3397, loss 0.6464
+Label Softmax (x): [0.49642876 0.5035713 ]
+Epoch 8, Batch 115/710, Grad Norms near zero: 12, Lx 0.6191, Lu 0.1216, Penalty -0.3398, loss 0.4009
+Label Softmax (x): [0.4972208 0.5027792]
+Epoch 8, Batch 116/710, Grad Norms near zero: 12, Lx 0.6629, Lu 0.2423, Penalty -0.3402, loss 0.5650
+Label Softmax (x): [0.50153035 0.49846962]
+Epoch 8, Batch 117/710, Grad Norms near zero: 12, Lx 0.6917, Lu 0.3046, Penalty -0.3410, loss 0.6553
+Label Softmax (x): [0.5073401  0.49265987]
+Epoch 8, Batch 118/710, Grad Norms near zero: 12, Lx 0.6752, Lu 0.2642, Penalty -0.3390, loss 0.6003
+Label Softmax (x): [0.45120633 0.5487937 ]
+Epoch 8, Batch 119/710, Grad Norms near zero: 12, Lx 0.6854, Lu 0.3354, Penalty -0.3401, loss 0.6807
+Label Softmax (x): [0.5261925 0.4738075]
+Epoch 8, Batch 120/710, Grad Norms near zero: 12, Lx 0.6520, Lu 0.2358, Penalty -0.3384, loss 0.5494
+Label Softmax (x): [0.5034742 0.4965258]
+Epoch 8, Batch 121/710, Grad Norms near zero: 12, Lx 0.6444, Lu 0.2810, Penalty -0.3420, loss 0.5833
+Label Softmax (x): [0.5788761  0.42112395]
+Epoch 8, Batch 122/710, Grad Norms near zero: 12, Lx 0.6524, Lu 0.1260, Penalty -0.3338, loss 0.4446
+Label Softmax (x): [0.5634679  0.43653208]
+Epoch 8, Batch 123/710, Grad Norms near zero: 12, Lx 0.6966, Lu 0.3767, Penalty -0.3387, loss 0.7346
+Label Softmax (x): [0.53287095 0.467129  ]
+Epoch 8, Batch 124/710, Grad Norms near zero: 12, Lx 0.7030, Lu 0.3290, Penalty -0.3432, loss 0.6888
+Label Softmax (x): [0.5682851  0.43171483]
+Epoch 8, Batch 125/710, Grad Norms near zero: 12, Lx 0.6525, Lu 0.1091, Penalty -0.3348, loss 0.4268
+Label Softmax (x): [0.49587655 0.50412345]
+Epoch 8, Batch 126/710, Grad Norms near zero: 12, Lx 0.6589, Lu 0.2465, Penalty -0.3424, loss 0.5630
+Label Softmax (x): [0.48180482 0.51819515]
+Epoch 8, Batch 127/710, Grad Norms near zero: 12, Lx 0.6596, Lu 0.1906, Penalty -0.3396, loss 0.5106
+Label Softmax (x): [0.4754045 0.5245955]
+Epoch 8, Batch 128/710, Grad Norms near zero: 12, Lx 0.6225, Lu 0.1749, Penalty -0.3384, loss 0.4590
+Label Softmax (x): [0.3880412 0.6119588]
+Epoch 8, Batch 129/710, Grad Norms near zero: 12, Lx 0.6129, Lu 0.2002, Penalty -0.3271, loss 0.4860
+Label Softmax (x): [0.38469672 0.6153033 ]
+Epoch 8, Batch 130/710, Grad Norms near zero: 12, Lx 0.7073, Lu 0.4776, Penalty -0.3299, loss 0.8550
+Label Softmax (x): [0.4903681 0.5096319]
+Epoch 8, Batch 131/710, Grad Norms near zero: 12, Lx 0.6554, Lu 0.2172, Penalty -0.3394, loss 0.5333
+Label Softmax (x): [0.50817716 0.4918228 ]
+Epoch 8, Batch 132/710, Grad Norms near zero: 12, Lx 0.6396, Lu 0.2137, Penalty -0.3412, loss 0.5121
+Label Softmax (x): [0.5456879  0.45431212]
+Epoch 8, Batch 133/710, Grad Norms near zero: 12, Lx 0.6473, Lu 0.1866, Penalty -0.3378, loss 0.4962
+Label Softmax (x): [0.49781626 0.50218374]
+Epoch 8, Batch 134/710, Grad Norms near zero: 12, Lx 0.6825, Lu 0.2852, Penalty -0.3423, loss 0.6253
+Label Softmax (x): [0.57021606 0.4297839 ]
+Epoch 8, Batch 135/710, Grad Norms near zero: 12, Lx 0.6594, Lu 0.2813, Penalty -0.3345, loss 0.6062
+Label Softmax (x): [0.5362458  0.46375412]
+Epoch 8, Batch 136/710, Grad Norms near zero: 12, Lx 0.6582, Lu 0.2213, Penalty -0.3394, loss 0.5400
+Label Softmax (x): [0.54842854 0.45157152]
+Epoch 8, Batch 137/710, Grad Norms near zero: 12, Lx 0.6743, Lu 0.1981, Penalty -0.3367, loss 0.5358
+Label Softmax (x): [0.5021693 0.4978307]
+Epoch 8, Batch 138/710, Grad Norms near zero: 12, Lx 0.6526, Lu 0.3611, Penalty -0.3406, loss 0.6732
+Label Softmax (x): [0.45925316 0.54074687]
+Epoch 8, Batch 139/710, Grad Norms near zero: 12, Lx 0.6819, Lu 0.2917, Penalty -0.3408, loss 0.6328
+Label Softmax (x): [0.45669416 0.5433058 ]
+Epoch 8, Batch 140/710, Grad Norms near zero: 12, Lx 0.6141, Lu 0.1095, Penalty -0.3361, loss 0.3875
+Label Softmax (x): [0.4417223  0.55827767]
+Epoch 8, Batch 141/710, Grad Norms near zero: 12, Lx 0.6612, Lu 0.3732, Penalty -0.3375, loss 0.6969
+Label Softmax (x): [0.4555012 0.5444988]
+Epoch 8, Batch 142/710, Grad Norms near zero: 12, Lx 0.6371, Lu 0.1183, Penalty -0.3374, loss 0.4180
+Label Softmax (x): [0.47254625 0.5274538 ]
+Epoch 8, Batch 143/710, Grad Norms near zero: 12, Lx 0.6637, Lu 0.3024, Penalty -0.3416, loss 0.6245
+Label Softmax (x): [0.51071775 0.48928225]
+Epoch 8, Batch 144/710, Grad Norms near zero: 12, Lx 0.6385, Lu 0.1247, Penalty -0.3380, loss 0.4252
+Label Softmax (x): [0.52748305 0.47251695]
+Epoch 8, Batch 145/710, Grad Norms near zero: 12, Lx 0.6481, Lu 0.1250, Penalty -0.3371, loss 0.4360
+Label Softmax (x): [0.5001817  0.49981827]
+Epoch 8, Batch 146/710, Grad Norms near zero: 12, Lx 0.6500, Lu 0.0967, Penalty -0.3386, loss 0.4080
+Label Softmax (x): [0.5089789  0.49102113]
+Epoch 8, Batch 147/710, Grad Norms near zero: 12, Lx 0.6299, Lu 0.1471, Penalty -0.3386, loss 0.4383
+Label Softmax (x): [0.4883895  0.51161045]
+Epoch 8, Batch 148/710, Grad Norms near zero: 12, Lx 0.6482, Lu 0.2152, Penalty -0.3378, loss 0.5255
+Label Softmax (x): [0.47221497 0.527785  ]
+Epoch 8, Batch 149/710, Grad Norms near zero: 12, Lx 0.6540, Lu 0.1934, Penalty -0.3391, loss 0.5083
+Label Softmax (x): [0.5127496 0.4872504]
+Epoch 8, Batch 150/710, Grad Norms near zero: 12, Lx 0.6538, Lu 0.1799, Penalty -0.3401, loss 0.4935
+Label Softmax (x): [0.4795754 0.5204246]
+Epoch 8, Batch 151/710, Grad Norms near zero: 12, Lx 0.6182, Lu 0.0755, Penalty -0.3384, loss 0.3554
+Label Softmax (x): [0.46283537 0.5371646 ]
+Epoch 8, Batch 152/710, Grad Norms near zero: 12, Lx 0.6777, Lu 0.2723, Penalty -0.3394, loss 0.6106
+Label Softmax (x): [0.49091113 0.5090889 ]
+Epoch 8, Batch 153/710, Grad Norms near zero: 12, Lx 0.6523, Lu 0.2719, Penalty -0.3372, loss 0.5870
+Label Softmax (x): [0.47906542 0.5209346 ]
+Epoch 8, Batch 154/710, Grad Norms near zero: 12, Lx 0.6908, Lu 0.3777, Penalty -0.3410, loss 0.7275
+Label Softmax (x): [0.48404035 0.5159596 ]
+Epoch 8, Batch 155/710, Grad Norms near zero: 12, Lx 0.6565, Lu 0.1482, Penalty -0.3377, loss 0.4670
+Label Softmax (x): [0.51074314 0.48925686]
+Epoch 8, Batch 156/710, Grad Norms near zero: 12, Lx 0.6447, Lu 0.2169, Penalty -0.3388, loss 0.5228
+Label Softmax (x): [0.5117379  0.48826212]
+Epoch 8, Batch 157/710, Grad Norms near zero: 12, Lx 0.6551, Lu 0.2152, Penalty -0.3368, loss 0.5335
+Label Softmax (x): [0.49533305 0.504667  ]
+Epoch 8, Batch 158/710, Grad Norms near zero: 12, Lx 0.6435, Lu 0.1471, Penalty -0.3374, loss 0.4533
+Label Softmax (x): [0.48384857 0.5161514 ]
+Epoch 8, Batch 159/710, Grad Norms near zero: 12, Lx 0.5726, Lu 0.0909, Penalty -0.3350, loss 0.3284
+Label Softmax (x): [0.4793834 0.5206166]
+Epoch 8, Batch 160/710, Grad Norms near zero: 12, Lx 0.6501, Lu 0.3289, Penalty -0.3387, loss 0.6403
+Label Softmax (x): [0.4354164 0.5645836]
+Epoch 8, Batch 161/710, Grad Norms near zero: 12, Lx 0.6090, Lu 0.2503, Penalty -0.3345, loss 0.5248
+Label Softmax (x): [0.48111993 0.51888007]
+Epoch 8, Batch 162/710, Grad Norms near zero: 12, Lx 0.6609, Lu 0.2647, Penalty -0.3401, loss 0.5855
+Label Softmax (x): [0.4648553 0.5351447]
+Epoch 8, Batch 163/710, Grad Norms near zero: 12, Lx 0.5978, Lu 0.0752, Penalty -0.3333, loss 0.3397
+Label Softmax (x): [0.4621119 0.5378881]
+Epoch 8, Batch 164/710, Grad Norms near zero: 12, Lx 0.6498, Lu 0.3405, Penalty -0.3376, loss 0.6526
+Label Softmax (x): [0.4574879  0.54251206]
+Epoch 8, Batch 165/710, Grad Norms near zero: 12, Lx 0.6614, Lu 0.2655, Penalty -0.3352, loss 0.5916
+Label Softmax (x): [0.5122929  0.48770714]
+Epoch 8, Batch 166/710, Grad Norms near zero: 12, Lx 0.6521, Lu 0.1570, Penalty -0.3373, loss 0.4718
+Label Softmax (x): [0.5254826  0.47451743]
+Epoch 8, Batch 167/710, Grad Norms near zero: 12, Lx 0.6541, Lu 0.1163, Penalty -0.3366, loss 0.4339
+Label Softmax (x): [0.5588993  0.44110078]
+Epoch 8, Batch 168/710, Grad Norms near zero: 12, Lx 0.6678, Lu 0.1755, Penalty -0.3352, loss 0.5081
+Label Softmax (x): [0.5253916  0.47460842]
+Epoch 8, Batch 169/710, Grad Norms near zero: 12, Lx 0.6599, Lu 0.1477, Penalty -0.3389, loss 0.4686
+Label Softmax (x): [0.5191172  0.48088276]
+Epoch 8, Batch 170/710, Grad Norms near zero: 12, Lx 0.6548, Lu 0.2771, Penalty -0.3396, loss 0.5923
+Label Softmax (x): [0.4494402  0.55055976]
+Epoch 8, Batch 171/710, Grad Norms near zero: 12, Lx 0.6440, Lu 0.2055, Penalty -0.3384, loss 0.5111
+Label Softmax (x): [0.435414 0.564586]
+Epoch 8, Batch 172/710, Grad Norms near zero: 12, Lx 0.5778, Lu 0.0614, Penalty -0.3316, loss 0.3076
+Label Softmax (x): [0.43721247 0.5627875 ]
+Epoch 8, Batch 173/710, Grad Norms near zero: 12, Lx 0.5823, Lu 0.0800, Penalty -0.3306, loss 0.3317
+Label Softmax (x): [0.46883965 0.53116035]
+Epoch 8, Batch 174/710, Grad Norms near zero: 12, Lx 0.6848, Lu 0.3000, Penalty -0.3396, loss 0.6452
+Label Softmax (x): [0.4913937 0.5086063]
+Epoch 8, Batch 175/710, Grad Norms near zero: 12, Lx 0.6556, Lu 0.2858, Penalty -0.3400, loss 0.6013
+Label Softmax (x): [0.50840044 0.4915996 ]
+Epoch 8, Batch 176/710, Grad Norms near zero: 12, Lx 0.6686, Lu 0.2911, Penalty -0.3400, loss 0.6197
+Label Softmax (x): [0.57736206 0.422638  ]
+Epoch 8, Batch 177/710, Grad Norms near zero: 12, Lx 0.6474, Lu 0.1184, Penalty -0.3294, loss 0.4364
+Label Softmax (x): [0.5645982  0.43540174]
+Epoch 8, Batch 178/710, Grad Norms near zero: 12, Lx 0.6741, Lu 0.2381, Penalty -0.3350, loss 0.5772
+Label Softmax (x): [0.5820885 0.4179115]
+Epoch 8, Batch 179/710, Grad Norms near zero: 12, Lx 0.6427, Lu 0.1999, Penalty -0.3316, loss 0.5110
+Label Softmax (x): [0.56817544 0.43182456]
+Epoch 8, Batch 180/710, Grad Norms near zero: 12, Lx 0.6263, Lu 0.3025, Penalty -0.3348, loss 0.5940
+Label Softmax (x): [0.54156387 0.45843613]
+Epoch 8, Batch 181/710, Grad Norms near zero: 12, Lx 0.6535, Lu 0.1492, Penalty -0.3371, loss 0.4656
+Label Softmax (x): [0.52736187 0.47263816]
+Epoch 8, Batch 182/710, Grad Norms near zero: 12, Lx 0.6693, Lu 0.1102, Penalty -0.3355, loss 0.4440
+Label Softmax (x): [0.45886445 0.5411355 ]
+Epoch 8, Batch 183/710, Grad Norms near zero: 12, Lx 0.6488, Lu 0.2176, Penalty -0.3385, loss 0.5278
+Label Softmax (x): [0.47412577 0.5258742 ]
+Epoch 8, Batch 184/710, Grad Norms near zero: 12, Lx 0.6677, Lu 0.1170, Penalty -0.3390, loss 0.4457
+Label Softmax (x): [0.43039125 0.56960875]
+Epoch 8, Batch 185/710, Grad Norms near zero: 12, Lx 0.6141, Lu 0.3121, Penalty -0.3342, loss 0.5920
+Label Softmax (x): [0.4612295 0.5387705]
+Epoch 8, Batch 186/710, Grad Norms near zero: 12, Lx 0.6815, Lu 0.2824, Penalty -0.3397, loss 0.6242
+Label Softmax (x): [0.48131996 0.51868   ]
+Epoch 8, Batch 187/710, Grad Norms near zero: 12, Lx 0.6141, Lu 0.0610, Penalty -0.3369, loss 0.3382
+Label Softmax (x): [0.48824006 0.5117599 ]
+Epoch 8, Batch 188/710, Grad Norms near zero: 12, Lx 0.6549, Lu 0.2650, Penalty -0.3382, loss 0.5817
+Label Softmax (x): [0.52290106 0.47709894]
+Epoch 8, Batch 189/710, Grad Norms near zero: 12, Lx 0.6706, Lu 0.0806, Penalty -0.3398, loss 0.4115
+Label Softmax (x): [0.5255731  0.47442698]
+Epoch 8, Batch 190/710, Grad Norms near zero: 12, Lx 0.6569, Lu 0.2490, Penalty -0.3384, loss 0.5676
+Label Softmax (x): [0.5203811  0.47961897]
+Epoch 8, Batch 191/710, Grad Norms near zero: 12, Lx 0.6792, Lu 0.2083, Penalty -0.3408, loss 0.5467
+Label Softmax (x): [0.5162376  0.48376232]
+Epoch 8, Batch 192/710, Grad Norms near zero: 12, Lx 0.6726, Lu 0.3354, Penalty -0.3383, loss 0.6696
+Label Softmax (x): [0.52165437 0.47834563]
+Epoch 8, Batch 193/710, Grad Norms near zero: 12, Lx 0.6565, Lu 0.2439, Penalty -0.3371, loss 0.5633
+Label Softmax (x): [0.49492678 0.5050732 ]
+Epoch 8, Batch 194/710, Grad Norms near zero: 12, Lx 0.6727, Lu 0.1335, Penalty -0.3379, loss 0.4683
+Label Softmax (x): [0.48007116 0.5199289 ]
+Epoch 8, Batch 195/710, Grad Norms near zero: 12, Lx 0.6595, Lu 0.2609, Penalty -0.3404, loss 0.5800
+Label Softmax (x): [0.43572724 0.56427276]
+Epoch 8, Batch 196/710, Grad Norms near zero: 12, Lx 0.6125, Lu 0.2600, Penalty -0.3376, loss 0.5350
+Label Softmax (x): [0.41391647 0.58608353]
+Epoch 8, Batch 197/710, Grad Norms near zero: 12, Lx 0.6417, Lu 0.1286, Penalty -0.3301, loss 0.4402
+Label Softmax (x): [0.41466808 0.5853319 ]
+Epoch 8, Batch 198/710, Grad Norms near zero: 12, Lx 0.6258, Lu 0.1499, Penalty -0.3313, loss 0.4444
+Label Softmax (x): [0.42452657 0.5754734 ]
+Epoch 8, Batch 199/710, Grad Norms near zero: 12, Lx 0.7083, Lu 0.2636, Penalty -0.3355, loss 0.6365
+Label Softmax (x): [0.45629168 0.5437083 ]
+Epoch 8, Batch 200/710, Grad Norms near zero: 12, Lx 0.6812, Lu 0.1715, Penalty -0.3372, loss 0.5154
+Label Softmax (x): [0.4830618 0.5169382]
+Epoch 8, Batch 201/710, Grad Norms near zero: 12, Lx 0.6754, Lu 0.2858, Penalty -0.3439, loss 0.6173
+Label Softmax (x): [0.5261153  0.47388467]
+Epoch 8, Batch 202/710, Grad Norms near zero: 12, Lx 0.6597, Lu 0.3326, Penalty -0.3407, loss 0.6516
+Label Softmax (x): [0.5185338 0.4814662]
+Epoch 8, Batch 203/710, Grad Norms near zero: 12, Lx 0.6764, Lu 0.3501, Penalty -0.3435, loss 0.6830
+Label Softmax (x): [0.5343078  0.46569222]
+Epoch 8, Batch 204/710, Grad Norms near zero: 12, Lx 0.6720, Lu 0.2664, Penalty -0.3420, loss 0.5963
+Label Softmax (x): [0.5228184  0.47718155]
+Epoch 8, Batch 205/710, Grad Norms near zero: 12, Lx 0.6817, Lu 0.2147, Penalty -0.3414, loss 0.5550
+Label Softmax (x): [0.54206795 0.4579321 ]
+Epoch 8, Batch 206/710, Grad Norms near zero: 12, Lx 0.6603, Lu 0.2387, Penalty -0.3409, loss 0.5581
+Label Softmax (x): [0.51979303 0.48020697]
+Epoch 8, Batch 207/710, Grad Norms near zero: 12, Lx 0.6460, Lu 0.1267, Penalty -0.3391, loss 0.4335
+Label Softmax (x): [0.50215733 0.49784273]
+Epoch 8, Batch 208/710, Grad Norms near zero: 12, Lx 0.6593, Lu 0.0677, Penalty -0.3405, loss 0.3865
+Label Softmax (x): [0.46658838 0.53341156]
+Epoch 8, Batch 209/710, Grad Norms near zero: 12, Lx 0.6559, Lu 0.3310, Penalty -0.3425, loss 0.6444
+Label Softmax (x): [0.43484485 0.56515515]
+Epoch 8, Batch 210/710, Grad Norms near zero: 12, Lx 0.6583, Lu 0.2341, Penalty -0.3379, loss 0.5545
+Label Softmax (x): [0.46597034 0.53402966]
+Epoch 8, Batch 211/710, Grad Norms near zero: 12, Lx 0.6596, Lu 0.2859, Penalty -0.3388, loss 0.6067
+Label Softmax (x): [0.44845563 0.55154437]
+Epoch 8, Batch 212/710, Grad Norms near zero: 12, Lx 0.6442, Lu 0.2551, Penalty -0.3379, loss 0.5613
+Label Softmax (x): [0.48285216 0.51714784]
+Epoch 8, Batch 213/710, Grad Norms near zero: 12, Lx 0.6611, Lu 0.1289, Penalty -0.3395, loss 0.4505
+Label Softmax (x): [0.49564344 0.50435656]
+Epoch 8, Batch 214/710, Grad Norms near zero: 12, Lx 0.6297, Lu 0.1233, Penalty -0.3390, loss 0.4140
+Label Softmax (x): [0.54875064 0.45124933]
+Epoch 8, Batch 215/710, Grad Norms near zero: 12, Lx 0.6515, Lu 0.1018, Penalty -0.3351, loss 0.4183
+Label Softmax (x): [0.5796295  0.42037052]
+Epoch 8, Batch 216/710, Grad Norms near zero: 12, Lx 0.6392, Lu 0.2725, Penalty -0.3315, loss 0.5803
+Label Softmax (x): [0.53805494 0.46194503]
+Epoch 8, Batch 217/710, Grad Norms near zero: 12, Lx 0.6422, Lu 0.1228, Penalty -0.3341, loss 0.4309
+Label Softmax (x): [0.5271228 0.4728772]
+Epoch 8, Batch 218/710, Grad Norms near zero: 12, Lx 0.6570, Lu 0.2258, Penalty -0.3402, loss 0.5426
+Label Softmax (x): [0.57340425 0.42659575]
+Epoch 8, Batch 219/710, Grad Norms near zero: 12, Lx 0.6540, Lu 0.1566, Penalty -0.3322, loss 0.4784
+Label Softmax (x): [0.5448469  0.45515317]
+Epoch 8, Batch 220/710, Grad Norms near zero: 12, Lx 0.6826, Lu 0.2778, Penalty -0.3384, loss 0.6220
+Label Softmax (x): [0.5145639  0.48543605]
+Epoch 8, Batch 221/710, Grad Norms near zero: 12, Lx 0.6113, Lu 0.1763, Penalty -0.3356, loss 0.4520
+Label Softmax (x): [0.48017278 0.51982725]
+Epoch 8, Batch 222/710, Grad Norms near zero: 12, Lx 0.6880, Lu 0.1923, Penalty -0.3403, loss 0.5401
+Label Softmax (x): [0.46120632 0.5387937 ]
+Epoch 8, Batch 223/710, Grad Norms near zero: 12, Lx 0.6678, Lu 0.2017, Penalty -0.3387, loss 0.5308
+Label Softmax (x): [0.4694306  0.53056943]
+Epoch 8, Batch 224/710, Grad Norms near zero: 12, Lx 0.6260, Lu 0.0985, Penalty -0.3364, loss 0.3882
+Label Softmax (x): [0.49665123 0.50334877]
+Epoch 8, Batch 225/710, Grad Norms near zero: 12, Lx 0.6526, Lu 0.1726, Penalty -0.3411, loss 0.4841
+Label Softmax (x): [0.4917516 0.5082483]
+Epoch 8, Batch 226/710, Grad Norms near zero: 12, Lx 0.6419, Lu 0.1372, Penalty -0.3397, loss 0.4394
+Label Softmax (x): [0.48865953 0.5113405 ]
+Epoch 8, Batch 227/710, Grad Norms near zero: 12, Lx 0.6606, Lu 0.1915, Penalty -0.3384, loss 0.5137
+Label Softmax (x): [0.48353297 0.51646703]
+Epoch 8, Batch 228/710, Grad Norms near zero: 12, Lx 0.6495, Lu 0.2274, Penalty -0.3407, loss 0.5362
+Label Softmax (x): [0.4825702  0.51742977]
+Epoch 8, Batch 229/710, Grad Norms near zero: 12, Lx 0.6385, Lu 0.1792, Penalty -0.3382, loss 0.4795
+Label Softmax (x): [0.5198821  0.48011795]
+Epoch 8, Batch 230/710, Grad Norms near zero: 12, Lx 0.6551, Lu 0.2334, Penalty -0.3390, loss 0.5495
+Label Softmax (x): [0.46506405 0.53493595]
+Epoch 8, Batch 231/710, Grad Norms near zero: 12, Lx 0.6618, Lu 0.2604, Penalty -0.3401, loss 0.5820
+Label Softmax (x): [0.44867742 0.5513226 ]
+Epoch 8, Batch 232/710, Grad Norms near zero: 12, Lx 0.6770, Lu 0.2823, Penalty -0.3390, loss 0.6203
+Label Softmax (x): [0.44723475 0.55276525]
+Epoch 8, Batch 233/710, Grad Norms near zero: 12, Lx 0.6541, Lu 0.3139, Penalty -0.3383, loss 0.6298
+Label Softmax (x): [0.47869587 0.52130413]
+Epoch 8, Batch 234/710, Grad Norms near zero: 12, Lx 0.6326, Lu 0.1716, Penalty -0.3375, loss 0.4667
+Label Softmax (x): [0.49880397 0.501196  ]
+Epoch 8, Batch 235/710, Grad Norms near zero: 12, Lx 0.6708, Lu 0.1206, Penalty -0.3389, loss 0.4525
+Label Softmax (x): [0.49968135 0.50031865]
+Epoch 8, Batch 236/710, Grad Norms near zero: 12, Lx 0.6177, Lu 0.1503, Penalty -0.3379, loss 0.4301
+Label Softmax (x): [0.5272214  0.47277868]
+Epoch 8, Batch 237/710, Grad Norms near zero: 12, Lx 0.6319, Lu 0.1120, Penalty -0.3345, loss 0.4093
+Label Softmax (x): [0.55657923 0.44342077]
+Epoch 8, Batch 238/710, Grad Norms near zero: 12, Lx 0.6416, Lu 0.1099, Penalty -0.3359, loss 0.4156
+Label Softmax (x): [0.5160527 0.4839473]
+Epoch 8, Batch 239/710, Grad Norms near zero: 12, Lx 0.6435, Lu 0.1377, Penalty -0.3364, loss 0.4448
+Label Softmax (x): [0.5040321  0.49596792]
+Epoch 8, Batch 240/710, Grad Norms near zero: 12, Lx 0.6404, Lu 0.2530, Penalty -0.3387, loss 0.5546
+Label Softmax (x): [0.49832243 0.5016776 ]
+Epoch 8, Batch 241/710, Grad Norms near zero: 12, Lx 0.6637, Lu 0.1186, Penalty -0.3390, loss 0.4433
+Label Softmax (x): [0.47882482 0.5211752 ]
+Epoch 8, Batch 242/710, Grad Norms near zero: 12, Lx 0.6464, Lu 0.1723, Penalty -0.3358, loss 0.4829
+Label Softmax (x): [0.50804424 0.49195573]
+Epoch 8, Batch 243/710, Grad Norms near zero: 12, Lx 0.6457, Lu 0.2002, Penalty -0.3381, loss 0.5079
+Label Softmax (x): [0.4982562  0.50174373]
+Epoch 8, Batch 244/710, Grad Norms near zero: 12, Lx 0.6673, Lu 0.2184, Penalty -0.3415, loss 0.5442
+Label Softmax (x): [0.4876246 0.5123754]
+Epoch 8, Batch 245/710, Grad Norms near zero: 12, Lx 0.6823, Lu 0.3740, Penalty -0.3420, loss 0.7143
+Label Softmax (x): [0.4734614 0.5265386]
+Epoch 8, Batch 246/710, Grad Norms near zero: 12, Lx 0.6693, Lu 0.1529, Penalty -0.3340, loss 0.4881
+Label Softmax (x): [0.48672944 0.51327056]
+Epoch 8, Batch 247/710, Grad Norms near zero: 12, Lx 0.5989, Lu 0.0504, Penalty -0.3336, loss 0.3157
+Label Softmax (x): [0.50848347 0.49151656]
+Epoch 8, Batch 248/710, Grad Norms near zero: 12, Lx 0.6524, Lu 0.1772, Penalty -0.3394, loss 0.4901
+Label Softmax (x): [0.52431285 0.47568718]
+Epoch 8, Batch 249/710, Grad Norms near zero: 12, Lx 0.6680, Lu 0.2969, Penalty -0.3381, loss 0.6269
+Label Softmax (x): [0.5410148  0.45898524]
+Epoch 8, Batch 250/710, Grad Norms near zero: 12, Lx 0.6914, Lu 0.0866, Penalty -0.3369, loss 0.4411
+Label Softmax (x): [0.55138934 0.4486106 ]
+Epoch 8, Batch 251/710, Grad Norms near zero: 12, Lx 0.6622, Lu 0.2820, Penalty -0.3371, loss 0.6071
+Label Softmax (x): [0.51148915 0.48851085]
+Epoch 8, Batch 252/710, Grad Norms near zero: 12, Lx 0.6520, Lu 0.2531, Penalty -0.3398, loss 0.5653
+Label Softmax (x): [0.5321495  0.46785054]
+Epoch 8, Batch 253/710, Grad Norms near zero: 12, Lx 0.6697, Lu 0.3544, Penalty -0.3406, loss 0.6836
+Label Softmax (x): [0.5004464 0.4995536]
+Epoch 8, Batch 254/710, Grad Norms near zero: 12, Lx 0.6311, Lu 0.2285, Penalty -0.3420, loss 0.5176
+Label Softmax (x): [0.49114314 0.5088569 ]
+Epoch 8, Batch 255/710, Grad Norms near zero: 12, Lx 0.6375, Lu 0.0959, Penalty -0.3356, loss 0.3978
+Label Softmax (x): [0.47864422 0.52135575]
+Epoch 8, Batch 256/710, Grad Norms near zero: 12, Lx 0.6012, Lu 0.0442, Penalty -0.3349, loss 0.3106
+Label Softmax (x): [0.5025976  0.49740243]
+Epoch 8, Batch 257/710, Grad Norms near zero: 12, Lx 0.6223, Lu 0.0949, Penalty -0.3363, loss 0.3809
+Label Softmax (x): [0.5225728  0.47742718]
+Epoch 8, Batch 258/710, Grad Norms near zero: 12, Lx 0.6477, Lu 0.2259, Penalty -0.3412, loss 0.5324
+Label Softmax (x): [0.47943962 0.5205603 ]
+Epoch 8, Batch 259/710, Grad Norms near zero: 12, Lx 0.6551, Lu 0.2358, Penalty -0.3408, loss 0.5501
+Label Softmax (x): [0.5334719 0.4665281]
+Epoch 8, Batch 260/710, Grad Norms near zero: 12, Lx 0.6548, Lu 0.3405, Penalty -0.3381, loss 0.6573
+Label Softmax (x): [0.55437577 0.44562423]
+Epoch 8, Batch 261/710, Grad Norms near zero: 12, Lx 0.6830, Lu 0.2264, Penalty -0.3343, loss 0.5750
+Label Softmax (x): [0.536645   0.46335503]
+Epoch 8, Batch 262/710, Grad Norms near zero: 12, Lx 0.6551, Lu 0.2565, Penalty -0.3382, loss 0.5735
+Label Softmax (x): [0.5847867 0.4152133]
+Epoch 8, Batch 263/710, Grad Norms near zero: 12, Lx 0.6465, Lu 0.1885, Penalty -0.3335, loss 0.5015
+Label Softmax (x): [0.55632234 0.44367766]
+Epoch 8, Batch 264/710, Grad Norms near zero: 12, Lx 0.6810, Lu 0.2815, Penalty -0.3408, loss 0.6217
+Label Softmax (x): [0.51938814 0.48061186]
+Epoch 8, Batch 265/710, Grad Norms near zero: 12, Lx 0.6626, Lu 0.3613, Penalty -0.3425, loss 0.6814
+Label Softmax (x): [0.47977602 0.520224  ]
+Epoch 8, Batch 266/710, Grad Norms near zero: 12, Lx 0.6441, Lu 0.1423, Penalty -0.3394, loss 0.4471
+Label Softmax (x): [0.4939034 0.5060966]
+Epoch 8, Batch 267/710, Grad Norms near zero: 12, Lx 0.6613, Lu 0.2761, Penalty -0.3411, loss 0.5964
+Label Softmax (x): [0.48072058 0.5192795 ]
+Epoch 8, Batch 268/710, Grad Norms near zero: 12, Lx 0.6735, Lu 0.1620, Penalty -0.3409, loss 0.4947
+Label Softmax (x): [0.5096694  0.49033058]
+Epoch 8, Batch 269/710, Grad Norms near zero: 12, Lx 0.6526, Lu 0.1587, Penalty -0.3403, loss 0.4709
+Label Softmax (x): [0.5227073 0.4772927]
+Epoch 8, Batch 270/710, Grad Norms near zero: 12, Lx 0.6367, Lu 0.1269, Penalty -0.3388, loss 0.4248
+Label Softmax (x): [0.51213896 0.48786104]
+Epoch 8, Batch 271/710, Grad Norms near zero: 12, Lx 0.6778, Lu 0.3410, Penalty -0.3422, loss 0.6766
+Label Softmax (x): [0.54296076 0.45703924]
+Epoch 8, Batch 272/710, Grad Norms near zero: 12, Lx 0.6730, Lu 0.2141, Penalty -0.3401, loss 0.5470
+Label Softmax (x): [0.5724975 0.4275025]
+Epoch 8, Batch 273/710, Grad Norms near zero: 12, Lx 0.6544, Lu 0.1534, Penalty -0.3348, loss 0.4730
+Label Softmax (x): [0.5608246  0.43917537]
+Epoch 8, Batch 274/710, Grad Norms near zero: 12, Lx 0.6551, Lu 0.1422, Penalty -0.3371, loss 0.4602
+Label Softmax (x): [0.53782964 0.4621704 ]
+Epoch 8, Batch 275/710, Grad Norms near zero: 12, Lx 0.6347, Lu 0.2337, Penalty -0.3412, loss 0.5272
+Label Softmax (x): [0.57584786 0.4241521 ]
+Epoch 8, Batch 276/710, Grad Norms near zero: 12, Lx 0.6748, Lu 0.3315, Penalty -0.3357, loss 0.6706
+Label Softmax (x): [0.51454705 0.48545295]
+Epoch 8, Batch 277/710, Grad Norms near zero: 12, Lx 0.6401, Lu 0.1525, Penalty -0.3406, loss 0.4520
+Label Softmax (x): [0.5316991  0.46830088]
+Epoch 8, Batch 278/710, Grad Norms near zero: 12, Lx 0.6572, Lu 0.3076, Penalty -0.3404, loss 0.6244
+Label Softmax (x): [0.5053221  0.49467787]
+Epoch 8, Batch 279/710, Grad Norms near zero: 12, Lx 0.6495, Lu 0.2090, Penalty -0.3409, loss 0.5176
+Label Softmax (x): [0.50063    0.49936998]
+Epoch 8, Batch 280/710, Grad Norms near zero: 12, Lx 0.6740, Lu 0.1561, Penalty -0.3409, loss 0.4892
+Label Softmax (x): [0.48715675 0.51284325]
+Epoch 8, Batch 281/710, Grad Norms near zero: 12, Lx 0.6613, Lu 0.2635, Penalty -0.3426, loss 0.5822
+Label Softmax (x): [0.50293183 0.49706817]
+Epoch 8, Batch 282/710, Grad Norms near zero: 12, Lx 0.6283, Lu 0.1007, Penalty -0.3400, loss 0.3889
+Label Softmax (x): [0.5471341  0.45286593]
+Epoch 8, Batch 283/710, Grad Norms near zero: 12, Lx 0.6440, Lu 0.2456, Penalty -0.3388, loss 0.5508
+Label Softmax (x): [0.53172374 0.4682763 ]
+Epoch 8, Batch 284/710, Grad Norms near zero: 12, Lx 0.6701, Lu 0.1655, Penalty -0.3376, loss 0.4980
+Label Softmax (x): [0.50169015 0.49830985]
+Epoch 8, Batch 285/710, Grad Norms near zero: 12, Lx 0.6713, Lu 0.2712, Penalty -0.3427, loss 0.5998
+Label Softmax (x): [0.5468402 0.4531598]
+Epoch 8, Batch 286/710, Grad Norms near zero: 12, Lx 0.6256, Lu 0.1158, Penalty -0.3381, loss 0.4033
+Label Softmax (x): [0.51458776 0.48541224]
+Epoch 8, Batch 287/710, Grad Norms near zero: 12, Lx 0.6544, Lu 0.2823, Penalty -0.3392, loss 0.5975
+Label Softmax (x): [0.544072   0.45592806]
+Epoch 8, Batch 288/710, Grad Norms near zero: 12, Lx 0.6943, Lu 0.0930, Penalty -0.3358, loss 0.4515
+Label Softmax (x): [0.5231469  0.47685307]
+Epoch 8, Batch 289/710, Grad Norms near zero: 12, Lx 0.6267, Lu 0.0417, Penalty -0.3382, loss 0.3302
+Label Softmax (x): [0.5138134  0.48618662]
+Epoch 8, Batch 290/710, Grad Norms near zero: 12, Lx 0.6677, Lu 0.1295, Penalty -0.3404, loss 0.4568
+Label Softmax (x): [0.500866 0.499134]
+Epoch 8, Batch 291/710, Grad Norms near zero: 12, Lx 0.6598, Lu 0.3169, Penalty -0.3412, loss 0.6355
+Label Softmax (x): [0.4959381  0.50406194]
+Epoch 8, Batch 292/710, Grad Norms near zero: 12, Lx 0.6256, Lu 0.1609, Penalty -0.3396, loss 0.4468
+Label Softmax (x): [0.5005543  0.49944565]
+Epoch 8, Batch 293/710, Grad Norms near zero: 12, Lx 0.6491, Lu 0.1833, Penalty -0.3405, loss 0.4919
+Label Softmax (x): [0.48795432 0.5120457 ]
+Epoch 8, Batch 294/710, Grad Norms near zero: 12, Lx 0.6524, Lu 0.1442, Penalty -0.3411, loss 0.4555
+Label Softmax (x): [0.5022755  0.49772447]
+Epoch 8, Batch 295/710, Grad Norms near zero: 12, Lx 0.6593, Lu 0.1010, Penalty -0.3390, loss 0.4213
+Label Softmax (x): [0.52757114 0.4724289 ]
+Epoch 8, Batch 296/710, Grad Norms near zero: 12, Lx 0.6536, Lu 0.2003, Penalty -0.3411, loss 0.5128
+Label Softmax (x): [0.5438362 0.4561638]
+Epoch 8, Batch 297/710, Grad Norms near zero: 12, Lx 0.6475, Lu 0.2489, Penalty -0.3405, loss 0.5559
+Label Softmax (x): [0.5439135  0.45608646]
+Epoch 8, Batch 298/710, Grad Norms near zero: 12, Lx 0.6532, Lu 0.3538, Penalty -0.3411, loss 0.6658
+Label Softmax (x): [0.5427766  0.45722336]
+Epoch 8, Batch 299/710, Grad Norms near zero: 12, Lx 0.6467, Lu 0.1483, Penalty -0.3382, loss 0.4567
+Label Softmax (x): [0.5616937  0.43830627]
+Epoch 8, Batch 300/710, Grad Norms near zero: 12, Lx 0.6553, Lu 0.2363, Penalty -0.3377, loss 0.5538
+Label Softmax (x): [0.5305387 0.4694613]
+Epoch 8, Batch 301/710, Grad Norms near zero: 12, Lx 0.6748, Lu 0.1382, Penalty -0.3393, loss 0.4736
+Label Softmax (x): [0.5024173  0.49758267]
+Epoch 8, Batch 302/710, Grad Norms near zero: 12, Lx 0.6836, Lu 0.1558, Penalty -0.3428, loss 0.4966
+Label Softmax (x): [0.48547214 0.51452786]
+Epoch 8, Batch 303/710, Grad Norms near zero: 12, Lx 0.6904, Lu 0.3461, Penalty -0.3425, loss 0.6940
+Label Softmax (x): [0.47562838 0.5243716 ]
+Epoch 8, Batch 304/710, Grad Norms near zero: 12, Lx 0.6653, Lu 0.1350, Penalty -0.3399, loss 0.4604
+Label Softmax (x): [0.4442996 0.5557004]
+Epoch 8, Batch 305/710, Grad Norms near zero: 12, Lx 0.6558, Lu 0.1971, Penalty -0.3373, loss 0.5156
+Label Softmax (x): [0.47554114 0.5244589 ]
+Epoch 8, Batch 306/710, Grad Norms near zero: 12, Lx 0.6309, Lu 0.1199, Penalty -0.3387, loss 0.4121
+Label Softmax (x): [0.4662019 0.5337981]
+Epoch 8, Batch 307/710, Grad Norms near zero: 12, Lx 0.6507, Lu 0.2790, Penalty -0.3400, loss 0.5896
+Label Softmax (x): [0.47832045 0.5216795 ]
+Epoch 8, Batch 308/710, Grad Norms near zero: 12, Lx 0.6518, Lu 0.2738, Penalty -0.3408, loss 0.5849
+Label Softmax (x): [0.4816324  0.51836765]
+Epoch 8, Batch 309/710, Grad Norms near zero: 12, Lx 0.6289, Lu 0.1995, Penalty -0.3408, loss 0.4876
+Label Softmax (x): [0.49130952 0.50869054]
+Epoch 8, Batch 310/710, Grad Norms near zero: 12, Lx 0.6662, Lu 0.0832, Penalty -0.3374, loss 0.4119
+Label Softmax (x): [0.49553624 0.5044638 ]
+Epoch 8, Batch 311/710, Grad Norms near zero: 12, Lx 0.6242, Lu 0.1524, Penalty -0.3380, loss 0.4386
+Label Softmax (x): [0.5020257  0.49797428]
+Epoch 8, Batch 312/710, Grad Norms near zero: 12, Lx 0.6714, Lu 0.3798, Penalty -0.3409, loss 0.7103
+Label Softmax (x): [0.5136243 0.4863757]
+Epoch 8, Batch 313/710, Grad Norms near zero: 12, Lx 0.6341, Lu 0.0998, Penalty -0.3387, loss 0.3952
+Label Softmax (x): [0.49531153 0.5046885 ]
+Epoch 8, Batch 314/710, Grad Norms near zero: 12, Lx 0.6163, Lu 0.1263, Penalty -0.3355, loss 0.4071
+Label Softmax (x): [0.5156175 0.4843825]
+Epoch 8, Batch 315/710, Grad Norms near zero: 12, Lx 0.6873, Lu 0.2799, Penalty -0.3409, loss 0.6263
+Label Softmax (x): [0.51036376 0.4896363 ]
+Epoch 8, Batch 316/710, Grad Norms near zero: 12, Lx 0.6794, Lu 0.2364, Penalty -0.3408, loss 0.5750
+Label Softmax (x): [0.46828163 0.5317184 ]
+Epoch 8, Batch 317/710, Grad Norms near zero: 12, Lx 0.6662, Lu 0.3387, Penalty -0.3406, loss 0.6644
+Label Softmax (x): [0.47114724 0.5288528 ]
+Epoch 8, Batch 318/710, Grad Norms near zero: 12, Lx 0.6368, Lu 0.3257, Penalty -0.3389, loss 0.6236
+Label Softmax (x): [0.47381917 0.5261808 ]
+Epoch 8, Batch 319/710, Grad Norms near zero: 12, Lx 0.6337, Lu 0.2751, Penalty -0.3360, loss 0.5728
+Label Softmax (x): [0.44571126 0.5542888 ]
+Epoch 8, Batch 320/710, Grad Norms near zero: 12, Lx 0.6249, Lu 0.2108, Penalty -0.3377, loss 0.4980
+Label Softmax (x): [0.4629647 0.5370353]
+Epoch 8, Batch 321/710, Grad Norms near zero: 12, Lx 0.6555, Lu 0.2561, Penalty -0.3392, loss 0.5724
+Label Softmax (x): [0.51682025 0.48317975]
+Epoch 8, Batch 322/710, Grad Norms near zero: 12, Lx 0.6800, Lu 0.0680, Penalty -0.3336, loss 0.4144
+Label Softmax (x): [0.5321892 0.4678108]
+Epoch 8, Batch 323/710, Grad Norms near zero: 12, Lx 0.6785, Lu 0.2674, Penalty -0.3378, loss 0.6081
+Label Softmax (x): [0.51480824 0.4851917 ]
+Epoch 8, Batch 324/710, Grad Norms near zero: 12, Lx 0.6413, Lu 0.1172, Penalty -0.3386, loss 0.4199
+Label Softmax (x): [0.49486324 0.5051367 ]
+Epoch 8, Batch 325/710, Grad Norms near zero: 12, Lx 0.6408, Lu 0.2114, Penalty -0.3383, loss 0.5138
+Label Softmax (x): [0.48566598 0.5143341 ]
+Epoch 8, Batch 326/710, Grad Norms near zero: 12, Lx 0.6324, Lu 0.1296, Penalty -0.3398, loss 0.4221
+Label Softmax (x): [0.47491997 0.52508   ]
+Epoch 8, Batch 327/710, Grad Norms near zero: 12, Lx 0.6628, Lu 0.3623, Penalty -0.3413, loss 0.6838
+Label Softmax (x): [0.4777566  0.52224344]
+Epoch 8, Batch 328/710, Grad Norms near zero: 12, Lx 0.6724, Lu 0.2892, Penalty -0.3392, loss 0.6224
+Label Softmax (x): [0.51145554 0.48854446]
+Epoch 8, Batch 329/710, Grad Norms near zero: 12, Lx 0.6470, Lu 0.3311, Penalty -0.3408, loss 0.6372
+Label Softmax (x): [0.5108989  0.48910114]
+Epoch 8, Batch 330/710, Grad Norms near zero: 12, Lx 0.6683, Lu 0.1690, Penalty -0.3399, loss 0.4973
+Label Softmax (x): [0.5181278  0.48187214]
+Epoch 8, Batch 331/710, Grad Norms near zero: 12, Lx 0.6597, Lu 0.2846, Penalty -0.3379, loss 0.6064
+Label Softmax (x): [0.4884716 0.5115284]
+Epoch 8, Batch 332/710, Grad Norms near zero: 12, Lx 0.6441, Lu 0.2869, Penalty -0.3410, loss 0.5899
+Label Softmax (x): [0.5309925 0.4690075]
+Epoch 8, Batch 333/710, Grad Norms near zero: 12, Lx 0.6553, Lu 0.1548, Penalty -0.3390, loss 0.4711
+Label Softmax (x): [0.47826505 0.521735  ]
+Epoch 8, Batch 334/710, Grad Norms near zero: 12, Lx 0.6552, Lu 0.1971, Penalty -0.3410, loss 0.5113
+Label Softmax (x): [0.5117955  0.48820448]
+Epoch 8, Batch 335/710, Grad Norms near zero: 12, Lx 0.6665, Lu 0.1294, Penalty -0.3389, loss 0.4569
+Label Softmax (x): [0.4779627  0.52203727]
+Epoch 8, Batch 336/710, Grad Norms near zero: 12, Lx 0.6596, Lu 0.2714, Penalty -0.3385, loss 0.5925
+Label Softmax (x): [0.49250606 0.507494  ]
+Epoch 8, Batch 337/710, Grad Norms near zero: 12, Lx 0.5962, Lu 0.1157, Penalty -0.3359, loss 0.3760
+Label Softmax (x): [0.4962142 0.5037858]
+Epoch 8, Batch 338/710, Grad Norms near zero: 12, Lx 0.6853, Lu 0.1853, Penalty -0.3408, loss 0.5297
+Label Softmax (x): [0.5223876  0.47761238]
+Epoch 8, Batch 339/710, Grad Norms near zero: 12, Lx 0.6854, Lu 0.2239, Penalty -0.3384, loss 0.5709
+Label Softmax (x): [0.5283867 0.4716133]
+Epoch 8, Batch 340/710, Grad Norms near zero: 12, Lx 0.6630, Lu 0.2296, Penalty -0.3406, loss 0.5520
+Label Softmax (x): [0.5382533  0.46174666]
+Epoch 8, Batch 341/710, Grad Norms near zero: 12, Lx 0.6652, Lu 0.2078, Penalty -0.3410, loss 0.5320
+Label Softmax (x): [0.54728854 0.4527114 ]
+Epoch 8, Batch 342/710, Grad Norms near zero: 12, Lx 0.6449, Lu 0.1354, Penalty -0.3386, loss 0.4418
+Label Softmax (x): [0.52437466 0.4756254 ]
+Epoch 8, Batch 343/710, Grad Norms near zero: 12, Lx 0.6782, Lu 0.1982, Penalty -0.3415, loss 0.5350
+Label Softmax (x): [0.5152332  0.48476678]
+Epoch 8, Batch 344/710, Grad Norms near zero: 12, Lx 0.6519, Lu 0.1258, Penalty -0.3399, loss 0.4378
+Label Softmax (x): [0.51862717 0.48137283]
+Epoch 8, Batch 345/710, Grad Norms near zero: 12, Lx 0.6551, Lu 0.1959, Penalty -0.3416, loss 0.5094
+Label Softmax (x): [0.46805406 0.53194594]
+Epoch 8, Batch 346/710, Grad Norms near zero: 12, Lx 0.6170, Lu 0.1146, Penalty -0.3401, loss 0.3914
+Label Softmax (x): [0.46879375 0.53120625]
+Epoch 8, Batch 347/710, Grad Norms near zero: 12, Lx 0.6779, Lu 0.3143, Penalty -0.3401, loss 0.6521
+Label Softmax (x): [0.4600931  0.53990686]
+Epoch 8, Batch 348/710, Grad Norms near zero: 12, Lx 0.6497, Lu 0.3140, Penalty -0.3396, loss 0.6240
+Label Softmax (x): [0.47465965 0.5253404 ]
+Epoch 8, Batch 349/710, Grad Norms near zero: 12, Lx 0.6744, Lu 0.3450, Penalty -0.3409, loss 0.6786
+Label Softmax (x): [0.47977084 0.52022916]
+Epoch 8, Batch 350/710, Grad Norms near zero: 12, Lx 0.6623, Lu 0.1981, Penalty -0.3385, loss 0.5218
+Label Softmax (x): [0.5185857  0.48141435]
+Epoch 8, Batch 351/710, Grad Norms near zero: 12, Lx 0.6691, Lu 0.3029, Penalty -0.3405, loss 0.6315
+Label Softmax (x): [0.5442217  0.45577824]
+Epoch 8, Batch 352/710, Grad Norms near zero: 12, Lx 0.6655, Lu 0.3732, Penalty -0.3411, loss 0.6976
+Label Softmax (x): [0.55520177 0.4447983 ]
+Epoch 8, Batch 353/710, Grad Norms near zero: 12, Lx 0.6111, Lu 0.1607, Penalty -0.3382, loss 0.4336
+Label Softmax (x): [0.5741185  0.42588148]
+Epoch 8, Batch 354/710, Grad Norms near zero: 12, Lx 0.6821, Lu 0.2828, Penalty -0.3354, loss 0.6295
+Label Softmax (x): [0.5582747 0.4417253]
+Epoch 8, Batch 355/710, Grad Norms near zero: 12, Lx 0.6316, Lu 0.2892, Penalty -0.3369, loss 0.5838
+Label Softmax (x): [0.58719105 0.41280892]
+Epoch 8, Batch 356/710, Grad Norms near zero: 12, Lx 0.6452, Lu 0.2447, Penalty -0.3327, loss 0.5573
+Label Softmax (x): [0.5538981  0.44610187]
+Epoch 8, Batch 357/710, Grad Norms near zero: 12, Lx 0.6229, Lu 0.1385, Penalty -0.3346, loss 0.4268
+Label Softmax (x): [0.5097019  0.49029815]
+Epoch 8, Batch 358/710, Grad Norms near zero: 12, Lx 0.6629, Lu 0.1944, Penalty -0.3407, loss 0.5166
+Label Softmax (x): [0.5124255  0.48757455]
+Epoch 8, Batch 359/710, Grad Norms near zero: 12, Lx 0.6718, Lu 0.3313, Penalty -0.3426, loss 0.6605
+Label Softmax (x): [0.46140835 0.5385916 ]
+Epoch 8, Batch 360/710, Grad Norms near zero: 12, Lx 0.6359, Lu 0.0891, Penalty -0.3376, loss 0.3874
+Label Softmax (x): [0.49082348 0.50917655]
+Epoch 8, Batch 361/710, Grad Norms near zero: 12, Lx 0.6560, Lu 0.2042, Penalty -0.3405, loss 0.5197
+Label Softmax (x): [0.49875343 0.5012466 ]
+Epoch 8, Batch 362/710, Grad Norms near zero: 12, Lx 0.6643, Lu 0.2861, Penalty -0.3414, loss 0.6089
+Label Softmax (x): [0.49020454 0.5097954 ]
+Epoch 8, Batch 363/710, Grad Norms near zero: 12, Lx 0.6424, Lu 0.2628, Penalty -0.3421, loss 0.5632
+Label Softmax (x): [0.49690187 0.50309813]
+Epoch 8, Batch 364/710, Grad Norms near zero: 12, Lx 0.6731, Lu 0.2153, Penalty -0.3414, loss 0.5470
+Label Softmax (x): [0.50184685 0.49815315]
+Epoch 8, Batch 365/710, Grad Norms near zero: 12, Lx 0.6495, Lu 0.3075, Penalty -0.3414, loss 0.6156
+Label Softmax (x): [0.4976034  0.50239664]
+Epoch 8, Batch 366/710, Grad Norms near zero: 12, Lx 0.6516, Lu 0.1419, Penalty -0.3400, loss 0.4536
+Label Softmax (x): [0.5151947  0.48480526]
+Epoch 8, Batch 367/710, Grad Norms near zero: 12, Lx 0.6393, Lu 0.1434, Penalty -0.3401, loss 0.4426
+Label Softmax (x): [0.49809128 0.5019087 ]
+Epoch 8, Batch 368/710, Grad Norms near zero: 12, Lx 0.6359, Lu 0.3250, Penalty -0.3420, loss 0.6188
+Label Softmax (x): [0.47420952 0.5257905 ]
+Epoch 8, Batch 369/710, Grad Norms near zero: 12, Lx 0.6753, Lu 0.3576, Penalty -0.3418, loss 0.6910
+Label Softmax (x): [0.47527087 0.52472913]
+Epoch 8, Batch 370/710, Grad Norms near zero: 12, Lx 0.6504, Lu 0.0518, Penalty -0.3394, loss 0.3628
+Label Softmax (x): [0.45614517 0.54385483]
+Epoch 8, Batch 371/710, Grad Norms near zero: 12, Lx 0.6527, Lu 0.1322, Penalty -0.3378, loss 0.4471
+Label Softmax (x): [0.46429697 0.53570294]
+Epoch 8, Batch 372/710, Grad Norms near zero: 12, Lx 0.6416, Lu 0.2393, Penalty -0.3398, loss 0.5411
+Label Softmax (x): [0.51655155 0.48344845]
+Epoch 8, Batch 373/710, Grad Norms near zero: 12, Lx 0.6475, Lu 0.1083, Penalty -0.3398, loss 0.4160
+Label Softmax (x): [0.52369654 0.47630343]
+Epoch 8, Batch 374/710, Grad Norms near zero: 12, Lx 0.6453, Lu 0.1727, Penalty -0.3411, loss 0.4769
+Label Softmax (x): [0.4992157  0.50078434]
+Epoch 8, Batch 375/710, Grad Norms near zero: 12, Lx 0.6777, Lu 0.2208, Penalty -0.3419, loss 0.5565
+Label Softmax (x): [0.5078521  0.49214792]
+Epoch 8, Batch 376/710, Grad Norms near zero: 12, Lx 0.6325, Lu 0.0947, Penalty -0.3401, loss 0.3871
+Label Softmax (x): [0.52191746 0.4780825 ]
+Epoch 8, Batch 377/710, Grad Norms near zero: 12, Lx 0.6478, Lu 0.2851, Penalty -0.3408, loss 0.5922
+Label Softmax (x): [0.4966528  0.50334716]
+Epoch 8, Batch 378/710, Grad Norms near zero: 12, Lx 0.6764, Lu 0.2970, Penalty -0.3403, loss 0.6332
+Label Softmax (x): [0.525341 0.474659]
+Epoch 8, Batch 379/710, Grad Norms near zero: 12, Lx 0.6732, Lu 0.3539, Penalty -0.3423, loss 0.6848
+Label Softmax (x): [0.5475831  0.45241684]
+Epoch 8, Batch 380/710, Grad Norms near zero: 12, Lx 0.7048, Lu 0.2310, Penalty -0.3409, loss 0.5949
+Label Softmax (x): [0.54123974 0.45876017]
+Epoch 8, Batch 381/710, Grad Norms near zero: 12, Lx 0.6624, Lu 0.1743, Penalty -0.3410, loss 0.4957
+Label Softmax (x): [0.53397596 0.46602404]
+Epoch 8, Batch 382/710, Grad Norms near zero: 12, Lx 0.6779, Lu 0.2988, Penalty -0.3417, loss 0.6351
+Label Softmax (x): [0.5451692 0.4548308]
+Epoch 8, Batch 383/710, Grad Norms near zero: 12, Lx 0.6762, Lu 0.2747, Penalty -0.3404, loss 0.6105
+Label Softmax (x): [0.49971646 0.50028354]
+Epoch 8, Batch 384/710, Grad Norms near zero: 12, Lx 0.6479, Lu 0.2191, Penalty -0.3411, loss 0.5260
+Label Softmax (x): [0.5034764  0.49652365]
+Epoch 8, Batch 385/710, Grad Norms near zero: 12, Lx 0.6615, Lu 0.2499, Penalty -0.3417, loss 0.5697
+Label Softmax (x): [0.47364777 0.5263522 ]
+Epoch 8, Batch 386/710, Grad Norms near zero: 12, Lx 0.6440, Lu 0.1582, Penalty -0.3400, loss 0.4623
+Label Softmax (x): [0.49782297 0.502177  ]
+Epoch 8, Batch 387/710, Grad Norms near zero: 12, Lx 0.6551, Lu 0.1952, Penalty -0.3405, loss 0.5098
+Label Softmax (x): [0.49049813 0.5095018 ]
+Epoch 8, Batch 388/710, Grad Norms near zero: 12, Lx 0.6685, Lu 0.2952, Penalty -0.3407, loss 0.6230
+Label Softmax (x): [0.5062541  0.49374592]
+Epoch 8, Batch 389/710, Grad Norms near zero: 12, Lx 0.6707, Lu 0.3288, Penalty -0.3427, loss 0.6569
+Label Softmax (x): [0.49049887 0.50950116]
+Epoch 8, Batch 390/710, Grad Norms near zero: 12, Lx 0.6310, Lu 0.1997, Penalty -0.3395, loss 0.4912
+Label Softmax (x): [0.49385718 0.5061428 ]
+Epoch 8, Batch 391/710, Grad Norms near zero: 12, Lx 0.6194, Lu 0.1130, Penalty -0.3381, loss 0.3943
+Label Softmax (x): [0.5084247 0.4915753]
+Epoch 8, Batch 392/710, Grad Norms near zero: 12, Lx 0.5918, Lu 0.0673, Penalty -0.3358, loss 0.3233
+Label Softmax (x): [0.52611    0.47388995]
+Epoch 8, Batch 393/710, Grad Norms near zero: 12, Lx 0.6685, Lu 0.2977, Penalty -0.3378, loss 0.6285
+Label Softmax (x): [0.5320045  0.46799552]
+Epoch 8, Batch 394/710, Grad Norms near zero: 12, Lx 0.6643, Lu 0.1064, Penalty -0.3370, loss 0.4337
+Label Softmax (x): [0.4873289 0.5126711]
+Epoch 8, Batch 395/710, Grad Norms near zero: 12, Lx 0.6577, Lu 0.2964, Penalty -0.3383, loss 0.6158
+Label Softmax (x): [0.49193376 0.50806624]
+Epoch 8, Batch 396/710, Grad Norms near zero: 12, Lx 0.6670, Lu 0.4735, Penalty -0.3398, loss 0.8007
+Label Softmax (x): [0.4614273  0.53857267]
+Epoch 8, Batch 397/710, Grad Norms near zero: 12, Lx 0.6432, Lu 0.2808, Penalty -0.3392, loss 0.5847
+Label Softmax (x): [0.49608278 0.5039172 ]
+Epoch 8, Batch 398/710, Grad Norms near zero: 12, Lx 0.6527, Lu 0.2784, Penalty -0.3388, loss 0.5923
+Label Softmax (x): [0.5679406  0.43205947]
+Epoch 8, Batch 399/710, Grad Norms near zero: 12, Lx 0.5744, Lu 0.0574, Penalty -0.3289, loss 0.3029
+Label Softmax (x): [0.5594895 0.4405105]
+Epoch 8, Batch 400/710, Grad Norms near zero: 12, Lx 0.6203, Lu 0.1053, Penalty -0.3313, loss 0.3943
+Label Softmax (x): [0.6048909  0.39510912]
+Epoch 8, Batch 401/710, Grad Norms near zero: 12, Lx 0.7334, Lu 0.3788, Penalty -0.3300, loss 0.7822
+Label Softmax (x): [0.57209694 0.42790306]
+Epoch 8, Batch 402/710, Grad Norms near zero: 12, Lx 0.6602, Lu 0.1592, Penalty -0.3336, loss 0.4858
+Label Softmax (x): [0.55346966 0.44653034]
+Epoch 8, Batch 403/710, Grad Norms near zero: 12, Lx 0.6621, Lu 0.2621, Penalty -0.3399, loss 0.5843
+Label Softmax (x): [0.52931046 0.4706895 ]
+Epoch 8, Batch 404/710, Grad Norms near zero: 12, Lx 0.6690, Lu 0.1885, Penalty -0.3412, loss 0.5163
+Label Softmax (x): [0.52254    0.47746003]
+Epoch 8, Batch 405/710, Grad Norms near zero: 12, Lx 0.6870, Lu 0.3220, Penalty -0.3431, loss 0.6659
+Label Softmax (x): [0.47431055 0.5256894 ]
+Epoch 8, Batch 406/710, Grad Norms near zero: 12, Lx 0.6611, Lu 0.1540, Penalty -0.3397, loss 0.4754
+Label Softmax (x): [0.45344785 0.5465522 ]
+Epoch 8, Batch 407/710, Grad Norms near zero: 12, Lx 0.6563, Lu 0.1885, Penalty -0.3402, loss 0.5045
+Label Softmax (x): [0.46500283 0.53499717]
+Epoch 8, Batch 408/710, Grad Norms near zero: 12, Lx 0.6464, Lu 0.1843, Penalty -0.3421, loss 0.4886
+Label Softmax (x): [0.47675472 0.5232453 ]
+Epoch 8, Batch 409/710, Grad Norms near zero: 12, Lx 0.6762, Lu 0.2450, Penalty -0.3435, loss 0.5777
+Label Softmax (x): [0.5226011 0.4773988]
+Epoch 8, Batch 410/710, Grad Norms near zero: 12, Lx 0.6711, Lu 0.1639, Penalty -0.3437, loss 0.4912
+Label Softmax (x): [0.504517 0.495483]
+Epoch 8, Batch 411/710, Grad Norms near zero: 12, Lx 0.6389, Lu 0.0803, Penalty -0.3428, loss 0.3764
+Label Softmax (x): [0.5157064  0.48429352]
+Epoch 8, Batch 412/710, Grad Norms near zero: 12, Lx 0.6816, Lu 0.2667, Penalty -0.3444, loss 0.6039
+Label Softmax (x): [0.5429616  0.45703843]
+Epoch 8, Batch 413/710, Grad Norms near zero: 12, Lx 0.6826, Lu 0.2229, Penalty -0.3427, loss 0.5628
+Label Softmax (x): [0.5131636  0.48683637]
+Epoch 8, Batch 414/710, Grad Norms near zero: 12, Lx 0.6583, Lu 0.1110, Penalty -0.3433, loss 0.4260
+Label Softmax (x): [0.49645463 0.50354534]
+Epoch 8, Batch 415/710, Grad Norms near zero: 12, Lx 0.6542, Lu 0.1574, Penalty -0.3441, loss 0.4676
+Label Softmax (x): [0.5083947  0.49160525]
+Epoch 8, Batch 416/710, Grad Norms near zero: 12, Lx 0.6590, Lu 0.2379, Penalty -0.3448, loss 0.5522
+Label Softmax (x): [0.46997923 0.53002083]
+Epoch 8, Batch 417/710, Grad Norms near zero: 12, Lx 0.6646, Lu 0.1582, Penalty -0.3422, loss 0.4805
+Label Softmax (x): [0.4956117  0.50438833]
+Epoch 8, Batch 418/710, Grad Norms near zero: 12, Lx 0.6863, Lu 0.3602, Penalty -0.3442, loss 0.7023
+Label Softmax (x): [0.48672497 0.513275  ]
+Epoch 8, Batch 419/710, Grad Norms near zero: 12, Lx 0.6446, Lu 0.2898, Penalty -0.3437, loss 0.5907
+Label Softmax (x): [0.49229145 0.50770855]
+Epoch 8, Batch 420/710, Grad Norms near zero: 12, Lx 0.6746, Lu 0.2361, Penalty -0.3437, loss 0.5669
+Label Softmax (x): [0.52468073 0.47531933]
+Epoch 8, Batch 421/710, Grad Norms near zero: 12, Lx 0.6701, Lu 0.3566, Penalty -0.3421, loss 0.6846
+Label Softmax (x): [0.5638137 0.4361863]
+Epoch 8, Batch 422/710, Grad Norms near zero: 12, Lx 0.6583, Lu 0.2023, Penalty -0.3390, loss 0.5216
+Label Softmax (x): [0.5640675 0.4359325]
+Epoch 8, Batch 423/710, Grad Norms near zero: 12, Lx 0.6494, Lu 0.0751, Penalty -0.3366, loss 0.3879
+Label Softmax (x): [0.54931545 0.4506846 ]
+Epoch 8, Batch 424/710, Grad Norms near zero: 12, Lx 0.7088, Lu 0.2076, Penalty -0.3373, loss 0.5791
+Label Softmax (x): [0.516598   0.48340204]
+Epoch 8, Batch 425/710, Grad Norms near zero: 12, Lx 0.6591, Lu 0.1300, Penalty -0.3387, loss 0.4505
+Label Softmax (x): [0.5573567  0.44264325]
+Epoch 8, Batch 426/710, Grad Norms near zero: 12, Lx 0.6883, Lu 0.2165, Penalty -0.3388, loss 0.5660
+Label Softmax (x): [0.51442057 0.48557943]
+Epoch 8, Batch 427/710, Grad Norms near zero: 12, Lx 0.6713, Lu 0.2030, Penalty -0.3405, loss 0.5338
+Label Softmax (x): [0.4882487 0.5117513]
+Epoch 8, Batch 428/710, Grad Norms near zero: 12, Lx 0.6777, Lu 0.4046, Penalty -0.3426, loss 0.7397
+Label Softmax (x): [0.47283185 0.5271682 ]
+Epoch 8, Batch 429/710, Grad Norms near zero: 12, Lx 0.6777, Lu 0.2233, Penalty -0.3415, loss 0.5595
+Label Softmax (x): [0.4727738 0.5272262]
+Epoch 8, Batch 430/710, Grad Norms near zero: 12, Lx 0.6574, Lu 0.2692, Penalty -0.3406, loss 0.5860
+Label Softmax (x): [0.45329574 0.54670423]
+Epoch 8, Batch 431/710, Grad Norms near zero: 12, Lx 0.6108, Lu 0.0977, Penalty -0.3371, loss 0.3714
+Label Softmax (x): [0.4758001  0.52419996]
+Epoch 8, Batch 432/710, Grad Norms near zero: 12, Lx 0.6630, Lu 0.3507, Penalty -0.3413, loss 0.6725
+Label Softmax (x): [0.5080317  0.49196827]
+Epoch 8, Batch 433/710, Grad Norms near zero: 12, Lx 0.6659, Lu 0.2770, Penalty -0.3413, loss 0.6016
+Label Softmax (x): [0.5169661 0.4830339]
+Epoch 8, Batch 434/710, Grad Norms near zero: 12, Lx 0.6565, Lu 0.1985, Penalty -0.3417, loss 0.5133
+Label Softmax (x): [0.48230428 0.5176957 ]
+Epoch 8, Batch 435/710, Grad Norms near zero: 12, Lx 0.6464, Lu 0.3048, Penalty -0.3392, loss 0.6120
+Label Softmax (x): [0.48302457 0.5169754 ]
+Epoch 8, Batch 436/710, Grad Norms near zero: 12, Lx 0.6711, Lu 0.2924, Penalty -0.3419, loss 0.6216
+Label Softmax (x): [0.53157115 0.46842888]
+Epoch 8, Batch 437/710, Grad Norms near zero: 12, Lx 0.6725, Lu 0.2865, Penalty -0.3403, loss 0.6187
+Label Softmax (x): [0.51792765 0.48207235]
+Epoch 8, Batch 438/710, Grad Norms near zero: 12, Lx 0.6192, Lu 0.0790, Penalty -0.3367, loss 0.3616
+Label Softmax (x): [0.48034382 0.5196562 ]
+Epoch 8, Batch 439/710, Grad Norms near zero: 12, Lx 0.6547, Lu 0.2516, Penalty -0.3398, loss 0.5664
+Label Softmax (x): [0.50138795 0.498612  ]
+Epoch 8, Batch 440/710, Grad Norms near zero: 12, Lx 0.6780, Lu 0.2844, Penalty -0.3426, loss 0.6198
+Label Softmax (x): [0.5404571 0.4595429]
+Epoch 8, Batch 441/710, Grad Norms near zero: 12, Lx 0.6727, Lu 0.3519, Penalty -0.3415, loss 0.6830
+Label Softmax (x): [0.4812965 0.5187035]
+Epoch 8, Batch 442/710, Grad Norms near zero: 12, Lx 0.6595, Lu 0.1969, Penalty -0.3414, loss 0.5150
+Label Softmax (x): [0.48218527 0.5178147 ]
+Epoch 8, Batch 443/710, Grad Norms near zero: 12, Lx 0.6508, Lu 0.1548, Penalty -0.3409, loss 0.4646
+Label Softmax (x): [0.5029428 0.4970572]
+Epoch 8, Batch 444/710, Grad Norms near zero: 12, Lx 0.6283, Lu 0.0963, Penalty -0.3412, loss 0.3834
+Label Softmax (x): [0.4887343  0.51126575]
+Epoch 8, Batch 445/710, Grad Norms near zero: 12, Lx 0.6320, Lu 0.1404, Penalty -0.3396, loss 0.4328
+Label Softmax (x): [0.4907656 0.5092344]
+Epoch 8, Batch 446/710, Grad Norms near zero: 12, Lx 0.6142, Lu 0.0598, Penalty -0.3390, loss 0.3349
+Label Softmax (x): [0.47321683 0.5267832 ]
+Epoch 8, Batch 447/710, Grad Norms near zero: 12, Lx 0.6605, Lu 0.2226, Penalty -0.3427, loss 0.5404
+Label Softmax (x): [0.50702107 0.49297893]
+Epoch 8, Batch 448/710, Grad Norms near zero: 12, Lx 0.6667, Lu 0.2076, Penalty -0.3419, loss 0.5324
+Label Softmax (x): [0.5160478  0.48395222]
+Epoch 8, Batch 449/710, Grad Norms near zero: 12, Lx 0.6326, Lu 0.1027, Penalty -0.3417, loss 0.3936
+Label Softmax (x): [0.5171644  0.48283556]
+Epoch 8, Batch 450/710, Grad Norms near zero: 12, Lx 0.6343, Lu 0.2769, Penalty -0.3413, loss 0.5699
+Label Softmax (x): [0.50460374 0.49539632]
+Epoch 8, Batch 451/710, Grad Norms near zero: 12, Lx 0.6688, Lu 0.1859, Penalty -0.3427, loss 0.5120
+Label Softmax (x): [0.51481026 0.48518974]
+Epoch 8, Batch 452/710, Grad Norms near zero: 12, Lx 0.6598, Lu 0.1765, Penalty -0.3402, loss 0.4961
+Label Softmax (x): [0.5134763  0.48652375]
+Epoch 8, Batch 453/710, Grad Norms near zero: 12, Lx 0.6730, Lu 0.2369, Penalty -0.3417, loss 0.5682
+Label Softmax (x): [0.51168054 0.4883194 ]
+Epoch 8, Batch 454/710, Grad Norms near zero: 12, Lx 0.6352, Lu 0.1216, Penalty -0.3417, loss 0.4151
+Label Softmax (x): [0.49104363 0.5089564 ]
+Epoch 8, Batch 455/710, Grad Norms near zero: 12, Lx 0.6679, Lu 0.0833, Penalty -0.3412, loss 0.4100
+Label Softmax (x): [0.49164605 0.50835395]
+Epoch 8, Batch 456/710, Grad Norms near zero: 12, Lx 0.6358, Lu 0.0558, Penalty -0.3418, loss 0.3497
+Label Softmax (x): [0.5008062 0.4991938]
+Epoch 8, Batch 457/710, Grad Norms near zero: 12, Lx 0.6599, Lu 0.1470, Penalty -0.3426, loss 0.4642
+Label Softmax (x): [0.49118075 0.5088192 ]
+Epoch 8, Batch 458/710, Grad Norms near zero: 12, Lx 0.6846, Lu 0.2804, Penalty -0.3432, loss 0.6218
+Label Softmax (x): [0.51092356 0.48907638]
+Epoch 8, Batch 459/710, Grad Norms near zero: 12, Lx 0.6510, Lu 0.0565, Penalty -0.3404, loss 0.3672
+Label Softmax (x): [0.5173391  0.48266092]
+Epoch 8, Batch 460/710, Grad Norms near zero: 12, Lx 0.6810, Lu 0.2470, Penalty -0.3427, loss 0.5853
+Label Softmax (x): [0.54931784 0.45068213]
+Epoch 8, Batch 461/710, Grad Norms near zero: 12, Lx 0.6437, Lu 0.1269, Penalty -0.3391, loss 0.4315
+Label Softmax (x): [0.564281 0.435719]
+Epoch 8, Batch 462/710, Grad Norms near zero: 12, Lx 0.6571, Lu 0.1254, Penalty -0.3356, loss 0.4468
+Label Softmax (x): [0.5565917  0.44340837]
+Epoch 8, Batch 463/710, Grad Norms near zero: 12, Lx 0.6678, Lu 0.2902, Penalty -0.3395, loss 0.6185
+Label Softmax (x): [0.5126543  0.48734573]
+Epoch 8, Batch 464/710, Grad Norms near zero: 12, Lx 0.6626, Lu 0.2153, Penalty -0.3428, loss 0.5351
+Label Softmax (x): [0.50453186 0.49546817]
+Epoch 8, Batch 465/710, Grad Norms near zero: 12, Lx 0.6637, Lu 0.2543, Penalty -0.3432, loss 0.5748
+Label Softmax (x): [0.45655927 0.54344076]
+Epoch 8, Batch 466/710, Grad Norms near zero: 12, Lx 0.6603, Lu 0.1507, Penalty -0.3400, loss 0.4711
+Label Softmax (x): [0.46607324 0.5339268 ]
+Epoch 8, Batch 467/710, Grad Norms near zero: 12, Lx 0.6443, Lu 0.1807, Penalty -0.3399, loss 0.4851
+Label Softmax (x): [0.4742832 0.5257168]
+Epoch 8, Batch 468/710, Grad Norms near zero: 12, Lx 0.6823, Lu 0.1332, Penalty -0.3427, loss 0.4727
+Label Softmax (x): [0.5008937  0.49910626]
+Epoch 8, Batch 469/710, Grad Norms near zero: 12, Lx 0.6394, Lu 0.1110, Penalty -0.3420, loss 0.4083
+Label Softmax (x): [0.5043372  0.49566284]
+Epoch 8, Batch 470/710, Grad Norms near zero: 12, Lx 0.6484, Lu 0.2170, Penalty -0.3430, loss 0.5224
+Label Softmax (x): [0.5407467 0.4592533]
+Epoch 8, Batch 471/710, Grad Norms near zero: 12, Lx 0.6424, Lu 0.1786, Penalty -0.3413, loss 0.4797
+Label Softmax (x): [0.53349245 0.46650752]
+Epoch 8, Batch 472/710, Grad Norms near zero: 12, Lx 0.6990, Lu 0.3820, Penalty -0.3416, loss 0.7395
+Label Softmax (x): [0.5654812  0.43451887]
+Epoch 8, Batch 473/710, Grad Norms near zero: 12, Lx 0.6973, Lu 0.3770, Penalty -0.3387, loss 0.7356
+Label Softmax (x): [0.5451919  0.45480812]
+Epoch 8, Batch 474/710, Grad Norms near zero: 12, Lx 0.6807, Lu 0.2735, Penalty -0.3426, loss 0.6116
+Label Softmax (x): [0.5008709  0.49912918]
+Epoch 8, Batch 475/710, Grad Norms near zero: 12, Lx 0.6704, Lu 0.3420, Penalty -0.3437, loss 0.6687
+Label Softmax (x): [0.45889437 0.54110557]
+Epoch 8, Batch 476/710, Grad Norms near zero: 12, Lx 0.6655, Lu 0.1765, Penalty -0.3405, loss 0.5015
+Label Softmax (x): [0.47620624 0.52379376]
+Epoch 8, Batch 477/710, Grad Norms near zero: 12, Lx 0.6816, Lu 0.1315, Penalty -0.3423, loss 0.4708
+Label Softmax (x): [0.44851178 0.5514882 ]
+Epoch 8, Batch 478/710, Grad Norms near zero: 12, Lx 0.6445, Lu 0.1453, Penalty -0.3392, loss 0.4506
+Label Softmax (x): [0.4672371 0.5327629]
+Epoch 8, Batch 479/710, Grad Norms near zero: 12, Lx 0.6561, Lu 0.3399, Penalty -0.3430, loss 0.6530
+Label Softmax (x): [0.49855483 0.5014452 ]
+Epoch 8, Batch 480/710, Grad Norms near zero: 12, Lx 0.6449, Lu 0.1607, Penalty -0.3435, loss 0.4621
+Label Softmax (x): [0.48654187 0.5134581 ]
+Epoch 8, Batch 481/710, Grad Norms near zero: 12, Lx 0.6560, Lu 0.1760, Penalty -0.3439, loss 0.4881
+Label Softmax (x): [0.51503825 0.48496172]
+Epoch 8, Batch 482/710, Grad Norms near zero: 12, Lx 0.6557, Lu 0.3004, Penalty -0.3433, loss 0.6128
+Label Softmax (x): [0.53678906 0.46321094]
+Epoch 8, Batch 483/710, Grad Norms near zero: 12, Lx 0.6729, Lu 0.3129, Penalty -0.3425, loss 0.6432
+Label Softmax (x): [0.5170581  0.48294196]
+Epoch 8, Batch 484/710, Grad Norms near zero: 12, Lx 0.6759, Lu 0.3684, Penalty -0.3436, loss 0.7007
+Label Softmax (x): [0.50754464 0.4924553 ]
+Epoch 8, Batch 485/710, Grad Norms near zero: 12, Lx 0.6306, Lu 0.0749, Penalty -0.3418, loss 0.3637
+Label Softmax (x): [0.51044476 0.4895552 ]
+Epoch 8, Batch 486/710, Grad Norms near zero: 12, Lx 0.6377, Lu 0.1603, Penalty -0.3411, loss 0.4569
+Label Softmax (x): [0.461867 0.538133]
+Epoch 8, Batch 487/710, Grad Norms near zero: 12, Lx 0.6600, Lu 0.2144, Penalty -0.3412, loss 0.5332
+Label Softmax (x): [0.5100819  0.48991817]
+Epoch 8, Batch 488/710, Grad Norms near zero: 12, Lx 0.6704, Lu 0.1102, Penalty -0.3406, loss 0.4399
+Label Softmax (x): [0.5018129  0.49818712]
+Epoch 8, Batch 489/710, Grad Norms near zero: 12, Lx 0.6845, Lu 0.2014, Penalty -0.3416, loss 0.5443
+Label Softmax (x): [0.5520285 0.4479715]
+Epoch 8, Batch 490/710, Grad Norms near zero: 12, Lx 0.6848, Lu 0.2033, Penalty -0.3389, loss 0.5492
+Label Softmax (x): [0.5148594  0.48514062]
+Epoch 8, Batch 491/710, Grad Norms near zero: 12, Lx 0.6151, Lu 0.1695, Penalty -0.3402, loss 0.4444
+Label Softmax (x): [0.5285194 0.4714806]
+Epoch 8, Batch 492/710, Grad Norms near zero: 12, Lx 0.6255, Lu 0.1233, Penalty -0.3384, loss 0.4104
+Label Softmax (x): [0.5702182  0.42978173]
+Epoch 8, Batch 493/710, Grad Norms near zero: 12, Lx 0.6832, Lu 0.2421, Penalty -0.3351, loss 0.5902
+Label Softmax (x): [0.54002345 0.45997655]
+Epoch 8, Batch 494/710, Grad Norms near zero: 12, Lx 0.6548, Lu 0.3220, Penalty -0.3387, loss 0.6381
+Label Softmax (x): [0.4940126 0.5059874]
+Epoch 8, Batch 495/710, Grad Norms near zero: 12, Lx 0.6727, Lu 0.1169, Penalty -0.3402, loss 0.4494
+Label Softmax (x): [0.5118423  0.48815763]
+Epoch 8, Batch 496/710, Grad Norms near zero: 12, Lx 0.6440, Lu 0.2673, Penalty -0.3419, loss 0.5694
+Label Softmax (x): [0.47404087 0.52595913]
+Epoch 8, Batch 497/710, Grad Norms near zero: 12, Lx 0.6594, Lu 0.1868, Penalty -0.3405, loss 0.5057
+Label Softmax (x): [0.48018622 0.5198138 ]
+Epoch 8, Batch 498/710, Grad Norms near zero: 12, Lx 0.6611, Lu 0.1578, Penalty -0.3411, loss 0.4778
+Label Softmax (x): [0.46036536 0.53963464]
+Epoch 8, Batch 499/710, Grad Norms near zero: 12, Lx 0.6684, Lu 0.2251, Penalty -0.3386, loss 0.5548
+Label Softmax (x): [0.47711706 0.52288294]
+Epoch 8, Batch 500/710, Grad Norms near zero: 12, Lx 0.6654, Lu 0.1473, Penalty -0.3390, loss 0.4738
+Label Softmax (x): [0.47996855 0.5200314 ]
+Epoch 8, Batch 501/710, Grad Norms near zero: 12, Lx 0.6587, Lu 0.3799, Penalty -0.3429, loss 0.6956
+Label Softmax (x): [0.51380575 0.48619422]
+Epoch 8, Batch 502/710, Grad Norms near zero: 12, Lx 0.6407, Lu 0.0525, Penalty -0.3382, loss 0.3550
+Label Softmax (x): [0.555424 0.444576]
+Epoch 8, Batch 503/710, Grad Norms near zero: 12, Lx 0.6864, Lu 0.2641, Penalty -0.3397, loss 0.6108
+Label Softmax (x): [0.56884646 0.4311536 ]
+Epoch 8, Batch 504/710, Grad Norms near zero: 12, Lx 0.7092, Lu 0.3307, Penalty -0.3381, loss 0.7018
+Label Softmax (x): [0.52353543 0.47646463]
+Epoch 8, Batch 505/710, Grad Norms near zero: 12, Lx 0.6765, Lu 0.2318, Penalty -0.3408, loss 0.5676
+Label Softmax (x): [0.53687596 0.463124  ]
+Epoch 8, Batch 506/710, Grad Norms near zero: 12, Lx 0.6758, Lu 0.2761, Penalty -0.3417, loss 0.6102
+Label Softmax (x): [0.46840358 0.5315964 ]
+Epoch 8, Batch 507/710, Grad Norms near zero: 12, Lx 0.6295, Lu 0.1943, Penalty -0.3398, loss 0.4839
+Label Softmax (x): [0.4547832 0.5452168]
+Epoch 8, Batch 508/710, Grad Norms near zero: 12, Lx 0.6274, Lu 0.0831, Penalty -0.3383, loss 0.3722
+Label Softmax (x): [0.41653007 0.5834699 ]
+Epoch 8, Batch 509/710, Grad Norms near zero: 12, Lx 0.6702, Lu 0.1353, Penalty -0.3341, loss 0.4714
+Label Softmax (x): [0.43166548 0.56833446]
+Epoch 8, Batch 510/710, Grad Norms near zero: 12, Lx 0.6501, Lu 0.2387, Penalty -0.3369, loss 0.5519
+Label Softmax (x): [0.43363532 0.56636465]
+Epoch 8, Batch 511/710, Grad Norms near zero: 12, Lx 0.6646, Lu 0.2812, Penalty -0.3386, loss 0.6072
+Label Softmax (x): [0.43752965 0.5624703 ]
+Epoch 8, Batch 512/710, Grad Norms near zero: 12, Lx 0.7015, Lu 0.3144, Penalty -0.3411, loss 0.6748
+Label Softmax (x): [0.50376564 0.49623436]
+Epoch 8, Batch 513/710, Grad Norms near zero: 12, Lx 0.6414, Lu 0.1607, Penalty -0.3418, loss 0.4602
+Label Softmax (x): [0.51345325 0.48654675]
+Epoch 8, Batch 514/710, Grad Norms near zero: 12, Lx 0.6806, Lu 0.2254, Penalty -0.3431, loss 0.5630
+Label Softmax (x): [0.5485546 0.4514454]
+Epoch 8, Batch 515/710, Grad Norms near zero: 12, Lx 0.6713, Lu 0.3482, Penalty -0.3410, loss 0.6785
+Label Softmax (x): [0.5615556  0.43844438]
+Epoch 8, Batch 516/710, Grad Norms near zero: 12, Lx 0.7037, Lu 0.2351, Penalty -0.3403, loss 0.5984
+Label Softmax (x): [0.5770758  0.42292416]
+Epoch 8, Batch 517/710, Grad Norms near zero: 12, Lx 0.7162, Lu 0.3877, Penalty -0.3377, loss 0.7662
+Label Softmax (x): [0.5356987 0.4643013]
+Epoch 8, Batch 518/710, Grad Norms near zero: 12, Lx 0.6727, Lu 0.0209, Penalty -0.3413, loss 0.3524
+Label Softmax (x): [0.49520573 0.50479424]
+Epoch 8, Batch 519/710, Grad Norms near zero: 12, Lx 0.6765, Lu 0.0462, Penalty -0.3435, loss 0.3792
+Label Softmax (x): [0.46955582 0.53044415]
+Epoch 8, Batch 520/710, Grad Norms near zero: 12, Lx 0.6841, Lu 0.1214, Penalty -0.3431, loss 0.4623
+Label Softmax (x): [0.45869303 0.541307  ]
+Epoch 8, Batch 521/710, Grad Norms near zero: 12, Lx 0.6795, Lu 0.3648, Penalty -0.3430, loss 0.7012
+Label Softmax (x): [0.45505792 0.544942  ]
+Epoch 8, Batch 522/710, Grad Norms near zero: 12, Lx 0.6688, Lu 0.0901, Penalty -0.3415, loss 0.4174
+Label Softmax (x): [0.4824532  0.51754683]
+Epoch 8, Batch 523/710, Grad Norms near zero: 12, Lx 0.6558, Lu 0.1594, Penalty -0.3443, loss 0.4710
+Label Softmax (x): [0.5237641  0.47623593]
+Epoch 8, Batch 524/710, Grad Norms near zero: 12, Lx 0.6605, Lu 0.1725, Penalty -0.3432, loss 0.4898
+Label Softmax (x): [0.53309953 0.46690047]
+Epoch 8, Batch 525/710, Grad Norms near zero: 12, Lx 0.6735, Lu 0.1736, Penalty -0.3437, loss 0.5034
+Label Softmax (x): [0.55258614 0.4474139 ]
+Epoch 8, Batch 526/710, Grad Norms near zero: 12, Lx 0.6859, Lu 0.3219, Penalty -0.3416, loss 0.6662
+Label Softmax (x): [0.5493293  0.45067075]
+Epoch 8, Batch 527/710, Grad Norms near zero: 12, Lx 0.6723, Lu 0.3070, Penalty -0.3424, loss 0.6369
+Label Softmax (x): [0.547278 0.452722]
+Epoch 8, Batch 528/710, Grad Norms near zero: 12, Lx 0.6302, Lu 0.0714, Penalty -0.3412, loss 0.3604
+Label Softmax (x): [0.5435609 0.4564391]
+Epoch 8, Batch 529/710, Grad Norms near zero: 12, Lx 0.6628, Lu 0.1198, Penalty -0.3409, loss 0.4416
+Label Softmax (x): [0.5161697  0.48383027]
+Epoch 8, Batch 530/710, Grad Norms near zero: 12, Lx 0.6701, Lu 0.1887, Penalty -0.3436, loss 0.5153
+Label Softmax (x): [0.48130488 0.5186951 ]
+Epoch 8, Batch 531/710, Grad Norms near zero: 12, Lx 0.6670, Lu 0.2584, Penalty -0.3413, loss 0.5841
+Label Softmax (x): [0.4683109 0.5316891]
+Epoch 8, Batch 532/710, Grad Norms near zero: 12, Lx 0.6448, Lu 0.2556, Penalty -0.3419, loss 0.5585
+Label Softmax (x): [0.44920692 0.55079305]
+Epoch 8, Batch 533/710, Grad Norms near zero: 12, Lx 0.6598, Lu 0.3350, Penalty -0.3399, loss 0.6549
+Label Softmax (x): [0.4640777 0.5359223]
+Epoch 8, Batch 534/710, Grad Norms near zero: 12, Lx 0.6672, Lu 0.3560, Penalty -0.3421, loss 0.6812
+Label Softmax (x): [0.4967752 0.5032248]
+Epoch 8, Batch 535/710, Grad Norms near zero: 12, Lx 0.6322, Lu 0.1655, Penalty -0.3387, loss 0.4589
+Label Softmax (x): [0.48285446 0.5171455 ]
+Epoch 8, Batch 536/710, Grad Norms near zero: 12, Lx 0.6029, Lu 0.1549, Penalty -0.3387, loss 0.4191
+Label Softmax (x): [0.51072514 0.4892748 ]
+Epoch 8, Batch 537/710, Grad Norms near zero: 12, Lx 0.6745, Lu 0.2727, Penalty -0.3409, loss 0.6063
+Label Softmax (x): [0.5335349  0.46646506]
+Epoch 8, Batch 538/710, Grad Norms near zero: 12, Lx 0.6421, Lu 0.1498, Penalty -0.3398, loss 0.4521
+Label Softmax (x): [0.5236418  0.47635818]
+Epoch 8, Batch 539/710, Grad Norms near zero: 12, Lx 0.6587, Lu 0.1419, Penalty -0.3393, loss 0.4613
+Label Softmax (x): [0.5187007  0.48129928]
+Epoch 8, Batch 540/710, Grad Norms near zero: 12, Lx 0.6511, Lu 0.1975, Penalty -0.3385, loss 0.5102
+Label Softmax (x): [0.5680793  0.43192068]
+Epoch 8, Batch 541/710, Grad Norms near zero: 12, Lx 0.6257, Lu 0.5462, Penalty -0.3371, loss 0.8348
+Label Softmax (x): [0.5866508  0.41334915]
+Epoch 8, Batch 542/710, Grad Norms near zero: 12, Lx 0.7056, Lu 0.4176, Penalty -0.3339, loss 0.7894
+Label Softmax (x): [0.56875676 0.43124324]
+Epoch 8, Batch 543/710, Grad Norms near zero: 12, Lx 0.6814, Lu 0.1391, Penalty -0.3340, loss 0.4865
+Label Softmax (x): [0.5214809  0.47851914]
+Epoch 8, Batch 544/710, Grad Norms near zero: 12, Lx 0.6659, Lu 0.3068, Penalty -0.3424, loss 0.6303
+Label Softmax (x): [0.49955633 0.5004437 ]
+Epoch 8, Batch 545/710, Grad Norms near zero: 12, Lx 0.6757, Lu 0.2043, Penalty -0.3416, loss 0.5384
+Label Softmax (x): [0.5263581  0.47364187]
+Epoch 8, Batch 546/710, Grad Norms near zero: 12, Lx 0.6262, Lu 0.0745, Penalty -0.3359, loss 0.3649
+Label Softmax (x): [0.49672025 0.50327975]
+Epoch 8, Batch 547/710, Grad Norms near zero: 12, Lx 0.6829, Lu 0.2981, Penalty -0.3404, loss 0.6406
+Label Softmax (x): [0.46682644 0.53317356]
+Epoch 8, Batch 548/710, Grad Norms near zero: 12, Lx 0.6279, Lu 0.1452, Penalty -0.3383, loss 0.4348
+Label Softmax (x): [0.44690928 0.5530907 ]
+Epoch 8, Batch 549/710, Grad Norms near zero: 12, Lx 0.6968, Lu 0.3527, Penalty -0.3399, loss 0.7096
+Label Softmax (x): [0.4656413 0.5343587]
+Epoch 8, Batch 550/710, Grad Norms near zero: 12, Lx 0.6679, Lu 0.2313, Penalty -0.3407, loss 0.5585
+Label Softmax (x): [0.47485632 0.5251437 ]
+Epoch 8, Batch 551/710, Grad Norms near zero: 12, Lx 0.6381, Lu 0.1525, Penalty -0.3402, loss 0.4504
+Label Softmax (x): [0.5461153  0.45388472]
+Epoch 8, Batch 552/710, Grad Norms near zero: 12, Lx 0.6609, Lu 0.2959, Penalty -0.3382, loss 0.6186
+Label Softmax (x): [0.52798724 0.4720127 ]
+Epoch 8, Batch 553/710, Grad Norms near zero: 12, Lx 0.6677, Lu 0.2891, Penalty -0.3417, loss 0.6151
+Label Softmax (x): [0.51320297 0.48679706]
+Epoch 8, Batch 554/710, Grad Norms near zero: 12, Lx 0.6759, Lu 0.3788, Penalty -0.3431, loss 0.7116
+Label Softmax (x): [0.5969126  0.40308735]
+Epoch 8, Batch 555/710, Grad Norms near zero: 12, Lx 0.7020, Lu 0.3257, Penalty -0.3324, loss 0.6952
+Label Softmax (x): [0.56472695 0.43527305]
+Epoch 8, Batch 556/710, Grad Norms near zero: 12, Lx 0.6830, Lu 0.3099, Penalty -0.3398, loss 0.6531
+Label Softmax (x): [0.55153173 0.4484682 ]
+Epoch 8, Batch 557/710, Grad Norms near zero: 12, Lx 0.6660, Lu 0.2562, Penalty -0.3402, loss 0.5820
+Label Softmax (x): [0.5236398 0.4763602]
+Epoch 8, Batch 558/710, Grad Norms near zero: 12, Lx 0.6512, Lu 0.1218, Penalty -0.3423, loss 0.4306
+Label Softmax (x): [0.5068807  0.49311936]
+Epoch 8, Batch 559/710, Grad Norms near zero: 12, Lx 0.6747, Lu 0.1445, Penalty -0.3443, loss 0.4750
+Label Softmax (x): [0.5144745  0.48552555]
+Epoch 8, Batch 560/710, Grad Norms near zero: 12, Lx 0.6367, Lu 0.1801, Penalty -0.3435, loss 0.4733
+Label Softmax (x): [0.5004325  0.49956748]
+Epoch 8, Batch 561/710, Grad Norms near zero: 12, Lx 0.6821, Lu 0.3118, Penalty -0.3437, loss 0.6501
+Label Softmax (x): [0.48825943 0.5117406 ]
+Epoch 8, Batch 562/710, Grad Norms near zero: 12, Lx 0.6360, Lu 0.1015, Penalty -0.3429, loss 0.3946
+Label Softmax (x): [0.5022921 0.4977079]
+Epoch 8, Batch 563/710, Grad Norms near zero: 12, Lx 0.6623, Lu 0.1241, Penalty -0.3442, loss 0.4423
+Label Softmax (x): [0.5070628 0.4929372]
+Epoch 8, Batch 564/710, Grad Norms near zero: 12, Lx 0.6987, Lu 0.2016, Penalty -0.3448, loss 0.5554
+Label Softmax (x): [0.5606054  0.43939465]
+Epoch 8, Batch 565/710, Grad Norms near zero: 12, Lx 0.6771, Lu 0.2344, Penalty -0.3394, loss 0.5721
+Label Softmax (x): [0.5253551  0.47464487]
+Epoch 8, Batch 566/710, Grad Norms near zero: 12, Lx 0.6764, Lu 0.2589, Penalty -0.3439, loss 0.5913
+Label Softmax (x): [0.5061964 0.4938036]
+Epoch 8, Batch 567/710, Grad Norms near zero: 12, Lx 0.6805, Lu 0.2650, Penalty -0.3447, loss 0.6008
+Label Softmax (x): [0.51139295 0.48860705]
+Epoch 8, Batch 568/710, Grad Norms near zero: 12, Lx 0.6783, Lu 0.2953, Penalty -0.3451, loss 0.6285
+Label Softmax (x): [0.51566947 0.4843306 ]
+Epoch 8, Batch 569/710, Grad Norms near zero: 12, Lx 0.6602, Lu 0.1269, Penalty -0.3424, loss 0.4447
+Label Softmax (x): [0.5211548  0.47884518]
+Epoch 8, Batch 570/710, Grad Norms near zero: 12, Lx 0.6719, Lu 0.0390, Penalty -0.3422, loss 0.3686
+Label Softmax (x): [0.53499657 0.4650034 ]
+Epoch 8, Batch 571/710, Grad Norms near zero: 12, Lx 0.6333, Lu 0.0658, Penalty -0.3418, loss 0.3573
+Label Softmax (x): [0.4976059 0.5023941]
+Epoch 8, Batch 572/710, Grad Norms near zero: 12, Lx 0.6796, Lu 0.3301, Penalty -0.3445, loss 0.6652
+Label Softmax (x): [0.51362145 0.48637855]
+Epoch 8, Batch 573/710, Grad Norms near zero: 12, Lx 0.6277, Lu 0.0527, Penalty -0.3409, loss 0.3395
+Label Softmax (x): [0.54027295 0.45972705]
+Epoch 8, Batch 574/710, Grad Norms near zero: 12, Lx 0.6638, Lu 0.2065, Penalty -0.3403, loss 0.5300
+Label Softmax (x): [0.48824435 0.51175565]
+Epoch 8, Batch 575/710, Grad Norms near zero: 12, Lx 0.6581, Lu 0.1786, Penalty -0.3405, loss 0.4962
+Label Softmax (x): [0.5308755 0.4691245]
+Epoch 8, Batch 576/710, Grad Norms near zero: 12, Lx 0.6543, Lu 0.2072, Penalty -0.3394, loss 0.5222
+Label Softmax (x): [0.4596097 0.5403903]
+Epoch 8, Batch 577/710, Grad Norms near zero: 12, Lx 0.6328, Lu 0.2219, Penalty -0.3408, loss 0.5139
+Label Softmax (x): [0.45212552 0.54787445]
+Epoch 8, Batch 578/710, Grad Norms near zero: 12, Lx 0.7044, Lu 0.3840, Penalty -0.3408, loss 0.7476
+Label Softmax (x): [0.50362813 0.49637187]
+Epoch 8, Batch 579/710, Grad Norms near zero: 12, Lx 0.6361, Lu 0.1309, Penalty -0.3391, loss 0.4279
+Label Softmax (x): [0.55012345 0.44987658]
+Epoch 8, Batch 580/710, Grad Norms near zero: 12, Lx 0.6264, Lu 0.1852, Penalty -0.3357, loss 0.4758
+Label Softmax (x): [0.5581872  0.44181284]
+Epoch 8, Batch 581/710, Grad Norms near zero: 12, Lx 0.6760, Lu 0.1279, Penalty -0.3362, loss 0.4677
+Label Softmax (x): [0.56786853 0.4321314 ]
+Epoch 8, Batch 582/710, Grad Norms near zero: 12, Lx 0.6831, Lu 0.3265, Penalty -0.3380, loss 0.6717
+Label Softmax (x): [0.5710536 0.4289464]
+Epoch 8, Batch 583/710, Grad Norms near zero: 12, Lx 0.6612, Lu 0.3290, Penalty -0.3364, loss 0.6537
+Label Softmax (x): [0.561633   0.43836698]
+Epoch 8, Batch 584/710, Grad Norms near zero: 12, Lx 0.6566, Lu 0.1582, Penalty -0.3366, loss 0.4783
+Label Softmax (x): [0.48784053 0.51215947]
+Epoch 8, Batch 585/710, Grad Norms near zero: 12, Lx 0.6328, Lu 0.0563, Penalty -0.3409, loss 0.3482
+Label Softmax (x): [0.4933079 0.5066921]
+Epoch 8, Batch 586/710, Grad Norms near zero: 12, Lx 0.6540, Lu 0.2289, Penalty -0.3432, loss 0.5397
+Label Softmax (x): [0.44612572 0.55387425]
+Epoch 8, Batch 587/710, Grad Norms near zero: 12, Lx 0.6556, Lu 0.1861, Penalty -0.3390, loss 0.5028
+Label Softmax (x): [0.43922526 0.56077474]
+Epoch 8, Batch 588/710, Grad Norms near zero: 12, Lx 0.6870, Lu 0.3341, Penalty -0.3400, loss 0.6811
+Label Softmax (x): [0.44667214 0.5533279 ]
+Epoch 8, Batch 589/710, Grad Norms near zero: 12, Lx 0.6712, Lu 0.1618, Penalty -0.3392, loss 0.4939
+Label Softmax (x): [0.45431048 0.5456895 ]
+Epoch 8, Batch 590/710, Grad Norms near zero: 12, Lx 0.6728, Lu 0.3292, Penalty -0.3419, loss 0.6601
+Label Softmax (x): [0.502595   0.49740505]
+Epoch 8, Batch 591/710, Grad Norms near zero: 12, Lx 0.6819, Lu 0.3034, Penalty -0.3438, loss 0.6415
+Label Softmax (x): [0.52043164 0.47956836]
+Epoch 8, Batch 592/710, Grad Norms near zero: 12, Lx 0.6609, Lu 0.1002, Penalty -0.3424, loss 0.4187
+Label Softmax (x): [0.55008817 0.44991177]
+Epoch 8, Batch 593/710, Grad Norms near zero: 12, Lx 0.6837, Lu 0.3703, Penalty -0.3423, loss 0.7117
+Label Softmax (x): [0.5316409 0.4683591]
+Epoch 8, Batch 594/710, Grad Norms near zero: 12, Lx 0.6902, Lu 0.1669, Penalty -0.3423, loss 0.5148
+Label Softmax (x): [0.55450463 0.44549537]
+Epoch 8, Batch 595/710, Grad Norms near zero: 12, Lx 0.6771, Lu 0.2759, Penalty -0.3421, loss 0.6108
+Label Softmax (x): [0.5198234 0.4801766]
+Epoch 8, Batch 596/710, Grad Norms near zero: 12, Lx 0.6743, Lu 0.2280, Penalty -0.3439, loss 0.5584
+Label Softmax (x): [0.51288617 0.48711386]
+Epoch 8, Batch 597/710, Grad Norms near zero: 12, Lx 0.6495, Lu 0.1206, Penalty -0.3443, loss 0.4258
+Label Softmax (x): [0.51337916 0.48662084]
+Epoch 8, Batch 598/710, Grad Norms near zero: 12, Lx 0.6730, Lu 0.1933, Penalty -0.3447, loss 0.5216
+Label Softmax (x): [0.50433874 0.49566132]
+Epoch 8, Batch 599/710, Grad Norms near zero: 12, Lx 0.6640, Lu 0.2296, Penalty -0.3447, loss 0.5488
+Label Softmax (x): [0.48638278 0.5136173 ]
+Epoch 8, Batch 600/710, Grad Norms near zero: 12, Lx 0.6513, Lu 0.2102, Penalty -0.3437, loss 0.5177
+Label Softmax (x): [0.48422056 0.51577944]
+Epoch 8, Batch 601/710, Grad Norms near zero: 12, Lx 0.6786, Lu 0.3100, Penalty -0.3446, loss 0.6440
+Label Softmax (x): [0.5024458  0.49755415]
+Epoch 8, Batch 602/710, Grad Norms near zero: 12, Lx 0.6659, Lu 0.1338, Penalty -0.3443, loss 0.4554
+Label Softmax (x): [0.5001357  0.49986425]
+Epoch 8, Batch 603/710, Grad Norms near zero: 12, Lx 0.6622, Lu 0.0988, Penalty -0.3438, loss 0.4172
+Label Softmax (x): [0.49729142 0.5027086 ]
+Epoch 8, Batch 604/710, Grad Norms near zero: 12, Lx 0.6395, Lu 0.0487, Penalty -0.3427, loss 0.3454
+Label Softmax (x): [0.50594425 0.49405575]
+Epoch 8, Batch 605/710, Grad Norms near zero: 12, Lx 0.6737, Lu 0.2537, Penalty -0.3438, loss 0.5836
+Label Softmax (x): [0.5112461  0.48875386]
+Epoch 8, Batch 606/710, Grad Norms near zero: 12, Lx 0.6518, Lu 0.1981, Penalty -0.3421, loss 0.5078
+Label Softmax (x): [0.4862337 0.5137663]
+Epoch 8, Batch 607/710, Grad Norms near zero: 12, Lx 0.6535, Lu 0.3342, Penalty -0.3424, loss 0.6453
+Label Softmax (x): [0.47996765 0.52003235]
+Epoch 8, Batch 608/710, Grad Norms near zero: 12, Lx 0.6716, Lu 0.2676, Penalty -0.3429, loss 0.5963
+Label Softmax (x): [0.4883448 0.5116552]
+Epoch 8, Batch 609/710, Grad Norms near zero: 12, Lx 0.6848, Lu 0.2361, Penalty -0.3422, loss 0.5787
+Label Softmax (x): [0.4967013 0.5032987]
+Epoch 8, Batch 610/710, Grad Norms near zero: 12, Lx 0.6847, Lu 0.2490, Penalty -0.3422, loss 0.5915
+Label Softmax (x): [0.4852869  0.51471305]
+Epoch 8, Batch 611/710, Grad Norms near zero: 12, Lx 0.6666, Lu 0.1809, Penalty -0.3411, loss 0.5064
+Label Softmax (x): [0.51714253 0.48285747]
+Epoch 8, Batch 612/710, Grad Norms near zero: 12, Lx 0.6644, Lu 0.3202, Penalty -0.3436, loss 0.6410
+Label Softmax (x): [0.4970758  0.50292426]
+Epoch 8, Batch 613/710, Grad Norms near zero: 12, Lx 0.6657, Lu 0.3562, Penalty -0.3410, loss 0.6809
+Label Softmax (x): [0.48705694 0.5129431 ]
+Epoch 8, Batch 614/710, Grad Norms near zero: 12, Lx 0.6656, Lu 0.2709, Penalty -0.3419, loss 0.5946
+Label Softmax (x): [0.51855505 0.48144493]
+Epoch 8, Batch 615/710, Grad Norms near zero: 12, Lx 0.6699, Lu 0.1803, Penalty -0.3413, loss 0.5089
+Label Softmax (x): [0.50511765 0.49488235]
+Epoch 8, Batch 616/710, Grad Norms near zero: 12, Lx 0.6408, Lu 0.1006, Penalty -0.3399, loss 0.4016
+Label Softmax (x): [0.5118019  0.48819807]
+Epoch 8, Batch 617/710, Grad Norms near zero: 12, Lx 0.6739, Lu 0.2934, Penalty -0.3428, loss 0.6245
+Label Softmax (x): [0.49448794 0.50551206]
+Epoch 8, Batch 618/710, Grad Norms near zero: 12, Lx 0.6331, Lu 0.1604, Penalty -0.3405, loss 0.4529
+Label Softmax (x): [0.49499464 0.50500536]
+Epoch 8, Batch 619/710, Grad Norms near zero: 12, Lx 0.6662, Lu 0.2119, Penalty -0.3423, loss 0.5358
+Label Softmax (x): [0.47727686 0.5227231 ]
+Epoch 8, Batch 620/710, Grad Norms near zero: 12, Lx 0.6761, Lu 0.1355, Penalty -0.3415, loss 0.4701
+Label Softmax (x): [0.48932877 0.51067126]
+Epoch 8, Batch 621/710, Grad Norms near zero: 12, Lx 0.6545, Lu 0.2449, Penalty -0.3422, loss 0.5572
+Label Softmax (x): [0.50224227 0.49775776]
+Epoch 8, Batch 622/710, Grad Norms near zero: 12, Lx 0.6103, Lu 0.0861, Penalty -0.3395, loss 0.3568
+Label Softmax (x): [0.50438356 0.49561644]
+Epoch 8, Batch 623/710, Grad Norms near zero: 12, Lx 0.6574, Lu 0.3070, Penalty -0.3425, loss 0.6219
+Label Softmax (x): [0.51242477 0.48757523]
+Epoch 8, Batch 624/710, Grad Norms near zero: 12, Lx 0.6646, Lu 0.2663, Penalty -0.3417, loss 0.5892
+Label Softmax (x): [0.5410817  0.45891827]
+Epoch 8, Batch 625/710, Grad Norms near zero: 12, Lx 0.6569, Lu 0.1920, Penalty -0.3418, loss 0.5072
+Label Softmax (x): [0.5161338  0.48386624]
+Epoch 8, Batch 626/710, Grad Norms near zero: 12, Lx 0.6740, Lu 0.2577, Penalty -0.3418, loss 0.5899
+Label Softmax (x): [0.5049005  0.49509948]
+Epoch 8, Batch 627/710, Grad Norms near zero: 12, Lx 0.6791, Lu 0.3293, Penalty -0.3435, loss 0.6649
+Label Softmax (x): [0.55636394 0.44363606]
+Epoch 8, Batch 628/710, Grad Norms near zero: 12, Lx 0.6347, Lu 0.3364, Penalty -0.3405, loss 0.6305
+Label Softmax (x): [0.53776956 0.46223044]
+Epoch 8, Batch 629/710, Grad Norms near zero: 12, Lx 0.6546, Lu 0.2529, Penalty -0.3404, loss 0.5671
+Label Softmax (x): [0.5511558 0.4488442]
+Epoch 8, Batch 630/710, Grad Norms near zero: 12, Lx 0.7033, Lu 0.2347, Penalty -0.3402, loss 0.5977
+Label Softmax (x): [0.5546397  0.44536036]
+Epoch 8, Batch 631/710, Grad Norms near zero: 12, Lx 0.6832, Lu 0.0985, Penalty -0.3388, loss 0.4428
+Label Softmax (x): [0.5454202 0.4545797]
+Epoch 8, Batch 632/710, Grad Norms near zero: 12, Lx 0.6504, Lu 0.1452, Penalty -0.3402, loss 0.4554
+Label Softmax (x): [0.51319253 0.4868074 ]
+Epoch 8, Batch 633/710, Grad Norms near zero: 12, Lx 0.6772, Lu 0.3226, Penalty -0.3419, loss 0.6579
+Label Softmax (x): [0.500981   0.49901906]
+Epoch 8, Batch 634/710, Grad Norms near zero: 12, Lx 0.6603, Lu 0.2555, Penalty -0.3427, loss 0.5731
+Label Softmax (x): [0.46993244 0.53006756]
+Epoch 8, Batch 635/710, Grad Norms near zero: 12, Lx 0.6498, Lu 0.2825, Penalty -0.3417, loss 0.5906
+Label Softmax (x): [0.49369118 0.50630885]
+Epoch 8, Batch 636/710, Grad Norms near zero: 12, Lx 0.6638, Lu 0.1729, Penalty -0.3414, loss 0.4953
+Label Softmax (x): [0.4838012 0.5161989]
+Epoch 8, Batch 637/710, Grad Norms near zero: 12, Lx 0.6568, Lu 0.2791, Penalty -0.3423, loss 0.5937
+Label Softmax (x): [0.49864244 0.50135756]
+Epoch 8, Batch 638/710, Grad Norms near zero: 12, Lx 0.6774, Lu 0.1460, Penalty -0.3419, loss 0.4815
+Label Softmax (x): [0.4925151 0.5074849]
+Epoch 8, Batch 639/710, Grad Norms near zero: 12, Lx 0.6683, Lu 0.2422, Penalty -0.3435, loss 0.5671
+Label Softmax (x): [0.48928234 0.5107177 ]
+Epoch 8, Batch 640/710, Grad Norms near zero: 12, Lx 0.6428, Lu 0.2270, Penalty -0.3425, loss 0.5274
+Label Softmax (x): [0.5296884  0.47031155]
+Epoch 8, Batch 641/710, Grad Norms near zero: 12, Lx 0.6203, Lu 0.0472, Penalty -0.3388, loss 0.3287
+Label Softmax (x): [0.55262077 0.44737914]
+Epoch 8, Batch 642/710, Grad Norms near zero: 12, Lx 0.6553, Lu 0.1266, Penalty -0.3398, loss 0.4420
+Label Softmax (x): [0.5200834 0.4799166]
+Epoch 8, Batch 643/710, Grad Norms near zero: 12, Lx 0.6578, Lu 0.3512, Penalty -0.3419, loss 0.6672
+Label Softmax (x): [0.5385642  0.46143574]
+Epoch 8, Batch 644/710, Grad Norms near zero: 12, Lx 0.6609, Lu 0.2754, Penalty -0.3395, loss 0.5967
+Label Softmax (x): [0.5396508  0.46034917]
+Epoch 8, Batch 645/710, Grad Norms near zero: 12, Lx 0.6722, Lu 0.1082, Penalty -0.3394, loss 0.4410
+Label Softmax (x): [0.55859923 0.44140077]
+Epoch 8, Batch 646/710, Grad Norms near zero: 12, Lx 0.6756, Lu 0.2367, Penalty -0.3390, loss 0.5734
+Label Softmax (x): [0.5477251  0.45227495]
+Epoch 8, Batch 647/710, Grad Norms near zero: 12, Lx 0.6537, Lu 0.2162, Penalty -0.3400, loss 0.5299
+Label Softmax (x): [0.54620045 0.4537995 ]
+Epoch 8, Batch 648/710, Grad Norms near zero: 12, Lx 0.6982, Lu 0.3199, Penalty -0.3405, loss 0.6776
+Label Softmax (x): [0.563344 0.436656]
+Epoch 8, Batch 649/710, Grad Norms near zero: 12, Lx 0.6414, Lu 0.0949, Penalty -0.3385, loss 0.3978
+Label Softmax (x): [0.56867564 0.43132436]
+Epoch 8, Batch 650/710, Grad Norms near zero: 12, Lx 0.6517, Lu 0.3203, Penalty -0.3377, loss 0.6343
+Label Softmax (x): [0.51329035 0.48670962]
+Epoch 8, Batch 651/710, Grad Norms near zero: 12, Lx 0.6969, Lu 0.2140, Penalty -0.3416, loss 0.5693
+Label Softmax (x): [0.50922513 0.49077487]
+Epoch 8, Batch 652/710, Grad Norms near zero: 12, Lx 0.6491, Lu 0.1018, Penalty -0.3400, loss 0.4109
+Label Softmax (x): [0.4994771 0.5005229]
+Epoch 8, Batch 653/710, Grad Norms near zero: 12, Lx 0.6526, Lu 0.2053, Penalty -0.3421, loss 0.5159
+Label Softmax (x): [0.49531114 0.50468886]
+Epoch 8, Batch 654/710, Grad Norms near zero: 12, Lx 0.6672, Lu 0.2818, Penalty -0.3433, loss 0.6057
+Label Softmax (x): [0.49181616 0.50818384]
+Epoch 8, Batch 655/710, Grad Norms near zero: 12, Lx 0.6681, Lu 0.3758, Penalty -0.3429, loss 0.7009
+Label Softmax (x): [0.48794377 0.51205623]
+Epoch 8, Batch 656/710, Grad Norms near zero: 12, Lx 0.6595, Lu 0.2269, Penalty -0.3423, loss 0.5441
+Label Softmax (x): [0.51366615 0.48633382]
+Epoch 8, Batch 657/710, Grad Norms near zero: 12, Lx 0.6403, Lu 0.1664, Penalty -0.3419, loss 0.4647
+Label Softmax (x): [0.5400061 0.4599939]
+Epoch 8, Batch 658/710, Grad Norms near zero: 12, Lx 0.6692, Lu 0.3121, Penalty -0.3419, loss 0.6394
+Label Softmax (x): [0.5342754 0.4657246]
+Epoch 8, Batch 659/710, Grad Norms near zero: 12, Lx 0.6510, Lu 0.2072, Penalty -0.3423, loss 0.5159
+Label Softmax (x): [0.5232818 0.4767182]
+Epoch 8, Batch 660/710, Grad Norms near zero: 12, Lx 0.6645, Lu 0.2600, Penalty -0.3415, loss 0.5830
+Label Softmax (x): [0.58347225 0.41652775]
+Epoch 8, Batch 661/710, Grad Norms near zero: 12, Lx 0.6521, Lu 0.0868, Penalty -0.3338, loss 0.4051
+Label Softmax (x): [0.56343573 0.43656427]
+Epoch 8, Batch 662/710, Grad Norms near zero: 12, Lx 0.6788, Lu 0.2715, Penalty -0.3386, loss 0.6118
+Label Softmax (x): [0.55046755 0.44953248]
+Epoch 8, Batch 663/710, Grad Norms near zero: 12, Lx 0.6720, Lu 0.1065, Penalty -0.3385, loss 0.4400
+Label Softmax (x): [0.51849496 0.48150507]
+Epoch 8, Batch 664/710, Grad Norms near zero: 12, Lx 0.6808, Lu 0.1893, Penalty -0.3427, loss 0.5273
+Label Softmax (x): [0.51972365 0.48027635]
+Epoch 8, Batch 665/710, Grad Norms near zero: 12, Lx 0.6647, Lu 0.0888, Penalty -0.3421, loss 0.4114
+Label Softmax (x): [0.49310857 0.5068914 ]
+Epoch 8, Batch 666/710, Grad Norms near zero: 12, Lx 0.6762, Lu 0.3432, Penalty -0.3441, loss 0.6753
+Label Softmax (x): [0.48012143 0.5198785 ]
+Epoch 8, Batch 667/710, Grad Norms near zero: 12, Lx 0.6841, Lu 0.3583, Penalty -0.3439, loss 0.6986
+Label Softmax (x): [0.4773594 0.5226406]
+Epoch 8, Batch 668/710, Grad Norms near zero: 12, Lx 0.6403, Lu 0.1122, Penalty -0.3401, loss 0.4124
+Label Softmax (x): [0.5029157  0.49708432]
+Epoch 8, Batch 669/710, Grad Norms near zero: 12, Lx 0.6321, Lu 0.0365, Penalty -0.3399, loss 0.3288
+Label Softmax (x): [0.501785   0.49821502]
+Epoch 8, Batch 670/710, Grad Norms near zero: 12, Lx 0.6576, Lu 0.1908, Penalty -0.3423, loss 0.5061
+Label Softmax (x): [0.5111846  0.48881543]
+Epoch 8, Batch 671/710, Grad Norms near zero: 12, Lx 0.6619, Lu 0.2996, Penalty -0.3432, loss 0.6183
+Label Softmax (x): [0.5402571 0.4597428]
+Epoch 8, Batch 672/710, Grad Norms near zero: 12, Lx 0.6581, Lu 0.1586, Penalty -0.3403, loss 0.4764
+Label Softmax (x): [0.5284997  0.47150028]
+Epoch 8, Batch 673/710, Grad Norms near zero: 12, Lx 0.6704, Lu 0.1092, Penalty -0.3407, loss 0.4388
+Label Softmax (x): [0.56017715 0.43982282]
+Epoch 8, Batch 674/710, Grad Norms near zero: 12, Lx 0.6629, Lu 0.2013, Penalty -0.3389, loss 0.5253
+Label Softmax (x): [0.5371918 0.4628082]
+Epoch 8, Batch 675/710, Grad Norms near zero: 12, Lx 0.6574, Lu 0.2309, Penalty -0.3414, loss 0.5468
+Label Softmax (x): [0.509927   0.49007303]
+Epoch 8, Batch 676/710, Grad Norms near zero: 12, Lx 0.6647, Lu 0.3066, Penalty -0.3427, loss 0.6286
+Label Softmax (x): [0.5085205  0.49147952]
+Epoch 8, Batch 677/710, Grad Norms near zero: 12, Lx 0.6726, Lu 0.1648, Penalty -0.3411, loss 0.4963
+Label Softmax (x): [0.49610043 0.50389963]
+Epoch 8, Batch 678/710, Grad Norms near zero: 12, Lx 0.6549, Lu 0.1745, Penalty -0.3411, loss 0.4883
+Label Softmax (x): [0.5290906  0.47090942]
+Epoch 8, Batch 679/710, Grad Norms near zero: 12, Lx 0.6402, Lu 0.1785, Penalty -0.3405, loss 0.4782
+Label Softmax (x): [0.52690727 0.47309273]
+Epoch 8, Batch 680/710, Grad Norms near zero: 12, Lx 0.6670, Lu 0.2333, Penalty -0.3423, loss 0.5580
+Label Softmax (x): [0.48513475 0.5148653 ]
+Epoch 8, Batch 681/710, Grad Norms near zero: 12, Lx 0.6377, Lu 0.1200, Penalty -0.3418, loss 0.4159
+Label Softmax (x): [0.4745421  0.52545786]
+Epoch 8, Batch 682/710, Grad Norms near zero: 12, Lx 0.6184, Lu 0.2060, Penalty -0.3397, loss 0.4847
+Label Softmax (x): [0.4779697  0.52203023]
+Epoch 8, Batch 683/710, Grad Norms near zero: 12, Lx 0.6903, Lu 0.3308, Penalty -0.3400, loss 0.6810
+Label Softmax (x): [0.4840141 0.5159859]
+Epoch 8, Batch 684/710, Grad Norms near zero: 12, Lx 0.6918, Lu 0.1600, Penalty -0.3401, loss 0.5117
+Label Softmax (x): [0.47544742 0.5245526 ]
+Epoch 8, Batch 685/710, Grad Norms near zero: 12, Lx 0.6582, Lu 0.3010, Penalty -0.3413, loss 0.6178
+Label Softmax (x): [0.5306295  0.46937048]
+Epoch 8, Batch 686/710, Grad Norms near zero: 12, Lx 0.6761, Lu 0.2394, Penalty -0.3416, loss 0.5739
+Label Softmax (x): [0.535618   0.46438202]
+Epoch 8, Batch 687/710, Grad Norms near zero: 12, Lx 0.6689, Lu 0.2528, Penalty -0.3420, loss 0.5797
+Label Softmax (x): [0.5342934 0.4657066]
+Epoch 8, Batch 688/710, Grad Norms near zero: 12, Lx 0.6675, Lu 0.1320, Penalty -0.3401, loss 0.4595
+Label Softmax (x): [0.53532887 0.46467116]
+Epoch 8, Batch 689/710, Grad Norms near zero: 12, Lx 0.6850, Lu 0.3206, Penalty -0.3425, loss 0.6630
+Label Softmax (x): [0.54142094 0.45857894]
+Epoch 8, Batch 690/710, Grad Norms near zero: 12, Lx 0.6852, Lu 0.2338, Penalty -0.3406, loss 0.5784
+Label Softmax (x): [0.5359021  0.46409792]
+Epoch 8, Batch 691/710, Grad Norms near zero: 12, Lx 0.6570, Lu 0.2141, Penalty -0.3416, loss 0.5295
+Label Softmax (x): [0.50855553 0.49144453]
+Epoch 8, Batch 692/710, Grad Norms near zero: 12, Lx 0.6330, Lu 0.1577, Penalty -0.3418, loss 0.4488
+Label Softmax (x): [0.5027191  0.49728093]
+Epoch 8, Batch 693/710, Grad Norms near zero: 12, Lx 0.6700, Lu 0.1546, Penalty -0.3427, loss 0.4819
+Label Softmax (x): [0.5001874  0.49981257]
+Epoch 8, Batch 694/710, Grad Norms near zero: 12, Lx 0.6689, Lu 0.2665, Penalty -0.3431, loss 0.5924
+Label Softmax (x): [0.5178079 0.4821921]
+Epoch 8, Batch 695/710, Grad Norms near zero: 12, Lx 0.6522, Lu 0.1918, Penalty -0.3425, loss 0.5015
+Label Softmax (x): [0.5297675  0.47023255]
+Epoch 8, Batch 696/710, Grad Norms near zero: 12, Lx 0.6649, Lu 0.2799, Penalty -0.3421, loss 0.6027
+Label Softmax (x): [0.5509237  0.44907635]
+Epoch 8, Batch 697/710, Grad Norms near zero: 12, Lx 0.6534, Lu 0.3038, Penalty -0.3399, loss 0.6174
+Label Softmax (x): [0.5937299  0.40627006]
+Epoch 8, Batch 698/710, Grad Norms near zero: 12, Lx 0.6888, Lu 0.4853, Penalty -0.3315, loss 0.8425
+Label Softmax (x): [0.56592387 0.43407607]
+Epoch 8, Batch 699/710, Grad Norms near zero: 12, Lx 0.6663, Lu 0.2158, Penalty -0.3379, loss 0.5442
+Label Softmax (x): [0.52828443 0.47171557]
+Epoch 8, Batch 700/710, Grad Norms near zero: 12, Lx 0.6518, Lu 0.2813, Penalty -0.3419, loss 0.5912
+Label Softmax (x): [0.5495144 0.4504856]
+Epoch 8, Batch 701/710, Grad Norms near zero: 12, Lx 0.6296, Lu 0.0783, Penalty -0.3388, loss 0.3690
+Label Softmax (x): [0.514904   0.48509598]
+Epoch 8, Batch 702/710, Grad Norms near zero: 12, Lx 0.6524, Lu 0.2780, Penalty -0.3403, loss 0.5902
+Label Softmax (x): [0.51640934 0.48359066]
+Epoch 8, Batch 703/710, Grad Norms near zero: 12, Lx 0.6705, Lu 0.1014, Penalty -0.3405, loss 0.4314
+Label Softmax (x): [0.48157212 0.51842785]
+Epoch 8, Batch 704/710, Grad Norms near zero: 12, Lx 0.6286, Lu 0.2181, Penalty -0.3403, loss 0.5064
+Label Softmax (x): [0.47134835 0.52865165]
+Epoch 8, Batch 705/710, Grad Norms near zero: 12, Lx 0.6694, Lu 0.2283, Penalty -0.3403, loss 0.5575
+Label Softmax (x): [0.47519022 0.5248098 ]
+Epoch 8, Batch 706/710, Grad Norms near zero: 12, Lx 0.6735, Lu 0.3112, Penalty -0.3407, loss 0.6440
+Label Softmax (x): [0.51465636 0.48534366]
+Epoch 8, Batch 707/710, Grad Norms near zero: 12, Lx 0.6472, Lu 0.2060, Penalty -0.3419, loss 0.5113
+Label Softmax (x): [0.49905986 0.50094014]
+Epoch 8, Batch 708/710, Grad Norms near zero: 12, Lx 0.6703, Lu 0.2347, Penalty -0.3425, loss 0.5625
+Label Softmax (x): [0.5382355  0.46176454]
+Epoch 8, Batch 709/710, Grad Norms near zero: 12, Lx 0.6730, Lu 0.3058, Penalty -0.3408, loss 0.6381
+Label Softmax (x): [0.5606658 0.4393343]
+Epoch 8, Batch 710/710, Grad Norms near zero: 12, Lx 0.6675, Lu 0.1595, Penalty -0.3378, loss 0.4892
+Evaluating models at epoch 8
+Test data size: 10000
+Epoch: 8, Test Loss: 0.7687, Test Accuracy: 0.4883, Test F1 Score: 0.4095
+Evaluating training data at epoch 8 for Model 1
+Evaluating training data at epoch 8 for Model 2

@@ -210,7 +210,6 @@ if __name__ == "__main__":
         print(f"Epoch: {epoch}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}, Test F1 Score: {test_f1:.4f}")
 
         # ---- Save Checkpoint ----
-        # ---- Save Checkpoint ----
         if epoch == warmup_epochs - 1:
             torch.save(
                 {

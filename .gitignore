@@ -6,3 +6,4 @@ __pycache__/
 *.npy
 *.pth
 *.model
+src/data/train/yahoo_train.csv

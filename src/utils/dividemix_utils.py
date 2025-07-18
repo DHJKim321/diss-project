@@ -30,7 +30,7 @@ def warmup_train(epoch_no, model, optimizer, warmup_loader, criterion, negentrop
         L = loss
         L.backward()
         optimizer.step()
-        tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Softmax: {torch.softmax(outputs, dim=1).mean(dim=0).detach().cpu().numpy()}")
+        # tqdm.write(f"Epoch {epoch_no}, Loss: {loss.item():.4f}, Softmax: {torch.softmax(outputs, dim=1).mean(dim=0).detach().cpu().numpy()}")
 
 def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=64, temperature=0.5, alpha=0.5, penalty_val=1.0, num_class=2, device='cuda'):
     """

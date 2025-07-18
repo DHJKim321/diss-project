@@ -155,8 +155,6 @@ if __name__ == "__main__":
     else:
         print("No warm-up-completed models. Training from scratch.")
 
-    all_loss = [[], []] # Store losses for model1 and model2
-
     # ------------ Start Training ------------
     for epoch in range(start_epoch, epochs):
         # ---- Learning Rate Decay ----
@@ -219,14 +217,13 @@ if __name__ == "__main__":
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
-        prob1, all_loss[0] = eval_train(model1, all_loss[0][-1], per_sample_CEloss, eval_loader, device=device)
-        save_loss_histogram(all_loss[0], epoch, model=1)
-        save_orig_noisy_loss_histogram(noisy_mask, all_loss[1], epoch, model=1)
+        prob1, losses1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(losses1, epoch, model=1)
+        save_orig_noisy_loss_histogram(noisy_mask, losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
-        prob2, all_loss[1] = eval_train(model2, all_loss[1][-1], per_sample_CEloss, eval_loader, device=device)
-        save_loss_histogram(all_loss[1], epoch, model=2)
-        save_orig_noisy_loss_histogram(noisy_mask, all_loss[1], epoch, model=2)
-        # save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
+        prob2, losses2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(losses2, epoch, model=2)
+        save_orig_noisy_loss_histogram(noisy_mask, losses2, epoch, model=2)
 
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")

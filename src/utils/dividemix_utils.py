@@ -163,7 +163,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         near_zero_grad_count = sum(1 for norm in grad_norms if norm <= 1e-6)
         tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Grad Norms near zero: {near_zero_grad_count}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
 
-def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
+def eval_train(model, criterion, eval_loader, device='cuda'):
     model.eval()
     num_iter = (len(eval_loader.dataset)//eval_loader.batch_size)+1
     losses = torch.zeros(len(eval_loader.dataset))
@@ -181,7 +181,6 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
             # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
 
     losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
-    all_loss.append(losses)
 
     # fit a two-component GMM to the loss
     input_loss = losses.reshape(-1,1).cpu().numpy() # input_loss.shape = [n_samples, 1]
@@ -191,7 +190,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
     prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
     # I guess ^ is just a way to not use a hard-coded index? You can still calculate probabilities for both indices since n_components=2
     # gmm.means_.argmin() returns the index of the component with the smallest mean
-    return prob, all_loss
+    return prob, losses.cpu().numpy()
 
 def test(model1, model2, test_loader, device='cuda'):
     preds, all_labels = [], []

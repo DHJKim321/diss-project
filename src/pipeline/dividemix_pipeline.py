@@ -177,28 +177,6 @@ if __name__ == "__main__":
             warmup_train(epoch, model1, optim1, warmup_loader, CEloss, negentropy, device)
             print(f"Warmup training for Network 2")
             warmup_train(epoch, model2, optim2, warmup_loader, CEloss, negentropy, device)
-            # ---- Save Checkpoint ----
-            if epoch == warmup_epochs - 1:
-                eval_loader = loader.run(train_data, mode="eval_train")
-                prob1, _ = eval_train(model1, per_sample_CEloss, eval_loader, device)
-                prob2, _= eval_train(model2, per_sample_CEloss, eval_loader, device)
-                torch.save(
-                    {
-                        "model1": model1.state_dict(),
-                        "model2": model2.state_dict(),
-                        "optim1": optim1.state_dict(),
-                        "optim2": optim2.state_dict(),
-                        "prob1" : prob1,
-                        "prob2" : prob2,
-                    },
-                    warmup_checkpoint_path,
-                )
-                warmup_done = True
-                print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
-                # for m in (model1, model2):
-                #     for param in m.bert.parameters():
-                #         param.requires_grad = True
-                    # m.bert.train()
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
@@ -230,6 +208,23 @@ if __name__ == "__main__":
         test_loader = loader.run(test_data, mode='test')
         test_acc, test_f1, test_preds, test_labels, test_loss = test(model1, model2, test_loader)
         print(f"Epoch: {epoch}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}, Test F1 Score: {test_f1:.4f}")
+
+        # ---- Save Checkpoint ----
+        # ---- Save Checkpoint ----
+        if epoch == warmup_epochs - 1:
+            torch.save(
+                {
+                    "model1": model1.state_dict(),
+                    "model2": model2.state_dict(),
+                    "optim1": optim1.state_dict(),
+                    "optim2": optim2.state_dict(),
+                    "prob1" : prob1,
+                    "prob2" : prob2,
+                },
+                warmup_checkpoint_path,
+            )
+            warmup_done = True
+            print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
 
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")

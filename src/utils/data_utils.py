@@ -132,6 +132,9 @@ def load_yahoo_train(file, file_path):
     data['label'] -= 1
     data = data[['text', 'label']]
     print(f"Yahoo train data loaded with {len(data)} samples")
+    # Take half the data for training with equal distribution
+    data = data.groupby('label').apply(lambda x: x.sample(frac=0.5, random_state=42)).reset_index(drop=True)
+    print(f"Reduced Yahoo train data to {len(data)} samples")
     return data
 
 def load_yahoo_test(file, file_path):

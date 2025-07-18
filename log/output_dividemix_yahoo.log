@@ -23,20 +23,3 @@ Evaluating training data at epoch 1 for Model 1
 Evaluating training data at epoch 1 for Model 2
 Evaluating models at epoch 1
 Test data size: 60000
-Epoch: 1, Test Loss: 1.8303, Test Accuracy: 0.3622, Test F1 Score: 0.2912
-Warmup training for Network 1
-Warmup training for Network 2
-Evaluating training data at epoch 2 for Model 1
-Evaluating training data at epoch 2 for Model 2
-Evaluating models at epoch 2
-Test data size: 60000
-Epoch: 2, Test Loss: 1.9134, Test Accuracy: 0.3897, Test F1 Score: 0.3594
-Warmup training for Network 1
-Warmup training for Network 2
-Evaluating training data at epoch 3 for Model 1
-Evaluating training data at epoch 3 for Model 2
-Evaluating models at epoch 3
-Test data size: 60000
-Epoch: 3, Test Loss: 1.6363, Test Accuracy: 0.4534, Test F1 Score: 0.3973
-Warmup training for Network 1
-Warmup training for Network 2

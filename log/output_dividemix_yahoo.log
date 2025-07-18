@@ -14,3 +14,5 @@ Warmup training for Network 1
 Warmup training for Network 2
 Evaluating training data at epoch 0 for Model 1
 Evaluating training data at epoch 0 for Model 2
+Evaluating models at epoch 0
+Test data size: 60000

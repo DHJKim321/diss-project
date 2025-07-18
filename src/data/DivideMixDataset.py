@@ -62,17 +62,23 @@ class DivideMixDataset(Dataset):
                 'index': index
             }
         elif self.mode == 'labelled':
-            augmented_text = augment_text(self.text[index])
-            encoding = self.tokenizer(
-                augmented_text,
+            encoding1 = self.tokenizer(
+                augment_text(self.text[index]),
                 padding='max_length',
                 truncation=True,
                 max_length=self.max_length,
                 return_tensors='pt'
             )
-            input_ids_1, attention_mask_1 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
+            encoding2 = self.tokenizer(
+                augment_text(self.text[index]),
+                padding='max_length',
+                truncation=True,
+                max_length=self.max_length,
+                return_tensors='pt'
+            )
+            input_ids_1, attention_mask_1 = encoding1['input_ids'].squeeze(0), encoding1['attention_mask'].squeeze(0)
             # input_ids_1, attention_mask_1 = augment(input_ids_1.clone(), attention_mask_1.clone(), self.tokenizer)
-            input_ids_2, attention_mask_2 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
+            input_ids_2, attention_mask_2 = encoding2['input_ids'].squeeze(0), encoding2['attention_mask'].squeeze(0)
             # input_ids_2, attention_mask_2 = augment(input_ids_2.clone(), attention_mask_2.clone(), self.tokenizer)
             return {
                 'input_ids_1': input_ids_1,
@@ -83,17 +89,23 @@ class DivideMixDataset(Dataset):
                 'probability': self.probability[index]
             }
         elif self.mode == 'unlabelled':
-            augmented_text = augment_text(self.text[index])
-            encoding = self.tokenizer(
-                augmented_text,
+            encoding1 = self.tokenizer(
+                augment_text(self.text[index]),
                 padding='max_length',
                 truncation=True,
                 max_length=self.max_length,
                 return_tensors='pt'
             )
-            input_ids_1, attention_mask_1 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
+            encoding2 = self.tokenizer(
+                augment_text(self.text[index]),
+                padding='max_length',
+                truncation=True,
+                max_length=self.max_length,
+                return_tensors='pt'
+            )
+            input_ids_1, attention_mask_1 = encoding1['input_ids'].squeeze(0), encoding1['attention_mask'].squeeze(0)
             # input_ids_1, attention_mask_1 = augment(input_ids_1.clone(), attention_mask_1.clone(), self.tokenizer)
-            input_ids_2, attention_mask_2 = encoding['input_ids'].squeeze(0), encoding['attention_mask'].squeeze(0)
+            input_ids_2, attention_mask_2 = encoding2['input_ids'].squeeze(0), encoding2['attention_mask'].squeeze(0)
             # input_ids_2, attention_mask_2 = augment(input_ids_2.clone(), attention_mask_2.clone(), self.tokenizer)
             return {
                 'input_ids_1': input_ids_1,

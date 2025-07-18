@@ -77,7 +77,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         batch_size = input_ids_x1.size(0)
         
         # Transform label to one-hot
-        labels_x = torch.zeros(batch_size, 2, device=device).scatter_(1, labels_x.view(-1, 1), 1)
+        labels_x = torch.zeros(batch_size, num_class, device=device).scatter_(1, labels_x.view(-1, 1), 1)
         prob = prob.view(-1,1).float().to(device)
 
         with torch.no_grad():

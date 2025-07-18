@@ -10,6 +10,12 @@ class Bert(nn.Module):
         self.use_hidden_state = use_hidden_state
         if head_type == "linear":
             self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)
+        elif head_type == 'mlp':
+            self.classifier = nn.Sequential(
+                nn.Linear(self.bert.config.hidden_size, 128),
+                nn.Tanh(),
+                nn.Linear(128, num_classes)
+            )
         elif head_type == 'lstm':
             self.lstm = nn.LSTM(self.bert.config.hidden_size, self.bert.config.hidden_size // 2, 
                                num_layers=1, bidirectional=True, batch_first=True)

@@ -42,15 +42,40 @@ def load_imdb_data(file, file_path):
     print(f"IMDB data loaded with {len(data)} samples")
     return data
 
-def inject_symmetric_noise(data, noise_ratio=0.2):
-    print(f"Injecting symmetric noise with ratio {noise_ratio}")
+def inject_symmetric_noise(data, noise_ratio, seed=42):
+    rng = np.random.default_rng(seed)
     data = data.copy().reset_index(drop=True)
+
     num_samples = len(data)
+    classes = np.unique(data['label'].values)
+    num_classes = len(classes)
+    print(f"Injecting symmetric noise with ratio {noise_ratio}")
+    print(f"Detected {num_classes} classes: {classes.tolist()}")
+
+    # Choose indices to corrupt
     num_noisy_samples = int(num_samples * noise_ratio)
-    noisy_indices = np.random.choice(num_samples, num_noisy_samples, replace=False)
-    data.loc[noisy_indices, 'label'] = 1 - data.loc[noisy_indices, 'label']
-    print(f"Injected noise into {num_noisy_samples} samples")
+    noisy_indices = rng.choice(num_samples, size=num_noisy_samples, replace=False)
+
+    # Original labels for those indices
+    original_labels = data.loc[noisy_indices, 'label'].values
+
+    # For each original label, pick a random *different* label
+    # Generate random labels uniformly, then fix collisions
+    random_labels = rng.choice(classes, size=num_noisy_samples, replace=True)
+
+    # Ensure new label != original label
+    same_mask = random_labels == original_labels
+    while np.any(same_mask):
+        # regenerate only for positions where label matched original
+        random_labels[same_mask] = rng.choice(classes, size=same_mask.sum(), replace=True)
+        same_mask = random_labels == original_labels
+
+    # Apply noisy labels
+    data.loc[noisy_indices, 'label'] = random_labels
+
+    print(f"Injected noise into {num_noisy_samples} samples.")
     return data
+
 
 def save_loss_histogram(losses, epoch, model):
     plt.figure(figsize=(6, 4))
@@ -97,3 +122,23 @@ def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
     plt.tight_layout()
     plt.savefig(f"src/data/images/loss/clean_noisy_loss_{epoch}_model_{model}.png")
     plt.close()
+
+def load_yahoo_train(file, file_path):
+    path = file_path + file
+    print(f"Loading Yahoo train data from {path}")
+    data = pd.read_csv(path, sep=',', header=None, names=['label', 'title', 'content', 'answer'])
+    data.fillna('', inplace=True)
+    data['text'] = data['title'].astype(str) + ' ' + data['content'].astype(str)
+    data = data[['text', 'label']]
+    print(f"Yahoo train data loaded with {len(data)} samples")
+    return data
+
+def load_yahoo_test(file, file_path):
+    path = file_path + file
+    print(f"Loading Yahoo tratestin data from {path}")
+    data = pd.read_csv(path, sep=',', header=None, names=['label', 'title', 'content', 'answer'])
+    data.fillna('', inplace=True)
+    data['text'] = data['title'].astype(str) + ' ' + data['content'].astype(str)
+    data = data[['text', 'label']]
+    print(f"Yahoo test data loaded with {len(data)} samples")
+    return data

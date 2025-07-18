@@ -133,15 +133,15 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         
         # Calculate regularization penalty - (Tanaka et al. 2018), (Arazo et al. 2019)
         # KL Divergence penalty
-        # prior = torch.full((num_class,), 1 / num_class, device=device)
-        # pred_mean = torch.softmax(logits, dim=1).mean(0)
-        # penalty = torch.sum(prior*torch.log(prior/pred_mean))
+        prior = torch.full((num_class,), 1 / num_class, device=device)
+        pred_mean = torch.softmax(logits, dim=1).mean(0)
+        penalty = torch.sum(prior*torch.log(prior/pred_mean))
 
         # Negative Entropy
-        probs = F.softmax(logits, dim=1)
-        log_probs = F.log_softmax(logits, dim=1)
-        entropy = -torch.sum(probs * log_probs, dim=1)
-        penalty = -entropy.mean()
+        # probs = F.softmax(logits, dim=1)
+        # log_probs = F.log_softmax(logits, dim=1)
+        # entropy = -torch.sum(probs * log_probs, dim=1)
+        # penalty = -entropy.mean()
         loss = Lx + lambda_u_val * Lu + penalty_val * penalty
 
         # ---- Optimizer Step ----
@@ -180,7 +180,6 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
             # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
 
-    raw_losses = losses.clone()
     losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
     all_loss.append(losses)
 
@@ -192,7 +191,7 @@ def eval_train(model, all_loss, criterion, eval_loader, device='cuda'):
     prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
     # I guess ^ is just a way to not use a hard-coded index? You can still calculate probabilities for both indices since n_components=2
     # gmm.means_.argmin() returns the index of the component with the smallest mean
-    return prob, all_loss, raw_losses
+    return prob, all_loss
 
 def test(model1, model2, test_loader, device='cuda'):
     preds, all_labels = [], []

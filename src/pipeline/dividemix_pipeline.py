@@ -38,6 +38,7 @@ if __name__ == "__main__":
     data_save_path = os.getenv("DATA_SAVE_PATH")
     checkpoint_path = os.getenv("CHECKPOINT_PATH")
     use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    use_yahoo = os.getenv("USE_YAHOO").lower() == "true"
     if use_imdb:
         test_file = os.getenv("TRAIN_FILE")
     warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
@@ -66,7 +67,7 @@ if __name__ == "__main__":
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")
         exit(1)
 
-    device = torch.device('cuda')
+    device = torch.device('mps')
     if device is None:
         print("Error: No GPU available. Please check your CUDA setup.")
         exit(1)
@@ -78,22 +79,31 @@ if __name__ == "__main__":
         original_labels = train_data['label'].values
         train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
         noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
-        clean_mask = ~noisy_mask
+        num_classes = 2
+    elif use_yahoo:
+        train_data = load_yahoo_train(train_file, train_data_path)
+        test_data = load_yahoo_test(test_file, test_data_path)
+        original_labels = train_data['label'].values
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+        noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
+        num_classes = train_data['label'].nunique()
+        print(f"Number of classes in Yahoo dataset: {num_classes}")
     else:
         print("Loading ShaPe Data")
         train_data = load_full_data(train_file, train_data_path)
         test_data = load_test_data(test_file, test_data_path)
+        num_classes = 2
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
     # ------------ Load Models ------------
     print(f"Loading BERT model from {bert_model}")
     torch.manual_seed(42)
-    model1 = Bert(bert_model, head_type, dropout=0.0).to_device(device)
+    model1 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
     torch.manual_seed(43)
-    model2 = Bert(bert_model, head_type, dropout=0.0).to_device(device)
-    for m in (model1, model2):
-        for param in m.bert.parameters():
-            param.requires_grad = False
+    model2 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
+    # for m in (model1, model2):
+    #     for param in m.bert.parameters():
+    #         param.requires_grad = False
 
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(
@@ -172,8 +182,8 @@ if __name__ == "__main__":
             # ---- Save Checkpoint ----
             if epoch == warmup_epochs - 1:
                 eval_loader = loader.run(train_data, mode="eval_train")
-                prob1, _, _ = eval_train(model1, [], per_sample_CEloss, eval_loader, device)
-                prob2, _, _= eval_train(model2, [], per_sample_CEloss, eval_loader, device)
+                prob1, _ = eval_train(model1, [], per_sample_CEloss, eval_loader, device)
+                prob2, _= eval_train(model2, [], per_sample_CEloss, eval_loader, device)
                 torch.save(
                     {
                         "model1": model1.state_dict(),
@@ -187,10 +197,10 @@ if __name__ == "__main__":
                 )
                 warmup_done = True
                 print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
-                for m in (model1, model2):
-                    for param in m.bert.parameters():
-                        param.requires_grad = True
-                    m.bert.train()
+                # for m in (model1, model2):
+                #     for param in m.bert.parameters():
+                #         param.requires_grad = True
+                    # m.bert.train()
         else:
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
@@ -201,21 +211,21 @@ if __name__ == "__main__":
 
             print(f"Training for Network 1")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred2, probs=prob2)
-            train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, device=device)
+            train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
             print(f"Training for Network 2")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred1, probs=prob1)
-            train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, device=device)
+            train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
 
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
-        prob1, all_loss[0], raw_losses1 = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
-        save_loss_histogram(raw_losses1, epoch, model=1)
-        save_orig_noisy_loss_histogram(noisy_mask, raw_losses1, epoch, model=1)
+        prob1, all_loss[0] = eval_train(model1, all_loss[0], per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(all_loss[0], epoch, model=1)
+        save_orig_noisy_loss_histogram(noisy_mask, all_loss[1], epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
-        prob2, all_loss[1], raw_losses2 = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
-        save_loss_histogram(raw_losses2, epoch, model=2)
-        save_orig_noisy_loss_histogram(noisy_mask, raw_losses2, epoch, model=2)
+        prob2, all_loss[1] = eval_train(model2, all_loss[1], per_sample_CEloss, eval_loader, device=device)
+        save_loss_histogram(all_loss[1], epoch, model=2)
+        save_orig_noisy_loss_histogram(noisy_mask, all_loss[1], epoch, model=2)
         # save_loss_as_df(epoch, all_loss, checkpoint_path, noise_ratio)
 
         # ---- Testing Phase ----

@@ -126,7 +126,7 @@ def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
 def load_yahoo_train(file, file_path):
     path = file_path + file
     print(f"Loading Yahoo train data from {path}")
-    data = pd.read_csv(path, sep=',', header=None, names=['text', 'label'])
+    data = pd.read_csv(path, sep=',', names=['text', 'label'])
     data.fillna('', inplace=True)
     data['label'] = data['label'].astype(int)
     data = data[['text', 'label']]
@@ -136,7 +136,7 @@ def load_yahoo_train(file, file_path):
 def load_yahoo_test(file, file_path):
     path = file_path + file
     print(f"Loading Yahoo tratestin data from {path}")
-    data = pd.read_csv(path, sep=',', header=None, names=['text', 'label'])
+    data = pd.read_csv(path, sep=',', names=['text', 'label'])
     data.fillna('', inplace=True)
     data['label'] = data['label'].astype(int)
     data = data[['text', 'label']]

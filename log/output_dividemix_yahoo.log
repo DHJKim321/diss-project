@@ -1,0 +1,16 @@
+Loading Yahoo train data from src/data/train/yahoo_train.csv
+Yahoo train data loaded with 1400000 samples
+Reduced Yahoo train data to 42000 samples
+Loading Yahoo tratestin data from src/data/test/yahoo_test.csv
+Yahoo test data loaded with 60000 samples
+Injecting symmetric noise with ratio 0.5
+Detected 10 classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Injected noise into 21000 samples.
+Number of classes in Yahoo dataset: 10
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+No warm-up-completed models. Training from scratch.
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 0 for Model 1
+Evaluating training data at epoch 0 for Model 2

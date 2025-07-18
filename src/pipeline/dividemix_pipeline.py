@@ -218,11 +218,11 @@ if __name__ == "__main__":
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
         prob1, losses1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device)
-        save_loss_histogram(losses1, epoch, model=1)
+        # save_loss_histogram(losses1, epoch, model=1)
         save_orig_noisy_loss_histogram(noisy_mask, losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
         prob2, losses2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device)
-        save_loss_histogram(losses2, epoch, model=2)
+        # save_loss_histogram(losses2, epoch, model=2)
         save_orig_noisy_loss_histogram(noisy_mask, losses2, epoch, model=2)
 
         # ---- Testing Phase ----

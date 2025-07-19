@@ -1,0 +1,18 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+[nltk_data] Downloading package wordnet to /home/s2017594/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/s2017594/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+/exports/eddie3_homes_local/s2017594/diss-project/src/pipeline/dividemix_pipeline.py:146: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  ckpt = torch.load(warmup_checkpoint_path, map_location=device)
+Training:   0%|          | 0/748 [00:00<?, ?it/s]/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/transformers/modeling_utils.py:1575: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+                                                 Training:   0%|          | 0/748 [00:08<?, ?it/s]Training:   0%|          | 0/748 [00:10<?, ?it/s]
+Traceback (most recent call last):
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/pipeline/dividemix_pipeline.py", line 190, in <module>
+    train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/utils/dividemix_utils.py", line 164, in train
+    tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Grad Norms near zero: {near_zero_grad_count}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
+AttributeError: 'int' object has no attribute 'item'

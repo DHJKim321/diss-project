@@ -24647,3 +24647,5 @@ Label Softmax (x): [0.06503571 0.11377359 0.07782    0.1061034  0.11033969 0.099
 Epoch 9, Batch 924/924, Grad Norms near zero: 12, Lx 1.8145, Lu 0.1602, Penalty 0.0966, loss 2.0714
 Evaluating training data at epoch 9 for Model 1
 Evaluating training data at epoch 9 for Model 2
+Evaluating models at epoch 9
+Test data size: 60000

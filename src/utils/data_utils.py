@@ -91,10 +91,6 @@ def save_loss_histogram(losses, epoch, model):
 def get_labels_injected_list(original, noisy):
     return np.array([orig != new for orig, new in zip(original, noisy)], dtype=bool)
 
-import numpy as np
-import matplotlib.pyplot as plt
-import os
-
 def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
     """
     Save a histogram comparing clean vs noisy sample losses for a given epoch.

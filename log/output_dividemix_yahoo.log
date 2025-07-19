@@ -40889,3 +40889,9 @@ Label Softmax (x): [0.07347687 0.07842164 0.07775929 0.12447784 0.12386305 0.073
 Epoch 12, Batch 860/860, Grad Norms near zero: 12, Lx 1.9516, Lu 0.2917, Penalty 0.0661, loss 2.3094
 Evaluating training data at epoch 12 for Model 1
 Evaluating training data at epoch 12 for Model 2
+Evaluating models at epoch 12
+Test data size: 60000
+Epoch: 12, Test Loss: 1.9467, Test Accuracy: 0.3660, Test F1 Score: 0.3334
+Training for Network 1
+labelled data size: 27763
+unlabelled data size: 14237

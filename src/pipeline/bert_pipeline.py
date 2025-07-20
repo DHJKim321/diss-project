@@ -159,7 +159,7 @@ if __name__ == "__main__":
             train_labels.extend(labels.cpu().tolist())
 
         train_loss /= num_batches
-        train_f1 = f1_score(train_labels, train_preds)
+        train_f1 = f1_score(train_labels, train_preds, average='macro')
         train_acc = accuracy_score(train_labels, train_preds)
         print(f"Train Loss: {train_loss:.4f}, F1: {train_f1:.4f}, Accuracy: {train_acc:.4f}")
         torch.cuda.empty_cache()

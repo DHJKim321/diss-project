@@ -1981,3 +1981,7 @@ Evaluating training data at epoch 11 for Model 1
 Evaluating training data at epoch 11 for Model 2
 Evaluating models at epoch 11
 Test data size: 60000
+Epoch: 11, Test Loss: 1.6832, Test Accuracy: 0.5270, Test F1 Score: 0.5122
+Training for Network 1
+labelled data size: 26427
+unlabelled data size: 15573

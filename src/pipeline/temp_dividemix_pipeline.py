@@ -140,7 +140,7 @@ if __name__ == "__main__":
     warmup_done = False
     prob1 = torch.zeros(len(train_data), device=device)
     prob2 = torch.zeros(len(train_data), device=device)
-    warmup_checkpoint_path = warmup_checkpoint_path.replace(".pth", f"_{noise_ratio}_{warmup_epochs}_{train_file.replace('_train.csv', '')}.pth")
+    warmup_checkpoint_path = warmup_checkpoint_path.replace(".pth", f"_{noise_ratio}_{10}_{train_file.replace('_train.csv', '')}.pth")
     if os.path.exists(warmup_checkpoint_path):
         print("Found warm-up-completed models")
         ckpt = torch.load(warmup_checkpoint_path, map_location=device)
@@ -151,6 +151,7 @@ if __name__ == "__main__":
         prob1 = ckpt["prob1"]
         prob2 = ckpt["prob2"]
         start_epoch = warmup_epochs
+        warmup_done = True
     else:
         print("No warm-up-completed models. Training from scratch.")
 
@@ -170,7 +171,7 @@ if __name__ == "__main__":
             model1.dropout.p = p_late
             model2.dropout.p = p_late
         # ---- Warmup Phase ----
-        if not warmup_done and epoch < warmup_epochs:
+        if epoch < warmup_epochs:
             warmup_loader = loader.run(train_data, mode='warmup')
             print(f"Warmup training for Network 1")
             warmup_train(epoch, model1, optim1, warmup_loader, CEloss, negentropy, device)

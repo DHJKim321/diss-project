@@ -171,6 +171,7 @@ if __name__ == "__main__":
             model2.dropout.p = p_late
         # ---- Warmup Phase ----
         if epoch < warmup_epochs:
+            print(f"Epoch {epoch}: Warmup Phase")
             warmup_loader = loader.run(train_data, mode='warmup')
             print(f"Warmup training for Network 1")
             warmup_train(epoch, model1, optim1, warmup_loader, CEloss, negentropy, device)

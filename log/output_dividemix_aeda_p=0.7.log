@@ -2282,3 +2282,6 @@ Label Softmax (x): [0.05117052 0.06337899 0.10248802 0.05761019 0.17074452 0.189
  0.07601029 0.11493307 0.13520269 0.0385329 ]
 Epoch 10, Batch 383/383, Grad Norms near zero: 12, Lx 1.2781, Lu 0.0273, Penalty 0.1264, loss 1.4317
 Evaluating training data at epoch 10 for Model 1
+Evaluating training data at epoch 10 for Model 2
+Evaluating models at epoch 10
+Test data size: 60000

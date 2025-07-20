@@ -135,7 +135,7 @@ def load_yahoo_train(file, file_path):
 
 def load_yahoo_test(file, file_path):
     path = file_path + file
-    print(f"Loading Yahoo tratestin data from {path}")
+    print(f"Loading Yahoo test data from {path}")
     data = pd.read_csv(path, sep=',', header=0)
     data.fillna('', inplace=True)
     data['label'] = data['label'].astype(int)

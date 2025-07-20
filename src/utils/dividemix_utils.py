@@ -194,6 +194,8 @@ def eval_train(model, criterion, eval_loader, device='cuda'):
     prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
     # I guess ^ is just a way to not use a hard-coded index? You can still calculate probabilities for both indices since n_components=2
     # gmm.means_.argmin() returns the index of the component with the smallest mean
+    print(f"GMM Means: {gmm.means_.flatten()}")
+    print(f"GMM Covariances: {gmm.covariances_.flatten()}")
     return prob, losses.cpu().numpy()
 
 def test(model1, model2, test_loader, device='cuda'):

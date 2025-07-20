@@ -187,10 +187,12 @@ if __name__ == "__main__":
 
             print(f"Training for Network 1")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred2, probs=prob2)
-            train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
+            loss, Lx, Lu, penalty = train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
+            print(f"Loss: {loss:.4f}, Lx: {Lx:.4f}, Lu: {Lu:.4f}, Penalty: {penalty:.4f}")
             print(f"Training for Network 2")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred1, probs=prob1)
-            train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
+            loss, Lx, Lu, penalty = train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
+            print(f"Loss: {loss:.4f}, Lx: {Lx:.4f}, Lu: {Lu:.4f}, Penalty: {penalty:.4f}")
 
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')

@@ -54,6 +54,12 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
     """
     model1.train()
     model2.eval()
+
+    total_loss = 0
+    total_Lx = 0
+    total_Lu = 0
+    total_penalty = 0
+    count = 0
     
     unlabelled_train_iter = iter(unlabelled_loader)
     num_iter = (len(labelled_loader.dataset)//batch_size)+1
@@ -144,24 +150,22 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # penalty = -entropy.mean()
         loss = Lx + lambda_u_val * Lu + penalty_val * penalty
 
+        total_Lx += Lx.item()
+        total_Lu += lambda_u_val * Lu.item()
+        total_penalty += penalty_val * penalty.item()
+        total_loss += loss.item()
+        count += 1
+
         # ---- Optimizer Step ----
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
-        # ---- Debugging
-        # for name, p in model1.named_parameters():
-        #     if p.grad is None:
-        #         tqdm.write(f"Parameter {name} has no gradient.")
-
-        # if batch_idx == 0:            # first batch of epoch
-        #     print("optim step =", optimizer.state_dict()['state'][next(iter(optimizer.state_dict()['state']))]['step'])
-        # ----
-
         # Get number of grad norms that are near zero
-        grad_norms = [p.grad.norm().item() for p in model1.parameters() if p.grad is not None]
-        near_zero_grad_count = sum(1 for norm in grad_norms if norm <= 1e-6)
-        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Grad Norms near zero: {near_zero_grad_count}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
+        # grad_norms = [p.grad.norm().item() for p in model1.parameters() if p.grad is not None]
+        # near_zero_grad_count = sum(1 for norm in grad_norms if norm <= 1e-6)
+        tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
+        return total_loss / count, total_Lx / count, total_Lu / count, total_penalty / count
 
 def eval_train(model, criterion, eval_loader, device='cuda'):
     model.eval()

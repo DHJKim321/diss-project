@@ -48,3 +48,13 @@ Test F1 Score: 0.6973
 Epoch 3/30
 Train Loss: 1.8826, F1: 0.4239, Accuracy: 0.4259
 Testing model on test data at epoch 3
+Test Loss: 1.2248
+Test Accuracy: 0.6987
+Test F1 Score: 0.6973
+Epoch 4/30
+Train Loss: 1.7865, F1: 0.4640, Accuracy: 0.4654
+Testing model on test data at epoch 4
+Test Loss: 1.2403
+Test Accuracy: 0.6828
+Test F1 Score: 0.6801
+Epoch 5/30

@@ -36,3 +36,15 @@ Starting training...
 Epoch 1/30
 Train Loss: 2.0830, F1: 0.3156, Accuracy: 0.3217
 Testing model on test data at epoch 1
+Test Loss: 1.3097
+Test Accuracy: 0.7067
+Test F1 Score: 0.7006
+Epoch 2/30
+Train Loss: 1.9586, F1: 0.3888, Accuracy: 0.3915
+Testing model on test data at epoch 2
+Test Loss: 1.2774
+Test Accuracy: 0.7038
+Test F1 Score: 0.6973
+Epoch 3/30
+Train Loss: 1.8826, F1: 0.4239, Accuracy: 0.4259
+Testing model on test data at epoch 3

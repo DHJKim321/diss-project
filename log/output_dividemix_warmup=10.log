@@ -40,3 +40,14 @@ Test data size: 60000
 Epoch: 3, Test Loss: 1.6363, Test Accuracy: 0.4534, Test F1 Score: 0.3973
 Warmup training for Network 1
 Warmup training for Network 2
+Evaluating training data at epoch 4 for Model 1
+Evaluating training data at epoch 4 for Model 2
+Evaluating models at epoch 4
+Test data size: 60000
+Epoch: 4, Test Loss: 1.6252, Test Accuracy: 0.4807, Test F1 Score: 0.4531
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 5 for Model 1
+Evaluating training data at epoch 5 for Model 2
+Evaluating models at epoch 5
+Test data size: 60000

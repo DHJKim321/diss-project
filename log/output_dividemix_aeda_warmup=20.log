@@ -1,0 +1,54 @@
+Loading Yahoo train data from src/data/train/yahoo_train.csv
+Yahoo train data loaded with 1400000 samples
+Reduced Yahoo train data to 42000 samples
+Loading Yahoo test data from src/data/test/yahoo_test.csv
+Yahoo test data loaded with 60000 samples
+Injecting symmetric noise with ratio 0.5
+Detected 10 classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Injected noise into 21000 samples.
+Number of classes in Yahoo dataset: 10
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+No warm-up-completed models. Training from scratch.
+Warmup training for Network 1
+Loading Yahoo train data from src/data/train/yahoo_train.csv
+Yahoo train data loaded with 1400000 samples
+Reduced Yahoo train data to 42000 samples
+Loading Yahoo test data from src/data/test/yahoo_test.csv
+Yahoo test data loaded with 60000 samples
+Injecting symmetric noise with ratio 0.5
+Detected 10 classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Injected noise into 21000 samples.
+Number of classes in Yahoo dataset: 10
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+checkpoint/dividemix/warmup_checkpoint_0.5_10_yahoo.pth
+Found warm-up-completed models
+Training for Network 1
+labelled data size: 7475
+unlabelled data size: 34525
+Loading Yahoo train data from src/data/train/yahoo_train.csv
+Yahoo train data loaded with 1400000 samples
+Reduced Yahoo train data to 42000 samples
+Loading Yahoo test data from src/data/test/yahoo_test.csv
+Yahoo test data loaded with 60000 samples
+Injecting symmetric noise with ratio 0.5
+Detected 10 classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Injected noise into 21000 samples.
+Number of classes in Yahoo dataset: 10
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+Found warm-up-completed models
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 10 for Model 1
+GMM Means: [0.29943211 0.55743286]
+GMM Covariances: [0.01198631 0.01154813]
+Evaluating training data at epoch 10 for Model 2
+GMM Means: [0.61794842 0.37965955]
+GMM Covariances: [0.01279033 0.01333942]
+Evaluating models at epoch 10
+Test data size: 60000
+Epoch: 10, Test Loss: 1.4087, Test Accuracy: 0.5350, Test F1 Score: 0.5085
+Warmup training for Network 1
+Warmup training for Network 2

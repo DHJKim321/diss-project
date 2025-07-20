@@ -101,6 +101,17 @@ def synonym_augment(text, alpha=0.1):
 
     return _join_tokens(tokens)
 
+PUNCTS = [".", ",", "!", "?", ";", ":"]
+
+def aeda_augment(text, n=4):
+    words = text.split()
+    for _ in range(n):
+        pos = random.randint(0, len(words))
+        mark = random.choice(PUNCTS)
+        words.insert(pos, mark)
+    aug = " ".join(words)
+    return aug
+
 def augment_token(input_ids, attention_mask, tokenizer):
         if random.random() < 0.5:
             return mask_augment(input_ids, attention_mask, tokenizer)

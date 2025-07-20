@@ -1979,3 +1979,5 @@ Epoch 11, Batch 605/605, Lx 1.5517, Lu 0.0000, Penalty 0.0650, loss 1.6166
 Loss: 1.5341, Lx: 1.4795, Lu: 0.0000, Penalty: 0.0546
 Evaluating training data at epoch 11 for Model 1
 Evaluating training data at epoch 11 for Model 2
+Evaluating models at epoch 11
+Test data size: 60000

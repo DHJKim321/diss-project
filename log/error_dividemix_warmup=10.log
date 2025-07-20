@@ -1,0 +1,7 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+[nltk_data] Downloading package wordnet to /home/s2017594/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/s2017594/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!

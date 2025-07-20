@@ -84,3 +84,31 @@ Test F1 Score: 0.5327
 Epoch 9/30
 Train Loss: 1.0204, F1: 0.6935, Accuracy: 0.6935
 Testing model on test data at epoch 9
+Test Loss: 1.8190
+Test Accuracy: 0.4960
+Test F1 Score: 0.4939
+Epoch 10/30
+Train Loss: 0.8702, F1: 0.7395, Accuracy: 0.7395
+Testing model on test data at epoch 10
+Test Loss: 1.9570
+Test Accuracy: 0.4720
+Test F1 Score: 0.4738
+Epoch 11/30
+Using Yahoo Answers dataset for training.
+Loading Yahoo train data from src/data/train/yahoo_train.csv
+Yahoo train data loaded with 1400000 samples
+Reduced Yahoo train data to 42000 samples
+Loading Yahoo tratestin data from src/data/test/yahoo_test.csv
+Yahoo test data loaded with 60000 samples
+Injecting symmetric noise to Yahoo Answers dataset.
+Injecting symmetric noise with ratio 0.5
+Detected 10 classes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Injected noise into 21000 samples.
+Loaded 42000 training samples.
+Loading BERT model from bert-base-uncased with head type mlp
+Using device: cuda
+Model loaded and moved to cuda
+Starting training with batch size 32...
+Number of batches: 1313
+Starting training...
+Epoch 1/3

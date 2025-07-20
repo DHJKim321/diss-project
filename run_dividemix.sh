@@ -1,13 +1,13 @@
 #!/bin/sh
 # Grid Engine options (lines prefixed with #$)
-#$ -N dividemix_50_output_no_Lu
+#$ -N dividemix_50_warmup=10
 #$ -cwd
 #$ -l h_rt=48:00:00
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/output_dividemix_no_Lu.log
-#$ -e log/error_dividemix_no_Lu.log
+#$ -o log/output_dividemix_warmup=10.log
+#$ -e log/error_dividemix_warmup=10.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

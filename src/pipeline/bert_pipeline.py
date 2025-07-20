@@ -48,6 +48,7 @@ if __name__ == "__main__":
     reducer_type = os.getenv("REDUCER_TYPE").lower()
     noise_ratio = float(os.getenv("NOISE_RATIO"))
     use_imdb = os.getenv("USE_IMDB").lower() == "true"
+    use_yahoo = os.getenv("USE_YAHOO").lower() == "true"
 
     # ------------ Load Data and Tokenizer ------------
     tokenizer = BertTokenizer.from_pretrained(bert_model)
@@ -58,10 +59,19 @@ if __name__ == "__main__":
         train_data, test_data = train_test_split(imdb_data, test_size=0.2, random_state=42)
         train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
         test_file = train_file # IMDB dataset does not have a separate test file
+        num_classes = 2
+    elif use_yahoo:
+        print("Using Yahoo Answers dataset for training.")
+        train_data = load_yahoo_train(train_file, train_data_path)
+        test_data = load_yahoo_test(test_file, test_data_path)
+        print("Injecting symmetric noise to Yahoo Answers dataset.")
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+        num_classes = 10
     else:
         print("Using ShaPe dataset for training.")
         train_data = load_full_data(train_file, train_data_path)
         test_data = load_test_data(test_file, test_data_path)
+        num_classes = 2
     print(f"Loaded {len(train_data)} training samples.")
 
     # ------------ (Optional) Denoise Noisy Labels ------------
@@ -101,7 +111,7 @@ if __name__ == "__main__":
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, collate_fn=collator)
     # ------------ Load Model, Loss, and Device ------------
     print(f"Loading BERT model from {bert_model} with head type {head_type}")
-    model = Bert(bert_model, head_type=head_type, use_dropout=use_dropout, dropout=dropout)
+    model = Bert(bert_model, head_type=head_type, num_classes=num_classes, use_dropout=use_dropout, dropout=dropout)
     loss = CrossEntropyLoss()
     device = 'cuda' if torch.cuda.is_available() else None
     print(f"Using device: {device}")
@@ -181,6 +191,10 @@ if __name__ == "__main__":
 
     # ------------ Save Evaluations ------------
     evaluations = evaluate_model(test_preds, test_labels)
+    if use_yahoo:
+        bert_model += "_yahoo"
+    if use_imdb:
+        bert_model += "_imdb"
     if head_type:
         bert_model += f"_{head_type}"
     if denoise_labels:
@@ -190,6 +204,8 @@ if __name__ == "__main__":
 
     # ------------ Save Model ------------
     model_save_path += f"bert_model_{head_type}.pth"
+    if use_yahoo:
+        model_save_path = model_save_path.replace(".pth", "_yahoo.pth")
     if use_imdb:
         model_save_path = model_save_path.replace(".pth", "_imdb.pth")
     if head_type:

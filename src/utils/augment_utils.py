@@ -119,7 +119,7 @@ def augment_token(input_ids, attention_mask, tokenizer):
             return delete_augment(input_ids, attention_mask, tokenizer)
         
 def augment_text(text):
-     return synonym_augment(text)
+     return aeda_augment(text)
 
 def augment(text, input_ids, attention_mask, tokenizer):
     if random.random() < 1/3:

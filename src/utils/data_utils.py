@@ -116,7 +116,7 @@ def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
     plt.title(f"Epoch {epoch}: Loss Distribution (Model {model})")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(f"src/data/images/loss_warmup=10/clean_noisy_loss_{epoch}_model_{model}.png")
+    plt.savefig(f"src/data/images/loss_aeda/clean_noisy_loss_{epoch}_model_{model}.png")
     plt.close()
 
 def load_yahoo_train(file, file_path):

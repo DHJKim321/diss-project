@@ -52,25 +52,15 @@ def inject_symmetric_noise(data, noise_ratio, seed=42):
     print(f"Injecting symmetric noise with ratio {noise_ratio}")
     print(f"Detected {num_classes} classes: {classes.tolist()}")
 
-    # Choose indices to corrupt
     num_noisy_samples = int(num_samples * noise_ratio)
     noisy_indices = rng.choice(num_samples, size=num_noisy_samples, replace=False)
-
-    # Original labels for those indices
     original_labels = data.loc[noisy_indices, 'label'].values
-
-    # For each original label, pick a random *different* label
-    # Generate random labels uniformly, then fix collisions
     random_labels = rng.choice(classes, size=num_noisy_samples, replace=True)
-
-    # Ensure new label != original label
     same_mask = random_labels == original_labels
     while np.any(same_mask):
-        # regenerate only for positions where label matched original
         random_labels[same_mask] = rng.choice(classes, size=same_mask.sum(), replace=True)
         same_mask = random_labels == original_labels
 
-    # Apply noisy labels
     data.loc[noisy_indices, 'label'] = random_labels
 
     print(f"Injected noise into {num_noisy_samples} samples.")

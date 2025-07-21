@@ -64,22 +64,6 @@ class Bert(nn.Module):
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
         return logits
-    
-    def forward_from_layer(self, mixed_hidden_state, attention_mask, layer_index):
-        # Manually run the remaining layers of the encoder
-        extended_attention_mask = self.bert.get_extended_attention_mask(attention_mask, attention_mask.shape, attention_mask.device)
-        # Go from mix_layer to end
-        for layer_module in self.bert.encoder.layer[layer_index:]:
-            mixed_hidden_state = layer_module(mixed_hidden_state, attention_mask=extended_attention_mask, head_mask=None)[0]
-        pooled_output = mixed_hidden_state[:, 0]
-        pooled_output = self.dropout(pooled_output)
-        logits = self.classifier(pooled_output)
-        return logits
-    
-    def get_embedding_at_layer(self, input_ids, attention_mask, layer_index):
-        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask, output_hidden_states=True)
-        hidden_states = outputs.hidden_states
-        return hidden_states[layer_index] # hidden_state.shape = [batch_size, seq_length, hidden_size]
 
     def forward_mixup(self, input_ids_x1, attention_mask_x1, input_ids_x2, attention_mask_x2, labels_x, 
                       input_ids_u1, attention_mask_u1, input_ids_u2, attention_mask_u2, labels_u, layer_index,
@@ -142,18 +126,6 @@ class Bert(nn.Module):
         # Classify the pooled output
         logits = self.classifier(pooled_output)
         return logits, mixed_labels
-
-    def freeze(self):
-        for param in self.bert.parameters():
-            param.requires_grad = False
-        for param in self.classifier.parameters():
-            param.requires_grad = True
-
-    def unfreeze(self):
-        for param in self.bert.parameters():
-            param.requires_grad = True
-        for param in self.classifier.parameters():
-            param.requires_grad = True
 
     def to_device(self, device):
         self.bert = self.bert.to(device)

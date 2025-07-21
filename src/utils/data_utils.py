@@ -133,3 +133,28 @@ def load_yahoo_test(file, file_path):
     data = data[['text', 'label']]
     print(f"Yahoo test data loaded with {len(data)} samples")
     return data
+
+def load_agnews_train(file, file_path):
+    path = file_path + file
+    print(f"Loading AG News train data from {path}")
+    data = pd.read_csv(path, sep=',', header=0)
+    data.fillna('', inplace=True)
+    data['text'] = data['Title'].astype(str) + ' ' + data['Description'].astype(str)
+    data['label'] = data['Class Index'].astype(int) - 1
+    data = data[['text', 'label']]
+    print(f"AG News train data loaded with {len(data)} samples")
+    # Take half the data for training with equal distribution
+    data = data.groupby('label').apply(lambda x: x.sample(frac=1/3, random_state=42)).reset_index(drop=True)
+    print(f"Reduced AG News train data to {len(data)} samples")
+    return data
+
+def load_agnews_test(file, file_path):
+    path = file_path + file
+    print(f"Loading AG News test data from {path}")
+    data = pd.read_csv(path, sep=',', header=0)
+    data.fillna('', inplace=True)
+    data['text'] = data['Title'].astype(str) + ' ' + data['Description'].astype(str)
+    data['label'] = data['Class Index'].astype(int) - 1
+    data = data[['text', 'label']]
+    print(f"AG News test data loaded with {len(data)} samples")
+    return data

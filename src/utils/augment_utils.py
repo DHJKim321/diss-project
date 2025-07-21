@@ -103,7 +103,7 @@ def synonym_augment(text, alpha=0.1):
 
 PUNCTS = [".", ",", "!", "?", ";", ":"]
 
-def aeda_augment(text, n=4):
+def aeda_augment(text, n=2):
     words = text.split()
     for _ in range(n):
         pos = random.randint(0, len(words))

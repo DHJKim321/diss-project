@@ -66,3 +66,23 @@ Evaluating models at epoch 4
 Test data size: 60000
 Epoch: 4, Test Loss: 1.4893, Test Accuracy: 0.5139, Test F1 Score: 0.4894
 Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 5 for Model 1
+GMM Means: [0.28343357 0.46477745]
+GMM Covariances: [0.01010031 0.01222807]
+Evaluating training data at epoch 5 for Model 2
+GMM Means: [0.28588848 0.49907809]
+GMM Covariances: [0.01143721 0.01210268]
+Evaluating models at epoch 5
+Test data size: 60000
+Epoch: 5, Test Loss: 1.3527, Test Accuracy: 0.5777, Test F1 Score: 0.5697
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 6 for Model 1
+GMM Means: [0.48367198 0.28788616]
+GMM Covariances: [0.01260997 0.01120253]
+Evaluating training data at epoch 6 for Model 2
+GMM Means: [0.54870018 0.29584235]
+GMM Covariances: [0.01325869 0.01235447]
+Evaluating models at epoch 6
+Test data size: 60000

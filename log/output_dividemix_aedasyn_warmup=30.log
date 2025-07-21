@@ -159,3 +159,18 @@ Evaluating training data at epoch 13 for Model 1
 GMM Means: [0.5112561  0.28931306]
 GMM Covariances: [0.01114633 0.01076432]
 Evaluating training data at epoch 13 for Model 2
+GMM Means: [0.28406423 0.54071977]
+GMM Covariances: [0.01200358 0.01389022]
+Evaluating models at epoch 13
+Test data size: 60000
+Epoch: 13, Test Loss: 1.4393, Test Accuracy: 0.5732, Test F1 Score: 0.5790
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 14 for Model 1
+GMM Means: [0.47456487 0.25652108]
+GMM Covariances: [0.01346392 0.01155553]
+Evaluating training data at epoch 14 for Model 2
+GMM Means: [0.54807491 0.27462617]
+GMM Covariances: [0.01156811 0.01112903]
+Evaluating models at epoch 14
+Test data size: 60000

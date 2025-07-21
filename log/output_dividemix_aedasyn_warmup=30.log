@@ -97,3 +97,25 @@ GMM Means: [0.30266358 0.50853831]
 GMM Covariances: [0.01333248 0.0154895 ]
 Evaluating models at epoch 7
 Test data size: 60000
+Epoch: 7, Test Loss: 1.4673, Test Accuracy: 0.5427, Test F1 Score: 0.5422
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 8 for Model 1
+GMM Means: [0.44859578 0.25712544]
+GMM Covariances: [0.01026939 0.01017518]
+Evaluating training data at epoch 8 for Model 2
+GMM Means: [0.52734461 0.28680343]
+GMM Covariances: [0.01274322 0.01180633]
+Evaluating models at epoch 8
+Test data size: 60000
+Epoch: 8, Test Loss: 1.4307, Test Accuracy: 0.5468, Test F1 Score: 0.5281
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 9 for Model 1
+GMM Means: [0.45244624 0.25060257]
+GMM Covariances: [0.01337498 0.01097714]
+Evaluating training data at epoch 9 for Model 2
+GMM Means: [0.4520986  0.24466903]
+GMM Covariances: [0.00995059 0.00874046]
+Evaluating models at epoch 9
+Test data size: 60000

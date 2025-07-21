@@ -39,6 +39,7 @@ if __name__ == "__main__":
     checkpoint_path = os.getenv("CHECKPOINT_PATH")
     use_imdb = os.getenv("USE_IMDB").lower() == "true"
     use_yahoo = os.getenv("USE_YAHOO").lower() == "true"
+    use_agnews = os.getenv("USE_AGNEWS").lower() == "true"
     if use_imdb:
         test_file = os.getenv("TRAIN_FILE")
     warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
@@ -88,6 +89,14 @@ if __name__ == "__main__":
         noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
         num_classes = train_data['label'].nunique()
         print(f"Number of classes in Yahoo dataset: {num_classes}")
+    elif use_agnews:
+        train_data = load_agnews_train(train_file, train_data_path)
+        test_data = load_agnews_test(test_file, test_data_path)
+        original_labels = train_data['label'].values
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+        noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
+        num_classes = train_data['label'].nunique()
+        print(f"Number of classes in AGNews dataset: {num_classes}")
     else:
         print("Loading ShaPe Data")
         train_data = load_full_data(train_file, train_data_path)
@@ -120,13 +129,13 @@ if __name__ == "__main__":
     optim1 = AdamW(
         [
             {"params": model1.bert.parameters(), "lr": learning_rate},
-            {"params": model1.classifier.parameters(), "lr": learning_rate},
+            {"params": model1.classifier.parameters(), "lr": learning_rate * 100},
         ]
     )
     optim2 = AdamW(
         [
             {"params": model2.bert.parameters(), "lr": learning_rate},
-            {"params": model2.classifier.parameters(), "lr": learning_rate},
+            {"params": model2.classifier.parameters(), "lr": learning_rate * 100},
         ]
     )
     per_sample_CEloss = nn.CrossEntropyLoss(reduction='none')

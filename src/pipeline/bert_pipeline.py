@@ -49,6 +49,7 @@ if __name__ == "__main__":
     noise_ratio = float(os.getenv("NOISE_RATIO"))
     use_imdb = os.getenv("USE_IMDB").lower() == "true"
     use_yahoo = os.getenv("USE_YAHOO").lower() == "true"
+    use_agnews = os.getenv("USE_AGNEWS").lower() == "true"
 
     # ------------ Load Data and Tokenizer ------------
     tokenizer = BertTokenizer.from_pretrained(bert_model)
@@ -67,6 +68,12 @@ if __name__ == "__main__":
         print("Injecting symmetric noise to Yahoo Answers dataset.")
         train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
         num_classes = 10
+    elif use_agnews:
+        print("Using AG News dataset for training.")
+        train_data = load_agnews_train(train_file, train_data_path)
+        test_data = load_agnews_test(test_file, test_data_path)
+        num_classes = 4
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
     else:
         print("Using ShaPe dataset for training.")
         train_data = load_full_data(train_file, train_data_path)
@@ -195,6 +202,8 @@ if __name__ == "__main__":
         bert_model += "_yahoo"
     if use_imdb:
         bert_model += "_imdb"
+    if use_agnews:
+        bert_model += "_agnews"
     if head_type:
         bert_model += f"_{head_type}"
     if denoise_labels:
@@ -206,6 +215,8 @@ if __name__ == "__main__":
     model_save_path += f"bert_model_{head_type}.pth"
     if use_yahoo:
         model_save_path = model_save_path.replace(".pth", "_yahoo.pth")
+    if use_agnews:
+        model_save_path = model_save_path.replace(".pth", "_agnews.pth")
     if use_imdb:
         model_save_path = model_save_path.replace(".pth", "_imdb.pth")
     if head_type:

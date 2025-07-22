@@ -6,6 +6,7 @@ import pandas as pd
 import torch
 from torch.optim import AdamW
 import torch.nn.functional as F
+from src.utils.data_utils import *
 from torch.utils.data import Dataset, DataLoader
 from transformers import (BertTokenizer, BertForSequenceClassification, get_linear_schedule_with_warmup)
 from sklearn.model_selection import train_test_split
@@ -139,7 +140,7 @@ def plot_hist(losses, flip_mask, out_path, title):
 # --------------------- Main ---------------------
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--train_csv', required=True)
+    ap.add_argument('--dataset', required=True)
     ap.add_argument('--text_col', default='text')
     ap.add_argument('--label_col', default='label')
     ap.add_argument('--noise_ratio', type=float, default=0.7)
@@ -158,11 +159,14 @@ def main():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     # --- Load data ---
-    df = pd.read_csv(args.train_csv) 
-    if {'Class Index', 'Title', 'Description'}.issubset(df.columns):
-        df['text']  = (df['Title'].fillna('') + ' ' + df['Description'].fillna('')).str.strip()
-        df['label'] = df['Class Index'].astype(int) - 1
-        num_classes = df[args.label_col].nunique()
+    if args.dataset == 'imdb':
+        df = load_imdb_data()
+    elif args.dataset == 'agnews':
+        df = load_agnews_train("agnews_train.csv", "src/data/train")
+    elif args.dataset == 'yahoo':
+        df = load_yahoo_train("yahoo_train.csv", "src/data/train")
+    else:
+        raise ValueError(f"Unknown dataset: {args.dataset}")
 
     # --- Split BEFORE noise (paper used noisy val; toggle if you want clean) ---
     train_df, val_df = train_test_split(df, test_size=args.val_size,

@@ -110,7 +110,9 @@ if __name__ == "__main__":
     model1 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
     torch.manual_seed(43)
     model2 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
-
+    for model in (model1, model2):
+        for param in model.bert.parameters():
+            param.requires_grad = False
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(
         batch_size=batch_size,

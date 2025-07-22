@@ -18,4 +18,4 @@ module load anaconda
 conda activate /exports/eddie/scratch/s2017594/conda-envs/diss
 
 # Run the program
-python src/pipeline/bert_loss_pipeline.py --train_csv src/data/train/agnews_train.csv
+python src/pipeline/bert_loss_pipeline.py --dataset yahoo

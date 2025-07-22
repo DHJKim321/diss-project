@@ -200,6 +200,8 @@ def test(model1, model2, test_loader, device='cuda'):
     preds, all_labels = [], []
     model1.eval()
     model2.eval()
+    total_loss = 0
+    total_samples = 0
     with torch.no_grad():
         for _, batch in tqdm(enumerate(test_loader), desc="Testing", total=len(test_loader)):
             input_ids = batch['input_ids'].to(device)
@@ -211,7 +213,10 @@ def test(model1, model2, test_loader, device='cuda'):
             _, predicted = torch.max(outputs, 1)
             preds.extend(predicted.cpu().numpy())
             all_labels.extend(labels.cpu().numpy())
-            loss = F.cross_entropy(outputs, labels, reduction='mean')
+            batch_loss = F.cross_entropy(outputs, labels, reduction='sum')
+            total_loss += batch_loss.item()
+            total_samples += input_ids.size(0)
+    loss = total_loss / total_samples
     acc = accuracy_score(all_labels, preds)
     f1 = f1_score(all_labels, preds, average='weighted')
     return acc, f1, preds, all_labels, loss

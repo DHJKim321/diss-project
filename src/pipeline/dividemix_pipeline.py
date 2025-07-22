@@ -129,13 +129,13 @@ if __name__ == "__main__":
     optim1 = AdamW(
         [
             {"params": model1.bert.parameters(), "lr": learning_rate},
-            {"params": model1.classifier.parameters(), "lr": learning_rate * 100},
+            {"params": model1.classifier.parameters(), "lr": learning_rate},
         ]
     )
     optim2 = AdamW(
         [
             {"params": model2.bert.parameters(), "lr": learning_rate},
-            {"params": model2.classifier.parameters(), "lr": learning_rate * 100},
+            {"params": model2.classifier.parameters(), "lr": learning_rate},
         ]
     )
     per_sample_CEloss = nn.CrossEntropyLoss(reduction='none')

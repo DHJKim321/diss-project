@@ -159,9 +159,7 @@ def main():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     # --- Load data ---
-    if args.dataset == 'imdb':
-        df = load_imdb_data()
-    elif args.dataset == 'agnews':
+    if args.dataset == 'agnews':
         df = load_agnews_train("agnews_train.csv", "src/data/train")
     elif args.dataset == 'yahoo':
         df = load_yahoo_train("yahoo_train.csv", "src/data/train")

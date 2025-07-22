@@ -161,8 +161,10 @@ def main():
     # --- Load data ---
     if args.dataset == 'agnews':
         df = load_agnews_train("agnews_train.csv", "src/data/train")
+        num_classes = 4
     elif args.dataset == 'yahoo':
         df = load_yahoo_train("yahoo_train.csv", "src/data/train")
+        num_classes = 10
     else:
         raise ValueError(f"Unknown dataset: {args.dataset}")
 

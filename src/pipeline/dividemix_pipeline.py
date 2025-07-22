@@ -110,9 +110,6 @@ if __name__ == "__main__":
     model1 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
     torch.manual_seed(43)
     model2 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
-    # for m in (model1, model2):
-    #     for param in m.bert.parameters():
-    #         param.requires_grad = False
 
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(
@@ -124,8 +121,6 @@ if __name__ == "__main__":
     # ------------ Load Optimizer and Loss ------------
     print("Setting up optimizers and losses...")
     semiloss = SemiLoss(lambda_u=lambda_u)
-    # optim1 = AdamW(model1.parameters(), lr=learning_rate)
-    # optim2 = AdamW(model2.parameters(), lr=learning_rate)
     optim1 = AdamW(
         [
             {"params": model1.bert.parameters(), "lr": learning_rate},
@@ -207,11 +202,9 @@ if __name__ == "__main__":
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
         prob1, losses1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device)
-        # save_loss_histogram(losses1, epoch, model=1)
         save_orig_noisy_loss_histogram(noisy_mask, losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
         prob2, losses2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device)
-        # save_loss_histogram(losses2, epoch, model=2)
         save_orig_noisy_loss_histogram(noisy_mask, losses2, epoch, model=2)
 
         # ---- Testing Phase ----

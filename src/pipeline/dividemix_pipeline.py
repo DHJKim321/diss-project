@@ -68,7 +68,7 @@ if __name__ == "__main__":
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")
         exit(1)
 
-    device = torch.device('mps')
+    device = torch.device('cuda')
     if device is None:
         print("Error: No GPU available. Please check your CUDA setup.")
         exit(1)

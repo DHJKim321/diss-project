@@ -70,7 +70,7 @@ class DivideMixDataset(Dataset):
                 return_tensors='pt'
             )
             encoding2 = self.tokenizer(
-                self.text[index],
+                augment_text(self.text[index]),
                 padding='max_length',
                 truncation=True,
                 max_length=self.max_length,
@@ -97,7 +97,7 @@ class DivideMixDataset(Dataset):
                 return_tensors='pt'
             )
             encoding2 = self.tokenizer(
-                self.text[index],
+                augment_text(self.text[index]),
                 padding='max_length',
                 truncation=True,
                 max_length=self.max_length,

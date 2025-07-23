@@ -74,3 +74,20 @@ Epoch: 5, Test Loss: 1.1306, Test Accuracy: 0.6280, Test F1 Score: 0.6189
 Training for Network 1
 labelled data size: 19717
 unlabelled data size: 20283
+Loss: 1.3704, Lx: 1.3658, Lu: 0.0000, Penalty: 0.0046
+Training for Network 2
+labelled data size: 16308
+unlabelled data size: 23692
+Loss: 1.3451, Lx: 1.3358, Lu: 0.0000, Penalty: 0.0093
+Evaluating training data at epoch 6 for Model 1
+Evaluating training data at epoch 6 for Model 2
+Evaluating models at epoch 6
+Test data size: 7600
+Epoch: 6, Test Loss: 1.1408, Test Accuracy: 0.5946, Test F1 Score: 0.5840
+Training for Network 1
+labelled data size: 21172
+unlabelled data size: 18828
+Loss: 1.3274, Lx: 1.3211, Lu: 0.0000, Penalty: 0.0064
+Training for Network 2
+labelled data size: 14807
+unlabelled data size: 25193

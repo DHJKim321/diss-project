@@ -118,11 +118,12 @@ if __name__ == "__main__":
     CEloss = nn.CrossEntropyLoss()
     negentropy = NegEntropy()
     decayed = False
-    decay_epoch = int(0.60 * epochs)
+    # decay_epoch = int(0.60 * epochs)
 
     # ------------ Load Pretrained Weights if available ------------
     start_epoch = 0
     warmup_done = False
+    is_training_started = False
     prob1 = torch.zeros(len(train_data), device=device)
     prob2 = torch.zeros(len(train_data), device=device)
     warmup_checkpoint_path = warmup_checkpoint_path.replace(".pth", f"_{noise_ratio}_{warmup_epochs}_{train_file.replace('_train.csv', '')}.pth")
@@ -137,22 +138,23 @@ if __name__ == "__main__":
         prob2 = ckpt["prob2"]
         start_epoch = warmup_epochs
         warmup_done = True
+        is_training_started 
     else:
         print("No warm-up-completed models. Training from scratch.")
 
     # ------------ Start Training ------------
     for epoch in range(start_epoch, epochs):
         # ---- Learning Rate Decay ----
-        if not decayed and epoch == decay_epoch:
-            for optim in (optim1, optim2):
-                for pg in optim.param_groups:
-                    pg['lr'] *= 0.1
-            decayed = True
+        # if not decayed and epoch == decay_epoch:
+        #     for optim in (optim1, optim2):
+        #         for pg in optim.param_groups:
+        #             pg['lr'] *= 0.1
+        #     decayed = True
         # ---- Dropout Management ----
-        if epoch < warmup_epochs and dropout_type == 'early':
+        if not is_training_started and dropout_type == 'early':
             model1.dropout.p = p_early
             model2.dropout.p = p_early
-        elif epoch >= warmup_epochs and dropout_type == 'late':
+        elif is_training_started and dropout_type == 'late':
             model1.dropout.p = p_late
             model2.dropout.p = p_late
         # ---- Warmup Phase ----
@@ -164,7 +166,7 @@ if __name__ == "__main__":
             warmup_train(epoch, model2, optim2, warmup_loader, CEloss, negentropy, device)
         else:
             # ---- Restore Best State ----
-            if best_state is not None:
+            if not is_training_started and best_state is not None:
                 print(f"Restoring best state from epoch {best_epoch} with GMM separation {best_sep_avg:.4f}")
                 model1.load_state_dict(best_state["model1"])
                 model2.load_state_dict(best_state["model2"])
@@ -172,6 +174,7 @@ if __name__ == "__main__":
                 optim2.load_state_dict(best_state["optim2"])
                 prob1 = best_state["prob1"]
                 prob2 = best_state["prob2"]
+                is_training_started = True
 
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)

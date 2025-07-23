@@ -41,12 +41,14 @@ if __name__ == "__main__":
     if dataset == 'imdb':
         test_file = os.getenv("TRAIN_FILE")
     warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
-    # ---- Training Variables ----
+    # Model Training Variables
     bert_model = os.getenv("BERT_MODEL")
     batch_size = int(os.getenv("BATCH_SIZE"))
     learning_rate = float(os.getenv("LEARNING_RATE"))
     warmup_epochs = int(os.getenv("WARMUP_EPOCHS"))
     epochs = int(os.getenv("EPOCHS"))
+    head_type = os.getenv("HEAD_TYPE")
+    # DivideMix Variables
     alpha = float(os.getenv("ALPHA"))
     penalty_val = float(os.getenv("PENALTY_VAL"))
     lambda_u = float(os.getenv("LAMBDA_U"))
@@ -56,13 +58,18 @@ if __name__ == "__main__":
     momentum = float(os.getenv("MOMENTUM"))
     weight_decay = float(os.getenv("WEIGHT_DECAY"))
     augmentation = os.getenv("AUGMENTATION")
-    head_type = os.getenv("HEAD_TYPE")
     noise_ratio = float(os.getenv("NOISE_RATIO"))
+    # Early-Late Dropout Variables
     dropout_type = os.getenv("DROPOUT_TYPE")
     p_early = float(os.getenv("P_EARLY"))
     p_late = float(os.getenv("P_LATE"))
+    # GMM Early Stopping Variables
     gmm_patience = int(os.getenv("GMM_PATIENCE"))
     delta_sep_tol = float(os.getenv("DELTA_SEP_TOL")) # Minimal improvement in GMM separation to continue training
+    bad_epochs = 0
+    best_state = None
+    best_sep_avg = -float("inf")
+    best_epoch   = -1
 
     if epochs < warmup_epochs:
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")
@@ -84,6 +91,7 @@ if __name__ == "__main__":
     model1 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
     torch.manual_seed(43)
     model2 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
+    
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(
         batch_size=batch_size,
@@ -155,6 +163,16 @@ if __name__ == "__main__":
             print(f"Warmup training for Network 2")
             warmup_train(epoch, model2, optim2, warmup_loader, CEloss, negentropy, device)
         else:
+            # ---- Restore Best State ----
+            if best_state is not None:
+                print(f"Restoring best state from epoch {best_epoch} with GMM separation {best_sep_avg:.4f}")
+                model1.load_state_dict(best_state["model1"])
+                model2.load_state_dict(best_state["model2"])
+                optim1.load_state_dict(best_state["optim1"])
+                optim2.load_state_dict(best_state["optim2"])
+                prob1 = best_state["prob1"]
+                prob2 = best_state["prob2"]
+
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
             pred2 = (prob2 > p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
@@ -187,41 +205,32 @@ if __name__ == "__main__":
             if gmm_sep_avg > best_sep_avg + delta_sep_tol:
                 best_sep_avg = gmm_sep_avg
                 best_epoch = epoch
+                bad_epochs = 0
                 print(f"New best GMM separation found at epoch {epoch}: {best_sep_avg:.4f}")
+                best_state = {
+                    "model1": model1.state_dict(),
+                    "model2": model2.state_dict(),
+                    "optim1": optim1.state_dict(),
+                    "optim2": optim2.state_dict(),
+                    "prob1": prob1,
+                    "prob2": prob2,
+                }
                 torch.save(
-                    {
-                        "model1": model1.state_dict(),
-                        "model2": model2.state_dict(),
-                        "optim1": optim1.state_dict(),
-                        "optim2": optim2.state_dict(),
-                        "prob1" : prob1,
-                        "prob2" : prob2,
-                    },
+                    best_state,
                     warmup_checkpoint_path,
                 )
-                print(f"Checkpoint saved at {warmup_checkpoint_path}")
+            else:
+                print(f"No significant improvement in GMM separation at epoch {epoch}. Current best: {best_sep_avg:.4f} at epoch {best_epoch}")
+                bad_epochs += 1
+                if bad_epochs >= gmm_patience:
+                    print(f"Early stopping triggered at epoch {epoch} due to no significant GMM separation improvement for {gmm_patience} epochs.")
+                    warmup_done = True
 
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")
         test_loader = loader.run(test_data, mode='test')
         test_acc, test_f1, test_preds, test_labels, test_loss = test(model1, model2, test_loader)
         print(f"Epoch: {epoch}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}, Test F1 Score: {test_f1:.4f}")
-
-        # ---- Save Checkpoint ----
-        if epoch == warmup_epochs - 1:
-            torch.save(
-                {
-                    "model1": model1.state_dict(),
-                    "model2": model2.state_dict(),
-                    "optim1": optim1.state_dict(),
-                    "optim2": optim2.state_dict(),
-                    "prob1" : prob1,
-                    "prob2" : prob2,
-                },
-                warmup_checkpoint_path,
-            )
-            warmup_done = True
-            print(f"Warmup completed. Checkpoint saved at {warmup_checkpoint_path}")
 
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")

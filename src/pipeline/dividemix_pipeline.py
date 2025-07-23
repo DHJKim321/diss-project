@@ -138,7 +138,7 @@ if __name__ == "__main__":
         prob2 = ckpt["prob2"]
         start_epoch = warmup_epochs
         warmup_done = True
-        is_training_started 
+        is_training_started = True
     else:
         print("No warm-up-completed models. Training from scratch.")
 

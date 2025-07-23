@@ -1,0 +1,76 @@
+Loading training data from agnews_train.csv and test data from agnews_test.csv
+Loading AG News train data from src/data/train/agnews_train.csv
+AG News train data loaded with 120000 samples
+Reduced AG News train data to 40000 samples
+Loading AG News test data from src/data/test/agnews_test.csv
+AG News test data loaded with 7600 samples
+Injecting symmetric noise with ratio 0.5
+Detected 4 classes: [0, 1, 2, 3]
+Injected noise into 20000 samples.
+Number of classes in AGNews dataset: 4
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+No warm-up-completed models. Training from scratch.
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 0 for Model 1
+Evaluating training data at epoch 0 for Model 2
+Epoch 0 | sep1=0.0983, sep2=0.1416, avg=0.1200
+New best GMM separation found at epoch 0: 0.1200
+Evaluating models at epoch 0
+Test data size: 7600
+Epoch: 0, Test Loss: 1.3043, Test Accuracy: 0.4726, Test F1 Score: 0.4587
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 1 for Model 1
+Evaluating training data at epoch 1 for Model 2
+Epoch 1 | sep1=0.1087, sep2=0.1387, avg=0.1237
+New best GMM separation found at epoch 1: 0.1237
+Evaluating models at epoch 1
+Test data size: 7600
+Epoch: 1, Test Loss: 1.2437, Test Accuracy: 0.5621, Test F1 Score: 0.5571
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 2 for Model 1
+Evaluating training data at epoch 2 for Model 2
+Epoch 2 | sep1=0.1511, sep2=0.1528, avg=0.1519
+New best GMM separation found at epoch 2: 0.1519
+Evaluating models at epoch 2
+Test data size: 7600
+Epoch: 2, Test Loss: 1.1975, Test Accuracy: 0.5863, Test F1 Score: 0.5806
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 3 for Model 1
+Evaluating training data at epoch 3 for Model 2
+Epoch 3 | sep1=0.1264, sep2=0.1180, avg=0.1222
+No significant improvement in GMM separation at epoch 3. Current best: 0.1519 at epoch 2
+Evaluating models at epoch 3
+Test data size: 7600
+Epoch: 3, Test Loss: 1.1613, Test Accuracy: 0.6103, Test F1 Score: 0.6046
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 4 for Model 1
+Evaluating training data at epoch 4 for Model 2
+Epoch 4 | sep1=0.1315, sep2=0.1351, avg=0.1333
+No significant improvement in GMM separation at epoch 4. Current best: 0.1519 at epoch 2
+Early stopping triggered at epoch 4 due to no significant GMM separation improvement for 2 epochs.
+Evaluating models at epoch 4
+Test data size: 7600
+Epoch: 4, Test Loss: 1.1275, Test Accuracy: 0.6362, Test F1 Score: 0.6290
+Restoring best state from epoch 2 with GMM separation 0.1519
+Training for Network 1
+labelled data size: 13465
+unlabelled data size: 26535
+Loss: 1.3517, Lx: 1.3297, Lu: 0.0000, Penalty: 0.0220
+Training for Network 2
+labelled data size: 28835
+unlabelled data size: 11165
+Loss: 1.3840, Lx: 1.3790, Lu: 0.0000, Penalty: 0.0050
+Evaluating training data at epoch 5 for Model 1
+Evaluating training data at epoch 5 for Model 2
+Evaluating models at epoch 5
+Test data size: 7600
+Epoch: 5, Test Loss: 1.1306, Test Accuracy: 0.6280, Test F1 Score: 0.6189
+Training for Network 1
+labelled data size: 19717
+unlabelled data size: 20283

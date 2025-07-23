@@ -27,6 +27,8 @@ class Bert(nn.Module):
             self.classifier = nn.Linear(64 * (self.bert.config.max_position_embeddings // 2), num_classes)
         else:
             raise ValueError(f"Unsupported head type: {head_type}")
+        for param in self.bert.parameters():
+            param.requires_grad = False
 
     def get_embeddings(self, input_ids, attention_mask):
         outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)

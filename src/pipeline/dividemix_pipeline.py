@@ -84,9 +84,6 @@ if __name__ == "__main__":
     model1 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
     torch.manual_seed(43)
     model2 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
-    for model in (model1, model2):
-        for param in model.bert.parameters():
-            param.requires_grad = False
     # ------------ Load DataLoader ------------
     loader = DivideMixDataloader(
         batch_size=batch_size,
@@ -191,6 +188,18 @@ if __name__ == "__main__":
                 best_sep_avg = gmm_sep_avg
                 best_epoch = epoch
                 print(f"New best GMM separation found at epoch {epoch}: {best_sep_avg:.4f}")
+                torch.save(
+                    {
+                        "model1": model1.state_dict(),
+                        "model2": model2.state_dict(),
+                        "optim1": optim1.state_dict(),
+                        "optim2": optim2.state_dict(),
+                        "prob1" : prob1,
+                        "prob2" : prob2,
+                    },
+                    warmup_checkpoint_path,
+                )
+                print(f"Checkpoint saved at {warmup_checkpoint_path}")
 
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")

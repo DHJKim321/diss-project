@@ -186,15 +186,17 @@ def eval_train(model, criterion, eval_loader, device='cuda'):
 
     # fit a two-component GMM to the loss
     input_loss = losses.reshape(-1,1).cpu().numpy() # input_loss.shape = [n_samples, 1]
-    gmm = GaussianMixture(n_components=2, max_iter=10, tol=1e-2, reg_covar=5e-4)
+    gmm = GaussianMixture(n_components=2, max_iter=10, tol=1e-2, reg_covar=5e-4, random_state=42)
     gmm.fit(input_loss)
     prob = gmm.predict_proba(input_loss) # prob.shape = [n_samples, n_components]
     prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
     # I guess ^ is just a way to not use a hard-coded index? You can still calculate probabilities for both indices since n_components=2
     # gmm.means_.argmin() returns the index of the component with the smallest mean
-    print(f"GMM Means: {gmm.means_.flatten()}")
-    print(f"GMM Covariances: {gmm.covariances_.flatten()}")
-    return prob, losses.cpu().numpy()
+    
+    means = gmm.means_.flatten()
+    sep = abs(means[0] - means[1])
+
+    return prob, losses.cpu().numpy(), sep
 
 def test(model1, model2, test_loader, device='cuda'):
     preds, all_labels = [], []

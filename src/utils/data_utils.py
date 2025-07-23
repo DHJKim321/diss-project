@@ -4,6 +4,7 @@ import numpy as np
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
 
 def load_full_data(train_file, file_path):
     path = file_path + train_file
@@ -158,3 +159,34 @@ def load_agnews_test(file, file_path):
     data = data[['text', 'label']]
     print(f"AG News test data loaded with {len(data)} samples")
     return data
+
+def load_data(train_file, train_data_path, dataset, noise_ratio, test_file=None, test_data_path=None):
+    if dataset == 'imdb':
+        imdb_data = load_imdb_data(train_file, train_data_path)
+        train_data, test_data = train_test_split(imdb_data, test_size=0.2, random_state=42)
+        original_labels = train_data['label'].values
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+        noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
+        num_classes = 2
+    elif dataset == 'yahoo':
+        train_data = load_yahoo_train(train_file, train_data_path)
+        test_data = load_yahoo_test(test_file, test_data_path)
+        original_labels = train_data['label'].values
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+        noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
+        num_classes = train_data['label'].nunique()
+        print(f"Number of classes in Yahoo dataset: {num_classes}")
+    elif dataset == 'agnews':
+        train_data = load_agnews_train(train_file, train_data_path)
+        test_data = load_agnews_test(test_file, test_data_path)
+        original_labels = train_data['label'].values
+        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
+        noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
+        num_classes = train_data['label'].nunique()
+        print(f"Number of classes in AGNews dataset: {num_classes}")
+    else:
+        print("Loading ShaPe Data")
+        train_data = load_full_data(train_file, train_data_path)
+        test_data = load_test_data(test_file, test_data_path)
+        num_classes = 2
+    return train_data, test_data, noisy_mask, num_classes

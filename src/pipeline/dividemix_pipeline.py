@@ -37,10 +37,8 @@ if __name__ == "__main__":
     test_data_path = os.getenv("TEST_DATA_PATH")
     data_save_path = os.getenv("DATA_SAVE_PATH")
     checkpoint_path = os.getenv("CHECKPOINT_PATH")
-    use_imdb = os.getenv("USE_IMDB").lower() == "true"
-    use_yahoo = os.getenv("USE_YAHOO").lower() == "true"
-    use_agnews = os.getenv("USE_AGNEWS").lower() == "true"
-    if use_imdb:
+    dataset = os.getenv("DATASET")
+    if dataset == 'imdb':
         test_file = os.getenv("TRAIN_FILE")
     warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
     # ---- Training Variables ----
@@ -63,6 +61,8 @@ if __name__ == "__main__":
     dropout_type = os.getenv("DROPOUT_TYPE")
     p_early = float(os.getenv("P_EARLY"))
     p_late = float(os.getenv("P_LATE"))
+    gmm_patience = int(os.getenv("GMM_PATIENCE"))
+    delta_sep_tol = float(os.getenv("DELTA_SEP_TOL")) # Minimal improvement in GMM separation to continue training
 
     if epochs < warmup_epochs:
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")
@@ -74,34 +74,8 @@ if __name__ == "__main__":
         exit(1)
 
     # ------------ Load Data and Tokenizer ------------
-    if use_imdb:
-        imdb_data = load_imdb_data(train_file, train_data_path)
-        train_data, test_data = train_test_split(imdb_data, test_size=0.2, random_state=42)
-        original_labels = train_data['label'].values
-        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
-        noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
-        num_classes = 2
-    elif use_yahoo:
-        train_data = load_yahoo_train(train_file, train_data_path)
-        test_data = load_yahoo_test(test_file, test_data_path)
-        original_labels = train_data['label'].values
-        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
-        noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
-        num_classes = train_data['label'].nunique()
-        print(f"Number of classes in Yahoo dataset: {num_classes}")
-    elif use_agnews:
-        train_data = load_agnews_train(train_file, train_data_path)
-        test_data = load_agnews_test(test_file, test_data_path)
-        original_labels = train_data['label'].values
-        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
-        noisy_mask = get_labels_injected_list(original_labels, train_data['label'].values)
-        num_classes = train_data['label'].nunique()
-        print(f"Number of classes in AGNews dataset: {num_classes}")
-    else:
-        print("Loading ShaPe Data")
-        train_data = load_full_data(train_file, train_data_path)
-        test_data = load_test_data(test_file, test_data_path)
-        num_classes = 2
+    print(f"Loading training data from {train_file} and test data from {test_file}")
+    train_data, test_data, noisy_mask, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
     # ------------ Load Models ------------
@@ -203,11 +177,20 @@ if __name__ == "__main__":
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
-        prob1, losses1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device)
+        prob1, losses1, gmm_sep1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device)
         save_orig_noisy_loss_histogram(noisy_mask, losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
-        prob2, losses2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device)
+        prob2, losses2, gmm_sep2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device)
         save_orig_noisy_loss_histogram(noisy_mask, losses2, epoch, model=2)
+
+        # ---- GMM Mean Early Stopping During Warm-Up ----
+        if not warmup_done:
+            gmm_sep_avg = (gmm_sep1 + gmm_sep2) / 2
+            print(f"Epoch {epoch} | sep1={gmm_sep1:.4f}, sep2={gmm_sep2:.4f}, avg={gmm_sep_avg:.4f}")
+            if gmm_sep_avg > best_sep_avg + delta_sep_tol:
+                best_sep_avg = gmm_sep_avg
+                best_epoch = epoch
+                print(f"New best GMM separation found at epoch {epoch}: {best_sep_avg:.4f}")
 
         # ---- Testing Phase ----
         print(f"Evaluating models at epoch {epoch}")

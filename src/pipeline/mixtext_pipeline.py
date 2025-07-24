@@ -43,7 +43,7 @@ if __name__ == "__main__":
     rampup = int(os.getenv("RAMPUP"))
     T = float(os.getenv("SHARPENING_TEMPERATURE"))
     alpha = float(os.getenv("ALPHA"))
-    device = torch.device('mps')
+    device = torch.device('cuda')
 
     # ------------ Load Data and Tokenizer ------------
     print(f"Loading training data from {train_file} and test data from {test_file}")

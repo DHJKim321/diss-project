@@ -80,7 +80,7 @@ def train(labelled_trainloader, unlabelled_trainloader, model, optimizer, criter
         optimizer.step()
     return total_loss / total_samples
 
-def validate(val_loader, model, criterion):
+def validate(val_loader, model, criterion, device='cuda'):
     model.eval()
     loss_total = 0
     total_sample = 0
@@ -88,9 +88,9 @@ def validate(val_loader, model, criterion):
     correct = 0
     with torch.no_grad():
         for batch in tqdm(val_loader):
-            inputs = batch['input_ids'].to(model.device)
-            attention_mask = batch['attention_mask'].to(model.device)
-            labels = batch['labels'].to(model.device)
+            inputs = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            labels = batch['labels'].to(device)
             y = labels.argmax(dim=1)
             logits = model(inputs, attention_mask)
             loss = criterion(logits, labels)

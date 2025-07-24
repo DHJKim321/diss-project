@@ -12,7 +12,7 @@ from src.model.bert import Bert
 from src.utils.data_utils import *
 from src.utils.eval_utils import save_evaluation, add_predictions_to_data, evaluate_model, save_loss_as_df
 from src.utils.dividemix_utils import warmup_train, train, eval_train, test
-from src.data.DivideMixDataloader import DivideMixDataloader
+from src.data.dataloader.DivideMixDataloader import DivideMixDataloader
 from src.modules.losses import SemiLoss, NegEntropy
 from transformers import BertTokenizer
 from sklearn.model_selection import train_test_split

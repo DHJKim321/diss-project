@@ -116,6 +116,7 @@ if __name__ == "__main__":
             best_loss = val_loss
             tqdm.write(f"Validation loss improved to {best_loss:.4f}, saving model...")
             torch.save(model.state_dict(), os.path.join(model_save_path, f"mixtext_bert_{dataset}_best.pth"))
+            tqdm.write(f"Testing best model on test set...")
             test_loss, test_acc = validate(test_loader, model, criterion)
             tqdm.write(f"Epoch {epoch + 1}/{epochs}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}")
 

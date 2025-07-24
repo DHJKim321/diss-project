@@ -127,20 +127,20 @@ if __name__ == "__main__":
     prob1 = torch.zeros(len(train_data), device=device)
     prob2 = torch.zeros(len(train_data), device=device)
     warmup_checkpoint_path = warmup_checkpoint_path.replace(".pth", f"_{noise_ratio}_{train_file.replace('_train.csv', '')}.pth")
-    if os.path.exists(warmup_checkpoint_path):
-        print("Found warm-up-completed models")
-        ckpt = torch.load(warmup_checkpoint_path, map_location=device)
-        model1.load_state_dict(ckpt["model1"])
-        model2.load_state_dict(ckpt["model2"])
-        optim1.load_state_dict(ckpt["optim1"])
-        optim2.load_state_dict(ckpt["optim2"])
-        prob1 = ckpt["prob1"]
-        prob2 = ckpt["prob2"]
-        start_epoch = warmup_epochs
-        warmup_done = True
-        is_training_started = True
-    else:
-        print("No warm-up-completed models. Training from scratch.")
+    # if os.path.exists(warmup_checkpoint_path):
+    #     print("Found warm-up-completed models")
+    #     ckpt = torch.load(warmup_checkpoint_path, map_location=device)
+    #     model1.load_state_dict(ckpt["model1"])
+    #     model2.load_state_dict(ckpt["model2"])
+    #     optim1.load_state_dict(ckpt["optim1"])
+    #     optim2.load_state_dict(ckpt["optim2"])
+    #     prob1 = ckpt["prob1"]
+    #     prob2 = ckpt["prob2"]
+    #     start_epoch = ckpt["warmup_epochs"]
+    #     warmup_done = True
+    #     is_training_started = True
+    # else:
+    #     print("No warm-up-completed models. Training from scratch.")
 
     # ------------ Start Training ------------
     for epoch in range(start_epoch, epochs):
@@ -175,6 +175,8 @@ if __name__ == "__main__":
                 prob1 = best_state["prob1"]
                 prob2 = best_state["prob2"]
                 is_training_started = True
+                model1.unfreeze()
+                model2.unfreeze()
 
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
@@ -185,11 +187,11 @@ if __name__ == "__main__":
 
             print(f"Training for Network 1")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred2, probs=prob2)
-            loss, Lx, Lu, penalty = train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
+            loss, Lx, Lu, penalty = train(epoch, model1, model2, optim1, semiloss, labelled_loader, unlabelled_loader, best_epoch, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
             print(f"Loss: {loss:.4f}, Lx: {Lx:.4f}, Lu: {Lu:.4f}, Penalty: {penalty:.4f}")
             print(f"Training for Network 2")
             labelled_loader, unlabelled_loader = loader.run(train_data, mode='train', preds=pred1, probs=prob1)
-            loss, Lx, Lu, penalty = train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, warmup_epochs, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
+            loss, Lx, Lu, penalty = train(epoch, model2, model1, optim2, semiloss, labelled_loader, unlabelled_loader, best_epoch, batch_size=batch_size, temperature=temperature, alpha=alpha, penalty_val=penalty_val, num_class=num_classes, device=device)
             print(f"Loss: {loss:.4f}, Lx: {Lx:.4f}, Lu: {Lu:.4f}, Penalty: {penalty:.4f}")
 
         # ---- Evaluation Phase ----
@@ -217,6 +219,7 @@ if __name__ == "__main__":
                     "optim2": optim2.state_dict(),
                     "prob1": prob1,
                     "prob2": prob2,
+                    "warmup_epochs": best_epoch + 1,
                 }
                 torch.save(
                     best_state,

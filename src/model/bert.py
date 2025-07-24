@@ -128,6 +128,11 @@ class Bert(nn.Module):
         # Classify the pooled output
         logits = self.classifier(pooled_output)
         return logits, mixed_labels
+    
+    def unfreeze(self):
+        for param in self.bert.parameters():
+            param.requires_grad = True
+        return self
 
     def to_device(self, device):
         self.bert = self.bert.to(device)

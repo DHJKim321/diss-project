@@ -21,7 +21,7 @@ class SemiLoss(object):
         Lx = -torch.mean(torch.sum(F.log_softmax(outputs_x, dim=1) * targets_x, dim=1))
         Lu = torch.mean((probs_u - targets_u)**2)
 
-        return Lx, Lu, self.linear_rampup(epoch, warm_up-1)
+        return Lx, Lu, self.linear_rampup(epoch, warm_up)
     
     def linear_rampup(self, current, warm_up, rampup_length=12):
         current = np.clip((current-warm_up) / rampup_length, 0.0, 1.0)

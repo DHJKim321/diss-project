@@ -20,7 +20,7 @@ class MixTextDataLoader():
             )
             loader = DataLoader(
                 labelled_dataset,
-                batch_size=self.batch_size/2,
+                batch_size=self.batch_size//2,
                 num_workers=self.num_workers,
                 shuffle=True
             )

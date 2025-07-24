@@ -28,7 +28,7 @@ if __name__ == "__main__":
     dataset = os.getenv("DATASET")
     if dataset == 'imdb':
         test_file = os.getenv("TRAIN_FILE")
-    warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
+    warmup_checkpoint_path = os.getenv("MIXTEXT_CHECKPOINT_PATH")
     n_labelled_per_class = int(os.getenv("N_LABELLED_PER_CLASS"))
     # Model Training Variables
     bert_model = os.getenv("BERT_MODEL")

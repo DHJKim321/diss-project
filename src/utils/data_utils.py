@@ -190,3 +190,54 @@ def load_data(train_file, train_data_path, dataset, noise_ratio, test_file=None,
         test_data = load_test_data(test_file, test_data_path)
         num_classes = 2
     return train_data, test_data, noisy_mask, num_classes
+
+def load_mixtext_train(file, data_path):
+    path = data_path + file
+    print(f"Loading AG News train data from {path} (MixText)")
+    data = pd.read_csv(path, sep=',', header=0)
+    data.fillna('', inplace=True)
+    data['text'] = data['Description'].astype(str)
+    data['label'] = data['Class Index'].astype(int) - 1
+    data = data[['text', 'label']]
+    print(f"AG News train data loaded with {len(data)} samples")
+    return data
+
+def load_mixtext_test(file, data_path):
+    path = data_path + file
+    print(f"Loading AG News test data from {path} (MixText)")
+    data = pd.read_csv(path, sep=',', header=0)
+    data.fillna('', inplace=True)
+    data['text'] = data['Description'].astype(str)
+    data['label'] = data['Class Index'].astype(int) - 1
+    data = data[['text', 'label']]
+    print(f"AG News test data loaded with {len(data)} samples")
+    return data
+
+def train_val_split(labels, n_labeled_per_class, n_labels, seed=0):
+    np.random.seed(seed)
+    labels = np.array(labels)
+    train_labeled_idxs = []
+    train_unlabeled_idxs = []
+    val_idxs = []
+
+    for i in range(n_labels):
+        idxs = np.where(labels == i)[0]
+        np.random.shuffle(idxs)
+        train_pool = np.concatenate((idxs[:500], idxs[5500:-2000]))
+        train_labeled_idxs.extend(train_pool[:n_labeled_per_class])
+        train_unlabeled_idxs.extend(
+            idxs[500: 500 + 5000])
+        val_idxs.extend(idxs[-2000:])
+    np.random.shuffle(train_labeled_idxs)
+    np.random.shuffle(train_unlabeled_idxs)
+    np.random.shuffle(val_idxs)
+
+    return train_labeled_idxs, train_unlabeled_idxs, val_idxs
+
+def get_mixtext_data_idx(train_file, train_data_path, test_file, test_data_path, n_labelled_per_class=20):
+    train_data = load_mixtext_train(train_file, train_data_path)
+    test_data = load_mixtext_test(test_file, test_data_path)
+    train_labelled_idxs, train_unlabelled_idxs, val_idxs = train_val_split(
+        train_data['label'], n_labelled_per_class, len(train_data['label'].unique()), seed=0)
+    num_classes = len(train_data['label'].unique())
+    return train_data, test_data, train_labelled_idxs, train_unlabelled_idxs, val_idxs, num_classes

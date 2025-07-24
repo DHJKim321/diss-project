@@ -91,12 +91,11 @@ def validate(val_loader, model, criterion, device='cuda'):
             inputs = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
             labels = batch['labels'].to(device)
-            y = labels.argmax(dim=1)
             logits = model(inputs, attention_mask)
             loss = criterion(logits, labels)
 
             pred = logits.argmax(dim=1)
-            correct += (pred == y).sum().item()
+            correct += (pred == labels).sum().item()
             loss_total += loss.item() * inputs.shape[0]
             total_sample += inputs.shape[0]
 

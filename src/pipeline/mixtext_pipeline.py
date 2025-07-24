@@ -11,6 +11,7 @@ from transformers import BertTokenizer
 import torch
 from torch.optim import AdamW
 from tqdm import tqdm
+import torch.nn as nn
 
 
 if __name__ == "__main__":
@@ -98,6 +99,7 @@ if __name__ == "__main__":
         lambda_u = lambda_u,
         rampup=rampup
     )
+    criterion = nn.CrossEntropyLoss()
 
     # ------------ Start Training ------------
     best_loss = float('inf')
@@ -107,14 +109,14 @@ if __name__ == "__main__":
         train_loss = train(labelled_loader, unlabelled_loader, model, optimizer, semiloss, epoch, num_classes, T, alpha, device)
         tqdm.write(f"Epoch {epoch + 1}/{epochs}, Train Loss: {train_loss:.4f}")
 
-        val_loss, val_acc = validate(val_loader, model, semiloss)
+        val_loss, val_acc = validate(val_loader, model, criterion)
         tqdm.write(f"Epoch {epoch + 1}/{epochs}, Validation Loss: {val_loss:.4f}, Validation Accuracy: {val_acc:.4f}")
 
         if val_loss < best_loss:
             best_loss = val_loss
             tqdm.write(f"Validation loss improved to {best_loss:.4f}, saving model...")
             torch.save(model.state_dict(), os.path.join(model_save_path, f"mixtext_bert_{dataset}_best.pth"))
-            test_loss, test_acc = validate(test_loader, model, semiloss)
+            test_loss, test_acc = validate(test_loader, model, criterion)
             tqdm.write(f"Epoch {epoch + 1}/{epochs}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}")
 
     tqdm.write("Training complete.")

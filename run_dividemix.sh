@@ -1,13 +1,13 @@
 #!/bin/sh
 # Grid Engine options (lines prefixed with #$)
-#$ -N dividemix
+#$ -N dividemix_unfreeze_bert
 #$ -cwd
 #$ -l h_rt=48:00:00
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/output_dividemix.log
-#$ -e log/error_dividemix.log
+#$ -o log/output_dividemix_unfreeze_bert.log
+#$ -e log/error_dividemix_unfreeze_bert.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

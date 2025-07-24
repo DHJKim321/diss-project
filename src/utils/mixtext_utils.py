@@ -3,6 +3,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 import torch
 import numpy as np
+from tqdm import tqdm
 
 def train(labelled_trainloader, unlabelled_trainloader, model, optimizer, criterion, epoch, n_labels, T, alpha, device):
     labeled_train_iter = iter(labelled_trainloader)
@@ -12,7 +13,7 @@ def train(labelled_trainloader, unlabelled_trainloader, model, optimizer, criter
     total_loss = 0
     total_samples = 0
 
-    for batch_idx in range(len(labelled_trainloader)):
+    for batch_idx in tqdm(range(len(labelled_trainloader))):
         # Get labelled data
         batch_x = next(labeled_train_iter)
         input_ids_x = batch_x['input_ids'].to(device)
@@ -86,7 +87,7 @@ def validate(val_loader, model, criterion):
     acc_total = 0
     correct = 0
     with torch.no_grad():
-        for batch in val_loader:
+        for batch in tqdm(val_loader):
             inputs = batch['input_ids'].to(model.device)
             attention_mask = batch['attention_mask'].to(model.device)
             labels = batch['labels'].to(model.device)

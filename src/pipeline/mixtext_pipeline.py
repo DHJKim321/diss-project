@@ -102,7 +102,7 @@ if __name__ == "__main__":
     # ------------ Start Training ------------
     best_loss = float('inf')
     print("Starting training...")
-    for epoch in tqdm(range(epochs)):
+    for epoch in range(epochs):
         tqdm.write(f"Epoch {epoch + 1}/{epochs}")
         train_loss = train(labelled_loader, unlabelled_loader, model, optimizer, semiloss, epoch, num_classes, T, alpha, device)
         tqdm.write(f"Epoch {epoch + 1}/{epochs}, Train Loss: {train_loss:.4f}")

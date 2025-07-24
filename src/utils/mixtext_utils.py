@@ -26,7 +26,6 @@ def train(labelled_trainloader, unlabelled_trainloader, model, optimizer, criter
         batch_u = next(unlabeled_train_iter)
         input_ids_u_orig = batch_u['input_ids_orig'].to(device)
         attention_mask_u_orig = batch_u['attention_mask_orig'].to(device)
-        batch_size_ori = input_ids_u_orig.size(0)
         input_ids_u_aug_1 = batch_u['input_ids_aug_1'].to(device)
         attention_mask_u_aug_1 = batch_u['attention_mask_aug_1'].to(device)
         input_ids_u_aug_2 = batch_u['input_ids_aug_2'].to(device)
@@ -50,14 +49,11 @@ def train(labelled_trainloader, unlabelled_trainloader, model, optimizer, criter
         layer_index = np.random.choice([7, 9, 12]) # Based on the paper below, these layers contain the richest syntactic and semantic information
         layer_index -= 1 # Convert to zero-based index
 
-        all_inputs = torch.cat([input_ids_x, input_ids_u_aug_1, input_ids_u_aug_2, input_ids_u_orig, input_ids_u_orig], dim=0)
-        all_masks = torch.cat([attention_mask_x, attention_mask_u_aug_1, attention_mask_u_aug_2, attention_mask_u_orig, attention_mask_u_orig], dim=0)
-        all_labels = torch.cat([labels_x, labels_u, labels_u, labels_u, labels_u], dim=0)
+        all_inputs = torch.cat([input_ids_x, input_ids_u_aug_1, input_ids_u_aug_2, input_ids_u_orig], dim=0)
+        all_masks = torch.cat([attention_mask_x, attention_mask_u_aug_1, attention_mask_u_aug_2, attention_mask_u_orig], dim=0)
+        all_labels = torch.cat([labels_x, labels_u, labels_u, labels_u], dim=0)
 
-        perm_idx1 = torch.randperm(all_inputs.size(0) - batch_size_ori)
-        perm_idx2 = torch.arange(batch_size_ori) + \
-            all_inputs.size(0) - batch_size_ori
-        perm_idx = torch.cat([perm_idx1, perm_idx2], dim=0)
+        perm_idx = torch.randperm(all_inputs.size(0))
 
         input_a, input_b = all_inputs, all_inputs[perm_idx]
         attention_mask_a, attention_mask_b = all_masks, all_masks[perm_idx]
@@ -69,8 +65,12 @@ def train(labelled_trainloader, unlabelled_trainloader, model, optimizer, criter
 
         # Calculate loss
         # Split the logits back into labelled, augmented unlabelled, and original unlabelled parts
-        Lx, Lu, lambda_u1 = criterion(logits[:batch_size], mixed_labels[:batch_size], logits[batch_size:-batch_size_ori],
-                                       mixed_labels[batch_size:-batch_size_ori], logits[-batch_size_ori:], epoch+batch_idx/len(labelled_trainloader))
+        logits_x = logits[:batch_size]
+        mixed_labels_x = mixed_labels[:batch_size]
+        logits_u = logits[batch_size:]
+        mixed_labels_u = mixed_labels[batch_size:]
+
+        Lx, Lu, lambda_u1 = criterion(logits_x, mixed_labels_x, logits_u, mixed_labels_u, epoch+batch_idx/len(labelled_trainloader))
         loss = Lx + lambda_u1 * Lu
         total_loss += loss.item()
         total_samples += batch_size

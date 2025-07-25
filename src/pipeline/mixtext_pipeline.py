@@ -35,7 +35,8 @@ if __name__ == "__main__":
     n_labelled_per_class = int(os.getenv("N_LABELLED_PER_CLASS"))
     # Model Training Variables
     bert_model = os.getenv("BERT_MODEL")
-    batch_size = int(os.getenv("BATCH_SIZE"))
+    batch_size_x = int(os.getenv("BATCH_SIZE_X"))
+    batch_size_u = int(os.getenv("BATCH_SIZE_U"))
     learning_rate = float(os.getenv("LEARNING_RATE"))
     warmup_epochs = int(os.getenv("WARMUP_EPOCHS"))
     epochs = int(os.getenv("EPOCHS"))
@@ -56,7 +57,8 @@ if __name__ == "__main__":
     # ------------ Load DataLoader ------------
     print("Loading MixText DataLoader")
     loader = MixTextDataLoader(
-        batch_size=batch_size,
+        batch_size_x=batch_size_x,
+        batch_size_u=batch_size_u,
         tokenizer=tokenizer,
         num_workers=num_workers
     )

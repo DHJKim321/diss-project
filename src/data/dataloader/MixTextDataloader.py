@@ -6,8 +6,9 @@ from src.data.dataset.MixTextDataset import MixTextDataset
 from torch.utils.data import DataLoader
 
 class MixTextDataLoader():
-    def __init__(self, batch_size, tokenizer, num_workers=4):
-        self.batch_size = batch_size
+    def __init__(self, batch_size_x, batch_size_u, tokenizer, num_workers=4):
+        self.batch_size_x = batch_size_x
+        self.batch_size_u = batch_size_u
         self.num_workers = num_workers
         self.tokenizer = tokenizer
 
@@ -20,7 +21,7 @@ class MixTextDataLoader():
             )
             loader = DataLoader(
                 labelled_dataset,
-                batch_size=self.batch_size//2,
+                batch_size=self.batch_size_x,
                 num_workers=self.num_workers,
                 shuffle=True
             )
@@ -33,7 +34,7 @@ class MixTextDataLoader():
             )
             loader = DataLoader(
                 unlabelled_dataset,
-                batch_size=self.batch_size,
+                batch_size=self.batch_size_u,
                 num_workers=self.num_workers,
                 shuffle=True
             )
@@ -46,7 +47,7 @@ class MixTextDataLoader():
             )
             loader = DataLoader(
                 val_dataset,
-                batch_size=self.batch_size,
+                batch_size=self.batch_size_u,
                 num_workers=self.num_workers,
                 shuffle=False
             )
@@ -59,7 +60,7 @@ class MixTextDataLoader():
             )
             loader = DataLoader(
                 test_dataset,
-                batch_size=self.batch_size,
+                batch_size=self.batch_size_u,
                 num_workers=self.num_workers,
                 shuffle=False
             )

@@ -9,6 +9,8 @@ import pickle
 
 device = torch.device('cuda')
 
+os.environ["TORCH_HOME"] = "/exports/eddie/scratch/s2017594/"
+
 en2ru = torch.hub.load('pytorch/fairseq', 'transformer.wmt19.en-ru.single_model', tokenizer='moses', bpe='fastbpe')
 ru2en = torch.hub.load('pytorch/fairseq', 'transformer.wmt19.ru-en.single_model', tokenizer='moses', bpe='fastbpe')
 

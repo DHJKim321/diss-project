@@ -99,7 +99,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
             
             # ----- Label Co-refinement (Labelled Samples) ----
             outputs_x = model1(input_ids_x1, attention_mask_x1)
-            outputs_x2 = model1(input_ids_x2, attention_mask_x2)            
+            outputs_x2 = model1(input_ids_x2, attention_mask_x2)
             
             px = (torch.softmax(outputs_x, dim=1) + torch.softmax(outputs_x2, dim=1)) / 2 # Average the outputs of the two models
             px = prob * labels_x + (1 - prob) * px # prob tells us the likelihood of the label being correct using the GMM's cluster probability

@@ -36,16 +36,10 @@ def hf_translate(texts, tok, mod, sampling=True, temperature=0.9):
     )
     return tok.batch_decode(outputs, skip_special_tokens=True)
 
-# ==============================
-# Load dataset
-# ==============================
 train_df = pd.read_csv('agnews_train.csv', header=None)
 train_labels = [v-1 for v in train_df[0]]
 train_text = [v for v in train_df[2]]
 
-# ==============================
-# Split data
-# ==============================
 def train_val_split(labels, n_labeled_per_class, n_labels, seed=0):
     np.random.seed(seed)
     labels = np.array(labels)

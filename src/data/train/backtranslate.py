@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import torch
 import pickle
-from tqdm.notebook import tqdm
 import os
+from tqdm import tqdm
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 

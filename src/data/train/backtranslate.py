@@ -28,7 +28,7 @@ def hf_translate(texts, tok, mod, sampling=True, temperature=0.9):
     inputs = tok(texts, return_tensors="pt", padding=True, truncation=True).to(device)
     outputs = mod.generate(
         **inputs,
-        num_beams=1,  # single beam
+        num_beams=1,
         do_sample=sampling,
         temperature=temperature,
         top_k=50,

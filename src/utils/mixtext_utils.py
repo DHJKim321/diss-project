@@ -37,7 +37,7 @@ def train(labelled_trainloader, unlabelled_trainloader, model, optimizer, criter
             outputs_u2 = model(input_ids_u_aug_2, attention_mask_u_aug_2)
             outputs_ori = model(input_ids_u_orig, attention_mask_u_orig)
 
-            p = (torch.softmax(outputs_u1, dim=1) + torch.softmax(outputs_u2, dim=1) + torch.softmax(outputs_ori, dim=1)) / 3
+            p = (0.25 * torch.softmax(outputs_u1, dim=1) + 0.25 * torch.softmax(outputs_u2, dim=1) + 0.5 * torch.softmax(outputs_ori, dim=1)) / 3
             pt = p**(1/T)
             labels_u = pt / pt.sum(dim=1, keepdim=True)
             labels_u = labels_u.detach()

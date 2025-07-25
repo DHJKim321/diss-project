@@ -7,9 +7,6 @@ import os
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# ==============================
-# Load HuggingFace translation models
-# ==============================
 from transformers import MarianMTModel, MarianTokenizer
 
 def load_translation_model(model_name):
@@ -26,13 +23,8 @@ tok_ru2en, mod_ru2en = load_translation_model("Helsinki-NLP/opus-mt-ru-en")
 tok_en2de, mod_en2de = load_translation_model("Helsinki-NLP/opus-mt-en-de")
 tok_de2en, mod_de2en = load_translation_model("Helsinki-NLP/opus-mt-de-en")
 
-# ==============================
-# Helper translate function
-# ==============================
 @torch.no_grad()
 def hf_translate(texts, tok, mod, sampling=True, temperature=0.9):
-    # HuggingFace MarianMT does not have sampling/temperature in the same way as Fairseq.
-    # You can approximate sampling with `do_sample=True` and set temperature.
     inputs = tok(texts, return_tensors="pt", padding=True, truncation=True).to(device)
     outputs = mod.generate(
         **inputs,

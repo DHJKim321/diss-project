@@ -23,12 +23,12 @@ class MixTextBert(nn.Module):
     def run_until(self, input_ids, attention_mask, layer_index, device='cuda'):
         hidden = self.bert.embeddings(input_ids)
         extended_mask = self.bert.get_extended_attention_mask(attention_mask, attention_mask.shape, device)
-        for i in range(layer_index):
+        for i in range(layer_index+1): # Run until the output of the layer index
             hidden = self.bert.encoder.layer[i](hidden, extended_mask)[0]
         return hidden, extended_mask
     
     def run_from(self, hidden_states, extended_mask, layer_index):
-        for i in range(layer_index, len(self.bert.encoder.layer)):
+        for i in range(layer_index+1, len(self.bert.encoder.layer)): # Start from the next layer
             hidden_states = self.bert.encoder.layer[i](hidden_states, extended_mask)[0]
         return hidden_states
         

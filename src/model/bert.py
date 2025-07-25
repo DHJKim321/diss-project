@@ -90,7 +90,7 @@ class Bert(nn.Module):
 
         # Iterate through from layer 0 to layer_index (exclusive)
         encoder_layers = self.bert.encoder.layer
-        for i in range(layer_index):
+        for i in range(layer_index+1):
             layer_module = encoder_layers[i]
             hidden_x1 = layer_module(hidden_x1, attention_mask=extended_attention_mask_x1)[0]
             hidden_x2 = layer_module(hidden_x2, attention_mask=extended_attention_mask_x2)[0]
@@ -118,7 +118,7 @@ class Bert(nn.Module):
         extended_attention_mask = self.bert.get_extended_attention_mask(attention_mask, attention_mask.shape, device)
 
         # Run the remaining layers from layer_index to the end
-        for i in range(layer_index, len(self.bert.encoder.layer)):
+        for i in range(layer_index+1, len(self.bert.encoder.layer)):
             mixed_hidden = self.bert.encoder.layer[i](mixed_hidden, attention_mask=extended_attention_mask)[0]
 
         # Get the pooled output

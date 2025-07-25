@@ -76,9 +76,6 @@ def train_val_split(labels, n_labeled_per_class, n_labels, seed=0):
 train_labeled_idxs, train_unlabeled_idxs, val_idxs = train_val_split(train_labels, 500, 10)
 idxs = train_unlabeled_idxs
 
-# ==============================
-# Back-translate through Russian
-# ==============================
 def translate_ru(start, end, file_name):
     trans_result = {}
     for i in tqdm(range(start, end)):
@@ -93,9 +90,6 @@ def translate_ru(start, end, file_name):
     with open(file_name, 'wb') as f:
         pickle.dump(trans_result, f)
 
-# ==============================
-# Back-translate through German
-# ==============================
 def translate_de(start, end, file_name):
     trans_result = {}
     for i in tqdm(range(start, end)):
@@ -109,9 +103,5 @@ def translate_de(start, end, file_name):
                 pickle.dump(trans_result, f)
     with open(file_name, 'wb') as f:
         pickle.dump(trans_result, f)
-
-# ==============================
-# Run back-translation
-# ==============================
 translate_de(0, 100000, 'de_1.pkl')
 translate_ru(0, 100000, 'ru_1.pkl')

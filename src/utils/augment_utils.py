@@ -4,7 +4,7 @@ Utility functions for the 'Augment' function in DivideMix.
 
 import os, sys
 import regex as re
-import random, re
+import random
 from nltk.corpus import wordnet as wn, stopwords
 from nltk import pos_tag
 _STOP = set(stopwords.words("english"))

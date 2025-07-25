@@ -11,7 +11,7 @@ from transformers import MarianMTModel, MarianTokenizer
 
 def load_translation_model(model_name):
     tok = MarianTokenizer.from_pretrained(model_name)
-    mod = MarianMTModel.from_pretrained(model_name, from_tf=True).to(device)
+    mod = MarianMTModel.from_pretrained(model_name).to(device)
     mod.eval()
     return tok, mod
 

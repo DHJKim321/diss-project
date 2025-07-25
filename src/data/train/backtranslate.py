@@ -2,29 +2,59 @@ import pandas as pd
 import numpy as np
 import torch
 import pickle
-from tqdm import tqdm_notebook as tqdm
+from tqdm.notebook import tqdm
 import os
-import re
-import pickle
 
-device = torch.device('cuda')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-os.environ["TORCH_HOME"] = "/exports/eddie/scratch/s2017594/"
+# ==============================
+# Load HuggingFace translation models
+# ==============================
+from transformers import MarianMTModel, MarianTokenizer
 
-en2ru = torch.hub.load('pytorch/fairseq', 'transformer.wmt19.en-ru.single_model', tokenizer='moses', bpe='subword_nmt')
-ru2en = torch.hub.load('pytorch/fairseq', 'transformer.wmt19.ru-en.single_model', tokenizer='moses', bpe='subword_nmt')
+def load_translation_model(model_name):
+    tok = MarianTokenizer.from_pretrained(model_name)
+    mod = MarianMTModel.from_pretrained(model_name).to(device)
+    mod.eval()
+    return tok, mod
 
-en2de = torch.hub.load('pytorch/fairseq', 'transformer.wmt19.en-de.single_model', tokenizer='moses', bpe='subword_nmt')
-de2en = torch.hub.load('pytorch/fairseq', 'transformer.wmt19.de-en.single_model', tokenizer='moses', bpe='subword_nmt')
+# English <-> Russian
+tok_en2ru, mod_en2ru = load_translation_model("Helsinki-NLP/opus-mt-en-ru")
+tok_ru2en, mod_ru2en = load_translation_model("Helsinki-NLP/opus-mt-ru-en")
 
+# English <-> German
+tok_en2de, mod_en2de = load_translation_model("Helsinki-NLP/opus-mt-en-de")
+tok_de2en, mod_de2en = load_translation_model("Helsinki-NLP/opus-mt-de-en")
+
+# ==============================
+# Helper translate function
+# ==============================
+@torch.no_grad()
+def hf_translate(texts, tok, mod, sampling=True, temperature=0.9):
+    # HuggingFace MarianMT does not have sampling/temperature in the same way as Fairseq.
+    # You can approximate sampling with `do_sample=True` and set temperature.
+    inputs = tok(texts, return_tensors="pt", padding=True, truncation=True).to(device)
+    outputs = mod.generate(
+        **inputs,
+        num_beams=1,  # single beam
+        do_sample=sampling,
+        temperature=temperature,
+        top_k=50,
+        max_length=128
+    )
+    return tok.batch_decode(outputs, skip_special_tokens=True)
+
+# ==============================
+# Load dataset
+# ==============================
 train_df = pd.read_csv('agnews_train.csv', header=None)
-train_df.head()
-
 train_labels = [v-1 for v in train_df[0]]
 train_text = [v for v in train_df[2]]
 
-# split and get our unlabeled training data
-def train_val_split(labels, n_labeled_per_class, n_labels, seed = 0):
+# ==============================
+# Split data
+# ==============================
+def train_val_split(labels, n_labeled_per_class, n_labels, seed=0):
     np.random.seed(seed)
     labels = np.array(labels)
     train_labeled_idxs = []
@@ -35,9 +65,9 @@ def train_val_split(labels, n_labeled_per_class, n_labels, seed = 0):
         idxs = np.where(labels == i)[0]
         np.random.shuffle(idxs)
         train_labeled_idxs.extend(idxs[:n_labeled_per_class])
-        train_unlabeled_idxs.extend(idxs[n_labeled_per_class : n_labeled_per_class + 10000])
+        train_unlabeled_idxs.extend(idxs[n_labeled_per_class:n_labeled_per_class + 10000])
         val_idxs.extend(idxs[-3000:])
-    
+
     np.random.shuffle(train_labeled_idxs)
     np.random.shuffle(train_unlabeled_idxs)
     np.random.shuffle(val_idxs)
@@ -45,26 +75,43 @@ def train_val_split(labels, n_labeled_per_class, n_labels, seed = 0):
 
 train_labeled_idxs, train_unlabeled_idxs, val_idxs = train_val_split(train_labels, 500, 10)
 idxs = train_unlabeled_idxs
+
+# ==============================
+# Back-translate through Russian
+# ==============================
 def translate_ru(start, end, file_name):
     trans_result = {}
-    for id in tqdm(range(start, end)):
-        trans_result[idxs[id]] = ru2en.translate(en2ru.translate(train_text[idxs[id]],  sampling = True, temperature = 0.9),  sampling = True, temperature = 0.9)
-        if id % 500 == 0:
+    for i in tqdm(range(start, end)):
+        text = train_text[idxs[i]]
+        # en -> ru -> en
+        ru = hf_translate([text], tok_en2ru, mod_en2ru, sampling=True, temperature=0.9)[0]
+        back = hf_translate([ru], tok_ru2en, mod_ru2en, sampling=True, temperature=0.9)[0]
+        trans_result[idxs[i]] = back
+        if i % 500 == 0:
             with open(file_name, 'wb') as f:
                 pickle.dump(trans_result, f)
     with open(file_name, 'wb') as f:
         pickle.dump(trans_result, f)
 
-# back translate using German as middle language
+# ==============================
+# Back-translate through German
+# ==============================
 def translate_de(start, end, file_name):
     trans_result = {}
-    for id in tqdm(range(start, end)):
-        trans_result[idxs[id]] = de2en.translate(en2de.translate(train_text[idxs[id]],  sampling = True, temperature = 0.9),  sampling = True, temperature = 0.9)
-        if id % 500 == 0:
+    for i in tqdm(range(start, end)):
+        text = train_text[idxs[i]]
+        # en -> de -> en
+        de = hf_translate([text], tok_en2de, mod_en2de, sampling=True, temperature=0.9)[0]
+        back = hf_translate([de], tok_de2en, mod_de2en, sampling=True, temperature=0.9)[0]
+        trans_result[idxs[i]] = back
+        if i % 500 == 0:
             with open(file_name, 'wb') as f:
                 pickle.dump(trans_result, f)
     with open(file_name, 'wb') as f:
         pickle.dump(trans_result, f)
 
-translate_de(0,100000, 'de_1.pkl')
-translate_ru(0,100000, 'ru_1.pkl')
+# ==============================
+# Run back-translation
+# ==============================
+translate_de(0, 100000, 'de_1.pkl')
+translate_ru(0, 100000, 'ru_1.pkl')

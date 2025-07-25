@@ -256,3 +256,254 @@ Epoch: 19, Test Loss: 1.3562, Test Accuracy: 0.3604, Test F1 Score: 0.2694
 Training for Network 1
 labelled data size: 29875
 unlabelled data size: 10125
+Loss: 1.4877, Lx: 1.2001, Lu: 0.1955, Penalty: 0.0921
+Training for Network 2
+labelled data size: 30214
+unlabelled data size: 9786
+Loss: 1.4864, Lx: 1.2103, Lu: 0.1868, Penalty: 0.0893
+Evaluating training data at epoch 20 for Model 1
+Evaluating training data at epoch 20 for Model 2
+Evaluating models at epoch 20
+Test data size: 7600
+Epoch: 20, Test Loss: 1.3471, Test Accuracy: 0.3670, Test F1 Score: 0.2823
+Training for Network 1
+labelled data size: 29819
+unlabelled data size: 10181
+Loss: 1.4934, Lx: 1.2042, Lu: 0.1994, Penalty: 0.0899
+Training for Network 2
+labelled data size: 30718
+unlabelled data size: 9282
+Loss: 1.5059, Lx: 1.2196, Lu: 0.2002, Penalty: 0.0861
+Evaluating training data at epoch 21 for Model 1
+Evaluating training data at epoch 21 for Model 2
+Evaluating models at epoch 21
+Test data size: 7600
+Epoch: 21, Test Loss: 1.3438, Test Accuracy: 0.3701, Test F1 Score: 0.2850
+Training for Network 1
+labelled data size: 29615
+unlabelled data size: 10385
+Loss: 1.4843, Lx: 1.2007, Lu: 0.1955, Penalty: 0.0881
+Training for Network 2
+labelled data size: 30768
+unlabelled data size: 9232
+Loss: 1.5082, Lx: 1.2205, Lu: 0.2029, Penalty: 0.0847
+Evaluating training data at epoch 22 for Model 1
+Evaluating training data at epoch 22 for Model 2
+Evaluating models at epoch 22
+Test data size: 7600
+Epoch: 22, Test Loss: 1.3457, Test Accuracy: 0.3667, Test F1 Score: 0.2841
+Training for Network 1
+labelled data size: 29805
+unlabelled data size: 10195
+Loss: 1.4960, Lx: 1.2055, Lu: 0.2037, Penalty: 0.0868
+Training for Network 2
+labelled data size: 30828
+unlabelled data size: 9172
+Loss: 1.5092, Lx: 1.2224, Lu: 0.2044, Penalty: 0.0824
+Evaluating training data at epoch 23 for Model 1
+Evaluating training data at epoch 23 for Model 2
+Evaluating models at epoch 23
+Test data size: 7600
+Epoch: 23, Test Loss: 1.3434, Test Accuracy: 0.3733, Test F1 Score: 0.2908
+Training for Network 1
+labelled data size: 29830
+unlabelled data size: 10170
+Loss: 1.4793, Lx: 1.2042, Lu: 0.1913, Penalty: 0.0839
+Training for Network 2
+labelled data size: 30782
+unlabelled data size: 9218
+Loss: 1.4955, Lx: 1.2225, Lu: 0.1933, Penalty: 0.0797
+Evaluating training data at epoch 24 for Model 1
+Evaluating training data at epoch 24 for Model 2
+Evaluating models at epoch 24
+Test data size: 7600
+Epoch: 24, Test Loss: 1.3415, Test Accuracy: 0.3787, Test F1 Score: 0.2975
+Training for Network 1
+labelled data size: 29898
+unlabelled data size: 10102
+Loss: 1.4815, Lx: 1.2071, Lu: 0.1926, Penalty: 0.0817
+Training for Network 2
+labelled data size: 30892
+unlabelled data size: 9108
+Loss: 1.4915, Lx: 1.2234, Lu: 0.1893, Penalty: 0.0788
+Evaluating training data at epoch 25 for Model 1
+Evaluating training data at epoch 25 for Model 2
+Evaluating models at epoch 25
+Test data size: 7600
+Epoch: 25, Test Loss: 1.3461, Test Accuracy: 0.3775, Test F1 Score: 0.2940
+Training for Network 1
+labelled data size: 29761
+unlabelled data size: 10239
+Loss: 1.4640, Lx: 1.2024, Lu: 0.1795, Penalty: 0.0821
+Training for Network 2
+labelled data size: 30935
+unlabelled data size: 9065
+Loss: 1.4947, Lx: 1.2236, Lu: 0.1930, Penalty: 0.0781
+Evaluating training data at epoch 26 for Model 1
+Evaluating training data at epoch 26 for Model 2
+Evaluating models at epoch 26
+Test data size: 7600
+Epoch: 26, Test Loss: 1.3491, Test Accuracy: 0.3738, Test F1 Score: 0.2935
+Training for Network 1
+labelled data size: 30099
+unlabelled data size: 9901
+Loss: 1.4729, Lx: 1.2065, Lu: 0.1858, Penalty: 0.0806
+Training for Network 2
+labelled data size: 30963
+unlabelled data size: 9037
+Loss: 1.4869, Lx: 1.2237, Lu: 0.1863, Penalty: 0.0769
+Evaluating training data at epoch 27 for Model 1
+Evaluating training data at epoch 27 for Model 2
+Evaluating models at epoch 27
+Test data size: 7600
+Epoch: 27, Test Loss: 1.3482, Test Accuracy: 0.3711, Test F1 Score: 0.2953
+Training for Network 1
+labelled data size: 30178
+unlabelled data size: 9822
+Loss: 1.4716, Lx: 1.2094, Lu: 0.1835, Penalty: 0.0787
+Training for Network 2
+labelled data size: 31158
+unlabelled data size: 8842
+Loss: 1.4917, Lx: 1.2289, Lu: 0.1882, Penalty: 0.0746
+Evaluating training data at epoch 28 for Model 1
+Evaluating training data at epoch 28 for Model 2
+Evaluating models at epoch 28
+Test data size: 7600
+Epoch: 28, Test Loss: 1.3516, Test Accuracy: 0.3659, Test F1 Score: 0.2902
+Training for Network 1
+labelled data size: 30361
+unlabelled data size: 9639
+Loss: 1.4780, Lx: 1.2119, Lu: 0.1881, Penalty: 0.0780
+Training for Network 2
+labelled data size: 31197
+unlabelled data size: 8803
+Loss: 1.4835, Lx: 1.2271, Lu: 0.1821, Penalty: 0.0743
+Evaluating training data at epoch 29 for Model 1
+Evaluating training data at epoch 29 for Model 2
+Evaluating models at epoch 29
+Test data size: 7600
+Epoch: 29, Test Loss: 1.3535, Test Accuracy: 0.3680, Test F1 Score: 0.2890
+Training for Network 1
+labelled data size: 30344
+unlabelled data size: 9656
+Loss: 1.4688, Lx: 1.2119, Lu: 0.1799, Penalty: 0.0770
+Training for Network 2
+labelled data size: 31021
+unlabelled data size: 8979
+Loss: 1.4812, Lx: 1.2246, Lu: 0.1814, Penalty: 0.0752
+Evaluating training data at epoch 30 for Model 1
+Evaluating training data at epoch 30 for Model 2
+Evaluating models at epoch 30
+Test data size: 7600
+Epoch: 30, Test Loss: 1.3583, Test Accuracy: 0.3583, Test F1 Score: 0.2800
+Training for Network 1
+labelled data size: 30525
+unlabelled data size: 9475
+Loss: 1.4601, Lx: 1.2139, Lu: 0.1696, Penalty: 0.0767
+Training for Network 2
+labelled data size: 31000
+unlabelled data size: 9000
+Loss: 1.4832, Lx: 1.2260, Lu: 0.1827, Penalty: 0.0744
+Evaluating training data at epoch 31 for Model 1
+Evaluating training data at epoch 31 for Model 2
+Evaluating models at epoch 31
+Test data size: 7600
+Epoch: 31, Test Loss: 1.3608, Test Accuracy: 0.3558, Test F1 Score: 0.2756
+Training for Network 1
+labelled data size: 30463
+unlabelled data size: 9537
+Loss: 1.4702, Lx: 1.2146, Lu: 0.1790, Penalty: 0.0765
+Training for Network 2
+labelled data size: 30960
+unlabelled data size: 9040
+Loss: 1.4743, Lx: 1.2244, Lu: 0.1746, Penalty: 0.0753
+Evaluating training data at epoch 32 for Model 1
+Evaluating training data at epoch 32 for Model 2
+Evaluating models at epoch 32
+Test data size: 7600
+Epoch: 32, Test Loss: 1.3632, Test Accuracy: 0.3497, Test F1 Score: 0.2682
+Training for Network 1
+labelled data size: 30535
+unlabelled data size: 9465
+Loss: 1.4731, Lx: 1.2177, Lu: 0.1801, Penalty: 0.0753
+Training for Network 2
+labelled data size: 30879
+unlabelled data size: 9121
+Loss: 1.4748, Lx: 1.2246, Lu: 0.1771, Penalty: 0.0731
+Evaluating training data at epoch 33 for Model 1
+Evaluating training data at epoch 33 for Model 2
+Evaluating models at epoch 33
+Test data size: 7600
+Epoch: 33, Test Loss: 1.3632, Test Accuracy: 0.3549, Test F1 Score: 0.2727
+Training for Network 1
+labelled data size: 30394
+unlabelled data size: 9606
+Loss: 1.4635, Lx: 1.2126, Lu: 0.1758, Penalty: 0.0751
+Training for Network 2
+labelled data size: 31014
+unlabelled data size: 8986
+Loss: 1.4762, Lx: 1.2275, Lu: 0.1756, Penalty: 0.0731
+Evaluating training data at epoch 34 for Model 1
+Evaluating training data at epoch 34 for Model 2
+Evaluating models at epoch 34
+Test data size: 7600
+Epoch: 34, Test Loss: 1.3670, Test Accuracy: 0.3421, Test F1 Score: 0.2604
+Training for Network 1
+labelled data size: 30587
+unlabelled data size: 9413
+Loss: 1.4676, Lx: 1.2184, Lu: 0.1746, Penalty: 0.0746
+Training for Network 2
+labelled data size: 31052
+unlabelled data size: 8948
+Loss: 1.4716, Lx: 1.2277, Lu: 0.1714, Penalty: 0.0726
+Evaluating training data at epoch 35 for Model 1
+Evaluating training data at epoch 35 for Model 2
+Evaluating models at epoch 35
+Test data size: 7600
+Epoch: 35, Test Loss: 1.3683, Test Accuracy: 0.3404, Test F1 Score: 0.2555
+Training for Network 1
+labelled data size: 30377
+unlabelled data size: 9623
+Loss: 1.4629, Lx: 1.2164, Lu: 0.1723, Penalty: 0.0742
+Training for Network 2
+labelled data size: 31016
+unlabelled data size: 8984
+Loss: 1.4768, Lx: 1.2282, Lu: 0.1758, Penalty: 0.0728
+Evaluating training data at epoch 36 for Model 1
+Evaluating training data at epoch 36 for Model 2
+Evaluating models at epoch 36
+Test data size: 7600
+Epoch: 36, Test Loss: 1.3735, Test Accuracy: 0.3291, Test F1 Score: 0.2410
+Training for Network 1
+labelled data size: 30536
+unlabelled data size: 9464
+Loss: 1.4707, Lx: 1.2196, Lu: 0.1773, Penalty: 0.0737
+Training for Network 2
+labelled data size: 31000
+unlabelled data size: 9000
+Loss: 1.4676, Lx: 1.2264, Lu: 0.1691, Penalty: 0.0720
+Evaluating training data at epoch 37 for Model 1
+Evaluating training data at epoch 37 for Model 2
+Evaluating models at epoch 37
+Test data size: 7600
+Epoch: 37, Test Loss: 1.3728, Test Accuracy: 0.3375, Test F1 Score: 0.2506
+Training for Network 1
+labelled data size: 30354
+unlabelled data size: 9646
+Loss: 1.4654, Lx: 1.2182, Lu: 0.1739, Penalty: 0.0733
+Training for Network 2
+labelled data size: 30947
+unlabelled data size: 9053
+Loss: 1.4702, Lx: 1.2260, Lu: 0.1724, Penalty: 0.0718
+Evaluating training data at epoch 38 for Model 1
+Evaluating training data at epoch 38 for Model 2
+Evaluating models at epoch 38
+Test data size: 7600
+Epoch: 38, Test Loss: 1.3743, Test Accuracy: 0.3343, Test F1 Score: 0.2477
+Training for Network 1
+labelled data size: 30598
+unlabelled data size: 9402
+Loss: 1.4664, Lx: 1.2211, Lu: 0.1731, Penalty: 0.0722
+Training for Network 2
+labelled data size: 30868
+unlabelled data size: 9132

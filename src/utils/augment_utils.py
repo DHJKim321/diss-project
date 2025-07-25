@@ -6,8 +6,10 @@ import os, sys
 import regex as re
 import random, re
 from nltk.corpus import wordnet as wn, stopwords
+from nltk import pos_tag
 _STOP = set(stopwords.words("english"))
 _tok_re = re.compile(r"\w+|[^\w\s]", re.UNICODE)
+_PENN_TO_WN = {'N': wn.NOUN, 'V': wn.VERB, 'J': wn.ADJ, 'R': wn.ADV}
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
@@ -48,9 +50,10 @@ def _is_special(tok, tokenizer):
     return tok in {tokenizer.cls_token, tokenizer.sep_token,
                    tokenizer.pad_token, tokenizer.mask_token}
 
-def _find_synonyms(word):
+def _find_synonyms(word, pos=None):
     syns = set()
-    for syn in wn.synsets(word):
+    synsets = wn.synsets(word, pos=pos) if pos else wn.synsets(word)
+    for syn in synsets:
         for lemma in syn.lemmas():
             w = lemma.name().replace('_', ' ').lower()
             if w != word.lower():
@@ -65,6 +68,10 @@ def _join_tokens(tokens):
         out.append(curr)
         prev = curr
     return ''.join(out)
+
+def _preserve_case(src, repl):
+    """Capitalize replacement if src was capitalized."""
+    return repl.capitalize() if src and src[0].isupper() else repl
 
 def delete_augment(input_ids, attention_mask, tokenizer, p=0.2):
     device, seq_len = input_ids.device, input_ids.size(0)
@@ -84,20 +91,33 @@ def delete_augment(input_ids, attention_mask, tokenizer, p=0.2):
     new_ids, new_mask = _tokens_to_ids(kept, tokenizer, seq_len, device)
     return new_ids, new_mask
 
-def synonym_augment(text, alpha=0.1):
+def synonym_augment(text, alpha=0.1, keep_pos=('N','V','J','R')):
     tokens = _tok_re.findall(text)
-    length = len(tokens)
-    word_idx = [
-        i for i, tok in enumerate(tokens)
-        if tok.isalpha() and tok.lower() not in _STOP
-    ]
-    if not word_idx:
+    word_positions = [(i, tok) for i, tok in enumerate(tokens) if tok.isalpha() and tok.lower() not in _STOP]
+    if not word_positions:
         return text
 
-    for idx in random.sample(word_idx, min(int(alpha * length), len(word_idx))):
-        syns = _find_synonyms(tokens[idx])
+    _, word_list = zip(*word_positions)
+    tags = pos_tag(list(word_list))
+
+    eligible = []
+    for (i, tok), (_, tag) in zip(word_positions, tags):
+        if tag and tag[0] in keep_pos:
+            eligible.append((i, tok, tag[0]))
+
+    # No eligible texts
+    if not eligible:
+        return text
+
+    k = max(1, int(alpha * len(tokens))) # Per the paper
+    chosen = random.sample(eligible, min(k, len(eligible)))
+
+    for idx, orig_tok, penn_first in chosen:
+        wn_pos = _PENN_TO_WN.get(penn_first)
+        syns = _find_synonyms(orig_tok, wn_pos)
         if syns:
-            tokens[idx] = random.choice(syns)
+            rep = random.choice(syns)
+            tokens[idx] = _preserve_case(orig_tok, rep)
 
     return _join_tokens(tokens)
 

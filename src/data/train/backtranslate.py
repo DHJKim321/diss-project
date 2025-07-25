@@ -3,7 +3,6 @@ import numpy as np
 import torch
 import pickle
 import os
-from tqdm import tqdm
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -64,7 +63,7 @@ idxs = train_unlabeled_idxs
 
 def translate_ru(start, end, file_name):
     trans_result = {}
-    for i in tqdm(range(start, end)):
+    for i in range(start, end):
         text = train_text[idxs[i]]
         # en -> ru -> en
         ru = hf_translate([text], tok_en2ru, mod_en2ru, sampling=True, temperature=0.9)[0]
@@ -78,7 +77,7 @@ def translate_ru(start, end, file_name):
 
 def translate_de(start, end, file_name):
     trans_result = {}
-    for i in tqdm(range(start, end)):
+    for i in range(start, end):
         text = train_text[idxs[i]]
         # en -> de -> en
         de = hf_translate([text], tok_en2de, mod_en2de, sampling=True, temperature=0.9)[0]

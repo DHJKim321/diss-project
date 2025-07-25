@@ -104,7 +104,7 @@ if __name__ == "__main__":
     criterion = nn.CrossEntropyLoss()
 
     # ------------ Start Training ------------
-    best_loss = float('inf')
+    best_acc = 0
     print("Starting training...")
     for epoch in range(epochs):
         tqdm.write(f"Epoch {epoch + 1}/{epochs}")
@@ -114,9 +114,9 @@ if __name__ == "__main__":
         val_loss, val_acc = validate(val_loader, model, criterion)
         tqdm.write(f"Epoch {epoch + 1}/{epochs}, Validation Loss: {val_loss:.4f}, Validation Accuracy: {val_acc:.4f}")
 
-        if val_loss < best_loss:
-            best_loss = val_loss
-            tqdm.write(f"Validation loss improved to {best_loss:.4f}, saving model...")
+        if val_acc > best_acc:
+            best_acc = val_acc
+            tqdm.write(f"Validation accuracy improved to {best_acc:.4f}, saving model...")
             torch.save(model.state_dict(), os.path.join(model_save_path, f"mixtext_bert_{dataset}_best.pth"))
             tqdm.write(f"Testing best model on test set...")
             test_loss, test_acc = validate(test_loader, model, criterion)

@@ -88,5 +88,5 @@ def translate_de(start, end, file_name):
                 pickle.dump(trans_result, f)
     with open(file_name, 'wb') as f:
         pickle.dump(trans_result, f)
-translate_de(0, 100000, 'de_1.pkl')
-translate_ru(0, 100000, 'ru_1.pkl')
+translate_de(0, 40000, 'de_1.pkl')
+# translate_ru(0, 100000, 'ru_1.pkl')

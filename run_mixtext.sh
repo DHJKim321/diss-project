@@ -17,4 +17,4 @@ module load anaconda
 
 conda activate /exports/eddie/scratch/s2017594/conda-envs/diss
 
-python src/pipeline/dividemix_pipeline.py
+python src/pipeline/mixtext_pipeline.py

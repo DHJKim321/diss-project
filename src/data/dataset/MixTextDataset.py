@@ -5,14 +5,30 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 import torch
 from torch.utils.data import Dataset
 from src.utils.augment_utils import augment_text
+import pickle
+
+class Translator:
+    def __init__(self, path):
+        # Pre-processed German data
+        with open(path + '/de_1.pkl', 'rb') as f:
+            self.de = pickle.load(f)
+        # Pre-processed Russian data
+        with open(path + '/ru_1.pkl', 'rb') as f:
+            self.ru = pickle.load(f)
+
+    def __call__(self, ori, idx):
+        out1 = self.de[idx]
+        out2 = self.ru[idx]
+        return out1, out2, ori
 
 class MixTextDataset(Dataset):
-    def __init__(self, data, tokenizer, mode, max_length=512):
+    def __init__(self, data, tokenizer, mode, pickle_path, max_length=512):
         self.tokenizer = tokenizer
         self.mode = mode
         self.max_length = max_length
         self.text = data['text'].tolist()
         self.labels = data['label'].tolist()
+        self.translator = Translator(pickle_path)
 
     def __len__(self):
         return len(self.text)

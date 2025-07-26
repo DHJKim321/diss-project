@@ -61,7 +61,8 @@ if __name__ == "__main__":
         batch_size_x=batch_size_x,
         batch_size_u=batch_size_u,
         tokenizer=tokenizer,
-        num_workers=num_workers
+        num_workers=num_workers,
+        pickle_path=pickle_path
     )
     labelled_loader = loader.run(
         data=train_data.iloc[train_labelled_idxs].reset_index(drop=True),

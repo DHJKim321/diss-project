@@ -33,6 +33,7 @@ if __name__ == "__main__":
         test_file = os.getenv("TRAIN_FILE")
     warmup_checkpoint_path = os.getenv("MIXTEXT_CHECKPOINT_PATH")
     n_labelled_per_class = int(os.getenv("N_LABELLED_PER_CLASS"))
+    pickle_path = os.getenv("PICKLE_PATH")
     # Model Training Variables
     bert_model = os.getenv("BERT_MODEL")
     batch_size_x = int(os.getenv("BATCH_SIZE_X"))
@@ -47,7 +48,7 @@ if __name__ == "__main__":
     rampup = int(os.getenv("RAMPUP"))
     T = float(os.getenv("SHARPENING_TEMPERATURE"))
     alpha = float(os.getenv("ALPHA"))
-    device = torch.device('cuda')
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     # ------------ Load Data and Tokenizer ------------
     print(f"Loading training data from {train_file} and test data from {test_file}")

@@ -35,7 +35,7 @@ def hf_translate(texts, tok, mod, sampling=True, temperature=0.9):
     )
     return tok.batch_decode(outputs, skip_special_tokens=True)
 
-train_df = pd.read_csv('agnews_train.csv')
+train_df = pd.read_csv('src/data/train/agnews_train.csv')
 train_labels = [v-1 for v in train_df['Class Index']]
 train_text = [v for v in train_df['Description']]
 
@@ -88,5 +88,5 @@ def translate_de(start, end, file_name):
                 pickle.dump(trans_result, f)
     with open(file_name, 'wb') as f:
         pickle.dump(trans_result, f)
-translate_de(0, 40000, 'de_1.pkl')
+translate_de(0, 40000, 'src/data/train/de_1.pkl')
 # translate_ru(0, 100000, 'ru_1.pkl')

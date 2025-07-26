@@ -6,11 +6,12 @@ from src.data.dataset.MixTextDataset import MixTextDataset
 from torch.utils.data import DataLoader
 
 class MixTextDataLoader():
-    def __init__(self, batch_size_x, batch_size_u, tokenizer, num_workers=4):
+    def __init__(self, batch_size_x, batch_size_u, tokenizer, pickle_path, num_workers=4):
         self.batch_size_x = batch_size_x
         self.batch_size_u = batch_size_u
         self.num_workers = num_workers
         self.tokenizer = tokenizer
+        self.pickle_path = pickle_path
 
     def run(self, data, mode):
         if mode == 'labelled':
@@ -18,6 +19,7 @@ class MixTextDataLoader():
                 data=data,
                 tokenizer=self.tokenizer,
                 mode='labelled',
+                pickle_path=self.pickle_path
             )
             loader = DataLoader(
                 labelled_dataset,
@@ -31,6 +33,7 @@ class MixTextDataLoader():
                 data=data,
                 tokenizer=self.tokenizer,
                 mode='unlabelled',
+                pickle_path=self.pickle_path
             )
             loader = DataLoader(
                 unlabelled_dataset,
@@ -43,7 +46,8 @@ class MixTextDataLoader():
             val_dataset = MixTextDataset(
                 data=data,
                 tokenizer=self.tokenizer,
-                mode='val'
+                mode='val',
+                pickle_path=self.pickle_path
             )
             loader = DataLoader(
                 val_dataset,
@@ -56,7 +60,8 @@ class MixTextDataLoader():
             test_dataset = MixTextDataset(
                 data=data,
                 tokenizer=self.tokenizer,
-                mode='test'
+                mode='test',
+                pickle_path=self.pickle_path
             )
             loader = DataLoader(
                 test_dataset,

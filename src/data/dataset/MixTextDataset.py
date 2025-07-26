@@ -57,7 +57,7 @@ class MixTextDataset(Dataset):
                 return_tensors='pt'
             )
             # Augmented
-            augmented_text1 = augment_text(self.text[index])
+            augmented_text1 = self.de[index]
             encoding_augmented1 = self.tokenizer(
                 augmented_text1,
                 padding='max_length',
@@ -65,7 +65,7 @@ class MixTextDataset(Dataset):
                 max_length=self.max_length,
                 return_tensors='pt'
             )
-            augmented_text2 = augment_text(self.text[index])
+            augmented_text2 = self.ru[index]
             encoding_augmented2 = self.tokenizer(
                 augmented_text2,
                 padding='max_length',

@@ -6,8 +6,8 @@
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/mixtext.log
-#$ -e log/mixtext.log
+#$ -o log/output_mixtext.log
+#$ -e log/error_mixtext.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

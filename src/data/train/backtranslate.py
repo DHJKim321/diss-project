@@ -15,8 +15,8 @@ def load_translation_model(model_name):
     return tok, mod
 
 # English <-> Russian
-tok_en2ru, mod_en2ru = load_translation_model("Helsinki-NLP/opus-mt-en-ru")
-tok_ru2en, mod_ru2en = load_translation_model("Helsinki-NLP/opus-mt-ru-en")
+# tok_en2ru, mod_en2ru = load_translation_model("Helsinki-NLP/opus-mt-en-ru")
+# tok_ru2en, mod_ru2en = load_translation_model("Helsinki-NLP/opus-mt-ru-en")
 
 # English <-> German
 tok_en2de, mod_en2de = load_translation_model("Helsinki-NLP/opus-mt-en-de")
@@ -88,5 +88,5 @@ def translate_de(start, end, file_name):
                 pickle.dump(trans_result, f)
     with open(file_name, 'wb') as f:
         pickle.dump(trans_result, f)
-translate_de(0, 40000, 'src/data/train/de_1.pkl')
+translate_de(39501, 40000, 'src/data/train/de_1_test.pkl')
 # translate_ru(0, 100000, 'ru_1.pkl')

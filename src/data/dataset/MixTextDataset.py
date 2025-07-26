@@ -22,13 +22,14 @@ class Translator:
         return out1, out2, ori
 
 class MixTextDataset(Dataset):
-    def __init__(self, data, tokenizer, mode, pickle_path, max_length=512):
+    def __init__(self, data, tokenizer, mode, pickle_path, indices=None, max_length=512):
         self.tokenizer = tokenizer
         self.mode = mode
         self.max_length = max_length
         self.text = data['text'].tolist()
         self.labels = data['label'].tolist()
         self.translator = Translator(pickle_path)
+        self.indices = indices
 
     def __len__(self):
         return len(self.text)
@@ -57,7 +58,7 @@ class MixTextDataset(Dataset):
                 return_tensors='pt'
             )
             # Augmented
-            augmented_text1 = self.translator.de[index]
+            augmented_text1 = self.translator.de[self.indices[index]]
             encoding_augmented1 = self.tokenizer(
                 augmented_text1,
                 padding='max_length',
@@ -65,7 +66,7 @@ class MixTextDataset(Dataset):
                 max_length=self.max_length,
                 return_tensors='pt'
             )
-            augmented_text2 = self.translator.ru[index]
+            augmented_text2 = self.translator.ru[self.indices[index]]
             encoding_augmented2 = self.tokenizer(
                 augmented_text2,
                 padding='max_length',

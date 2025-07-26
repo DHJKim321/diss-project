@@ -65,12 +65,14 @@ if __name__ == "__main__":
         pickle_path=pickle_path
     )
     labelled_loader = loader.run(
-        data=train_data.iloc[train_labelled_idxs].reset_index(drop=True),
+        data=train_data.iloc[train_labelled_idxs],
         mode='labelled',
+        indices=train_labelled_idxs,
     )
     unlabelled_loader = loader.run(
-        data=train_data.iloc[train_unlabelled_idxs].reset_index(drop=True),
+        data=train_data.iloc[train_unlabelled_idxs],
         mode='unlabelled',
+        indices=train_unlabelled_idxs,
     )
     val_loader = loader.run(
         data=train_data.iloc[val_idxs].reset_index(drop=True),

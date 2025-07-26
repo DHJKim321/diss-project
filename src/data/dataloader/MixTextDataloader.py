@@ -13,7 +13,7 @@ class MixTextDataLoader():
         self.tokenizer = tokenizer
         self.pickle_path = pickle_path
 
-    def run(self, data, mode):
+    def run(self, data, mode, indices=None):
         if mode == 'labelled':
             labelled_dataset = MixTextDataset(
                 data=data,
@@ -31,6 +31,7 @@ class MixTextDataLoader():
         elif mode == 'unlabelled':
             unlabelled_dataset = MixTextDataset(
                 data=data,
+                indices=indices,
                 tokenizer=self.tokenizer,
                 mode='unlabelled',
                 pickle_path=self.pickle_path

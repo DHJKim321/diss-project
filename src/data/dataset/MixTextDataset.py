@@ -36,8 +36,9 @@ class MixTextDataset(Dataset):
     
     def __getitem__(self, index):
         if self.mode == 'labelled':
+            augmented_text = augment_text(self.text[index])
             encoding = self.tokenizer(
-                self.text[index],
+                augmented_text,
                 padding='max_length',
                 truncation=True,
                 max_length=self.max_length,

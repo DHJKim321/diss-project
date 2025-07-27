@@ -62,7 +62,7 @@ class Bert(nn.Module):
             x = x.view(x.size(0), -1)
             pooled_output = x
         else:
-            pooled_output = outputs.pooler_output
+            pooled_output = torch.mean(last_hidden_state, dim=1)
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
         return logits

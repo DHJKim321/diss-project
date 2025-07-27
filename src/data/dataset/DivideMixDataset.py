@@ -8,7 +8,7 @@ from src.utils.augment_utils import augment, augment_text
 
 class DivideMixDataset(Dataset):
     
-    def __init__(self, data, tokenizer, mode, preds=[], probs=[], max_length=512, augmentation='mask'):
+    def __init__(self, data, tokenizer, mode, preds=[], probs=[], max_length=256, augmentation='mask'):
         self.tokenizer = tokenizer
         self.mode = mode
         self.preds = preds

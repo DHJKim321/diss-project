@@ -145,7 +145,7 @@ def load_agnews_train(file, file_path):
     data = data[['text', 'label']]
     print(f"AG News train data loaded with {len(data)} samples")
     # Take half the data for training with equal distribution
-    data = data.groupby('label').apply(lambda x: x.sample(frac=1, random_state=42)).reset_index(drop=True)
+    data = data.groupby('label').apply(lambda x: x.sample(frac=1/3, random_state=42)).reset_index(drop=True)
     print(f"Reduced AG News train data to {len(data)} samples")
     return data
 

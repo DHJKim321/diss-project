@@ -82,10 +82,10 @@ def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
     plt.hist(noisy_losses, bins=bins, density=True, alpha=0.5, label="Noisy", color="red")
     plt.xlabel("Normalized loss")
     plt.ylabel("Empirical pdf")
-    plt.title(f"Epoch {epoch}: Loss Distribution (Model {model})")
+    plt.title(f"Epoch {epoch+1}: Loss Distribution (Model {model})")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(f"src/data/images/loss/clean_noisy_loss_{epoch}_model_{model}.png")
+    plt.savefig(f"src/data/images/loss/clean_noisy_loss_{epoch+1}_model_{model}.png")
     plt.close()
 
 def load_yahoo_train(file, file_path):

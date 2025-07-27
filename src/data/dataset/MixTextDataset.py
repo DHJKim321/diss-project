@@ -22,7 +22,7 @@ class Translator:
         return out1, out2, ori
 
 class MixTextDataset(Dataset):
-    def __init__(self, data, tokenizer, mode, pickle_path, indices=None, max_length=512):
+    def __init__(self, data, tokenizer, mode, pickle_path, indices=None, max_length=256):
         self.tokenizer = tokenizer
         self.mode = mode
         self.max_length = max_length

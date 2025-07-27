@@ -3,6 +3,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 import torch.nn as nn
 from transformers import BertModel
+import torch
 
 class MixTextBert(nn.Module):
     def __init__(self, bert_model, head_type='linear', num_classes=2, use_dropout=True, dropout=0.3):
@@ -38,14 +39,14 @@ class MixTextBert(nn.Module):
         hidden_mixed = l * hidden_a + (1 - l) * hidden_b
 
         hidden_output = self.run_from(hidden_mixed, extended_mask_a, layer_index)
-        pooled_output = hidden_output[:, 0]
+        pooled_output = torch.mean(hidden_output, dim=1)
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
         return logits
 
     def forward(self, input_ids, attention_mask):
         outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
-        pooled_output = outputs.pooler_output
+        pooled_output = torch.mean(outputs.last_hidden_state, dim=1)
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
         return logits

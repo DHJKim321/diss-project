@@ -38,7 +38,7 @@ def train(labelled_trainloader, unlabelled_trainloader, model, optimizer, criter
             outputs_ori = model(input_ids_u_orig, attention_mask_u_orig)
 
             # AG News setting: German = 1, Russian = 0, Original = 1
-            p = (1 * torch.softmax(outputs_u1, dim=1) + 1 * torch.softmax(outputs_u2, dim=1) + 1 * torch.softmax(outputs_ori, dim=1)) / 3
+            p = (1 * torch.softmax(outputs_u1, dim=1) + 0 * torch.softmax(outputs_u2, dim=1) + 1 * torch.softmax(outputs_ori, dim=1)) / 2
             pt = p**(1/T)
             labels_u = pt / pt.sum(dim=1, keepdim=True)
             labels_u = labels_u.detach()

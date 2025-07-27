@@ -1,0 +1,80 @@
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+[nltk_data] Downloading package wordnet to /home/s2017594/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/s2017594/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Loading training data from agnews_train.csv and test data from agnews_test.csv
+Loading AG News train data from src/data/train/agnews_train.csv
+AG News train data loaded with 120000 samples
+Reduced AG News train data to 120000 samples
+Loading AG News test data from src/data/test/agnews_test.csv
+AG News test data loaded with 7600 samples
+Injecting symmetric noise with ratio 0.5
+Detected 4 classes: [0, 1, 2, 3]
+Injected noise into 60000 samples.
+Number of classes in AGNews dataset: 4
+Loading BERT model from bert-base-uncased
+Traceback (most recent call last):
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/pipeline/dividemix_pipeline.py", line 91, in <module>
+    model1 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/model/bert.py", line 138, in to_device
+    self.bert = self.bert.to(device)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/transformers/modeling_utils.py", line 2905, in to
+    return super().to(*args, **kwargs)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1174, in to
+    return self._apply(convert)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 805, in _apply
+    param_applied = fn(param)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1160, in convert
+    return t.to(
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/cuda/__init__.py", line 305, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+WARNING: If you use conda to create environments, your home directory may fill up. Please see our documentation at 
+ https://www.wiki.ed.ac.uk/display/ResearchServices/Anaconda for advice.
+[nltk_data] Downloading package wordnet to /home/s2017594/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/s2017594/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Loading training data from agnews_train.csv and test data from agnews_test.csv
+Loading AG News train data from src/data/train/agnews_train.csv
+AG News train data loaded with 120000 samples
+Reduced AG News train data to 120000 samples
+Loading AG News test data from src/data/test/agnews_test.csv
+AG News test data loaded with 7600 samples
+Injecting symmetric noise with ratio 0.5
+Detected 4 classes: [0, 1, 2, 3]
+Injected noise into 60000 samples.
+Number of classes in AGNews dataset: 4
+Loading BERT model from bert-base-uncased
+Traceback (most recent call last):
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/pipeline/dividemix_pipeline.py", line 91, in <module>
+    model1 = Bert(bert_model, head_type, dropout=0.0, num_classes=num_classes).to_device(device)
+  File "/exports/eddie3_homes_local/s2017594/diss-project/src/model/bert.py", line 138, in to_device
+    self.bert = self.bert.to(device)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/transformers/modeling_utils.py", line 2905, in to
+    return super().to(*args, **kwargs)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1174, in to
+    return self._apply(convert)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 805, in _apply
+    param_applied = fn(param)
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1160, in convert
+    return t.to(
+  File "/exports/eddie/scratch/s2017594/conda-envs/diss/lib/python3.10/site-packages/torch/cuda/__init__.py", line 305, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled

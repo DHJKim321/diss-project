@@ -8,8 +8,9 @@ Run MixText Experiments
 
 Run DivideMixText Experiments
     Maybe no hyperparameter tuning for now
+    Only vary the noise level
     Run with:
-        alpha=0.5
+        alpha=0.3
         lr=1e-5 (1e-3 for MLP)
         warmup=10
         epochs=30
@@ -18,3 +19,4 @@ Run DivideMixText Experiments
         batch_size=32
         dropout=0.0
         rampup=30
+        noise=0.5

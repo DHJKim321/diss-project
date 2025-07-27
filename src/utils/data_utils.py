@@ -67,18 +67,6 @@ def inject_symmetric_noise(data, noise_ratio, seed=42):
     print(f"Injected noise into {num_noisy_samples} samples.")
     return data
 
-
-def save_loss_histogram(losses, epoch, model):
-    plt.figure(figsize=(6, 4))
-    plt.hist(losses, bins=100, color='skyblue', alpha=0.7, edgecolor='black')
-    plt.title(f"Loss Distribution At Epoch {epoch} for Model {model}")
-    plt.xlabel("Normalized Loss")
-    plt.ylabel("Frequency")
-    plt.grid(True)
-    plt.tight_layout()
-    plt.savefig(f"src/data/images/loss/loss_distribution_epoch_{epoch}_model_{model}.png")
-    plt.close()
-
 def get_labels_injected_list(original, noisy):
     return np.array([orig != new for orig, new in zip(original, noisy)], dtype=bool)
 
@@ -107,7 +95,7 @@ def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
     plt.title(f"Epoch {epoch}: Loss Distribution (Model {model})")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(f"src/data/images/loss_unfreeze_bert/clean_noisy_loss_{epoch}_model_{model}.png")
+    plt.savefig(f"src/data/images/loss/clean_noisy_loss_{epoch}_model_{model}.png")
     plt.close()
 
 def load_yahoo_train(file, file_path):

@@ -3,12 +3,13 @@ Things to do:
 Constrain dataset to AG News for now
 
 Run MixText Experiments
-    WIP
     Verify that the framework works. Don't need to run the full suite of experiments
 
 Run DivideMixText Experiments
     Maybe no hyperparameter tuning for now
     Only vary the noise level
+    Hopefully it works with synonym replacement and punctuation insertion
+        Otherwise, we have to use backtranslation which isn't ideal
     Run with:
         alpha=0.3
         lr=1e-5 (1e-3 for MLP)
@@ -20,3 +21,12 @@ Run DivideMixText Experiments
         dropout=0.0
         rampup=30
         noise=0.5
+
+Run BERT Baseline Experiments
+    Only on AG News
+    Vary noise levels
+    Same hyperparameters as DivideMixText 
+        lr=1e-5 (1e-3 for MLP)
+        batch_size=32
+        dropout=0.0
+        epochs=3

@@ -48,6 +48,7 @@ if __name__ == "__main__":
     rampup = int(os.getenv("RAMPUP"))
     T = float(os.getenv("SHARPENING_TEMPERATURE"))
     alpha = float(os.getenv("ALPHA"))
+    patience = int(os.getenv("PATIENCE"))
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     # ------------ Load Data and Tokenizer ------------
@@ -111,6 +112,7 @@ if __name__ == "__main__":
 
     # ------------ Start Training ------------
     best_acc = 0
+    counter = 0
     print("Starting training...")
     for epoch in range(epochs):
         tqdm.write(f"Epoch {epoch + 1}/{epochs}")
@@ -127,6 +129,12 @@ if __name__ == "__main__":
             tqdm.write(f"Testing best model on test set...")
             test_loss, test_acc = validate(test_loader, model, criterion)
             tqdm.write(f"Epoch {epoch + 1}/{epochs}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}")
+        else:
+            tqdm.write(f"Validation accuracy did not improve from {best_acc:.4f}")
+            counter += 1
+            if counter >= patience:
+                tqdm.write("Early stopping triggered, stopping training.")
+                break
 
     tqdm.write("Training complete.")
     # Save the final model

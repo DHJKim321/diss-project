@@ -129,6 +129,7 @@ if __name__ == "__main__":
             tqdm.write(f"Testing best model on test set...")
             test_loss, test_acc = validate(test_loader, model, criterion)
             tqdm.write(f"Epoch {epoch + 1}/{epochs}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}")
+            counter = 0
         else:
             tqdm.write(f"Validation accuracy did not improve from {best_acc:.4f}")
             counter += 1

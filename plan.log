@@ -10,6 +10,7 @@ Run DivideMixText Experiments
     Only vary the noise level
     Hopefully it works with synonym replacement and punctuation insertion
         Otherwise, we have to use backtranslation which isn't ideal
+    What about the batch size? For MixText, they use 4 for labelled and 8 for unlabelled
     Run with:
         alpha=0.3
         lr=1e-5 (1e-3 for MLP)

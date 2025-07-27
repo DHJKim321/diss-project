@@ -71,16 +71,6 @@ def get_labels_injected_list(original, noisy):
     return np.array([orig != new for orig, new in zip(original, noisy)], dtype=bool)
 
 def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
-    """
-    Save a histogram comparing clean vs noisy sample losses for a given epoch.
-
-    Args:
-        noisy_mask (array-like): Boolean array of shape [num_samples], True for noisy samples.
-        raw_losses (array-like): Per-sample losses (unnormalized or normalized), shape [num_samples].
-        epoch (int): Current epoch number.
-        model (int): Model index (1 or 2) to label the plot.
-        save_dir (str): Directory to save the plot.
-    """
     raw_losses = np.array(raw_losses)
     noisy_mask = np.array(noisy_mask)
     clean_losses = raw_losses[~noisy_mask]

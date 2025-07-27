@@ -20,15 +20,8 @@ class Bert(nn.Module):
             self.lstm = nn.LSTM(self.bert.config.hidden_size, self.bert.config.hidden_size // 2, 
                                num_layers=1, bidirectional=True, batch_first=True)
             self.classifier = nn.Linear(self.bert.config.hidden_size, num_classes)
-        elif head_type == 'cnn':
-            self.conv1 = nn.Conv1d(self.bert.config.hidden_size, 128, kernel_size=3, padding=1)
-            self.conv2 = nn.Conv1d(128, 64, kernel_size=3, padding=1)
-            self.pool = nn.MaxPool1d(kernel_size=2)
-            self.classifier = nn.Linear(64 * (self.bert.config.max_position_embeddings // 2), num_classes)
         else:
             raise ValueError(f"Unsupported head type: {head_type}")
-        for param in self.bert.parameters():
-            param.requires_grad = False
 
     def get_embeddings(self, input_ids, attention_mask):
         outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
@@ -44,7 +37,7 @@ class Bert(nn.Module):
             x = x.view(x.size(0), -1)
             pooled_output = x
         else:
-            pooled_output = outputs.pooler_output
+            pooled_output = torch.mean(last_hidden_state, dim=1)
 
         return self.dropout(pooled_output)
 
@@ -55,12 +48,6 @@ class Bert(nn.Module):
         if hasattr(self, 'lstm'):
             lstm_out, _ = self.lstm(last_hidden_state)
             pooled_output = lstm_out[:, 0, :]
-        elif hasattr(self, 'conv1'):
-            x = last_hidden_state.permute(0, 2, 1)
-            x = self.pool(torch.relu(self.conv1(x)))
-            x = self.pool(torch.relu(self.conv2(x)))
-            x = x.view(x.size(0), -1)
-            pooled_output = x
         else:
             pooled_output = torch.mean(last_hidden_state, dim=1)
         pooled_output = self.dropout(pooled_output)
@@ -122,7 +109,7 @@ class Bert(nn.Module):
             mixed_hidden = self.bert.encoder.layer[i](mixed_hidden, attention_mask=extended_attention_mask)[0]
 
         # Get the pooled output
-        pooled_output = mixed_hidden[:, 0]
+        pooled_output = torch.mean(mixed_hidden, dim=1)
         pooled_output = self.dropout(pooled_output)
 
         # Classify the pooled output

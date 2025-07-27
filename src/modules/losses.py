@@ -12,8 +12,9 @@ import numpy as np
 
 class SemiLoss(object):
 
-    def __init__(self, lambda_u=1.0):
+    def __init__(self, lambda_u, rampup):
         self.lambda_u = lambda_u
+        self.rampup = rampup
 
     def __call__(self, outputs_x, targets_x, outputs_u, targets_u, epoch, warm_up):
         probs_u = torch.softmax(outputs_u, dim=1)
@@ -23,8 +24,8 @@ class SemiLoss(object):
 
         return Lx, Lu, self.linear_rampup(epoch, warm_up)
     
-    def linear_rampup(self, current, warm_up, rampup_length=12):
-        current = np.clip((current-warm_up) / rampup_length, 0.0, 1.0)
+    def linear_rampup(self, current, warm_up):
+        current = np.clip((current-warm_up) / self.rampup, 0.0, 1.0)
         return self.lambda_u*float(current)
     
 class NegEntropy(object):

@@ -59,6 +59,7 @@ if __name__ == "__main__":
     weight_decay = float(os.getenv("WEIGHT_DECAY"))
     augmentation = os.getenv("AUGMENTATION")
     noise_ratio = float(os.getenv("NOISE_RATIO"))
+    rampup = float(os.getenv("RAMP_UP"))
     # Early-Late Dropout Variables
     dropout_type = os.getenv("DROPOUT_TYPE")
     p_early = float(os.getenv("P_EARLY"))
@@ -69,7 +70,7 @@ if __name__ == "__main__":
     bad_epochs = 0
     best_state = None
     best_sep_avg = -float("inf")
-    best_epoch   = -1
+    best_epoch = -1
 
     if epochs < warmup_epochs:
         print("Error: The number of epochs must be greater than or equal to the number of warmup epochs.")
@@ -101,17 +102,17 @@ if __name__ == "__main__":
 
     # ------------ Load Optimizer and Loss ------------
     print("Setting up optimizers and losses...")
-    semiloss = SemiLoss(lambda_u=lambda_u)
+    semiloss = SemiLoss(lambda_u=lambda_u, rampup=rampup)
     optim1 = AdamW(
         [
             {"params": model1.bert.parameters(), "lr": learning_rate},
-            {"params": model1.classifier.parameters(), "lr": learning_rate},
+            {"params": model1.classifier.parameters(), "lr": learning_rate * 100},
         ]
     )
     optim2 = AdamW(
         [
             {"params": model2.bert.parameters(), "lr": learning_rate},
-            {"params": model2.classifier.parameters(), "lr": learning_rate},
+            {"params": model2.classifier.parameters(), "lr": learning_rate * 100},
         ]
     )
     per_sample_CEloss = nn.CrossEntropyLoss(reduction='none')

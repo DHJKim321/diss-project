@@ -59,7 +59,7 @@ if __name__ == "__main__":
     weight_decay = float(os.getenv("WEIGHT_DECAY"))
     augmentation = os.getenv("AUGMENTATION")
     noise_ratio = float(os.getenv("NOISE_RATIO"))
-    rampup = float(os.getenv("RAMP_UP"))
+    rampup = float(os.getenv("RAMPUP"))
     # Early-Late Dropout Variables
     dropout_type = os.getenv("DROPOUT_TYPE")
     p_early = float(os.getenv("P_EARLY"))

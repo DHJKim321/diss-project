@@ -49,38 +49,12 @@ if __name__ == "__main__":
     gmm_threshold = float(os.getenv("GMM_THRESHOLD"))
     reducer_type = os.getenv("REDUCER_TYPE").lower()
     noise_ratio = float(os.getenv("NOISE_RATIO"))
-    use_imdb = os.getenv("USE_IMDB").lower() == "true"
-    use_yahoo = os.getenv("USE_YAHOO").lower() == "true"
-    use_agnews = os.getenv("USE_AGNEWS").lower() == "true"
+    dataset = os.getenv("DATASET").lower()
 
     # ------------ Load Data and Tokenizer ------------
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
-    if use_imdb:
-        print("Using IMDB dataset for training.")
-        imdb_data = load_imdb_data(train_file, train_data_path)
-        train_data, test_data = train_test_split(imdb_data, test_size=0.2, random_state=42)
-        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
-        test_file = train_file # IMDB dataset does not have a separate test file
-        num_classes = 2
-    elif use_yahoo:
-        print("Using Yahoo Answers dataset for training.")
-        train_data = load_yahoo_train(train_file, train_data_path)
-        test_data = load_yahoo_test(test_file, test_data_path)
-        print("Injecting symmetric noise to Yahoo Answers dataset.")
-        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
-        num_classes = 10
-    elif use_agnews:
-        print("Using AG News dataset for training.")
-        train_data = load_agnews_train(train_file, train_data_path)
-        test_data = load_agnews_test(test_file, test_data_path)
-        num_classes = 4
-        train_data = inject_symmetric_noise(train_data, noise_ratio=noise_ratio)
-    else:
-        print("Using ShaPe dataset for training.")
-        train_data = load_full_data(train_file, train_data_path)
-        test_data = load_test_data(test_file, test_data_path)
-        num_classes = 2
+    train_data, test_data, noisy_mask, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
     print(f"Loaded {len(train_data)} training samples.")
 
     # ------------ (Optional) Denoise Noisy Labels ------------
@@ -200,12 +174,7 @@ if __name__ == "__main__":
 
     # ------------ Save Evaluations ------------
     evaluations = evaluate_model(test_preds, test_labels)
-    if use_yahoo:
-        bert_model += "_yahoo"
-    if use_imdb:
-        bert_model += "_imdb"
-    if use_agnews:
-        bert_model += "_agnews"
+    bert_model += f"_{dataset}"
     if head_type:
         bert_model += f"_{head_type}"
     if denoise_labels:
@@ -215,12 +184,7 @@ if __name__ == "__main__":
 
     # ------------ Save Model ------------
     model_save_path += f"bert_model_{head_type}.pth"
-    if use_yahoo:
-        model_save_path = model_save_path.replace(".pth", "_yahoo.pth")
-    if use_agnews:
-        model_save_path = model_save_path.replace(".pth", "_agnews.pth")
-    if use_imdb:
-        model_save_path = model_save_path.replace(".pth", "_imdb.pth")
+    model_save_path = model_save_path.replace(".pth", f"_{dataset}.pth")
     if head_type:
         model_save_path = model_save_path.replace(".pth", f"_{head_type}.pth")
     if denoise_labels:

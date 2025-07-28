@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".
 from dotenv import load_dotenv
 from src.utils.data_utils import *
 from src.utils.eval_utils import evaluate_model, save_evaluation, add_predictions_to_data
-from src.data.BertDataset import BertDataset
+from src.data.dataset.BertDataset import BertDataset
 from src.model.bert import Bert
 from src.modules.GMMLabelCorrector import GMMLabelCorrector
 from transformers import BertTokenizer, DataCollatorWithPadding

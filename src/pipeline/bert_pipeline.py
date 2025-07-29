@@ -181,11 +181,11 @@ if __name__ == "__main__":
     add_predictions_to_data(test_data, test_file, data_save_path, test_preds, model_name=bert_model)
 
     # ------------ Save Model ------------
-    model_save_path += f"bert_model_{head_type}.pth"
-    model_save_path = model_save_path.replace(".pth", f"_{dataset}.pth")
-    if head_type:
-        model_save_path = model_save_path.replace(".pth", f"_{head_type}.pth")
-    if denoise_labels:
-        model_save_path = model_save_path.replace(".pth", f"_{reducer_type}_{denoise_type}_denoised.pth")
-    model.save(model_save_path)
-    print(f"Model saved to {model_save_path}")
+    # model_save_path += f"bert_model_{head_type}.pth"
+    # model_save_path = model_save_path.replace(".pth", f"_{dataset}.pth")
+    # if head_type:
+    #     model_save_path = model_save_path.replace(".pth", f"_{head_type}.pth")
+    # if denoise_labels:
+    #     model_save_path = model_save_path.replace(".pth", f"_{reducer_type}_{denoise_type}_denoised.pth")
+    # model.save(model_save_path)
+    # print(f"Model saved to {model_save_path}")

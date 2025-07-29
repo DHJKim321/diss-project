@@ -167,6 +167,7 @@ def load_data(train_file, train_data_path, dataset, noise_ratio, test_file=None,
         train_data = load_full_data(train_file, train_data_path)
         test_data = load_test_data(test_file, test_data_path)
         num_classes = 2
+        noisy_mask = None
     return train_data, test_data, noisy_mask, num_classes
 
 def load_mixtext_train(file, data_path):

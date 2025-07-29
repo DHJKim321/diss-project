@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
     # ------------ Load Data and Tokenizer ------------
     print(f"Loading training data from {train_file} and test data from {test_file}")
-    train_data, test_data, noisy_mask, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
+    train_data, test_data, _, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
     # ------------ Load Models ------------

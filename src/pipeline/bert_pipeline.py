@@ -175,6 +175,7 @@ if __name__ == "__main__":
     bert_model += f"_{dataset}"
     if head_type:
         bert_model += f"_{head_type}"
+    bert_model += f"_{noise_ratio}"
     if denoise_labels:
         bert_model += f"_{reducer_type}_{denoise_type}_denoised"
     save_evaluation(evaluations, test_file, data_save_path, model_name=bert_model)

@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
     # ------------ Load Data and Tokenizer ------------
     print(f"Loading training data from {train_file} and test data from {test_file}")
-    train_data, test_data, _, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
+    train_data, test_data, noisy_mask, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
 
     # ------------ Load Models ------------
@@ -199,10 +199,10 @@ if __name__ == "__main__":
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
         prob1, losses1, gmm_sep1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device)
-        # save_orig_noisy_loss_histogram(noisy_mask, losses1, epoch, model=1)
+        save_orig_noisy_loss_histogram(noisy_mask, losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
         prob2, losses2, gmm_sep2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device)
-        # save_orig_noisy_loss_histogram(noisy_mask, losses2, epoch, model=2)
+        save_orig_noisy_loss_histogram(noisy_mask, losses2, epoch, model=2)
 
         # ---- GMM Mean Early Stopping During Warm-Up ----
         if not warmup_done:

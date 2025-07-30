@@ -222,10 +222,10 @@ if __name__ == "__main__":
                     "prob2": prob2,
                     "warmup_epochs": best_epoch + 1,
                 }
-                torch.save(
-                    best_state,
-                    warmup_checkpoint_path,
-                )
+                # torch.save(
+                #     best_state,
+                #     warmup_checkpoint_path,
+                # )
             else:
                 print(f"No significant improvement in GMM separation at epoch {epoch}. Current best: {best_sep_avg:.4f} at epoch {best_epoch}")
                 bad_epochs += 1

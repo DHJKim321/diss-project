@@ -19,3 +19,27 @@ Epoch 0 | sep1=0.2462, sep2=0.1382, avg=0.1922
 New best GMM separation found at epoch 0: 0.1922
 Evaluating models at epoch 0
 Test data size: 7600
+Epoch: 0, Test Loss: 1.5829, Test Accuracy: 0.0171, Test F1 Score: 0.0157
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 1 for Model 1
+Evaluating training data at epoch 1 for Model 2
+Epoch 1 | sep1=0.1795, sep2=0.1906, avg=0.1851
+No significant improvement in GMM separation at epoch 1. Current best: 0.1922 at epoch 0
+Evaluating models at epoch 1
+Test data size: 7600
+Epoch: 1, Test Loss: 1.6981, Test Accuracy: 0.0455, Test F1 Score: 0.0311
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 2 for Model 1
+Evaluating training data at epoch 2 for Model 2
+Epoch 2 | sep1=0.1832, sep2=0.1844, avg=0.1838
+No significant improvement in GMM separation at epoch 2. Current best: 0.1922 at epoch 0
+Early stopping triggered at epoch 2 due to no significant GMM separation improvement for 2 epochs.
+Evaluating models at epoch 2
+Test data size: 7600
+Epoch: 2, Test Loss: 2.3068, Test Accuracy: 0.1263, Test F1 Score: 0.1251
+Restoring best state from epoch 0 with GMM separation 0.1922
+Training for Network 1
+labelled data size: 29696
+unlabelled data size: 10304

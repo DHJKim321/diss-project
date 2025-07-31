@@ -70,6 +70,18 @@ def inject_symmetric_noise(data, noise_ratio, seed=42):
 def get_labels_injected_list(original, noisy):
     return np.array([orig != new for orig, new in zip(original, noisy)], dtype=bool)
 
+def save_loss_histogram(raw_losses, epoch, model):
+    raw_losses = np.array(raw_losses)
+    plt.figure(figsize=(8, 5))
+    bins = 100
+    plt.hist(raw_losses, bins=bins, density=True, alpha=0.5, color="blue")
+    plt.xlabel("Normalized loss")
+    plt.ylabel("Empirical pdf")
+    plt.title(f"Epoch {epoch+1}: Loss Distribution (Model {model})")
+    plt.tight_layout()
+    plt.savefig(f"src/data/images/loss_yahoo/loss_{epoch+1}_model_{model}.png")
+    plt.close()
+
 def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
     raw_losses = np.array(raw_losses)
     noisy_mask = np.array(noisy_mask)
@@ -85,7 +97,7 @@ def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):
     plt.title(f"Epoch {epoch+1}: Loss Distribution (Model {model})")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(f"src/data/images/loss_agnews_noise=0.7/clean_noisy_loss_{epoch+1}_model_{model}.png")
+    plt.savefig(f"src/data/images/loss_reddit/clean_noisy_loss_{epoch+1}_model_{model}.png")
     plt.close()
 
 def load_yahoo_train(file, file_path):

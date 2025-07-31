@@ -222,3 +222,55 @@ Loss: 0.7244, Lx: 0.4713, Lu: 0.2247, Penalty: 0.0284
 Training for Network 2
 labelled data size: 25497
 unlabelled data size: 14503
+Loss: 0.7489, Lx: 0.4804, Lu: 0.2410, Penalty: 0.0274
+Evaluating training data at epoch 12 for Model 1
+Evaluating training data at epoch 12 for Model 2
+Evaluating models at epoch 12
+Test data size: 7600
+Epoch: 12, Test Loss: 7.9465, Test Accuracy: 0.0208, Test F1 Score: 0.0203
+Training for Network 1
+labelled data size: 25516
+unlabelled data size: 14484
+Loss: 0.7016, Lx: 0.4599, Lu: 0.2140, Penalty: 0.0277
+Training for Network 2
+labelled data size: 25450
+unlabelled data size: 14550
+Loss: 0.6863, Lx: 0.4532, Lu: 0.2058, Penalty: 0.0273
+Evaluating training data at epoch 13 for Model 1
+Evaluating training data at epoch 13 for Model 2
+Evaluating models at epoch 13
+Test data size: 7600
+Epoch: 13, Test Loss: 7.8161, Test Accuracy: 0.0201, Test F1 Score: 0.0198
+Training for Network 1
+labelled data size: 25528
+unlabelled data size: 14472
+Loss: 0.6822, Lx: 0.4526, Lu: 0.2019, Penalty: 0.0277
+Training for Network 2
+labelled data size: 25510
+unlabelled data size: 14490
+Loss: 0.6411, Lx: 0.4248, Lu: 0.1892, Penalty: 0.0271
+Evaluating training data at epoch 14 for Model 1
+Evaluating training data at epoch 14 for Model 2
+Evaluating models at epoch 14
+Test data size: 7600
+Epoch: 14, Test Loss: 7.9411, Test Accuracy: 0.0205, Test F1 Score: 0.0202
+Training for Network 1
+labelled data size: 25521
+unlabelled data size: 14479
+Loss: 0.6278, Lx: 0.4224, Lu: 0.1774, Penalty: 0.0280
+Training for Network 2
+labelled data size: 25511
+unlabelled data size: 14489
+Loss: 0.6179, Lx: 0.4175, Lu: 0.1722, Penalty: 0.0282
+Evaluating training data at epoch 15 for Model 1
+Evaluating training data at epoch 15 for Model 2
+Evaluating models at epoch 15
+Test data size: 7600
+Epoch: 15, Test Loss: 7.8848, Test Accuracy: 0.0204, Test F1 Score: 0.0201
+Training for Network 1
+labelled data size: 25517
+unlabelled data size: 14483
+Loss: 0.6075, Lx: 0.4098, Lu: 0.1701, Penalty: 0.0276
+Training for Network 2
+labelled data size: 25507
+unlabelled data size: 14493

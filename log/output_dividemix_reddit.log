@@ -1,0 +1,18 @@
+Loading training data from expanded_full_v2.csv and test data from shape.csv
+Loading ShaPe Data
+Loading data from src/data/train/expanded_full_v2.csv
+Loading test data from src/data/test/shape.csv
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+No warm-up-completed models. Training from scratch.
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 0 for Model 1
+Evaluating training data at epoch 0 for Model 2
+Epoch 0 | sep1=0.1858, sep2=0.1858, avg=0.1858
+New best GMM separation found at epoch 0: 0.1858
+Evaluating models at epoch 0
+Test data size: 233
+Epoch: 0, Test Loss: 1.0131, Test Accuracy: 0.7296, Test F1 Score: 0.7261
+Warmup training for Network 1
+Warmup training for Network 2

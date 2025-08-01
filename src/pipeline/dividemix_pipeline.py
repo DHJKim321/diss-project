@@ -40,7 +40,7 @@ if __name__ == "__main__":
     dataset = os.getenv("DATASET")
     if dataset == 'imdb':
         test_file = os.getenv("TRAIN_FILE")
-    warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
+    # warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
     # Model Training Variables
     bert_model = os.getenv("BERT_MODEL")
     batch_size = int(os.getenv("BATCH_SIZE"))
@@ -85,7 +85,8 @@ if __name__ == "__main__":
     print(f"Loading training data from {train_file} and test data from {test_file}")
     train_data, test_data, noisy_mask, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
-    invert = (1 - noise_ratio) < (noise_ratio / (num_classes - 1))
+    # invert = (1 - noise_ratio) < (noise_ratio / (num_classes - 1))
+    invert = False
 
     # ------------ Load Models ------------
     print(f"Loading BERT model from {bert_model}")
@@ -128,17 +129,17 @@ if __name__ == "__main__":
     is_training_started = False
     prob1 = torch.zeros(len(train_data), device=device)
     prob2 = torch.zeros(len(train_data), device=device)
-    warmup_checkpoint_path = warmup_checkpoint_path.replace(".pth", f"_{noise_ratio}_{train_file.replace('_train.csv', '')}.pth")
-    if os.path.exists(warmup_checkpoint_path):
+    checkpoint_path = checkpoint_path.replace(".pth", f"_{noise_ratio}_{train_file.replace('_train.csv', '')}.pth")
+    if os.path.exists(checkpoint_path):
         print("Found warm-up-completed models")
-        ckpt = torch.load(warmup_checkpoint_path, map_location=device)
+        ckpt = torch.load(checkpoint_path, map_location=device)
         model1.load_state_dict(ckpt["model1"])
         model2.load_state_dict(ckpt["model2"])
         optim1.load_state_dict(ckpt["optim1"])
         optim2.load_state_dict(ckpt["optim2"])
         prob1 = ckpt["prob1"]
         prob2 = ckpt["prob2"]
-        start_epoch = ckpt["warmup_epochs"]
+        start_epoch = ckpt["epoch"]
         warmup_done = True
         is_training_started = True
     else:
@@ -146,19 +147,13 @@ if __name__ == "__main__":
 
     # ------------ Start Training ------------
     for epoch in range(start_epoch, epochs):
-        # ---- Learning Rate Decay ----
-        # if not decayed and epoch == decay_epoch:
-        #     for optim in (optim1, optim2):
-        #         for pg in optim.param_groups:
-        #             pg['lr'] *= 0.1
-        #     decayed = True
         # ---- Dropout Management ----
-        if not is_training_started and dropout_type == 'early':
-            model1.dropout.p = p_early
-            model2.dropout.p = p_early
-        elif is_training_started and dropout_type == 'late':
-            model1.dropout.p = p_late
-            model2.dropout.p = p_late
+        # if not is_training_started and dropout_type == 'early':
+        #     model1.dropout.p = p_early
+        #     model2.dropout.p = p_early
+        # elif is_training_started and dropout_type == 'late':
+        #     model1.dropout.p = p_late
+        #     model2.dropout.p = p_late
         # ---- Warmup Phase ----
         if not warmup_done and epoch < warmup_epochs:
             warmup_loader = loader.run(train_data, mode='warmup')
@@ -177,9 +172,6 @@ if __name__ == "__main__":
                 prob1 = best_state["prob1"]
                 prob2 = best_state["prob2"]
                 is_training_started = True
-                model1.unfreeze()
-                model2.unfreeze()
-
             # ---- Training Phase ----
             pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
             pred2 = (prob2 > p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
@@ -227,12 +219,12 @@ if __name__ == "__main__":
                     "optim2": optim2.state_dict(),
                     "prob1": prob1,
                     "prob2": prob2,
-                    "warmup_epochs": best_epoch + 1,
+                    "epoch": epoch + 1
                 }
-                # torch.save(
-                #     best_state,
-                #     warmup_checkpoint_path,
-                # )
+                torch.save(
+                    best_state,
+                    checkpoint_path,
+                )
             else:
                 print(f"No significant improvement in GMM separation at epoch {epoch}. Current best: {best_sep_avg:.4f} at epoch {best_epoch}")
                 bad_epochs += 1
@@ -246,6 +238,18 @@ if __name__ == "__main__":
         test_acc, test_f1, test_preds, test_labels, test_loss = test(model1, model2, test_loader)
         print(f"Epoch: {epoch}, Test Loss: {test_loss:.4f}, Test Accuracy: {test_acc:.4f}, Test F1 Score: {test_f1:.4f}")
 
+        # ---- Save Checkpoint ----
+        checkpoint = {
+            "model1": model1.state_dict(),
+            "model2": model2.state_dict(),
+            "optim1": optim1.state_dict(),
+            "optim2": optim2.state_dict(),
+            "prob1": prob1,
+            "prob2": prob2,
+            "epoch": epoch + 1,
+        }
+        torch.save(checkpoint, checkpoint_path)
+        print(f"Checkpoint saved at {checkpoint_path}")
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")
     report = evaluate_model(test_preds, test_labels)

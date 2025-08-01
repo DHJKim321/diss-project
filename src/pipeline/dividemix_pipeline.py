@@ -129,7 +129,7 @@ if __name__ == "__main__":
     is_training_started = False
     prob1 = torch.zeros(len(train_data), device=device)
     prob2 = torch.zeros(len(train_data), device=device)
-    checkpoint_path = checkpoint_path.replace(".pth", f"_{noise_ratio}_{train_file.replace('_train.csv', '')}.pth")
+    # checkpoint_path = checkpoint_path.replace(".pth", f"_{noise_ratio}_{train_file.replace('_train.csv', '')}.pth")
     if os.path.exists(checkpoint_path):
         print("Found warm-up-completed models")
         ckpt = torch.load(checkpoint_path, map_location=device)

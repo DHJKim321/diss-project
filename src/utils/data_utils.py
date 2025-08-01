@@ -79,7 +79,7 @@ def save_loss_histogram(raw_losses, epoch, model):
     plt.ylabel("Empirical pdf")
     plt.title(f"Epoch {epoch+1}: Loss Distribution (Model {model})")
     plt.tight_layout()
-    plt.savefig(f"src/data/images/loss_yahoo/loss_{epoch+1}_model_{model}.png")
+    plt.savefig(f"src/data/images/loss_reddit/loss_{epoch+1}_model_{model}.png")
     plt.close()
 
 def save_orig_noisy_loss_histogram(noisy_mask, raw_losses, epoch, model):

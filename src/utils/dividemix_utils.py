@@ -181,8 +181,8 @@ def eval_train(model, criterion, eval_loader, device='cuda', invert=False):
             loss = loss.detach().cpu()
             for b in range(input_ids.size(0)):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
-                if loss[b] > 0.3:
-                    tqdm.write(f"Loss: {loss[b].item():.4f}, Text: {tokenizer.decode(input_ids[b].cpu().numpy(), skip_special_tokens=True)}")
+                # if loss[b] > 0.3:
+                    # tqdm.write(f"Loss: {loss[b].item():.4f}, Text: {tokenizer.decode(input_ids[b].cpu().numpy(), skip_special_tokens=True)}")
             # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
 
 

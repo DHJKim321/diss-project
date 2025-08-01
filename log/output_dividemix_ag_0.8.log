@@ -365,3 +365,92 @@ Loss: 0.5013, Lx: 0.3522, Lu: 0.1192, Penalty: 0.0298
 Training for Network 2
 labelled data size: 25514
 unlabelled data size: 14486
+Loss: 0.5181, Lx: 0.3687, Lu: 0.1216, Penalty: 0.0278
+Evaluating training data at epoch 23 for Model 1
+Evaluating training data at epoch 23 for Model 2
+Evaluating models at epoch 23
+Test data size: 7600
+Epoch: 23, Test Loss: 8.1394, Test Accuracy: 0.0214, Test F1 Score: 0.0209
+Training for Network 1
+labelled data size: 25513
+unlabelled data size: 14487
+Loss: 0.4931, Lx: 0.3524, Lu: 0.1111, Penalty: 0.0295
+Training for Network 2
+labelled data size: 25506
+unlabelled data size: 14494
+Loss: 0.4931, Lx: 0.3525, Lu: 0.1111, Penalty: 0.0295
+Evaluating training data at epoch 24 for Model 1
+Evaluating training data at epoch 24 for Model 2
+Evaluating models at epoch 24
+Test data size: 7600
+Epoch: 24, Test Loss: 8.1575, Test Accuracy: 0.0207, Test F1 Score: 0.0205
+Training for Network 1
+labelled data size: 25518
+unlabelled data size: 14482
+Loss: 0.4751, Lx: 0.3384, Lu: 0.1066, Penalty: 0.0300
+Training for Network 2
+labelled data size: 25512
+unlabelled data size: 14488
+Loss: 0.5085, Lx: 0.3603, Lu: 0.1182, Penalty: 0.0300
+Evaluating training data at epoch 25 for Model 1
+Evaluating training data at epoch 25 for Model 2
+Evaluating models at epoch 25
+Test data size: 7600
+Epoch: 25, Test Loss: 8.1989, Test Accuracy: 0.0197, Test F1 Score: 0.0195
+Training for Network 1
+labelled data size: 25507
+unlabelled data size: 14493
+Loss: 0.4811, Lx: 0.3436, Lu: 0.1077, Penalty: 0.0299
+Training for Network 2
+labelled data size: 25510
+unlabelled data size: 14490
+Loss: 0.4724, Lx: 0.3408, Lu: 0.1017, Penalty: 0.0299
+Evaluating training data at epoch 26 for Model 1
+Evaluating training data at epoch 26 for Model 2
+Evaluating models at epoch 26
+Test data size: 7600
+Epoch: 26, Test Loss: 8.2346, Test Accuracy: 0.0230, Test F1 Score: 0.0224
+Training for Network 1
+labelled data size: 25511
+unlabelled data size: 14489
+Loss: 0.4594, Lx: 0.3269, Lu: 0.1019, Penalty: 0.0307
+Training for Network 2
+labelled data size: 25515
+unlabelled data size: 14485
+Loss: 0.4690, Lx: 0.3400, Lu: 0.0986, Penalty: 0.0304
+Evaluating training data at epoch 27 for Model 1
+Evaluating training data at epoch 27 for Model 2
+Evaluating models at epoch 27
+Test data size: 7600
+Epoch: 27, Test Loss: 8.3799, Test Accuracy: 0.0212, Test F1 Score: 0.0206
+Training for Network 1
+labelled data size: 25512
+unlabelled data size: 14488
+Loss: 0.4427, Lx: 0.3247, Lu: 0.0870, Penalty: 0.0311
+Training for Network 2
+labelled data size: 25505
+unlabelled data size: 14495
+Loss: 0.4483, Lx: 0.3264, Lu: 0.0919, Penalty: 0.0300
+Evaluating training data at epoch 28 for Model 1
+Evaluating training data at epoch 28 for Model 2
+Evaluating models at epoch 28
+Test data size: 7600
+Epoch: 28, Test Loss: 8.1963, Test Accuracy: 0.0213, Test F1 Score: 0.0211
+Training for Network 1
+labelled data size: 25510
+unlabelled data size: 14490
+Loss: 0.4395, Lx: 0.3204, Lu: 0.0883, Penalty: 0.0309
+Training for Network 2
+labelled data size: 25508
+unlabelled data size: 14492
+Loss: 0.4425, Lx: 0.3247, Lu: 0.0883, Penalty: 0.0295
+Evaluating training data at epoch 29 for Model 1
+Evaluating training data at epoch 29 for Model 2
+Evaluating models at epoch 29
+Test data size: 7600
+Epoch: 29, Test Loss: 8.4339, Test Accuracy: 0.0226, Test F1 Score: 0.0219
+Saving evaluation results and predictions...
+Evaluation Report:
+{'0': {'precision': 0.021415823914336704, 'recall': 0.018947368421052633, 'f1-score': 0.02010611561016476, 'support': 1900.0}, '1': {'precision': 0.008469055374592834, 'recall': 0.006842105263157895, 'f1-score': 0.007569141193595342, 'support': 1900.0}, '2': {'precision': 0.030951041080472707, 'recall': 0.02894736842105263, 'f1-score': 0.029915692140331792, 'support': 1900.0}, '3': {'precision': 0.02608362102032988, 'recall': 0.035789473684210524, 'f1-score': 0.030175282893277124, 'support': 1900.0}, 'accuracy': 0.022631578947368423, 'macro avg': {'precision': 0.02172988534743303, 'recall': 0.02263157894736842, 'f1-score': 0.021941557959342252, 'support': 7600.0}, 'weighted avg': {'precision': 0.02172988534743303, 'recall': 0.022631578947368423, 'f1-score': 0.021941557959342255, 'support': 7600.0}}
+Evaluation results saved to src/data/eval/metrics_agnews_test_dividemix_0.9.json
+Predictions saved to src/data/eval/evaluated_agnews_test_dividemix_0.9.csv

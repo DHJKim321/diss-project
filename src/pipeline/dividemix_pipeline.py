@@ -85,6 +85,7 @@ if __name__ == "__main__":
     print(f"Loading training data from {train_file} and test data from {test_file}")
     train_data, test_data, noisy_mask, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
+    invert = (1 - noise_ratio) < (noise_ratio / (num_classes - 1))
 
     # ------------ Load Models ------------
     print(f"Loading BERT model from {bert_model}")
@@ -198,13 +199,13 @@ if __name__ == "__main__":
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
-        prob1, losses1, gmm_sep1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device)
+        prob1, losses1, gmm_sep1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device, invert=invert)
         if dataset != 'reddit':
             save_orig_noisy_loss_histogram(noisy_mask, losses1, epoch, model=1)
         else:
             save_loss_histogram(losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
-        prob2, losses2, gmm_sep2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device)
+        prob2, losses2, gmm_sep2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device, invert=invert)
         if dataset != 'reddit':
             save_orig_noisy_loss_histogram(noisy_mask, losses2, epoch, model=2)
         else:

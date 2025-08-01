@@ -6,7 +6,8 @@ from tqdm import tqdm
 from sklearn.metrics import f1_score, accuracy_score
 from sklearn.mixture import GaussianMixture
 import numpy as np
-import random
+from transformers import BertTokenizer
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 import torch.nn.functional as F
 torch.backends.cudnn.benchmark = True
 
@@ -165,7 +166,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
     return total_loss / count, total_Lx / count, total_Lu / count, total_penalty / count
 
-def eval_train(model, criterion, eval_loader, device='cuda'):
+def eval_train(model, criterion, eval_loader, device='cuda', invert=False):
     model.eval()
     num_iter = (len(eval_loader.dataset)//eval_loader.batch_size)+1
     losses = torch.zeros(len(eval_loader.dataset))
@@ -180,7 +181,10 @@ def eval_train(model, criterion, eval_loader, device='cuda'):
             loss = loss.detach().cpu()
             for b in range(input_ids.size(0)):
                 losses[index[b]]=loss[b] # losses.shape = [batch_size,]
+                if loss[b] > 0.3:
+                    tqdm.write(f"Loss: {loss[b].item():.4f}, Text: {tokenizer.decode(input_ids[b].cpu().numpy(), skip_special_tokens=True)}")
             # tqdm.write(f"Batch {batch_idx+1}/{num_iter}, Loss: {loss.mean().item()}")
+
 
     losses = (losses-losses.min())/(losses.max()-losses.min()) # Normalize losses to [0, 1]
 
@@ -189,7 +193,11 @@ def eval_train(model, criterion, eval_loader, device='cuda'):
     gmm = GaussianMixture(n_components=2, max_iter=10, tol=1e-2, reg_covar=5e-4, random_state=42)
     gmm.fit(input_loss)
     prob = gmm.predict_proba(input_loss) # prob.shape = [n_samples, n_components]
-    prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
+    if invert:
+        # We do this to invert the GMM's cluster assignment if the noise ratio is too high
+        prob = prob[:,gmm.means_.argmax()]
+    else:
+        prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
     # I guess ^ is just a way to not use a hard-coded index? You can still calculate probabilities for both indices since n_components=2
     # gmm.means_.argmin() returns the index of the component with the smallest mean
     

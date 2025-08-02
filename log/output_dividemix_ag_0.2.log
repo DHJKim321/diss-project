@@ -1,0 +1,145 @@
+Loading training data from agnews_train.csv and test data from agnews_test.csv
+Loading AG News train data from src/data/train/agnews_train.csv
+AG News train data loaded with 120000 samples
+Reduced AG News train data to 40000 samples
+Loading AG News test data from src/data/test/agnews_test.csv
+AG News test data loaded with 7600 samples
+Injecting symmetric noise with ratio 0.2
+Detected 4 classes: [0, 1, 2, 3]
+Injected noise into 8000 samples.
+Number of classes in AGNews dataset: 4
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+No warm-up-completed models. Training from scratch.
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 0 for Model 1
+Evaluating training data at epoch 0 for Model 2
+Epoch 0 | sep1=0.5991, sep2=0.6313, avg=0.6152
+New best GMM separation found at epoch 0: 0.6152
+Evaluating models at epoch 0
+Test data size: 7600
+Epoch: 0, Test Loss: 0.2291, Test Accuracy: 0.9258, Test F1 Score: 0.9258
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 1 for Model 1
+Evaluating training data at epoch 1 for Model 2
+Epoch 1 | sep1=0.6580, sep2=0.6159, avg=0.6370
+New best GMM separation found at epoch 1: 0.6370
+Evaluating models at epoch 1
+Test data size: 7600
+Epoch: 1, Test Loss: 0.2273, Test Accuracy: 0.9305, Test F1 Score: 0.9304
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 2 for Model 1
+Evaluating training data at epoch 2 for Model 2
+Epoch 2 | sep1=0.5075, sep2=0.5668, avg=0.5371
+No significant improvement in GMM separation at epoch 2. Current best: 0.6370 at epoch 1
+Evaluating models at epoch 2
+Test data size: 7600
+Epoch: 2, Test Loss: 0.2617, Test Accuracy: 0.9234, Test F1 Score: 0.9231
+Warmup training for Network 1
+Warmup training for Network 2
+Evaluating training data at epoch 3 for Model 1
+Evaluating training data at epoch 3 for Model 2
+Epoch 3 | sep1=0.3283, sep2=0.3221, avg=0.3252
+No significant improvement in GMM separation at epoch 3. Current best: 0.6370 at epoch 1
+Early stopping triggered at epoch 3 due to no significant GMM separation improvement for 2 epochs.
+Evaluating models at epoch 3
+Test data size: 7600
+Epoch: 3, Test Loss: 0.3756, Test Accuracy: 0.9087, Test F1 Score: 0.9086
+Restoring best state from epoch 1 with GMM separation 0.6370
+Training for Network 1
+labelled data size: 30702
+unlabelled data size: 9298
+Loss: 0.5612, Lx: 0.3999, Lu: 0.1390, Penalty: 0.0223
+Training for Network 2
+labelled data size: 31131
+unlabelled data size: 8869
+Loss: 0.5431, Lx: 0.3846, Lu: 0.1362, Penalty: 0.0223
+Evaluating training data at epoch 4 for Model 1
+Evaluating training data at epoch 4 for Model 2
+Evaluating models at epoch 4
+Test data size: 7600
+Epoch: 4, Test Loss: 0.3842, Test Accuracy: 0.9220, Test F1 Score: 0.9220
+Training for Network 1
+labelled data size: 32822
+unlabelled data size: 7178
+Loss: 0.4631, Lx: 0.3772, Lu: 0.0647, Penalty: 0.0212
+Training for Network 2
+labelled data size: 33136
+unlabelled data size: 6864
+Loss: 0.4538, Lx: 0.3782, Lu: 0.0554, Penalty: 0.0201
+Evaluating training data at epoch 5 for Model 1
+Evaluating training data at epoch 5 for Model 2
+Evaluating models at epoch 5
+Test data size: 7600
+Epoch: 5, Test Loss: 0.3871, Test Accuracy: 0.9242, Test F1 Score: 0.9242
+Training for Network 1
+labelled data size: 32845
+unlabelled data size: 7155
+Loss: 0.4265, Lx: 0.3544, Lu: 0.0500, Penalty: 0.0221
+Training for Network 2
+labelled data size: 32743
+unlabelled data size: 7257
+Loss: 0.4095, Lx: 0.3369, Lu: 0.0506, Penalty: 0.0221
+Evaluating training data at epoch 6 for Model 1
+Evaluating training data at epoch 6 for Model 2
+Evaluating models at epoch 6
+Test data size: 7600
+Epoch: 6, Test Loss: 0.4138, Test Accuracy: 0.9242, Test F1 Score: 0.9242
+Training for Network 1
+labelled data size: 32753
+unlabelled data size: 7247
+Loss: 0.3879, Lx: 0.3214, Lu: 0.0447, Penalty: 0.0218
+Training for Network 2
+labelled data size: 32772
+unlabelled data size: 7228
+Loss: 0.3794, Lx: 0.3168, Lu: 0.0397, Penalty: 0.0229
+Evaluating training data at epoch 7 for Model 1
+Evaluating training data at epoch 7 for Model 2
+Evaluating models at epoch 7
+Test data size: 7600
+Epoch: 7, Test Loss: 0.4312, Test Accuracy: 0.9222, Test F1 Score: 0.9221
+Training for Network 1
+labelled data size: 32754
+unlabelled data size: 7246
+Loss: 0.3633, Lx: 0.3028, Lu: 0.0388, Penalty: 0.0218
+Training for Network 2
+labelled data size: 32740
+unlabelled data size: 7260
+Loss: 0.3550, Lx: 0.2922, Lu: 0.0382, Penalty: 0.0247
+Evaluating training data at epoch 8 for Model 1
+Evaluating training data at epoch 8 for Model 2
+Evaluating models at epoch 8
+Test data size: 7600
+Epoch: 8, Test Loss: 0.4510, Test Accuracy: 0.9229, Test F1 Score: 0.9229
+Training for Network 1
+labelled data size: 32747
+unlabelled data size: 7253
+Loss: 0.3496, Lx: 0.2916, Lu: 0.0339, Penalty: 0.0240
+Training for Network 2
+labelled data size: 32718
+unlabelled data size: 7282
+Loss: 0.3428, Lx: 0.2881, Lu: 0.0327, Penalty: 0.0220
+Evaluating training data at epoch 9 for Model 1
+Evaluating training data at epoch 9 for Model 2
+Evaluating models at epoch 9
+Test data size: 7600
+Epoch: 9, Test Loss: 0.4488, Test Accuracy: 0.9230, Test F1 Score: 0.9231
+Training for Network 1
+labelled data size: 32736
+unlabelled data size: 7264
+Loss: 0.3308, Lx: 0.2775, Lu: 0.0300, Penalty: 0.0233
+Training for Network 2
+labelled data size: 32728
+unlabelled data size: 7272
+Loss: 0.3281, Lx: 0.2796, Lu: 0.0253, Penalty: 0.0232
+Evaluating training data at epoch 10 for Model 1
+Evaluating training data at epoch 10 for Model 2
+Evaluating models at epoch 10
+Test data size: 7600
+Epoch: 10, Test Loss: 0.4839, Test Accuracy: 0.9203, Test F1 Score: 0.9203
+Training for Network 1
+labelled data size: 32738
+unlabelled data size: 7262

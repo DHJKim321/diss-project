@@ -166,7 +166,7 @@ def train(epoch_no, model1, model2, optimizer, semiloss, labelled_loader, unlabe
         # tqdm.write(f"Epoch {epoch_no}, Batch {batch_idx+1}/{num_iter}, Lx {Lx.item():.4f}, Lu {lambda_u_val * Lu.item():.4f}, Penalty {penalty_val * penalty.item():.4f}, loss {loss.item():.4f}")
     return total_loss / count, total_Lx / count, total_Lu / count, total_penalty / count
 
-def eval_train(model, criterion, eval_loader, device='cuda', invert=False):
+def eval_train(model, criterion, eval_loader, device='cuda'):
     model.eval()
     num_iter = (len(eval_loader.dataset)//eval_loader.batch_size)+1
     losses = torch.zeros(len(eval_loader.dataset))
@@ -193,11 +193,7 @@ def eval_train(model, criterion, eval_loader, device='cuda', invert=False):
     gmm = GaussianMixture(n_components=2, max_iter=10, tol=1e-2, reg_covar=5e-4, random_state=42)
     gmm.fit(input_loss)
     prob = gmm.predict_proba(input_loss) # prob.shape = [n_samples, n_components]
-    if invert:
-        # We do this to invert the GMM's cluster assignment if the noise ratio is too high
-        prob = prob[:,gmm.means_.argmax()]
-    else:
-        prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
+    prob = prob[:,gmm.means_.argmin()] # prob.shape = [n_samples], gmm.means_.shape = [n_components, 1] - the centre of each component cluster
     # I guess ^ is just a way to not use a hard-coded index? You can still calculate probabilities for both indices since n_components=2
     # gmm.means_.argmin() returns the index of the component with the smallest mean
     

@@ -40,7 +40,6 @@ if __name__ == "__main__":
     dataset = os.getenv("DATASET")
     if dataset == 'imdb':
         test_file = os.getenv("TRAIN_FILE")
-    # warmup_checkpoint_path = os.getenv("WARMUP_CHECKPOINT_PATH")
     # Model Training Variables
     bert_model = os.getenv("BERT_MODEL")
     batch_size = int(os.getenv("BATCH_SIZE"))
@@ -85,8 +84,7 @@ if __name__ == "__main__":
     print(f"Loading training data from {train_file} and test data from {test_file}")
     train_data, test_data, noisy_mask, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
-    # invert = (1 - noise_ratio) < (noise_ratio / (num_classes - 1))
-    invert = False
+    invert = (1 - noise_ratio) < (noise_ratio / (num_classes - 1))
 
     # ------------ Load Models ------------
     print(f"Loading BERT model from {bert_model}")
@@ -173,8 +171,8 @@ if __name__ == "__main__":
                 prob2 = best_state["prob2"]
                 is_training_started = True
             # ---- Training Phase ----
-            pred1 = (prob1 > p_threshold) # predX.shape = [num_samples] (Boolean)
-            pred2 = (prob2 > p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
+            pred1 = (prob1 > p_threshold) if not invert else (prob1 <= p_threshold) # predX.shape = [num_samples] (Boolean)
+            pred2 = (prob2 > p_threshold) if not invert else (prob2 <= p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
             if pred1.sum() == 0 or pred2.sum() == 0:
                 print("Warning: no confident samples selected for this epoch.")
             # Wouldn't it be possible that no samples cross this threshold and everything gets classified as unlabelled?
@@ -191,13 +189,13 @@ if __name__ == "__main__":
         # ---- Evaluation Phase ----
         eval_loader = loader.run(train_data, mode='eval_train')
         print(f"Evaluating training data at epoch {epoch} for Model 1")
-        prob1, losses1, gmm_sep1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device, invert=invert)
+        prob1, losses1, gmm_sep1 = eval_train(model1, per_sample_CEloss, eval_loader, device=device)
         if dataset != 'reddit':
             save_orig_noisy_loss_histogram(noisy_mask, losses1, epoch, model=1)
         else:
             save_loss_histogram(losses1, epoch, model=1)
         print(f"Evaluating training data at epoch {epoch} for Model 2")
-        prob2, losses2, gmm_sep2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device, invert=invert)
+        prob2, losses2, gmm_sep2 = eval_train(model2, per_sample_CEloss, eval_loader, device=device)
         if dataset != 'reddit':
             save_orig_noisy_loss_histogram(noisy_mask, losses2, epoch, model=2)
         else:
@@ -221,10 +219,10 @@ if __name__ == "__main__":
                     "prob2": prob2,
                     "epoch": epoch + 1
                 }
-                # torch.save(
-                #     best_state,
-                #     checkpoint_path,
-                # )
+                torch.save(
+                    best_state,
+                    checkpoint_path,
+                )
             else:
                 print(f"No significant improvement in GMM separation at epoch {epoch}. Current best: {best_sep_avg:.4f} at epoch {best_epoch}")
                 bad_epochs += 1
@@ -248,8 +246,8 @@ if __name__ == "__main__":
             "prob2": prob2,
             "epoch": epoch + 1,
         }
-        # torch.save(checkpoint, checkpoint_path)
-        # print(f"Checkpoint saved at {checkpoint_path}")
+        torch.save(checkpoint, checkpoint_path)
+        print(f"Checkpoint saved at {checkpoint_path}")
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")
     report = evaluate_model(test_preds, test_labels)

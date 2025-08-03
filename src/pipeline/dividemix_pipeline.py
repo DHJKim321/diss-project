@@ -219,10 +219,10 @@ if __name__ == "__main__":
                     "prob2": prob2,
                     "epoch": epoch + 1
                 }
-                torch.save(
-                    best_state,
-                    checkpoint_path,
-                )
+                # torch.save(
+                #     best_state,
+                #     checkpoint_path,
+                # )
             else:
                 print(f"No significant improvement in GMM separation at epoch {epoch}. Current best: {best_sep_avg:.4f} at epoch {best_epoch}")
                 bad_epochs += 1
@@ -246,7 +246,7 @@ if __name__ == "__main__":
             "prob2": prob2,
             "epoch": epoch + 1,
         }
-        torch.save(checkpoint, checkpoint_path)
+        # torch.save(checkpoint, checkpoint_path)
         print(f"Checkpoint saved at {checkpoint_path}")
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")

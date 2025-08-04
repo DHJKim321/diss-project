@@ -171,8 +171,10 @@ if __name__ == "__main__":
                 prob2 = best_state["prob2"]
                 is_training_started = True
             # ---- Training Phase ----
-            pred1 = (prob1 > p_threshold) if not invert else (prob1 <= p_threshold) # predX.shape = [num_samples] (Boolean)
-            pred2 = (prob2 > p_threshold) if not invert else (prob2 <= p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
+            pred1 = (prob1 > p_threshold)
+            pred2 = (prob2 > p_threshold)
+            # pred1 = (prob1 > p_threshold) if not invert else (prob1 <= p_threshold) # predX.shape = [num_samples] (Boolean)
+            # pred2 = (prob2 > p_threshold) if not invert else (prob2 <= p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
             if pred1.sum() == 0 or pred2.sum() == 0:
                 print("Warning: no confident samples selected for this epoch.")
             # Wouldn't it be possible that no samples cross this threshold and everything gets classified as unlabelled?
@@ -247,7 +249,7 @@ if __name__ == "__main__":
             "epoch": epoch + 1,
         }
         # torch.save(checkpoint, checkpoint_path)
-        print(f"Checkpoint saved at {checkpoint_path}")
+        # print(f"Checkpoint saved at {checkpoint_path}")
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")
     report = evaluate_model(test_preds, test_labels)

@@ -85,6 +85,7 @@ if __name__ == "__main__":
     train_data, test_data, noisy_mask, num_classes = load_data(train_file, train_data_path, dataset, noise_ratio, test_file=test_file, test_data_path=test_data_path)
     tokenizer = BertTokenizer.from_pretrained(bert_model)
     invert = (1 - noise_ratio) < (noise_ratio / (num_classes - 1))
+    is_inverted = False
 
     # ------------ Load Models ------------
     print(f"Loading BERT model from {bert_model}")
@@ -171,9 +172,10 @@ if __name__ == "__main__":
                 prob2 = best_state["prob2"]
                 is_training_started = True
             # ---- Training Phase ----
-            if invert:
+            if not is_inverted and invert:
                 prob1 = 1 - prob1
                 prob2 = 1 - prob2
+                is_inverted = True
             pred1 = (prob1 > p_threshold)
             pred2 = (prob2 > p_threshold)
             if pred1.sum() == 0 or pred2.sum() == 0:

@@ -82,3 +82,285 @@ Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
 Training for Network 1
 labelled data size: 119268
 unlabelled data size: 7220
+Loss: 0.3359, Lx: 0.2325, Lu: 0.0963, Penalty: 0.0071
+Training for Network 2
+labelled data size: 118861
+unlabelled data size: 7627
+Loss: 0.3529, Lx: 0.2307, Lu: 0.1155, Penalty: 0.0067
+Evaluating training data at epoch 6 for Model 1
+Evaluating training data at epoch 6 for Model 2
+Evaluating models at epoch 6
+Test data size: 233
+Epoch: 6, Test Loss: 1.3354, Test Accuracy: 0.7253, Test F1 Score: 0.7252
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118715
+unlabelled data size: 7773
+Loss: 0.3226, Lx: 0.2203, Lu: 0.0952, Penalty: 0.0072
+Training for Network 2
+labelled data size: 118739
+unlabelled data size: 7749
+Loss: 0.3152, Lx: 0.2167, Lu: 0.0913, Penalty: 0.0072
+Evaluating training data at epoch 7 for Model 1
+Evaluating training data at epoch 7 for Model 2
+Evaluating models at epoch 7
+Test data size: 233
+Epoch: 7, Test Loss: 1.3556, Test Accuracy: 0.7468, Test F1 Score: 0.7468
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118689
+unlabelled data size: 7799
+Loss: 0.2960, Lx: 0.2135, Lu: 0.0753, Penalty: 0.0072
+Training for Network 2
+labelled data size: 118438
+unlabelled data size: 8050
+Loss: 0.3076, Lx: 0.2108, Lu: 0.0898, Penalty: 0.0070
+Evaluating training data at epoch 8 for Model 1
+Evaluating training data at epoch 8 for Model 2
+Evaluating models at epoch 8
+Test data size: 233
+Epoch: 8, Test Loss: 1.3782, Test Accuracy: 0.7597, Test F1 Score: 0.7596
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118550
+unlabelled data size: 7938
+Loss: 0.2667, Lx: 0.1975, Lu: 0.0620, Penalty: 0.0072
+Training for Network 2
+labelled data size: 118495
+unlabelled data size: 7993
+Loss: 0.2802, Lx: 0.2026, Lu: 0.0703, Penalty: 0.0074
+Evaluating training data at epoch 9 for Model 1
+Evaluating training data at epoch 9 for Model 2
+Evaluating models at epoch 9
+Test data size: 233
+Epoch: 9, Test Loss: 1.4931, Test Accuracy: 0.7339, Test F1 Score: 0.7340
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118450
+unlabelled data size: 8038
+Loss: 0.2577, Lx: 0.1927, Lu: 0.0575, Penalty: 0.0075
+Training for Network 2
+labelled data size: 118441
+unlabelled data size: 8047
+Loss: 0.2605, Lx: 0.1954, Lu: 0.0574, Penalty: 0.0078
+Evaluating training data at epoch 10 for Model 1
+Evaluating training data at epoch 10 for Model 2
+Evaluating models at epoch 10
+Test data size: 233
+Epoch: 10, Test Loss: 1.4907, Test Accuracy: 0.7682, Test F1 Score: 0.7683
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118418
+unlabelled data size: 8070
+Loss: 0.2482, Lx: 0.1928, Lu: 0.0477, Penalty: 0.0077
+Training for Network 2
+labelled data size: 118383
+unlabelled data size: 8105
+Loss: 0.2454, Lx: 0.1895, Lu: 0.0484, Penalty: 0.0075
+Evaluating training data at epoch 11 for Model 1
+Evaluating training data at epoch 11 for Model 2
+Evaluating models at epoch 11
+Test data size: 233
+Epoch: 11, Test Loss: 1.5890, Test Accuracy: 0.7339, Test F1 Score: 0.7339
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118385
+unlabelled data size: 8103
+Loss: 0.2299, Lx: 0.1808, Lu: 0.0414, Penalty: 0.0077
+Training for Network 2
+labelled data size: 118381
+unlabelled data size: 8107
+Loss: 0.2324, Lx: 0.1836, Lu: 0.0412, Penalty: 0.0075
+Evaluating training data at epoch 12 for Model 1
+Evaluating training data at epoch 12 for Model 2
+Evaluating models at epoch 12
+Test data size: 233
+Epoch: 12, Test Loss: 1.4992, Test Accuracy: 0.7682, Test F1 Score: 0.7682
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118331
+unlabelled data size: 8157
+Loss: 0.2291, Lx: 0.1817, Lu: 0.0398, Penalty: 0.0076
+Training for Network 2
+labelled data size: 118326
+unlabelled data size: 8162
+Loss: 0.2227, Lx: 0.1795, Lu: 0.0356, Penalty: 0.0076
+Evaluating training data at epoch 13 for Model 1
+Evaluating training data at epoch 13 for Model 2
+Evaluating models at epoch 13
+Test data size: 233
+Epoch: 13, Test Loss: 1.6355, Test Accuracy: 0.7554, Test F1 Score: 0.7554
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118337
+unlabelled data size: 8151
+Loading training data from expanded_full_v2.csv and test data from shape.csv
+Loading ShaPe Data
+Loading data from src/data/train/expanded_full_v2.csv
+Loading test data from src/data/test/shape.csv
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+Found warm-up-completed models
+Training for Network 1
+labelled data size: 8151
+unlabelled data size: 118337
+Loss: 0.3403, Lx: 0.1762, Lu: 0.1555, Penalty: 0.0086
+Training for Network 2
+labelled data size: 8247
+unlabelled data size: 118241
+Loss: 0.3234, Lx: 0.1873, Lu: 0.1289, Penalty: 0.0072
+Evaluating training data at epoch 14 for Model 1
+Loading training data from expanded_full_v2.csv and test data from shape.csv
+Loading ShaPe Data
+Loading data from src/data/train/expanded_full_v2.csv
+Loading test data from src/data/test/shape.csv
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+Found warm-up-completed models
+Training for Network 1
+labelled data size: 118337
+unlabelled data size: 8151
+Loss: 0.2104, Lx: 0.1754, Lu: 0.0273, Penalty: 0.0077
+Training for Network 2
+labelled data size: 118241
+unlabelled data size: 8247
+Loss: 0.2231, Lx: 0.1801, Lu: 0.0353, Penalty: 0.0077
+Evaluating training data at epoch 14 for Model 1
+Evaluating training data at epoch 14 for Model 2
+Evaluating models at epoch 14
+Test data size: 233
+Epoch: 14, Test Loss: 1.7886, Test Accuracy: 0.7339, Test F1 Score: 0.7340
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118300
+unlabelled data size: 8188
+Loss: 0.2075, Lx: 0.1747, Lu: 0.0254, Penalty: 0.0074
+Training for Network 2
+labelled data size: 118318
+unlabelled data size: 8170
+Loss: 0.2079, Lx: 0.1770, Lu: 0.0230, Penalty: 0.0079
+Evaluating training data at epoch 15 for Model 1
+Evaluating training data at epoch 15 for Model 2
+Evaluating models at epoch 15
+Test data size: 233
+Epoch: 15, Test Loss: 1.7775, Test Accuracy: 0.7682, Test F1 Score: 0.7681
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118306
+unlabelled data size: 8182
+Loss: 0.2049, Lx: 0.1729, Lu: 0.0247, Penalty: 0.0073
+Training for Network 2
+labelled data size: 118301
+unlabelled data size: 8187
+Loss: 0.2072, Lx: 0.1753, Lu: 0.0242, Penalty: 0.0077
+Evaluating training data at epoch 16 for Model 1
+Evaluating training data at epoch 16 for Model 2
+Evaluating models at epoch 16
+Test data size: 233
+Epoch: 16, Test Loss: 1.8381, Test Accuracy: 0.7725, Test F1 Score: 0.7724
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118310
+unlabelled data size: 8178
+Loss: 0.1949, Lx: 0.1694, Lu: 0.0181, Penalty: 0.0074
+Training for Network 2
+labelled data size: 118302
+unlabelled data size: 8186
+Loss: 0.1981, Lx: 0.1704, Lu: 0.0196, Penalty: 0.0081
+Evaluating training data at epoch 17 for Model 1
+Evaluating training data at epoch 17 for Model 2
+Evaluating models at epoch 17
+Test data size: 233
+Epoch: 17, Test Loss: 1.8581, Test Accuracy: 0.7639, Test F1 Score: 0.7640
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118287
+unlabelled data size: 8201
+Loss: 0.1961, Lx: 0.1687, Lu: 0.0194, Penalty: 0.0081
+Training for Network 2
+labelled data size: 118279
+unlabelled data size: 8209
+Loss: 0.1923, Lx: 0.1662, Lu: 0.0184, Penalty: 0.0077
+Evaluating training data at epoch 18 for Model 1
+Evaluating training data at epoch 18 for Model 2
+Evaluating models at epoch 18
+Test data size: 233
+Epoch: 18, Test Loss: 1.8318, Test Accuracy: 0.7768, Test F1 Score: 0.7769
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118270
+unlabelled data size: 8218
+Loss: 0.1913, Lx: 0.1661, Lu: 0.0174, Penalty: 0.0078
+Training for Network 2
+labelled data size: 118284
+unlabelled data size: 8204
+Loss: 0.1878, Lx: 0.1640, Lu: 0.0160, Penalty: 0.0077
+Evaluating training data at epoch 19 for Model 1
+Evaluating training data at epoch 19 for Model 2
+Evaluating models at epoch 19
+Test data size: 233
+Epoch: 19, Test Loss: 1.8018, Test Accuracy: 0.7597, Test F1 Score: 0.7594
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118291
+unlabelled data size: 8197
+Loss: 0.1850, Lx: 0.1627, Lu: 0.0143, Penalty: 0.0079
+Training for Network 2
+labelled data size: 118268
+unlabelled data size: 8220
+Loss: 0.1874, Lx: 0.1640, Lu: 0.0159, Penalty: 0.0075
+Evaluating training data at epoch 20 for Model 1
+Evaluating training data at epoch 20 for Model 2
+Evaluating models at epoch 20
+Test data size: 233
+Epoch: 20, Test Loss: 1.9093, Test Accuracy: 0.7682, Test F1 Score: 0.7683
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118267
+unlabelled data size: 8221
+Loss: 0.1870, Lx: 0.1649, Lu: 0.0139, Penalty: 0.0082
+Training for Network 2
+labelled data size: 118236
+unlabelled data size: 8252
+Loss: 0.1876, Lx: 0.1634, Lu: 0.0165, Penalty: 0.0078
+Evaluating training data at epoch 21 for Model 1
+Evaluating training data at epoch 21 for Model 2
+Evaluating models at epoch 21
+Test data size: 233
+Epoch: 21, Test Loss: 1.8972, Test Accuracy: 0.7511, Test F1 Score: 0.7510
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118265
+unlabelled data size: 8223
+Loss: 0.1872, Lx: 0.1666, Lu: 0.0128, Penalty: 0.0079
+Training for Network 2
+labelled data size: 118274
+unlabelled data size: 8214
+Loss: 0.1849, Lx: 0.1644, Lu: 0.0129, Penalty: 0.0076
+Evaluating training data at epoch 22 for Model 1
+Evaluating training data at epoch 22 for Model 2
+Evaluating models at epoch 22
+Test data size: 233
+Epoch: 22, Test Loss: 1.8938, Test Accuracy: 0.7554, Test F1 Score: 0.7553
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118265
+unlabelled data size: 8223
+Loss: 0.1788, Lx: 0.1596, Lu: 0.0111, Penalty: 0.0080
+Training for Network 2
+labelled data size: 118257
+unlabelled data size: 8231
+Loss: 0.1830, Lx: 0.1626, Lu: 0.0128, Penalty: 0.0076
+Evaluating training data at epoch 23 for Model 1
+Evaluating training data at epoch 23 for Model 2
+Evaluating models at epoch 23
+Test data size: 233
+Epoch: 23, Test Loss: 1.9654, Test Accuracy: 0.7511, Test F1 Score: 0.7511
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118276
+unlabelled data size: 8212
+Loss: 0.1796, Lx: 0.1606, Lu: 0.0111, Penalty: 0.0079
+Training for Network 2
+labelled data size: 118269
+unlabelled data size: 8219

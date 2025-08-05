@@ -364,3 +364,13 @@ Loss: 0.1796, Lx: 0.1606, Lu: 0.0111, Penalty: 0.0079
 Training for Network 2
 labelled data size: 118269
 unlabelled data size: 8219
+Loss: 0.1830, Lx: 0.1624, Lu: 0.0129, Penalty: 0.0077
+Evaluating training data at epoch 24 for Model 1
+Evaluating training data at epoch 24 for Model 2
+Evaluating models at epoch 24
+Test data size: 233
+Epoch: 24, Test Loss: 2.0293, Test Accuracy: 0.7639, Test F1 Score: 0.7632
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118199
+unlabelled data size: 8289

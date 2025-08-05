@@ -374,3 +374,7 @@ Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
 Training for Network 1
 labelled data size: 118199
 unlabelled data size: 8289
+Loss: 0.1893, Lx: 0.1640, Lu: 0.0177, Penalty: 0.0075
+Training for Network 2
+labelled data size: 118266
+unlabelled data size: 8222

@@ -1,13 +1,13 @@
 #!/bin/sh
 # Grid Engine options (lines prefixed with #$)
-#$ -N dividemix_ag_0.8_fix
+#$ -N dividemix_reddit
 #$ -cwd
 #$ -l h_rt=48:00:00
 #$ -l h_vmem=512G
 #$ -q gpu
 #$ -l gpu=1
-#$ -o log/output_dividemix_ag_0.8_fix.log
-#$ -e log/error_dividemix_ag_0.8_fix.log
+#$ -o log/output_dividemix_reddit.log
+#$ -e log/error_dividemix_reddit.log
 
 # Initialise the environment modules
 . /etc/profile.d/modules.sh

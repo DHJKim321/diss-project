@@ -171,10 +171,11 @@ if __name__ == "__main__":
                 prob2 = best_state["prob2"]
                 is_training_started = True
             # ---- Training Phase ----
+            if invert:
+                prob1 = 1 - prob1
+                prob2 = 1 - prob2
             pred1 = (prob1 > p_threshold)
             pred2 = (prob2 > p_threshold)
-            # pred1 = (prob1 > p_threshold) if not invert else (prob1 <= p_threshold) # predX.shape = [num_samples] (Boolean)
-            # pred2 = (prob2 > p_threshold) if not invert else (prob2 <= p_threshold) # True if the component with the lowest mean loss has probability higher than p_threshold
             if pred1.sum() == 0 or pred2.sum() == 0:
                 print("Warning: no confident samples selected for this epoch.")
             # Wouldn't it be possible that no samples cross this threshold and everything gets classified as unlabelled?

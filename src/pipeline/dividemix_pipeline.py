@@ -128,21 +128,20 @@ if __name__ == "__main__":
     is_training_started = False
     prob1 = torch.zeros(len(train_data), device=device)
     prob2 = torch.zeros(len(train_data), device=device)
-    # checkpoint_path = checkpoint_path.replace(".pth", f"_{noise_ratio}_{train_file.replace('_train.csv', '')}.pth")
-    # if os.path.exists(checkpoint_path):
-    #     print("Found warm-up-completed models")
-    #     ckpt = torch.load(checkpoint_path, map_location=device)
-    #     model1.load_state_dict(ckpt["model1"])
-    #     model2.load_state_dict(ckpt["model2"])
-    #     optim1.load_state_dict(ckpt["optim1"])
-    #     optim2.load_state_dict(ckpt["optim2"])
-    #     prob1 = ckpt["prob1"]
-    #     prob2 = ckpt["prob2"]
-    #     start_epoch = ckpt["epoch"]
-    #     warmup_done = True
-    #     is_training_started = True
-    # else:
-    #     print("No warm-up-completed models. Training from scratch.")
+    if os.path.exists(checkpoint_path):
+        print("Found warm-up-completed models")
+        ckpt = torch.load(checkpoint_path, map_location=device)
+        model1.load_state_dict(ckpt["model1"])
+        model2.load_state_dict(ckpt["model2"])
+        optim1.load_state_dict(ckpt["optim1"])
+        optim2.load_state_dict(ckpt["optim2"])
+        prob1 = ckpt["prob1"]
+        prob2 = ckpt["prob2"]
+        start_epoch = ckpt["epoch"]
+        warmup_done = True
+        is_training_started = True
+    else:
+        print("No warm-up-completed models. Training from scratch.")
 
     # ------------ Start Training ------------
     for epoch in range(start_epoch, epochs):
@@ -224,10 +223,10 @@ if __name__ == "__main__":
                     "prob2": prob2,
                     "epoch": epoch + 1
                 }
-                # torch.save(
-                #     best_state,
-                #     checkpoint_path,
-                # )
+                torch.save(
+                    best_state,
+                    checkpoint_path,
+                )
             else:
                 print(f"No significant improvement in GMM separation at epoch {epoch}. Current best: {best_sep_avg:.4f} at epoch {best_epoch}")
                 bad_epochs += 1
@@ -251,8 +250,8 @@ if __name__ == "__main__":
             "prob2": prob2,
             "epoch": epoch + 1,
         }
-        # torch.save(checkpoint, checkpoint_path)
-        # print(f"Checkpoint saved at {checkpoint_path}")
+        torch.save(checkpoint, checkpoint_path)
+        print(f"Checkpoint saved at {checkpoint_path}")
     # ---- Save Evaluation Results ----
     print("Saving evaluation results and predictions...")
     report = evaluate_model(test_preds, test_labels)

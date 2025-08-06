@@ -388,3 +388,27 @@ Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
 Training for Network 1
 labelled data size: 118275
 unlabelled data size: 8213
+Loading training data from expanded_full_v2.csv and test data from shape.csv
+Loading ShaPe Data
+Loading data from src/data/train/expanded_full_v2.csv
+Loading test data from src/data/test/shape.csv
+Loading BERT model from bert-base-uncased
+Setting up optimizers and losses...
+Found warm-up-completed models
+Training for Network 1
+labelled data size: 118275
+unlabelled data size: 8213
+Loss: 0.1766, Lx: 0.1581, Lu: 0.0106, Penalty: 0.0079
+Training for Network 2
+labelled data size: 118262
+unlabelled data size: 8226
+Loss: 0.1816, Lx: 0.1610, Lu: 0.0126, Penalty: 0.0080
+Evaluating training data at epoch 26 for Model 1
+Evaluating training data at epoch 26 for Model 2
+Evaluating models at epoch 26
+Test data size: 233
+Epoch: 26, Test Loss: 1.9361, Test Accuracy: 0.7597, Test F1 Score: 0.7597
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118251
+unlabelled data size: 8237

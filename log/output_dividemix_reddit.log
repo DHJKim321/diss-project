@@ -412,3 +412,47 @@ Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
 Training for Network 1
 labelled data size: 118251
 unlabelled data size: 8237
+Loss: 0.1768, Lx: 0.1589, Lu: 0.0099, Penalty: 0.0081
+Training for Network 2
+labelled data size: 118265
+unlabelled data size: 8223
+Loss: 0.1771, Lx: 0.1594, Lu: 0.0101, Penalty: 0.0076
+Evaluating training data at epoch 27 for Model 1
+Evaluating training data at epoch 27 for Model 2
+Evaluating models at epoch 27
+Test data size: 233
+Epoch: 27, Test Loss: 1.9348, Test Accuracy: 0.7511, Test F1 Score: 0.7511
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118225
+unlabelled data size: 8263
+Loss: 0.1745, Lx: 0.1547, Lu: 0.0116, Penalty: 0.0082
+Training for Network 2
+labelled data size: 118249
+unlabelled data size: 8239
+Loss: 0.1742, Lx: 0.1565, Lu: 0.0097, Penalty: 0.0080
+Evaluating training data at epoch 28 for Model 1
+Evaluating training data at epoch 28 for Model 2
+Evaluating models at epoch 28
+Test data size: 233
+Epoch: 28, Test Loss: 2.1652, Test Accuracy: 0.7468, Test F1 Score: 0.7468
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Training for Network 1
+labelled data size: 118255
+unlabelled data size: 8233
+Loss: 0.1728, Lx: 0.1560, Lu: 0.0090, Penalty: 0.0079
+Training for Network 2
+labelled data size: 118244
+unlabelled data size: 8244
+Loss: 0.1763, Lx: 0.1576, Lu: 0.0109, Penalty: 0.0077
+Evaluating training data at epoch 29 for Model 1
+Evaluating training data at epoch 29 for Model 2
+Evaluating models at epoch 29
+Test data size: 233
+Epoch: 29, Test Loss: 2.1651, Test Accuracy: 0.7511, Test F1 Score: 0.7511
+Checkpoint saved at /exports/eddie/scratch/s2017594/dividemix_reddit.pth
+Saving evaluation results and predictions...
+Evaluation Report:
+{'0': {'precision': 0.7627118644067796, 'recall': 0.75, 'f1-score': 0.7563025210084033, 'support': 120.0}, '1': {'precision': 0.7391304347826086, 'recall': 0.7522123893805309, 'f1-score': 0.7456140350877193, 'support': 113.0}, 'accuracy': 0.7510729613733905, 'macro avg': {'precision': 0.7509211495946941, 'recall': 0.7511061946902655, 'f1-score': 0.7509582780480613, 'support': 233.0}, 'weighted avg': {'precision': 0.7512753770783189, 'recall': 0.7510729613733905, 'f1-score': 0.7511188347035221, 'support': 233.0}}
+Evaluation results saved to src/data/eval/metrics_shape_dividemix_0.0.json
+Predictions saved to src/data/eval/evaluated_shape_dividemix_0.0.csv

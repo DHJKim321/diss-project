@@ -33,9 +33,10 @@ if __name__ == "__main__":
     bert = BertModel.from_pretrained('bert-base-uncased').to(device)
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
-    data = (df['title'] + ' ' + df['selftext']).tolist()
+    # data = (df['title'] + ' ' + df['selftext']).tolist()
+    data = df['review'].tolist()
     encoded_data = encode_texts(data, bert, tokenizer, device)
 
     print(f"Encoded data shape: {encoded_data.shape}")
-    np.save('src/data/train/bert_embeddings_expanded_full_v2.npy', encoded_data)
-    print("Embeddings saved to train/bert_embeddings_expanded_full_v2.npy")
+    np.save('src/data/train/bert_embeddings_imdb.npy', encoded_data)
+    print("Embeddings saved to train/bert_embeddings_imdb.npy")

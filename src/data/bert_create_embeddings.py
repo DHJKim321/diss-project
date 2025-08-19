@@ -25,7 +25,7 @@ def encode_texts(texts, model, tokenizer, device, batch_size=16):
     return np.concatenate(embeddings, axis=0)
 
 if __name__ == "__main__":
-    df = pd.read_csv('src/data/train/expanded_full_v2.csv')
+    df = pd.read_csv('src/data/train/imdb.csv')
     df.fillna('', inplace=True)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
